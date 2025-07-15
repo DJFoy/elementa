@@ -5,9 +5,9 @@
 [ext_resource type="Script" uid="uid://tuj5cq6ma4dc" path="res://scripts/State Machine/state_machine.gd" id="2_j4twj"]
 [ext_resource type="Script" uid="uid://ci4h75ptkut1c" path="res://scripts/State Machine/CharacterStates/walk_up.gd" id="3_moqm4"]
 [ext_resource type="Script" uid="uid://cb0a2je4lemv8" path="res://scripts/State Machine/CharacterStates/walk_down.gd" id="4_7r4a6"]
-[ext_resource type="Script" uid="uid://cklwakm6he15p" path="res://walk_left.gd" id="5_d71p8"]
+[ext_resource type="Script" uid="uid://cklwakm6he15p" path="res://scripts/State Machine/CharacterStates/walk_left.gd" id="5_d71p8"]
 [ext_resource type="Script" uid="uid://cjbvhmhob54ei" path="res://scripts/State Machine/CharacterStates/walk_right.gd" id="6_whdth"]
-[ext_resource type="Script" uid="uid://djp7jxucu5ulq" path="res://idle.gd" id="7_0tccx"]
+[ext_resource type="Script" uid="uid://djp7jxucu5ulq" path="res://scripts/State Machine/CharacterStates/idle.gd" id="7_0tccx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xl2yx"]
 size = Vector2(13, 17)

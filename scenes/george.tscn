@@ -10,9 +10,9 @@
 [ext_resource type="Script" uid="uid://tuj5cq6ma4dc" path="res://scripts/State Machine/state_machine.gd" id="7_gcwdg"]
 [ext_resource type="Script" uid="uid://ci4h75ptkut1c" path="res://scripts/State Machine/CharacterStates/walk_up.gd" id="8_gcwdg"]
 [ext_resource type="Script" uid="uid://cb0a2je4lemv8" path="res://scripts/State Machine/CharacterStates/walk_down.gd" id="9_q5pfd"]
-[ext_resource type="Script" uid="uid://cklwakm6he15p" path="res://walk_left.gd" id="10_p00a4"]
+[ext_resource type="Script" uid="uid://cklwakm6he15p" path="res://scripts/State Machine/CharacterStates/walk_left.gd" id="10_p00a4"]
 [ext_resource type="Script" uid="uid://cjbvhmhob54ei" path="res://scripts/State Machine/CharacterStates/walk_right.gd" id="11_5jpgk"]
-[ext_resource type="Script" uid="uid://djp7jxucu5ulq" path="res://idle.gd" id="13_j17qr"]
+[ext_resource type="Script" uid="uid://djp7jxucu5ulq" path="res://scripts/State Machine/CharacterStates/idle.gd" id="13_j17qr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f3v8a"]
 size = Vector2(13, 17)
