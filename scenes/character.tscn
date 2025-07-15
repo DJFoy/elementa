@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://ci4k8lcalagn5"]
+
+[ext_resource type="Script" uid="uid://bay74y2qy5h1r" path="res://scripts/character.gd" id="1_agfs1"]
+
+[node name="Character" type="CharacterBody2D"]
+script = ExtResource("1_agfs1")
