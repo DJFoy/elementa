@@ -3,7 +3,7 @@ class_name Character
 
 const tile_size = 16
 @onready var move_ray:= RayCast2D.new()
-@onready var sprite:= $AnimatedSprite2D
+@onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
 var moving:= false
 var wants_to_move:= false
 var anims = {Vector2.DOWN: "walk_down",
@@ -11,17 +11,21 @@ var anims = {Vector2.DOWN: "walk_down",
 			Vector2.RIGHT: "walk_right",
 			Vector2.UP: "walk_up"}
 var current_anim: String
-signal continue_move
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	add_child(move_ray)
+	move_ray.target_position = Vector2.RIGHT * 16
+	move_ray.enabled = true
+	move_ray.collision_mask = 1
+	
+	
 	# On loading into the scene, ensure that the character is fixed to a tile
 	position = position.snapped(Vector2.ONE * tile_size) 
 	# Ensure it is aligned in the centre of a tile
 	position += Vector2.ONE * tile_size/2
 	
-	# Add the raycast object to the scene for collision detection during movement
-	add_child(move_ray)
+
 	
 func move(dir: Vector2):
 	# Function for moving the character, ensuring it starts and ends within a tile
@@ -31,7 +35,7 @@ func move(dir: Vector2):
 	if !move_ray.is_colliding():
 		# Add animation to the movement
 		current_anim = anims[dir]
-		if !sprite.animation == current_anim:
+		if !sprite.animation == current_anim || !sprite.is_playing():
 				sprite.play(current_anim)
 		# Move the character a tile in the specified direction
 		var tween = create_tween()
@@ -41,6 +45,8 @@ func move(dir: Vector2):
 		moving = true
 		# Wait for the movement to be completed
 		tween.finished.connect(_on_tween_finished)
+	else:
+		_stop_movement()
 
 func _on_tween_finished():
 	if wants_to_move:

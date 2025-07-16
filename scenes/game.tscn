@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://ck443a2wwek6u" path="res://scenes/player.tscn" id="1_80nbo"]
 [ext_resource type="PackedScene" uid="uid://cp511qvqgq2j8" path="res://scenes/background.tscn" id="1_e2o6t"]
-[ext_resource type="Texture2D" uid="uid://c03j213jgqarw" path="res://assets/character_assets/george/George Pixel Portrait.png" id="3_fc0e3"]
+[ext_resource type="Texture2D" uid="uid://lr8yllbfa6a3" path="res://assets/character_assets/george/George Pixel Portrait.png" id="3_fc0e3"]
 [ext_resource type="PackedScene" uid="uid://bq2wy15gb2wqq" path="res://scenes/george.tscn" id="3_feb5d"]
 [ext_resource type="Texture2D" uid="uid://cblm66l2385ri" path="res://assets/Dialogue Box.png" id="4_7jktm"]
 [ext_resource type="PackedScene" uid="uid://dge3cxgjs12mr" path="res://scenes/gigi.tscn" id="6_ryrav"]
