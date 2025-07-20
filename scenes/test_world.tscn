@@ -1,8 +1,23 @@
-[gd_scene load_steps=4 format=4 uid="uid://crfdb4bxxdep7"]
+[gd_scene load_steps=5 format=4 uid="uid://crfdb4bxxdep7"]
 
 [ext_resource type="PackedScene" uid="uid://uuc58l7tgo2i" path="res://scenes/test_pc.tscn" id="1_amxg5"]
 [ext_resource type="TileSet" uid="uid://dfctamtnu4t5e" path="res://assets/interior_tile_set.tres" id="1_umbte"]
-[ext_resource type="Script" uid="uid://blikvf2nowopk" path="res://scripts/test_label.gd" id="2_umbte"]
+[ext_resource type="PackedScene" uid="uid://rrso0eyxlb7j" path="res://scenes/test_npc.tscn" id="3_3263u"]
+
+[sub_resource type="GDScript" id="GDScript_umbte"]
+script/source = "extends Label
+
+@onready var test_pc: Player_Character = $\"..\"
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	text = \"Position\" + str(global_position)
+"
 
 [node name="test_world" type="Node2D"]
 
@@ -10,11 +25,13 @@
 texture_filter = 1
 tile_map_data = PackedByteArray("AAD7//3/AAACAAMAAAD7//7/AAACAAMAAAD7////AAACAAMAAAD7/wAAAAACAAMAAAD7/wEAAAACAAMAAAD7/wIAAAACAAMAAAD7/wMAAAACAAMAAAD7/wQAAAACAAMAAAD8/wQAAAACAAMAAAD9/wQAAAACAAMAAAD+/wQAAAACAAMAAAD//wQAAAACAAMAAAAAAAQAAAACAAMAAAABAAQAAAACAAMAAAACAAQAAAACAAMAAAADAAQAAAACAAMAAAAEAAQAAAACAAMAAAAFAAQAAAACAAMAAAAGAAQAAAACAAMAAAAGAAMAAAACAAMAAAAGAAIAAAACAAMAAAAGAAEAAAACAAMAAAAGAAAAAAACAAMAAAAGAP//AAACAAMAAAAGAP7/AAACAAMAAAAGAP3/AAACAAMAAAAFAP3/AAACAAMAAAAEAP3/AAACAAMAAAADAP3/AAACAAMAAAACAP3/AAACAAMAAAABAP3/AAACAAMAAAAAAP3/AAACAAMAAAD///3/AAACAAMAAAD+//3/AAACAAMAAAD9//3/AAACAAMAAAD8//3/AAACAAMAAAD9/wAAAAACAAMAAAD9////AAACAAMAAAD9//7/AAACAAMAAAD8//7/AAACAAMAAAD8////AAACAAMAAAD8/wAAAAACAAMAAAD8/wEAAAACAAMAAAD8/wIAAAACAAMAAAD8/wMAAAACAAMAAAD9/wMAAAACAAMAAAD9/wIAAAACAAMAAAD9/wEAAAACAAMAAAD+/wEAAAACAAMAAAD+/wAAAAACAAMAAAD+////AAACAAMAAAD+//7/AAACAAMAAAD///7/AAACAAMAAAD/////AAACAAMAAAD//wAAAAACAAMAAAD//wEAAAACAAMAAAD//wIAAAACAAMAAAD+/wIAAAACAAMAAAD+/wMAAAACAAMAAAD//wMAAAACAAMAAAAAAAMAAAACAAMAAAAAAAIAAAACAAMAAAAAAAEAAAACAAMAAAAAAAAAAAACAAMAAAAAAP//AAACAAMAAAAAAP7/AAACAAMAAAABAP7/AAACAAMAAAABAP//AAACAAMAAAABAAAAAAACAAMAAAABAAEAAAACAAMAAAABAAIAAAACAAMAAAABAAMAAAACAAMAAAACAAMAAAACAAMAAAACAAIAAAACAAMAAAACAAEAAAACAAMAAAACAAAAAAACAAMAAAACAP//AAACAAMAAAACAP7/AAACAAMAAAADAP7/AAACAAMAAAADAP//AAACAAMAAAADAAAAAAACAAMAAAADAAEAAAACAAMAAAADAAIAAAACAAMAAAADAAMAAAACAAMAAAAEAAMAAAACAAMAAAAEAAIAAAACAAMAAAAEAAEAAAACAAMAAAAEAAAAAAACAAMAAAAEAP//AAACAAMAAAAEAP7/AAACAAMAAAAFAP7/AAACAAMAAAAFAP//AAACAAMAAAAFAAAAAAACAAMAAAAFAAEAAAACAAMAAAAFAAIAAAACAAMAAAAFAAMAAAACAAMAAAA=")
 tile_set = ExtResource("1_umbte")
+metadata/_edit_lock_ = true
 
 [node name="TileMapLayer2" type="TileMapLayer" parent="."]
 texture_filter = 1
 tile_map_data = PackedByteArray("AAD9//z/AAAGAAMAAAD+//z/AAAGAAMAAAD///z/AAAGAAMAAAAAAPz/AAAGAAMAAAABAPz/AAAGAAMAAAACAPz/AAAGAAMAAAADAPz/AAAGAAMAAAAEAPz/AAAGAAMAAAAFAPz/AAAGAAMAAAAGAPz/AAAGAAMAAAD7//z/AAAGAAMAAAD8//z/AAAGAAMAAAAGAP7/AAAGAAEAAAAGAP//AAAGAAEAAAAGAAEAAAAGAAEAAAAGAAIAAAAGAAEAAAAGAAMAAAAGAAEAAAAGAAAAAAAGAAEAAAA=")
 tile_set = ExtResource("1_umbte")
+metadata/_edit_lock_ = true
 
 [node name="TestPC" parent="." instance=ExtResource("1_amxg5")]
 position = Vector2(8, -8)
@@ -24,4 +41,7 @@ offset_left = 5.0
 offset_top = -26.0
 offset_right = 45.0
 offset_bottom = -3.0
-script = ExtResource("2_umbte")
+script = SubResource("GDScript_umbte")
+
+[node name="test_npc" parent="." instance=ExtResource("3_3263u")]
+position = Vector2(-28, 30)

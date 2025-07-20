@@ -1,0 +1,154 @@
+[gd_scene load_steps=21 format=3 uid="uid://rrso0eyxlb7j"]
+
+[ext_resource type="Script" uid="uid://dqqhg26r5odn3" path="res://scripts/npc.gd" id="1_fohsx"]
+[ext_resource type="Texture2D" uid="uid://b3ka2wqsdwpd8" path="res://assets/character_assets/george/George Overworld Sprite.png" id="2_a1j51"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5e1og"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_01yqc"]
+atlas = ExtResource("2_a1j51")
+region = Rect2(0, 0, 16, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_byner"]
+atlas = ExtResource("2_a1j51")
+region = Rect2(16, 0, 16, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jsvo3"]
+atlas = ExtResource("2_a1j51")
+region = Rect2(32, 0, 16, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ajia1"]
+atlas = ExtResource("2_a1j51")
+region = Rect2(48, 0, 16, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ytmqi"]
+atlas = ExtResource("2_a1j51")
+region = Rect2(0, 18, 16, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dohuq"]
+atlas = ExtResource("2_a1j51")
+region = Rect2(16, 18, 16, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cikwx"]
+atlas = ExtResource("2_a1j51")
+region = Rect2(32, 18, 16, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nd37e"]
+atlas = ExtResource("2_a1j51")
+region = Rect2(48, 18, 16, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_klext"]
+atlas = ExtResource("2_a1j51")
+region = Rect2(0, 36, 16, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aebiu"]
+atlas = ExtResource("2_a1j51")
+region = Rect2(16, 36, 16, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pfxlw"]
+atlas = ExtResource("2_a1j51")
+region = Rect2(32, 36, 16, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_12p43"]
+atlas = ExtResource("2_a1j51")
+region = Rect2(48, 36, 16, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kdv5f"]
+atlas = ExtResource("2_a1j51")
+region = Rect2(0, 54, 16, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w1to7"]
+atlas = ExtResource("2_a1j51")
+region = Rect2(16, 54, 16, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bxb77"]
+atlas = ExtResource("2_a1j51")
+region = Rect2(32, 54, 16, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6klh1"]
+atlas = ExtResource("2_a1j51")
+region = Rect2(48, 54, 16, 18)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_sb2kg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_01yqc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_byner")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jsvo3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ajia1")
+}],
+"loop": true,
+"name": &"walk_down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ytmqi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dohuq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cikwx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nd37e")
+}],
+"loop": true,
+"name": &"walk_left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_klext")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aebiu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pfxlw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_12p43")
+}],
+"loop": true,
+"name": &"walk_right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kdv5f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w1to7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bxb77")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6klh1")
+}],
+"loop": true,
+"name": &"walk_up",
+"speed": 5.0
+}]
+
+[node name="test_npc" type="CharacterBody2D"]
+script = ExtResource("1_fohsx")
+metadata/_custom_type_script = "uid://bay74y2qy5h1r"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(0.8, 0.8)
+shape = SubResource("RectangleShape2D_5e1og")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_sb2kg")
+animation = &"walk_up"

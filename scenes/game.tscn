@@ -1,47 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://cen5v7yrcuney"]
+[gd_scene load_steps=2 format=3 uid="uid://cen5v7yrcuney"]
 
-[ext_resource type="PackedScene" uid="uid://ck443a2wwek6u" path="res://scenes/player.tscn" id="1_80nbo"]
 [ext_resource type="PackedScene" uid="uid://cp511qvqgq2j8" path="res://scenes/background.tscn" id="1_e2o6t"]
-[ext_resource type="Texture2D" uid="uid://lr8yllbfa6a3" path="res://assets/character_assets/george/George Pixel Portrait.png" id="3_fc0e3"]
-[ext_resource type="PackedScene" uid="uid://bq2wy15gb2wqq" path="res://scenes/george.tscn" id="3_feb5d"]
-[ext_resource type="Texture2D" uid="uid://cblm66l2385ri" path="res://assets/Dialogue Box.png" id="4_7jktm"]
-[ext_resource type="PackedScene" uid="uid://dge3cxgjs12mr" path="res://scenes/gigi.tscn" id="6_ryrav"]
 
 [node name="Game" type="Node2D"]
 y_sort_enabled = true
 
 [node name="GameTiles" parent="." instance=ExtResource("1_e2o6t")]
-
-[node name="player" parent="." instance=ExtResource("1_80nbo")]
-z_index = 1
-position = Vector2(-200, 0)
-
-[node name="Camera2D" type="Camera2D" parent="player"]
-
-[node name="Portrait" type="Sprite2D" parent="player/Camera2D"]
-visible = false
-texture_filter = 1
-position = Vector2(-115, -26)
-texture = ExtResource("3_fc0e3")
-
-[node name="TextBox" type="Sprite2D" parent="player/Camera2D"]
-visible = false
-texture = ExtResource("4_7jktm")
-
-[node name="RichTextLabel" type="RichTextLabel" parent="player/Camera2D"]
-visible = false
-z_index = 1
-offset_left = -167.0
-offset_top = 63.0
-offset_right = 166.0
-offset_bottom = 115.0
-bbcode_enabled = true
-text = "[color=black]Hey I'm George and it's not like I want to talk to you.[/color]"
-
-[node name="George" parent="." instance=ExtResource("3_feb5d")]
-z_index = 1
-position = Vector2(-199, 72)
-
-[node name="Gigi" parent="." instance=ExtResource("6_ryrav")]
-z_index = 1
-position = Vector2(-223, -33)
