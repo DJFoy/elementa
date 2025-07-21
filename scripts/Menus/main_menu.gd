@@ -1,7 +1,9 @@
 extends Control
+signal new_game
 
 func _on_new_game_pressed() -> void:
-	pass # Replace with function body.
+	print("Pressed New Game")
+	new_game.emit()
 
 
 func _on_load_game_pressed() -> void:
