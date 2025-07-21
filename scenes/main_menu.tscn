@@ -1,0 +1,47 @@
+[gd_scene load_steps=3 format=3 uid="uid://ckvr536qqht8a"]
+
+[ext_resource type="Script" uid="uid://cv623n10lbfok" path="res://scripts/main_menu.gd" id="1_ekxnf"]
+[ext_resource type="Texture2D" uid="uid://lr8yllbfa6a3" path="res://assets/character_assets/george/George Pixel Portrait.png" id="2_bqqt6"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_ekxnf")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 480.0
+offset_bottom = 270.0
+texture = ExtResource("2_bqqt6")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="MenuOptions" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 165.0
+offset_bottom = 270.0
+alignment = 1
+
+[node name="NewGame" type="Button" parent="MenuOptions"]
+layout_mode = 2
+text = "New Game"
+
+[node name="LoadGame" type="Button" parent="MenuOptions"]
+layout_mode = 2
+disabled = true
+text = "Load Game"
+
+[node name="Options" type="Button" parent="MenuOptions"]
+layout_mode = 2
+text = "Options"
+
+[node name="Exit" type="Button" parent="MenuOptions"]
+layout_mode = 2
+text = "Exit Game"
+
+[connection signal="pressed" from="MenuOptions/NewGame" to="." method="_on_new_game_pressed"]
+[connection signal="pressed" from="MenuOptions/LoadGame" to="." method="_on_load_game_pressed"]
+[connection signal="pressed" from="MenuOptions/Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="MenuOptions/Exit" to="." method="_on_exit_pressed"]

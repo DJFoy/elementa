@@ -1,8 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://cen5v7yrcuney"]
 
-[ext_resource type="PackedScene" uid="uid://cp511qvqgq2j8" path="res://scenes/background.tscn" id="1_e2o6t"]
+[ext_resource type="Script" uid="uid://bp248y7jfn8xs" path="res://scripts/main.gd" id="1_uwrxv"]
 
 [node name="Game" type="Node2D"]
 y_sort_enabled = true
-
-[node name="GameTiles" parent="." instance=ExtResource("1_e2o6t")]
+script = ExtResource("1_uwrxv")
