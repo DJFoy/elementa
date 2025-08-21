@@ -1,0 +1,34 @@
+[gd_scene load_steps=2 format=3 uid="uid://cvmmd6s0k7jcg"]
+
+[ext_resource type="Script" uid="uid://d2wsio0gwr6d5" path="res://scripts/Menus/debug_menu.gd" id="1_lgrwq"]
+
+[node name="Debug" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_lgrwq")
+
+[node name="DebugOptions" type="VBoxContainer" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="NPC" type="OptionButton" parent="DebugOptions"]
+layout_mode = 2
+item_count = 8
+popup/item_0/text = "George"
+popup/item_0/id = 0
+popup/item_1/text = "Gigi"
+popup/item_1/id = 1
+popup/item_2/text = "Roy"
+popup/item_2/id = 2
+popup/item_3/text = "Shiela"
+popup/item_3/id = 3
+popup/item_4/text = "Matthias"
+popup/item_4/id = 4
+popup/item_5/text = "Charlotte"
+popup/item_5/id = 5
+popup/item_6/text = "Damien"
+popup/item_6/id = 6
+popup/item_7/text = "Eliza"
+popup/item_7/id = 7
+
+[connection signal="item_selected" from="DebugOptions/NPC" to="." method="_on_npc_item_selected"]
