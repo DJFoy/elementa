@@ -8,11 +8,13 @@ anchors_preset = 0
 script = ExtResource("1_lgrwq")
 
 [node name="DebugOptions" type="VBoxContainer" parent="."]
+layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="NPC" type="OptionButton" parent="DebugOptions"]
 layout_mode = 2
+selected = 0
 item_count = 8
 popup/item_0/text = "George"
 popup/item_0/id = 0
@@ -20,7 +22,7 @@ popup/item_1/text = "Gigi"
 popup/item_1/id = 1
 popup/item_2/text = "Roy"
 popup/item_2/id = 2
-popup/item_3/text = "Shiela"
+popup/item_3/text = "Sheila"
 popup/item_3/id = 3
 popup/item_4/text = "Matthias"
 popup/item_4/id = 4
@@ -31,4 +33,32 @@ popup/item_6/id = 6
 popup/item_7/text = "Eliza"
 popup/item_7/id = 7
 
+[node name="SpawnNPC" type="Button" parent="DebugOptions"]
+layout_mode = 2
+text = "Spawn NPC"
+
+[node name="MovementOptions" type="OptionButton" parent="DebugOptions"]
+layout_mode = 2
+item_count = 4
+popup/item_0/text = "Move Up"
+popup/item_0/id = 0
+popup/item_1/text = "Move Down"
+popup/item_1/id = 1
+popup/item_2/text = "Move Left"
+popup/item_2/id = 2
+popup/item_3/text = "Move Right"
+popup/item_3/id = 3
+
+[node name="Stop" type="Button" parent="DebugOptions"]
+layout_mode = 2
+text = "Stop Movement"
+
+[node name="Clear" type="Button" parent="DebugOptions"]
+layout_mode = 2
+text = "Clear Debug"
+
 [connection signal="item_selected" from="DebugOptions/NPC" to="." method="_on_npc_item_selected"]
+[connection signal="pressed" from="DebugOptions/SpawnNPC" to="." method="_on_spawn_npc_pressed"]
+[connection signal="item_selected" from="DebugOptions/MovementOptions" to="." method="_on_movement_options_item_selected"]
+[connection signal="pressed" from="DebugOptions/Stop" to="." method="_on_stop_pressed"]
+[connection signal="pressed" from="DebugOptions/Clear" to="." method="_on_clear_pressed"]

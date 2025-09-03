@@ -4,6 +4,13 @@ class_name Player_Character
 # Since this is the player character, always initialise a camera to follow
 @onready var camera:= Camera2D.new()
 
+@onready var character_data: PlayerCreationData
+
+@onready var hair_dict:= {
+	0: preload("res://resources/character_sprite_tilesets/pc_hair_1.tres"), 
+	1: preload("res://resources/character_sprite_tilesets/pc_hair_2.tres")
+}
+
 var inputs:= {"move_left": Vector2.LEFT,
 			"move_right": Vector2.RIGHT,
 			"move_up": Vector2.UP,
@@ -11,6 +18,9 @@ var inputs:= {"move_left": Vector2.LEFT,
 
 func _ready() -> void:
 	add_child(camera)
+	if character_data:
+		print(character_data.name)
+		apply_character_data(character_data)
 	super()
 	
 func _process(delta: float) -> void:
@@ -39,3 +49,7 @@ func _continuous_movement() -> void:
 	if current_dir != wants_to_move_dir:
 		direction_change(wants_to_move_dir)
 	move(wants_to_move_dir)
+
+func apply_character_data(data: PlayerCreationData):
+	get_node("Hair").texture = hair_dict[data.hair]
+	get_node("Hair").modulate = data.hair_colour

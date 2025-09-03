@@ -1,6 +1,7 @@
 extends Resource
 class_name PlayerCreationData
 
-var hair: int
-var body_type: int
-var name: String
+@export var hair: int
+@export var body_type: int
+@export var name: String
+@export var hair_colour: Color

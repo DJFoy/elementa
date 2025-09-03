@@ -1,8 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://bfqfu6xbhmt4k"]
+[gd_scene load_steps=3 format=3 uid="uid://bfqfu6xbhmt4k"]
 
 [ext_resource type="Script" uid="uid://dxbju3x74w8cl" path="res://scripts/Menus/player_init.gd" id="1_x3k8m"]
-[ext_resource type="Texture2D" uid="uid://be5tbx8xjni46" path="res://assets/character_assets/gigi/Gigi Pixel Portrait.png" id="2_6edg5"]
-[ext_resource type="Texture2D" uid="uid://lr8yllbfa6a3" path="res://assets/character_assets/george/George Pixel Portrait.png" id="3_kbn35"]
+[ext_resource type="PackedScene" uid="uid://byjclgdfdac10" path="res://scenes/pc.tscn" id="2_vc5ab"]
 
 [node name="PlayerInit" type="Control"]
 layout_mode = 3
@@ -15,8 +14,8 @@ script = ExtResource("1_x3k8m")
 
 [node name="ScrollContainer" type="ScrollContainer" parent="."]
 layout_mode = 2
-offset_left = 111.0
-offset_right = 370.0
+offset_left = 30.0
+offset_right = 289.0
 offset_bottom = 270.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer"]
@@ -36,22 +35,32 @@ text = "Body Type 1"
 layout_mode = 2
 text = "Body Type 2"
 
-[node name="OptionButton" type="OptionButton" parent="ScrollContainer/VBoxContainer"]
+[node name="HairType" type="OptionButton" parent="ScrollContainer/VBoxContainer"]
 layout_mode = 2
-item_count = 3
+item_count = 2
 popup/item_0/text = "Hair 1"
-popup/item_0/icon = ExtResource("2_6edg5")
 popup/item_0/id = 0
 popup/item_1/text = "Hair 2"
-popup/item_1/icon = ExtResource("3_kbn35")
 popup/item_1/id = 1
-popup/item_2/text = "Hair 3"
-popup/item_2/id = 2
+
+[node name="HairColour" type="ColorPickerButton" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2
+text = "Hair Colour"
+color = Color(0.364763, 0.221563, 0.0883609, 1)
 
 [node name="Confirm" type="Button" parent="ScrollContainer/VBoxContainer"]
 layout_mode = 2
 text = "Confirm"
 
+[node name="PC" parent="." instance=ExtResource("2_vc5ab")]
+position = Vector2(295, 122)
+scale = Vector2(2, 2)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(240, 135)
+
 [connection signal="toggled" from="ScrollContainer/VBoxContainer/BodyType1" to="." method="_on_body_type_1_toggled"]
 [connection signal="toggled" from="ScrollContainer/VBoxContainer/BodyType2" to="." method="_on_body_type_2_toggled"]
+[connection signal="item_selected" from="ScrollContainer/VBoxContainer/HairType" to="." method="_on_hair_type_item_selected"]
+[connection signal="color_changed" from="ScrollContainer/VBoxContainer/HairColour" to="." method="_on_hair_colour_color_changed"]
 [connection signal="pressed" from="ScrollContainer/VBoxContainer/Confirm" to="." method="_on_confirm_pressed"]

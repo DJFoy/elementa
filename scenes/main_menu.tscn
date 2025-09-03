@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://ckvr536qqht8a"]
 
 [ext_resource type="Script" uid="uid://cv623n10lbfok" path="res://scripts/Menus/main_menu.gd" id="1_ekxnf"]
-[ext_resource type="Texture2D" uid="uid://lr8yllbfa6a3" path="res://assets/character_assets/george/George Pixel Portrait.png" id="2_bqqt6"]
+[ext_resource type="Texture2D" uid="uid://coaf61v8cgmbe" path="res://assets/character_assets/george/George Pixel Portrait.png" id="2_bqqt6"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3

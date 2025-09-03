@@ -7,7 +7,8 @@ const tile_size = 16
 # Ensure a new RayCast2D object exists for collision detection
 @onready var move_ray:= RayCast2D.new()
 # All Character classes will require an animated sprite
-@onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
+@onready var sprite: Sprite2D = $Sprite2D
+@onready var anim: AnimationPlayer = $AnimationPlayer
 
 # Stores whether the character is currently moving
 var moving:= false
@@ -41,17 +42,16 @@ func _ready() -> void:
 	position += Vector2.ONE * tile_size/2
 	
 	# Ensure that the character is facing the same direction as the RayCast2D
-	sprite.play("move_down")
-	sprite.stop()
-	sprite.frame = 0
+	anim.play("move_down")
+	anim.stop()
 
 	
 func move(dir: Vector2):
 	# Move the character one tile in specified direction,
 	# ensuring it starts and ends within a tile
 	if !move_ray.is_colliding():
-		if !sprite.animation == current_anim || !sprite.is_playing():
-				sprite.play(current_anim)
+		if !anim.current_animation == current_anim || !anim.is_playing():
+				anim.play(current_anim)
 		# Move the character a tile in the specified direction
 		var tween = create_tween()
 		tween.tween_property(self, "position",
@@ -69,9 +69,8 @@ func position_snap():
 
 func direction_change(dir: Vector2):
 	# Change the current animation to make the sprite face the new direction
-	sprite.play(anims[dir])
-	sprite.stop()
-	sprite.frame = 0
+	anim.play(anims[dir])
+	anim.stop()
 	current_anim = anims[dir]
 	# Move the RayCast2D target position to face the same direction as sprite
 	move_ray.target_position = dir * tile_size
@@ -88,8 +87,7 @@ func _on_tween_finished():
 
 func _stop_movement():
 	moving = false
-	sprite.stop()
-	sprite.frame = 0
+	anim.stop()
 
 func _continuous_movement():
 	pass

@@ -1,7 +1,7 @@
 [gd_scene load_steps=21 format=3 uid="uid://rrso0eyxlb7j"]
 
 [ext_resource type="Script" uid="uid://dqqhg26r5odn3" path="res://scripts/npc.gd" id="1_fohsx"]
-[ext_resource type="Texture2D" uid="uid://b3ka2wqsdwpd8" path="res://assets/character_assets/george/George Overworld Sprite.png" id="2_a1j51"]
+[ext_resource type="Texture2D" uid="uid://d3karkd6gfodp" path="res://assets/character_assets/george/George Overworld Sprite.png" id="2_a1j51"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5e1og"]
 
