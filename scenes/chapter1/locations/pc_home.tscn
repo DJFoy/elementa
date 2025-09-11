@@ -1,0 +1,48 @@
+[gd_scene load_steps=4 format=4 uid="uid://7s6n5s6n4jun"]
+
+[ext_resource type="TileSet" uid="uid://gfwi66i5se4k" path="res://assets/tilesets/backgrounds/base_inside_tiles.tres" id="1_1m1lp"]
+[ext_resource type="Script" uid="uid://d17n47ihtn6ik" path="res://scripts/pc_home.gd" id="1_67net"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_67net"]
+size = Vector2(1, 1)
+
+[node name="PCHome" type="Node2D"]
+script = ExtResource("1_67net")
+
+[node name="FloorsAndWalls" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAABAAAAAAADAAAAAAABAAEAAAADAAAAAAABAAIAAAADAAAAAAABAAMAAAADAAAAAAACAAAAAAADAAAAAAACAAEAAAADAAAAAAACAAIAAAADAAAAAAACAAMAAAADAAAAAAADAAAAAAADAAAAAAADAAEAAAADAAAAAAADAAIAAAADAAAAAAADAAMAAAADAAAAAAAEAAAAAAADAAAAAAAEAAEAAAADAAAAAAAEAAIAAAADAAAAAAAEAAMAAAADAAAAAAAFAAAAAAADAAAAAAAFAAEAAAADAAAAAAAFAAIAAAADAAAAAAAFAAMAAAADAAAAAAAGAAAAAAADAAAAAAAGAAEAAAADAAAAAAAGAAIAAAADAAAAAAAGAAMAAAAAAAYAAAAFAP7/AAALAAAAAAAGAP7/AAAMAAAAAAACAP7/AAAMAAAAAAADAP7/AAANAAAAAAAEAP7/AAANAAAAAAABAP7/AAALAAAAAAAHAP7/AAAFAAcAAAAHAP//AAAFAAcAAAAHAAAAAAAFAAcAAAAHAAEAAAAFAAcAAAAHAAIAAAAFAAcAAAAHAAMAAAAFAAcAAAAHAAQAAAAFAAcAAAAGAAQAAAAFAAcAAAAFAAQAAAAFAAcAAAAEAAQAAAAFAAcAAAADAAQAAAAFAAcAAAACAAQAAAAFAAcAAAABAAQAAAAFAAcAAAAAAAQAAAAFAAcAAAAAAAMAAAAFAAcAAAAAAAIAAAAFAAcAAAAAAAEAAAAFAAcAAAAAAAAAAAAFAAcAAAAAAP//AAAFAAcAAAAAAP7/AAAFAAcAAAA=")
+tile_set = ExtResource("1_1m1lp")
+
+[node name="Furniture" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAADAP7/AAAJAAgAAAABAAIAAAACAAQAAAACAAIAAAADAAEAAAADAAIAAAACAAgAAAADAP//AAAAAAgAAAACAP//AAAAAAgAAAAEAP7/AAAHAAAAAAAFAP7/AAAIAAQAAAA=")
+tile_set = ExtResource("1_1m1lp")
+
+[node name="Sink" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAADAP//AAAEAAUAAAA=")
+tile_set = ExtResource("1_1m1lp")
+
+[node name="Rug" type="TileMapLayer" parent="."]
+modulate = Color(0.847595, 0.317795, 0.3295, 1)
+tile_map_data = PackedByteArray("AAADAAEAAAADAAIAAAADAP7/AAAKAAgAAAA=")
+tile_set = ExtResource("1_1m1lp")
+
+[node name="SpawnStairs" type="Marker2D" parent="."]
+position = Vector2(104, 56)
+
+[node name="SpawnDoor" type="Marker2D" parent="."]
+position = Vector2(72, 56)
+
+[node name="ExitStairs" type="Area2D" parent="." groups=["Exits"]]
+
+[node name="ExitStairsCollision" type="CollisionShape2D" parent="ExitStairs"]
+position = Vector2(109, 56)
+shape = SubResource("RectangleShape2D_67net")
+
+[node name="ExitStairs2" type="Area2D" parent="."]
+
+[node name="ExitStairsCollision" type="CollisionShape2D" parent="ExitStairs2"]
+position = Vector2(109, 56)
+shape = SubResource("RectangleShape2D_67net")
+
+[connection signal="body_entered" from="ExitStairs" to="." method="_on_exit_stairs_body_entered"]
+[connection signal="body_exited" from="ExitStairs2" to="." method="_on_exit_stairs_2_body_exited"]

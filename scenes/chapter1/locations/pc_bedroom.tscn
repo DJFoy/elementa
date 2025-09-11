@@ -1,19 +1,22 @@
-[gd_scene load_steps=3 format=4 uid="uid://pe7bm124rb7k"]
+[gd_scene load_steps=4 format=4 uid="uid://pe7bm124rb7k"]
 
 [ext_resource type="TileSet" uid="uid://gfwi66i5se4k" path="res://assets/tilesets/backgrounds/base_inside_tiles.tres" id="1_6l15u"]
 [ext_resource type="Script" uid="uid://btvksk5oy230u" path="res://scripts/pc_bedroom.gd" id="1_fhqw1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fhqw1"]
+size = Vector2(1, 1)
 
 [node name="PCBedroom" type="Node2D"]
 script = ExtResource("1_fhqw1")
 
 [node name="FloorAndWalls" type="TileMapLayer" parent="."]
 texture_filter = 1
-tile_map_data = PackedByteArray("AAAAAAAAAAALAAAAAAABAAAAAAAMAAAAAAACAAAAAAANAAAAAAADAAAAAAANAAAAAAAAAAIAAAADAAAAAAAAAAMAAAADAAAAAAAAAAQAAAADAAAAAAAAAAUAAAADAAAAAAABAAIAAAADAAAAAAABAAMAAAADAAAAAAABAAQAAAADAAAAAAABAAUAAAADAAAAAAACAAIAAAADAAAAAAACAAMAAAADAAAAAAACAAQAAAADAAAAAAACAAUAAAADAAAAAAADAAIAAAADAAAAAAADAAMAAAADAAAAAAADAAQAAAADAAAAAAADAAUAAAADAAAAAAAEAAAAAAALAAAAAAAEAAIAAAADAAAAAAAEAAMAAAADAAAAAAAEAAQAAAADAAAAAAAEAAUAAAADAAAAAAAFAAAAAAAMAAAAAAAFAAIAAAADAAAAAAAFAAMAAAADAAAAAAAFAAQAAAADAAAAAAAFAAUAAAAAAAYAAAA=")
+tile_map_data = PackedByteArray("AAAAAAAAAAALAAAAAAABAAAAAAAMAAAAAAACAAAAAAANAAAAAAADAAAAAAANAAAAAAAAAAIAAAADAAAAAAAAAAMAAAADAAAAAAAAAAQAAAADAAAAAAAAAAUAAAADAAAAAAABAAIAAAADAAAAAAABAAMAAAADAAAAAAABAAQAAAADAAAAAAABAAUAAAADAAAAAAACAAIAAAADAAAAAAACAAMAAAADAAAAAAACAAQAAAADAAAAAAACAAUAAAADAAAAAAADAAIAAAADAAAAAAADAAMAAAADAAAAAAADAAQAAAADAAAAAAADAAUAAAADAAAAAAAEAAAAAAALAAAAAAAEAAIAAAADAAAAAAAEAAMAAAADAAAAAAAEAAQAAAADAAAAAAAEAAUAAAADAAAAAAAFAAAAAAAMAAAAAAAFAAIAAAADAAAAAAAFAAMAAAADAAAAAAAFAAQAAAADAAAAAAAFAAUAAAAAAAYAAAD//wIAAAAFAAcAAAD//wMAAAAFAAcAAAD//wQAAAAFAAcAAAD//wUAAAAFAAcAAAD//wYAAAAFAAcAAAAAAAYAAAAFAAcAAAABAAYAAAAFAAcAAAACAAYAAAAFAAcAAAADAAYAAAAFAAcAAAAEAAYAAAAFAAcAAAAFAAYAAAAFAAcAAAAGAAYAAAAFAAcAAAAGAAUAAAAFAAcAAAAGAAQAAAAFAAcAAAAGAAMAAAAFAAcAAAAGAAIAAAAFAAcAAAA=")
 tile_set = ExtResource("1_6l15u")
 
 [node name="Furniture" type="TileMapLayer" parent="."]
 texture_filter = 1
-tile_map_data = PackedByteArray("AAABAAEAAAAGAAgAAAACAAIAAAAAAAAAAAADAAAAAAAJAAgAAAAEAAEAAAABAAcAAAA=")
+tile_map_data = PackedByteArray("AAACAAIAAAAAAAAAAAADAAAAAAAJAAgAAAAEAAEAAAABAAcAAAABAAEAAAAGAAgAAAA=")
 tile_set = ExtResource("1_6l15u")
 
 [node name="Rug" type="TileMapLayer" parent="."]
@@ -28,3 +31,32 @@ z_index = 2
 texture_filter = 1
 tile_map_data = PackedByteArray("AAACAAIAAAAEAAcAAAA=")
 tile_set = ExtResource("1_6l15u")
+
+[node name="Candle" type="TileMapLayer" parent="."]
+z_index = 2
+texture_filter = 1
+tile_map_data = PackedByteArray("AAABAAEAAAABAAAAAAA=")
+tile_set = ExtResource("1_6l15u")
+
+[node name="SpawnInit" type="Marker2D" parent="."]
+position = Vector2(40, 40)
+
+[node name="SpawnStairs" type="Marker2D" parent="."]
+position = Vector2(88, 88)
+
+[node name="ExitStairs" type="Area2D" parent="." groups=["Exits"]]
+position = Vector2(88, 88)
+
+[node name="ExitStairsCollision" type="CollisionShape2D" parent="ExitStairs"]
+position = Vector2(5, 0)
+shape = SubResource("RectangleShape2D_fhqw1")
+
+[node name="ExitStairs2" type="Area2D" parent="."]
+position = Vector2(88, 88)
+
+[node name="ExitStairsCollision" type="CollisionShape2D" parent="ExitStairs2"]
+position = Vector2(5, 0)
+shape = SubResource("RectangleShape2D_fhqw1")
+
+[connection signal="body_entered" from="ExitStairs" to="." method="_on_exit_stairs_body_entered"]
+[connection signal="body_exited" from="ExitStairs2" to="." method="_on_exit_stairs_2_body_exited"]

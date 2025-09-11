@@ -19,7 +19,6 @@ var inputs:= {"move_left": Vector2.LEFT,
 func _ready() -> void:
 	add_child(camera)
 	if character_data:
-		print(character_data.name)
 		apply_character_data(character_data)
 	super()
 	

@@ -8,6 +8,8 @@ extends Control
 
 @onready var pc: Node2D = $PC
 
+var Global = preload("res://global.gd")
+
 func _ready() -> void:
 	pc.get_node("Hair").modulate = hair_colour.color
 
@@ -49,11 +51,7 @@ func _on_confirm_pressed() -> void:
 	player_settings.hair = hair.selected
 	player_settings.hair_colour = hair_colour.color
 	
-	
 	ResourceSaver.save(player_settings, "res://saves/player_data.tres")
-	print("Body type " + str(player_settings.body_type))
-	print("Name " + str(player_settings.name))
-	print("Hair " + str(player_settings.hair))
-	print("Hair Colour " + str(player_settings.hair_colour))
 	
+	get_node("/root/Global").store_prev_scene("PlayerInit")
 	get_tree().change_scene_to_file("res://scenes/chapter1/locations/pc_bedroom.tscn")

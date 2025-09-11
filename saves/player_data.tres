@@ -1,10 +1,10 @@
-[gd_resource type="Resource" script_class="PlayerCreationData" load_steps=2 format=3 uid="uid://tn0r6ufooqu3"]
+[gd_resource type="Resource" script_class="PlayerCreationData" load_steps=2 format=3]
 
-[ext_resource type="Script" uid="uid://0xvhitkg70yg" path="res://resources/player_creation_data.gd" id="1_p1bc8"]
+[ext_resource type="Script" path="res://resources/player_creation_data.gd" id="1_p1bc8"]
 
 [resource]
 script = ExtResource("1_p1bc8")
 hair = 0
 body_type = 1
-name = "Beanz 2"
-hair_colour = Color(0.364763, 0.221563, 0.0883609, 1)
+name = "Doofus"
+hair_colour = Color(0.0883609, 0.364763, 0.173657, 1)

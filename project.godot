@@ -16,6 +16,10 @@ run/main_scene="uid://cen5v7yrcuney"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="uid://c03j213jgqarw"
 
+[autoload]
+
+Global="*res://global.gd"
+
 [display]
 
 window/size/viewport_width=480
@@ -27,6 +31,10 @@ window/stretch/scale_mode="integer"
 
 version_control/plugin_name="GitPlugin"
 version_control/autoload_on_startup=true
+
+[global_group]
+
+Exits="Group for all areas that leave an area"
 
 [input]
 
@@ -57,6 +65,7 @@ move_down={
 
 [rendering]
 
+textures/canvas_textures/default_texture_filter=0
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
 2d/snap/snap_2d_transforms_to_pixel=true
