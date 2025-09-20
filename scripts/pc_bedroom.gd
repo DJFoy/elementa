@@ -1,5 +1,6 @@
 extends Location
 
+
 @onready var spawn_init: Marker2D = $SpawnInit
 @onready var spawn_stairs: Marker2D = $SpawnStairs
 
@@ -9,12 +10,13 @@ func _ready() -> void:
 		"PCHome": spawn_stairs
 	}
 	super()
+	if prev_scene == "PlayerInit":
+		leave_trans_area()
 
 
 func _on_exit_stairs_body_entered(body: Node2D) -> void:
-	if body.is_class("CharacterBody2D"):
-		get_node("/root/Global").prev_scene = "PCBedroom"
-		get_tree().change_scene_to_file("res://scenes/chapter1/locations/pc_home.tscn")
+	if body is PC:
+		trigger_exit("PCBedroom", "res://scenes/chapter1/locations/pc_home.tscn")
 
 
 func _on_exit_stairs_2_body_exited(body: Node2D) -> void:

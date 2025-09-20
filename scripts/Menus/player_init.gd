@@ -53,5 +53,6 @@ func _on_confirm_pressed() -> void:
 	
 	ResourceSaver.save(player_settings, "res://saves/player_data.tres")
 	
-	get_node("/root/Global").store_prev_scene("PlayerInit")
+	get_node("/root/Global").prev_scene = "PlayerInit"
+	get_node("/root/Global").game_loaded = true
 	get_tree().change_scene_to_file("res://scenes/chapter1/locations/pc_bedroom.tscn")

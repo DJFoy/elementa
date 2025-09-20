@@ -157,6 +157,7 @@ _data = {
 
 [node name="PC" type="CharacterBody2D"]
 script = ExtResource("1_o5wjj")
+metadata/_custom_type_script = "uid://1j8kdo0v4c2q"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -1)
