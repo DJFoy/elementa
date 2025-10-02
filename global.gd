@@ -11,3 +11,26 @@ var pc_dir: Vector2
 
 # Check whether a scene transition is occuring to prevent character input
 var scene_transitioning:= false
+
+# Generate a state for interacting - character cannot move until interaction
+# ends
+var interacting:= false
+
+# Create a player lock function interaction
+
+var lock_count: int = 0
+
+signal locked_state_changed(is_locked: bool)
+
+func lock():
+	lock_count += 1
+	if lock_count == 1:
+		locked_state_changed.emit(true)
+
+func unlock():
+	lock_count = max(0, lock_count - 1)
+	if lock_count == 0:
+		locked_state_changed.emit(false)
+
+func is_locked() -> bool:
+	return lock_count > 0

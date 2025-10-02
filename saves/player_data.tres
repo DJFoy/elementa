@@ -1,10 +1,9 @@
-[gd_resource type="Resource" script_class="PlayerCreationData" load_steps=2 format=3]
+[gd_resource type="Resource" script_class="PlayerCreationData" load_steps=2 format=3 uid="uid://cqlkxgaasvsrl"]
 
-[ext_resource type="Script" path="res://resources/player_creation_data.gd" id="1_p1bc8"]
+[ext_resource type="Script" uid="uid://0xvhitkg70yg" path="res://resources/player_creation_data.gd" id="1_p1bc8"]
 
 [resource]
 script = ExtResource("1_p1bc8")
-hair = 0
 body_type = 1
-name = "N"
-hair_colour = Color(0.0659571, 0.696289, 0.0942728, 1)
+name = "Henry"
+hair_colour = Color(0.66972667, 0.73828125, 0, 1)

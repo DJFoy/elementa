@@ -1,60 +1,105 @@
-[gd_scene load_steps=4 format=4 uid="uid://pe7bm124rb7k"]
+[gd_scene load_steps=6 format=4 uid="uid://pe7bm124rb7k"]
 
 [ext_resource type="TileSet" uid="uid://gfwi66i5se4k" path="res://assets/tilesets/backgrounds/base_inside_tiles.tres" id="1_6l15u"]
-[ext_resource type="Script" uid="uid://btvksk5oy230u" path="res://scripts/pc_bedroom.gd" id="1_fhqw1"]
+[ext_resource type="Script" uid="uid://btvksk5oy230u" path="res://scripts/Chapter 1/pc_bedroom.gd" id="1_fhqw1"]
+[ext_resource type="Texture2D" uid="uid://cos0d1elaavha" path="res://assets/locations/brackenberry village/player home/Maid Uniform Asset.png" id="3_s5vp4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fhqw1"]
 size = Vector2(16.5, 16.5)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s5vp4"]
+size = Vector2(16, 16)
+
 [node name="PCBedroom" type="Node2D"]
 script = ExtResource("1_fhqw1")
 
-[node name="FloorAndWalls" type="TileMapLayer" parent="."]
+[node name="TileMaps" type="Node2D" parent="."]
+
+[node name="FloorAndWalls" type="TileMapLayer" parent="TileMaps"]
 texture_filter = 1
-tile_map_data = PackedByteArray("AAAAAAAAAAALAAAAAAABAAAAAAAMAAAAAAACAAAAAAANAAAAAAADAAAAAAANAAAAAAAAAAIAAAADAAAAAAAAAAMAAAADAAAAAAAAAAQAAAADAAAAAAAAAAUAAAADAAAAAAABAAIAAAADAAAAAAABAAMAAAADAAAAAAABAAQAAAADAAAAAAABAAUAAAADAAAAAAACAAIAAAADAAAAAAACAAMAAAADAAAAAAACAAQAAAADAAAAAAACAAUAAAADAAAAAAADAAIAAAADAAAAAAADAAMAAAADAAAAAAADAAQAAAADAAAAAAADAAUAAAADAAAAAAAEAAAAAAALAAAAAAAEAAIAAAADAAAAAAAEAAMAAAADAAAAAAAEAAQAAAADAAAAAAAEAAUAAAADAAAAAAAFAAAAAAAMAAAAAAAFAAIAAAADAAAAAAAFAAMAAAADAAAAAAAFAAQAAAADAAAAAAAFAAUAAAAAAAYAAAD//wIAAAAFAAcAAAD//wMAAAAFAAcAAAD//wQAAAAFAAcAAAD//wUAAAAFAAcAAAD//wYAAAAFAAcAAAAAAAYAAAAFAAcAAAABAAYAAAAFAAcAAAACAAYAAAAFAAcAAAAFAAYAAAAFAAcAAAAGAAYAAAAFAAcAAAAGAAUAAAAFAAcAAAAGAAQAAAAFAAcAAAAGAAMAAAAFAAcAAAAGAAIAAAAFAAcAAAA=")
+tile_map_data = PackedByteArray("AAAAAAAAAAALAAAAAAABAAAAAAAMAAAAAAACAAAAAAANAAAAAAADAAAAAAANAAAAAAAAAAIAAAADAAAAAAAAAAMAAAADAAAAAAAAAAQAAAADAAAAAAAAAAUAAAADAAAAAAABAAIAAAADAAAAAAABAAMAAAADAAAAAAABAAQAAAADAAAAAAABAAUAAAADAAAAAAACAAIAAAADAAAAAAACAAMAAAADAAAAAAACAAQAAAADAAAAAAACAAUAAAADAAAAAAADAAIAAAADAAAAAAADAAMAAAADAAAAAAADAAQAAAADAAAAAAADAAUAAAADAAAAAAAEAAAAAAALAAAAAAAEAAIAAAADAAAAAAAEAAMAAAADAAAAAAAEAAQAAAADAAAAAAAEAAUAAAADAAAAAAAFAAAAAAAMAAAAAAAFAAIAAAADAAAAAAAFAAMAAAADAAAAAAAFAAQAAAADAAAAAAAFAAUAAAAAAAYAAAD//wIAAAAFAAcAAAD//wMAAAAFAAcAAAD//wQAAAAFAAcAAAD//wUAAAAFAAcAAAD//wYAAAAFAAcAAAAAAAYAAAAFAAcAAAABAAYAAAAFAAcAAAACAAYAAAAFAAcAAAAFAAYAAAAFAAcAAAAGAAYAAAAFAAcAAAAGAAUAAAAFAAcAAAAGAAQAAAAFAAcAAAAGAAMAAAAFAAcAAAAGAAIAAAAFAAcAAAADAAYAAAAFAAcAAAAEAAYAAAAFAAcAAAA=")
 tile_set = ExtResource("1_6l15u")
 
-[node name="Furniture" type="TileMapLayer" parent="."]
+[node name="Furniture" type="TileMapLayer" parent="TileMaps"]
 texture_filter = 1
 tile_map_data = PackedByteArray("AAACAAIAAAAAAAAAAAADAAAAAAAJAAgAAAAEAAEAAAABAAcAAAABAAEAAAAGAAgAAAA=")
 tile_set = ExtResource("1_6l15u")
 
-[node name="Rug" type="TileMapLayer" parent="."]
+[node name="Rug" type="TileMapLayer" parent="TileMaps"]
 self_modulate = Color(0, 0.560784, 0.172549, 1)
 texture_filter = 1
 tile_map_data = PackedByteArray("AAACAAQAAAAFAAAAAAA=")
 tile_set = ExtResource("1_6l15u")
 
-[node name="BedSheet" type="TileMapLayer" parent="."]
+[node name="BedSheet" type="TileMapLayer" parent="TileMaps"]
 self_modulate = Color(0, 0.560784, 0.172549, 1)
 z_index = 2
 texture_filter = 1
 tile_map_data = PackedByteArray("AAACAAIAAAAEAAcAAAA=")
 tile_set = ExtResource("1_6l15u")
 
-[node name="Candle" type="TileMapLayer" parent="."]
+[node name="Candle" type="TileMapLayer" parent="TileMaps"]
 z_index = 2
 texture_filter = 1
 tile_map_data = PackedByteArray("AAABAAEAAAABAAAAAAA=")
 tile_set = ExtResource("1_6l15u")
 
-[node name="SpawnInit" type="Marker2D" parent="."]
+[node name="EntryPoints" type="Node2D" parent="."]
+
+[node name="SpawnInit" type="Marker2D" parent="EntryPoints"]
 position = Vector2(40, 40)
 
-[node name="SpawnStairs" type="Marker2D" parent="."]
+[node name="SpawnStairs" type="Marker2D" parent="EntryPoints"]
 position = Vector2(88, 88)
 
-[node name="ExitStairs" type="Area2D" parent="." groups=["Exits"]]
+[node name="ExitStairs" type="Area2D" parent="EntryPoints" groups=["Exits"]]
 position = Vector2(88, 88)
+input_pickable = false
 
-[node name="ExitStairsCollision" type="CollisionShape2D" parent="ExitStairs"]
+[node name="ExitStairsCollision" type="CollisionShape2D" parent="EntryPoints/ExitStairs"]
 shape = SubResource("RectangleShape2D_fhqw1")
 
-[node name="ExitStairs2" type="Area2D" parent="."]
+[node name="ExitStairs2" type="Area2D" parent="EntryPoints"]
 position = Vector2(88, 88)
+input_pickable = false
 
-[node name="ExitStairsCollision" type="CollisionShape2D" parent="ExitStairs2"]
+[node name="ExitStairsCollision" type="CollisionShape2D" parent="EntryPoints/ExitStairs2"]
 shape = SubResource("RectangleShape2D_fhqw1")
 
-[connection signal="body_entered" from="ExitStairs" to="." method="_on_exit_stairs_body_entered"]
-[connection signal="body_exited" from="ExitStairs2" to="." method="_on_exit_stairs_2_body_exited"]
+[node name="Interactables" type="Node2D" parent="."]
+
+[node name="Bookcase" type="Area2D" parent="Interactables" groups=["Interactable"]]
+collision_layer = 2
+collision_mask = 2
+input_pickable = false
+
+[node name="BookcaseCollision" type="CollisionShape2D" parent="Interactables/Bookcase"]
+position = Vector2(72, 24)
+shape = SubResource("RectangleShape2D_s5vp4")
+
+[node name="Drawer" type="Area2D" parent="Interactables" groups=["Interactable"]]
+position = Vector2(-48, 0)
+collision_layer = 2
+collision_mask = 2
+input_pickable = false
+
+[node name="DrawerCollision" type="CollisionShape2D" parent="Interactables/Drawer"]
+position = Vector2(72, 24)
+shape = SubResource("RectangleShape2D_s5vp4")
+
+[node name="Window" type="Area2D" parent="Interactables" groups=["Interactable"]]
+position = Vector2(-16, 0)
+collision_layer = 2
+collision_mask = 2
+input_pickable = false
+
+[node name="WindowCollision" type="CollisionShape2D" parent="Interactables/Window"]
+position = Vector2(72, 24)
+shape = SubResource("RectangleShape2D_s5vp4")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(7, 17)
+texture = ExtResource("3_s5vp4")
+
+[connection signal="body_entered" from="EntryPoints/ExitStairs" to="." method="_on_exit_stairs_body_entered"]
+[connection signal="body_exited" from="EntryPoints/ExitStairs2" to="." method="_on_exit_stairs_2_body_exited"]
