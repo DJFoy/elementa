@@ -7,10 +7,17 @@ class_name Player_Character
 @onready var camera:= Camera2D.new()
 @onready var interact_ray:= RayCast2D.new()
 
-@onready var hair_dict:= {
-	0: preload("res://resources/character_sprite_tilesets/pc_hair_1.tres"), 
-	1: preload("res://resources/character_sprite_tilesets/pc_hair_2.tres")
-}
+@onready var skin: Sprite2D = $SkinTone
+@onready var clothes: Sprite2D = $Clothes
+@onready var hair: Sprite2D = $Hair
+@onready var hair_shadows: Sprite2D = $HairShadows
+@onready var eyes: Sprite2D = $Eyes
+
+@export var hair_choice: int = 1
+@export var hair_colour_choice: Color = Color.WHITE
+@export var eye_colour_choice: Color = Color.WHITE
+@export var skin_colour_choice: int = 1
+@export var clothes_choice: int = 1
 
 var inputs:= {"move_left": Vector2.LEFT,
 			"move_right": Vector2.RIGHT,
@@ -31,6 +38,7 @@ func _ready() -> void:
 		player_data = ResourceLoader.load("res://saves/player_data.tres")
 		if player_data:
 			apply_character_data(player_data)
+	load_textures()
 	if Global.pc_dir:
 		direction_change(Global.pc_dir)
 		interact_ray.target_position = Global.pc_dir * 16
@@ -76,9 +84,23 @@ func _continuous_movement() -> void:
 		direction_change(wants_to_move_dir)
 	move(wants_to_move_dir)
 
+func get_sprite_asset(category: String, filename: String) -> String:
+	return "res://assets/character_assets/pc_assets/overworld_sprite/%s/%s.png" % [category, filename]
+
 func apply_character_data(data: PlayerCreationData):
-	get_node("Hair").texture = hair_dict[data.hair]
-	get_node("Hair").modulate = data.hair_colour
+	hair_choice = data.hair
+	hair_colour_choice = data.hair_colour
+	eye_colour_choice = data.eye_colour
+	skin_colour_choice = data.skin_colour
+	clothes_choice = data.clothes
+
+func load_textures():
+	skin.texture = load(get_sprite_asset("skin", "tone_%d" % skin_colour_choice))
+	clothes.texture = load(get_sprite_asset("clothes", "outfit_%d" % clothes_choice))
+	hair_shadows.texture = load(get_sprite_asset("shadows", "h%d_st%d_shadow" % [hair_choice, skin_colour_choice]))
+	eyes.modulate = eye_colour_choice
+	hair.texture = load(get_sprite_asset("hair", "h%d" % hair_choice))
+	hair.modulate = hair_colour_choice
 
 func _on_locked_state_changed(locked: bool):
 	is_locked = locked

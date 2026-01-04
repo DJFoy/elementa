@@ -3,6 +3,7 @@ class_name Location
 
 @onready var prev_scene: String
 const PC = preload("res://scripts/player_character.gd")
+const PLAYER_DATA = preload("res://saves/player_data.tres")
 
 @onready var pc_load:= preload("res://scenes/pc.tscn")
 @onready var pc: Player_Character
@@ -17,6 +18,7 @@ const INTERACT = preload("uid://bd5yex4vadwcc")
 const DIALOGUE = preload("uid://xlgquvpcpldn")
 
 var interactables: Dictionary
+var dialogues: Dictionary
 
 func _ready() -> void:
 	# Turn off monitoring for Area2D when initialising location to prevent infinite loop
@@ -67,4 +69,6 @@ func _process(delta: float) -> void:
 				var dialogue = DIALOGUE.instantiate()
 				add_child(dialogue)
 				set_process_unhandled_input(false)
-				dialogue.process_text_array(dialogue.dialogue_test)
+				dialogue.process_text_array(dialogues[pc.interact_ray.get_collider()])
+				#print(pc.interact_ray.get_collider())
+				#print(dialogues[pc.interact_ray.get_collider()])

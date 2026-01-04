@@ -1,7 +1,7 @@
 extends Control
 class_name Interact
 
-@onready var text_box: RichTextLabel = $CanvasLayer/TextBox
+@onready var text_box: RichTextLabel = $Panel/TextBox
 
 
 # A screen that appears when interacting with objects. Should display text

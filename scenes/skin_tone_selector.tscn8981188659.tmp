@@ -1,0 +1,30 @@
+[gd_scene load_steps=3 format=3 uid="uid://ciyerdi3eh05y"]
+
+[ext_resource type="Script" uid="uid://bavyjtyigryes" path="res://scripts/skin_tone_selector.gd" id="1_4rpvu"]
+[ext_resource type="FontFile" uid="uid://bes6ottao3jvw" path="res://assets/font/Jacquard12-Regular.ttf" id="2_ipfas"]
+
+[node name="SkinToneSelector" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_4rpvu")
+
+[node name="SkinColourLabel" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_right = 170.0
+offset_bottom = 21.0
+theme_override_colors/default_color = Color(0.24313726, 0.13333334, 0.06666667, 1)
+theme_override_fonts/normal_font = ExtResource("2_ipfas")
+theme_override_font_sizes/normal_font_size = 21
+text = "Skin Colour
+"
+scroll_active = false
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_top = 23.0
+offset_right = 170.0
+offset_bottom = 43.0

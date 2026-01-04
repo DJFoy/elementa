@@ -1,0 +1,40 @@
+[gd_scene load_steps=10 format=3 uid="uid://06t2iv7b2ywp"]
+
+[ext_resource type="Script" uid="uid://cvmnon60kx5wg" path="res://scripts/portrait.gd" id="1_7abl3"]
+[ext_resource type="Texture2D" uid="uid://blpcqhsumlrxj" path="res://assets/character_assets/pc_assets/portrait/body_type_1/clothes/outfit_1.png" id="2_7abl3"]
+[ext_resource type="Texture2D" uid="uid://bu4uqf63hi6b3" path="res://assets/character_assets/pc_assets/portrait/body_type_1/skin/tone_1.png" id="2_8faes"]
+[ext_resource type="Texture2D" uid="uid://btarut4mixlai" path="res://assets/character_assets/pc_assets/portrait/body_type_1/shadows/st1.png" id="3_8faes"]
+[ext_resource type="Texture2D" uid="uid://bxyb12s31f434" path="res://assets/character_assets/pc_assets/portrait/body_type_1/eyes/eyes.png" id="4_uxquq"]
+[ext_resource type="Texture2D" uid="uid://vtvwkx2jspns" path="res://assets/character_assets/pc_assets/portrait/body_type_1/eyes/highlights.png" id="5_pr7i1"]
+[ext_resource type="Texture2D" uid="uid://bk7p72jmyxg7s" path="res://assets/character_assets/pc_assets/portrait/body_type_1/eyes/whites.png" id="6_kr38r"]
+[ext_resource type="Texture2D" uid="uid://1qp8y2sk66q" path="res://assets/character_assets/pc_assets/portrait/body_type_1/hair/h1.png" id="7_r1x2f"]
+[ext_resource type="Texture2D" uid="uid://bdfgqawbpux7c" path="res://assets/character_assets/pc_assets/portrait/body_type_1/hair/h1_st1_shadow.png" id="9_7abl3"]
+
+[node name="Portrait" type="Node2D"]
+script = ExtResource("1_7abl3")
+
+[node name="Skin" type="Sprite2D" parent="."]
+texture = ExtResource("2_8faes")
+
+[node name="Base" type="Sprite2D" parent="."]
+texture = ExtResource("2_7abl3")
+
+[node name="SkinShadows" type="Sprite2D" parent="."]
+texture = ExtResource("3_8faes")
+
+[node name="EyeColour" type="Sprite2D" parent="."]
+modulate = Color(1, 0, 0.023529412, 1)
+texture = ExtResource("4_uxquq")
+
+[node name="EyeHighlight" type="Sprite2D" parent="."]
+texture = ExtResource("5_pr7i1")
+
+[node name="EyeWhites" type="Sprite2D" parent="."]
+texture = ExtResource("6_kr38r")
+
+[node name="Hair" type="Sprite2D" parent="."]
+modulate = Color(0.7051365, 0.19494301, 0.87037677, 1)
+texture = ExtResource("7_r1x2f")
+
+[node name="HairShadows" type="Sprite2D" parent="."]
+texture = ExtResource("9_7abl3")

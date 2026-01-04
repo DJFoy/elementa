@@ -1,0 +1,91 @@
+[gd_resource type="Theme" load_steps=7 format=3 uid="uid://dthhuuah0qhsg"]
+
+[ext_resource type="FontFile" uid="uid://h8n6bdxmtvcn" path="res://assets/font/m5x7.ttf" id="1_ahw81"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6dwj1"]
+content_margin_left = 2.0
+content_margin_top = 1.0
+content_margin_right = 2.0
+content_margin_bottom = 1.0
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kj4fi"]
+bg_color = Color(1, 1, 1, 0)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.43904907, 0.43904918, 0.4390489, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ahw81"]
+content_margin_left = 1.0
+content_margin_top = 2.0
+content_margin_right = 1.0
+content_margin_bottom = 2.0
+bg_color = Color(0.83889705, 0.83889705, 0.8388969, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.43904907, 0.43904918, 0.4390489, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bxbhg"]
+content_margin_left = 1.0
+content_margin_top = 2.0
+content_margin_right = 1.0
+content_margin_bottom = 2.0
+bg_color = Color(0.556953, 0.556953, 0.5569529, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.43904907, 0.43904918, 0.4390489, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ul54g"]
+bg_color = Color(1, 1, 1, 1)
+
+[resource]
+default_font = ExtResource("1_ahw81")
+InteractButton/base_type = &"Button"
+InteractButton/colors/font_color = Color(0, 0, 0, 1)
+InteractButton/colors/font_disabled_color = Color(0, 0, 0, 1)
+InteractButton/colors/font_focus_color = Color(0, 0, 0, 1)
+InteractButton/colors/font_hover_color = Color(0, 0, 0, 1)
+InteractButton/colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+InteractButton/colors/font_outline_color = Color(0, 0, 0, 1)
+InteractButton/colors/font_pressed_color = Color(0, 0, 0, 1)
+InteractButton/colors/icon_disabled_color = Color(0, 0, 0, 1)
+InteractButton/colors/icon_focus_color = Color(0, 0, 0, 1)
+InteractButton/colors/icon_hover_color = Color(0, 0, 0, 1)
+InteractButton/colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
+InteractButton/colors/icon_normal_color = Color(0, 0, 0, 1)
+InteractButton/colors/icon_pressed_color = Color(0, 0, 0, 1)
+InteractButton/constants/align_to_largest_stylebox = 1
+InteractButton/styles/disabled = SubResource("StyleBoxFlat_6dwj1")
+InteractButton/styles/disabled_mirrored = SubResource("StyleBoxFlat_6dwj1")
+InteractButton/styles/focus = SubResource("StyleBoxFlat_kj4fi")
+InteractButton/styles/hover = SubResource("StyleBoxFlat_ahw81")
+InteractButton/styles/hover_mirrored = SubResource("StyleBoxFlat_ahw81")
+InteractButton/styles/hover_pressed = SubResource("StyleBoxFlat_bxbhg")
+InteractButton/styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_bxbhg")
+InteractButton/styles/normal = SubResource("StyleBoxFlat_6dwj1")
+InteractButton/styles/normal_mirrored = SubResource("StyleBoxFlat_6dwj1")
+InteractButton/styles/pressed = SubResource("StyleBoxFlat_bxbhg")
+InteractButton/styles/pressed_mirrored = SubResource("StyleBoxFlat_bxbhg")
+InteractPanel/base_type = &"Panel"
+InteractPanel/styles/panel = SubResource("StyleBoxFlat_ul54g")
+InteractRichTextLabel/base_type = &"RichTextLabel"
+InteractRichTextLabel/colors/default_color = Color(0, 0, 0, 1)
+InteractRichTextLabel/colors/font_outline_color = Color(0, 0, 0, 1)
+InteractRichTextLabel/colors/font_selected_color = Color(0, 0, 0, 1)
+InteractRichTextLabel/colors/selection_color = Color(0, 0, 0, 1)
+InteractRichTextLabel/colors/table_border = Color(0, 0, 0, 1)
+InteractRichTextLabel/colors/table_even_row_bg = Color(0, 0, 0, 1)
+InteractRichTextLabel/colors/table_odd_row_bg = Color(0, 0, 0, 1)
+InteractVBoxContainer/base_type = &"VBoxContainer"
+InteractVBoxContainer/constants/separation = 0

@@ -1,13 +1,59 @@
-[gd_scene load_steps=3 format=3 uid="uid://bfqfu6xbhmt4k"]
+[gd_scene load_steps=21 format=3 uid="uid://bfqfu6xbhmt4k"]
 
 [ext_resource type="Script" uid="uid://dxbju3x74w8cl" path="res://scripts/Menus/player_init.gd" id="1_x3k8m"]
-[ext_resource type="PackedScene" uid="uid://byjclgdfdac10" path="res://scenes/pc.tscn" id="2_vc5ab"]
+[ext_resource type="Texture2D" uid="uid://cwr4dc3u01ncy" path="res://assets/Scroll.png" id="2_6edg5"]
+[ext_resource type="FontFile" uid="uid://bes6ottao3jvw" path="res://assets/font/Jacquard12-Regular.ttf" id="3_6edg5"]
+[ext_resource type="PackedScene" uid="uid://06t2iv7b2ywp" path="res://scenes/portrait.tscn" id="4_6edg5"]
+[ext_resource type="Texture2D" uid="uid://brc2i0hp5pb3w" path="res://assets/locations/brackenberry village/player home/Butler Uniform Asset.png" id="5_qxc0b"]
+[ext_resource type="Texture2D" uid="uid://cos0d1elaavha" path="res://assets/locations/brackenberry village/player home/Maid Uniform Asset.png" id="6_0nc47"]
+[ext_resource type="PackedScene" uid="uid://ciyerdi3eh05y" path="res://scenes/skin_tone_selector.tscn" id="7_0nc47"]
+[ext_resource type="Texture2D" uid="uid://d1eo784s7samo" path="res://assets/character_assets/pc_assets/overworld_sprite/hair/h1.png" id="8_q7hap"]
+[ext_resource type="Texture2D" uid="uid://bi882xibkxp7j" path="res://assets/character_assets/pc_assets/overworld_sprite/hair/h2.png" id="9_yjwey"]
+[ext_resource type="Texture2D" uid="uid://b25y3dpklm5fq" path="res://assets/character_assets/pc_assets/overworld_sprite/clothes/outfit_1.png" id="10_sg2sg"]
+[ext_resource type="Texture2D" uid="uid://d084ghdasx8os" path="res://assets/character_assets/pc_assets/overworld_sprite/clothes/outfit_2.png" id="11_bomf6"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sg2sg"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.24313726, 0.13333334, 0.06666667, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yjwey"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_sg2sg"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0nc47"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qxc0b"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sg2sg"]
+atlas = ExtResource("8_q7hap")
+region = Rect2(0, 0, 16, 17)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bomf6"]
+atlas = ExtResource("9_yjwey")
+region = Rect2(0, 0, 16, 17)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8rhn3"]
+atlas = ExtResource("10_sg2sg")
+region = Rect2(0, 0, 16, 17)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_neoaf"]
+atlas = ExtResource("11_bomf6")
+region = Rect2(0, 0, 16, 17)
 
 [node name="PlayerInit" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_bottom = 294.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
@@ -15,53 +61,356 @@ script = ExtResource("1_x3k8m")
 
 [node name="ScrollContainer" type="ScrollContainer" parent="."]
 layout_mode = 0
-offset_left = 30.0
-offset_right = 289.0
+offset_right = 488.0
 offset_bottom = 270.0
+horizontal_scroll_mode = 0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer"]
+[node name="ScrollLayer" type="Control" parent="ScrollContainer"]
+custom_minimum_size = Vector2(0, 1000)
 layout_mode = 2
 
-[node name="PlayerName" type="LineEdit" parent="ScrollContainer/VBoxContainer"]
-layout_mode = 2
-text = "Name:"
-placeholder_text = "George's No. 1 Fan"
-max_length = 32
+[node name="Scroll" type="TextureRect" parent="ScrollContainer/ScrollLayer"]
+layout_mode = 1
+offset_right = 480.0
+offset_bottom = 1000.0
+mouse_filter = 2
+texture = ExtResource("2_6edg5")
+stretch_mode = 5
 
-[node name="BodyType1" type="CheckBox" parent="ScrollContainer/VBoxContainer"]
-layout_mode = 2
-text = "Body Type 1"
+[node name="Introduction" type="RichTextLabel" parent="ScrollContainer/ScrollLayer"]
+layout_mode = 0
+offset_left = 165.0
+offset_top = 34.0
+offset_right = 444.0
+offset_bottom = 139.0
+theme_override_colors/default_color = Color(0.24313726, 0.13333334, 0.06666667, 1)
+theme_override_fonts/normal_font = ExtResource("3_6edg5")
+theme_override_font_sizes/normal_font_size = 42
+text = "oyal Adventurer Scholarship"
 
-[node name="BodyType2" type="CheckBox" parent="ScrollContainer/VBoxContainer"]
-layout_mode = 2
-text = "Body Type 2"
+[node name="Instructions" type="RichTextLabel" parent="ScrollContainer/ScrollLayer"]
+layout_mode = 0
+offset_left = 85.0
+offset_top = 120.0
+offset_right = 436.0
+offset_bottom = 336.0
+theme_override_colors/default_color = Color(0.24313726, 0.13333334, 0.06666667, 1)
+theme_override_fonts/normal_font = ExtResource("3_6edg5")
+theme_override_font_sizes/normal_font_size = 21
+text = "Welcome Applicant.
 
-[node name="HairType" type="OptionButton" parent="ScrollContainer/VBoxContainer"]
-layout_mode = 2
-item_count = 2
-popup/item_0/text = "Hair 1"
+Please complete the following for review by the esteemed Royal Council.
+
+If successful, your sponsor will be allocated upon your acceptance
+"
+scroll_active = false
+
+[node name="Portrait" parent="ScrollContainer/ScrollLayer" instance=ExtResource("4_6edg5")]
+position = Vector2(356, 325)
+
+[node name="NameLabel" type="RichTextLabel" parent="ScrollContainer/ScrollLayer"]
+layout_mode = 0
+offset_left = 85.0
+offset_top = 285.0
+offset_right = 255.0
+offset_bottom = 306.0
+theme_override_colors/default_color = Color(0.24313726, 0.13333334, 0.06666667, 1)
+theme_override_fonts/normal_font = ExtResource("3_6edg5")
+theme_override_font_sizes/normal_font_size = 21
+text = "Name
+"
+scroll_active = false
+
+[node name="PlayerName" type="LineEdit" parent="ScrollContainer/ScrollLayer"]
+layout_mode = 0
+offset_left = 85.0
+offset_top = 308.0
+offset_right = 255.0
+offset_bottom = 339.0
+theme_override_colors/font_color = Color(0.24313726, 0.13333334, 0.06666667, 1)
+theme_override_colors/font_placeholder_color = Color(0.24313726, 0.13333334, 0.06666667, 1)
+theme_override_fonts/font = ExtResource("3_6edg5")
+theme_override_font_sizes/font_size = 21
+theme_override_styles/normal = SubResource("StyleBoxFlat_sg2sg")
+placeholder_text = "Enter name here"
+context_menu_enabled = false
+emoji_menu_enabled = false
+
+[node name="PronounsLabel" type="RichTextLabel" parent="ScrollContainer/ScrollLayer"]
+layout_mode = 0
+offset_left = 84.0
+offset_top = 341.0
+offset_right = 254.0
+offset_bottom = 362.0
+theme_override_colors/default_color = Color(0.24313726, 0.13333334, 0.06666667, 1)
+theme_override_fonts/normal_font = ExtResource("3_6edg5")
+theme_override_font_sizes/normal_font_size = 21
+text = "Pronouns
+"
+scroll_active = false
+
+[node name="Pronouns" type="OptionButton" parent="ScrollContainer/ScrollLayer"]
+layout_mode = 0
+offset_left = 84.0
+offset_top = 364.0
+offset_right = 254.0
+offset_bottom = 395.0
+theme_override_colors/font_color = Color(0.24313726, 0.13333334, 0.06666667, 1)
+theme_override_colors/font_focus_color = Color(0.24313726, 0.13333334, 0.06666667, 1)
+theme_override_colors/font_pressed_color = Color(0.24313726, 0.13333334, 0.06666667, 1)
+theme_override_colors/icon_normal_color = Color(0.24313726, 0.13333334, 0.06666667, 1)
+theme_override_colors/icon_focus_color = Color(0.24313726, 0.13333334, 0.06666667, 1)
+theme_override_colors/icon_pressed_color = Color(0.24313726, 0.13333334, 0.06666667, 1)
+theme_override_colors/icon_hover_color = Color(0.24313726, 0.13333334, 0.06666667, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0.24313726, 0.13333334, 0.06666667, 1)
+theme_override_fonts/font = ExtResource("3_6edg5")
+theme_override_font_sizes/font_size = 21
+theme_override_styles/normal = SubResource("StyleBoxFlat_sg2sg")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_yjwey")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_sg2sg")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_0nc47")
+item_count = 3
+popup/item_0/text = "He/Him"
 popup/item_0/id = 0
-popup/item_1/text = "Hair 2"
+popup/item_1/text = "She/Her"
 popup/item_1/id = 1
+popup/item_2/text = "They/Them"
+popup/item_2/id = 2
 
-[node name="HairColour" type="ColorPickerButton" parent="ScrollContainer/VBoxContainer"]
-layout_mode = 2
+[node name="BodyTypeLabel" type="RichTextLabel" parent="ScrollContainer/ScrollLayer"]
+layout_mode = 0
+offset_left = 85.0
+offset_top = 397.0
+offset_right = 255.0
+offset_bottom = 418.0
+theme_override_colors/default_color = Color(0.24313726, 0.13333334, 0.06666667, 1)
+theme_override_fonts/normal_font = ExtResource("3_6edg5")
+theme_override_font_sizes/normal_font_size = 21
+text = "Body Type
+"
+scroll_active = false
+
+[node name="BodyType" type="ItemList" parent="ScrollContainer/ScrollLayer"]
+layout_mode = 0
+offset_left = 85.0
+offset_top = 420.0
+offset_right = 255.0
+offset_bottom = 451.0
+theme_override_colors/font_color = Color(0.24313726, 0.13333334, 0.06666667, 1)
+theme_override_colors/font_selected_color = Color(0.24313726, 0.13333334, 0.06666667, 1)
+theme_override_fonts/font = ExtResource("3_6edg5")
+theme_override_font_sizes/font_size = 21
+theme_override_styles/panel = SubResource("StyleBoxFlat_sg2sg")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_0nc47")
+theme_override_styles/selected = SubResource("StyleBoxFlat_qxc0b")
+item_count = 2
+max_columns = 2
+same_column_width = true
+item_0/text = "Type 1"
+item_0/icon = ExtResource("6_0nc47")
+item_1/text = "Type 2"
+item_1/icon = ExtResource("5_qxc0b")
+
+[node name="SkinToneSelector" parent="ScrollContainer/ScrollLayer" instance=ExtResource("7_0nc47")]
+layout_mode = 0
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 85.0
+offset_top = 452.0
+offset_right = 255.0
+offset_bottom = 495.0
+grow_horizontal = 1
+grow_vertical = 1
+
+[node name="HairLabel" type="RichTextLabel" parent="ScrollContainer/ScrollLayer"]
+layout_mode = 0
+offset_left = 85.0
+offset_top = 497.0
+offset_right = 255.0
+offset_bottom = 518.0
+theme_override_colors/default_color = Color(0.24313726, 0.13333334, 0.06666667, 1)
+theme_override_fonts/normal_font = ExtResource("3_6edg5")
+theme_override_font_sizes/normal_font_size = 21
+text = "Hair Style"
+scroll_active = false
+
+[node name="HairStyle" type="ItemList" parent="ScrollContainer/ScrollLayer"]
+layout_mode = 0
+offset_left = 85.0
+offset_top = 519.0
+offset_right = 255.0
+offset_bottom = 550.0
+theme_override_colors/font_color = Color(0.24313726, 0.13333334, 0.06666667, 1)
+theme_override_colors/font_selected_color = Color(0.24313726, 0.13333334, 0.06666667, 1)
+theme_override_fonts/font = ExtResource("3_6edg5")
+theme_override_font_sizes/font_size = 21
+theme_override_styles/panel = SubResource("StyleBoxFlat_sg2sg")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_0nc47")
+theme_override_styles/selected = SubResource("StyleBoxFlat_qxc0b")
+item_count = 2
+max_columns = 2
+same_column_width = true
+item_0/icon = SubResource("AtlasTexture_sg2sg")
+item_1/icon = SubResource("AtlasTexture_bomf6")
+
+[node name="HairColourLabel" type="RichTextLabel" parent="ScrollContainer/ScrollLayer"]
+layout_mode = 0
+offset_left = 273.0
+offset_top = 415.0
+offset_right = 443.0
+offset_bottom = 436.0
+theme_override_colors/default_color = Color(0.24313726, 0.13333334, 0.06666667, 1)
+theme_override_fonts/normal_font = ExtResource("3_6edg5")
+theme_override_font_sizes/normal_font_size = 21
 text = "Hair Colour"
-color = Color(0.364763, 0.221563, 0.0883609, 1)
+scroll_active = false
 
-[node name="Confirm" type="Button" parent="ScrollContainer/VBoxContainer"]
-layout_mode = 2
+[node name="HairColour" type="ColorPickerButton" parent="ScrollContainer/ScrollLayer"]
+layout_mode = 0
+offset_left = 276.0
+offset_top = 438.0
+offset_right = 361.0
+offset_bottom = 469.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_sg2sg")
+color = Color(1, 1, 1, 1)
+
+[node name="EyeColourLabel" type="RichTextLabel" parent="ScrollContainer/ScrollLayer"]
+layout_mode = 0
+offset_left = 275.0
+offset_top = 471.0
+offset_right = 445.0
+offset_bottom = 492.0
+theme_override_colors/default_color = Color(0.24313726, 0.13333334, 0.06666667, 1)
+theme_override_fonts/normal_font = ExtResource("3_6edg5")
+theme_override_font_sizes/normal_font_size = 21
+text = "Eye Colour"
+scroll_active = false
+
+[node name="EyeColour" type="ColorPickerButton" parent="ScrollContainer/ScrollLayer"]
+layout_mode = 0
+offset_left = 278.0
+offset_top = 494.0
+offset_right = 363.0
+offset_bottom = 525.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_sg2sg")
+color = Color(1, 1, 1, 1)
+
+[node name="OutfitLabel" type="RichTextLabel" parent="ScrollContainer/ScrollLayer"]
+layout_mode = 0
+offset_left = 84.0
+offset_top = 551.0
+offset_right = 254.0
+offset_bottom = 572.0
+theme_override_colors/default_color = Color(0.24313726, 0.13333334, 0.06666667, 1)
+theme_override_fonts/normal_font = ExtResource("3_6edg5")
+theme_override_font_sizes/normal_font_size = 21
+text = "Outfit"
+scroll_active = false
+
+[node name="Outfit" type="ItemList" parent="ScrollContainer/ScrollLayer"]
+layout_mode = 0
+offset_left = 84.0
+offset_top = 573.0
+offset_right = 254.0
+offset_bottom = 604.0
+theme_override_colors/font_color = Color(0.24313726, 0.13333334, 0.06666667, 1)
+theme_override_colors/font_selected_color = Color(0.24313726, 0.13333334, 0.06666667, 1)
+theme_override_fonts/font = ExtResource("3_6edg5")
+theme_override_font_sizes/font_size = 21
+theme_override_styles/panel = SubResource("StyleBoxFlat_sg2sg")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_0nc47")
+theme_override_styles/selected = SubResource("StyleBoxFlat_qxc0b")
+item_count = 2
+max_columns = 2
+same_column_width = true
+item_0/icon = SubResource("AtlasTexture_8rhn3")
+item_1/icon = SubResource("AtlasTexture_neoaf")
+
+[node name="LikesLabel" type="RichTextLabel" parent="ScrollContainer/ScrollLayer"]
+layout_mode = 0
+offset_left = 274.0
+offset_top = 526.0
+offset_right = 444.0
+offset_bottom = 547.0
+theme_override_colors/default_color = Color(0.24313726, 0.13333334, 0.06666667, 1)
+theme_override_fonts/normal_font = ExtResource("3_6edg5")
+theme_override_font_sizes/normal_font_size = 21
+text = "Likes
+"
+scroll_active = false
+
+[node name="Likes" type="OptionButton" parent="ScrollContainer/ScrollLayer"]
+layout_mode = 0
+offset_left = 274.0
+offset_top = 548.0
+offset_right = 444.0
+offset_bottom = 579.0
+theme_override_colors/font_color = Color(0.24313726, 0.13333334, 0.06666667, 1)
+theme_override_colors/font_focus_color = Color(0.24313726, 0.13333334, 0.06666667, 1)
+theme_override_colors/font_pressed_color = Color(0.24313726, 0.13333334, 0.06666667, 1)
+theme_override_colors/icon_normal_color = Color(0.24313726, 0.13333334, 0.06666667, 1)
+theme_override_colors/icon_focus_color = Color(0.24313726, 0.13333334, 0.06666667, 1)
+theme_override_colors/icon_pressed_color = Color(0.24313726, 0.13333334, 0.06666667, 1)
+theme_override_colors/icon_hover_color = Color(0.24313726, 0.13333334, 0.06666667, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0.24313726, 0.13333334, 0.06666667, 1)
+theme_override_fonts/font = ExtResource("3_6edg5")
+theme_override_font_sizes/font_size = 21
+theme_override_styles/normal = SubResource("StyleBoxFlat_sg2sg")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_yjwey")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_sg2sg")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_0nc47")
+
+[node name="DislikesLabel" type="RichTextLabel" parent="ScrollContainer/ScrollLayer"]
+layout_mode = 0
+offset_left = 274.0
+offset_top = 580.0
+offset_right = 444.0
+offset_bottom = 601.0
+theme_override_colors/default_color = Color(0.24313726, 0.13333334, 0.06666667, 1)
+theme_override_fonts/normal_font = ExtResource("3_6edg5")
+theme_override_font_sizes/normal_font_size = 21
+text = "Dislikes"
+scroll_active = false
+
+[node name="Dislikes" type="OptionButton" parent="ScrollContainer/ScrollLayer"]
+layout_mode = 0
+offset_left = 274.0
+offset_top = 602.0
+offset_right = 444.0
+offset_bottom = 633.0
+theme_override_colors/font_color = Color(0.24313726, 0.13333334, 0.06666667, 1)
+theme_override_colors/font_focus_color = Color(0.24313726, 0.13333334, 0.06666667, 1)
+theme_override_colors/font_pressed_color = Color(0.24313726, 0.13333334, 0.06666667, 1)
+theme_override_colors/icon_normal_color = Color(0.24313726, 0.13333334, 0.06666667, 1)
+theme_override_colors/icon_focus_color = Color(0.24313726, 0.13333334, 0.06666667, 1)
+theme_override_colors/icon_pressed_color = Color(0.24313726, 0.13333334, 0.06666667, 1)
+theme_override_colors/icon_hover_color = Color(0.24313726, 0.13333334, 0.06666667, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0.24313726, 0.13333334, 0.06666667, 1)
+theme_override_fonts/font = ExtResource("3_6edg5")
+theme_override_font_sizes/font_size = 21
+theme_override_styles/normal = SubResource("StyleBoxFlat_sg2sg")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_yjwey")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_sg2sg")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_0nc47")
+
+[node name="Confirm" type="Button" parent="ScrollContainer/ScrollLayer"]
+layout_mode = 0
+offset_left = 83.0
+offset_top = 629.0
+offset_right = 159.0
+offset_bottom = 658.0
+theme_override_colors/font_color = Color(0.24313726, 0.13333334, 0.06666667, 1)
+theme_override_fonts/font = ExtResource("3_6edg5")
+theme_override_font_sizes/font_size = 21
 text = "Confirm"
-
-[node name="PC" parent="." instance=ExtResource("2_vc5ab")]
-position = Vector2(295, 122)
-scale = Vector2(2, 2)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(240, 135)
 
-[connection signal="toggled" from="ScrollContainer/VBoxContainer/BodyType1" to="." method="_on_body_type_1_toggled"]
-[connection signal="toggled" from="ScrollContainer/VBoxContainer/BodyType2" to="." method="_on_body_type_2_toggled"]
-[connection signal="item_selected" from="ScrollContainer/VBoxContainer/HairType" to="." method="_on_hair_type_item_selected"]
-[connection signal="color_changed" from="ScrollContainer/VBoxContainer/HairColour" to="." method="_on_hair_colour_color_changed"]
-[connection signal="pressed" from="ScrollContainer/VBoxContainer/Confirm" to="." method="_on_confirm_pressed"]
+[connection signal="item_selected" from="ScrollContainer/ScrollLayer/BodyType" to="." method="_on_body_type_item_selected"]
+[connection signal="item_selected" from="ScrollContainer/ScrollLayer/HairStyle" to="." method="_on_hair_style_item_selected"]
+[connection signal="color_changed" from="ScrollContainer/ScrollLayer/HairColour" to="." method="_on_hair_colour_color_changed"]
+[connection signal="color_changed" from="ScrollContainer/ScrollLayer/EyeColour" to="." method="_on_eye_colour_color_changed"]
+[connection signal="item_selected" from="ScrollContainer/ScrollLayer/Outfit" to="." method="_on_outfit_item_selected"]
+[connection signal="pressed" from="ScrollContainer/ScrollLayer/Confirm" to="." method="_on_confirm_pressed"]

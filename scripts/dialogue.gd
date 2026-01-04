@@ -1,30 +1,33 @@
 extends Interact
 class_name Dialogue
 
-@onready var character_name: RichTextLabel = $CanvasLayer/CharacterName
+@onready var character_name: RichTextLabel = $Panel/CharacterName
+@onready var panel: Panel = $Panel
 
-var active_char: String
 
-const PLAYER_DATA = preload("res://saves/player_data.tres")
+@onready var active_char: String
 
-var dialogue_test:= [
-	["Dad", "Hello, " + PLAYER_DATA.name + ". How are you feeling?"],
-	["Dad", "Hope you slept well! I made my special waffles."],
-	[PLAYER_DATA.name, "It's just bread, slightly warmed up."],
-	["Action", "test_func"]
-]
+#var dialogue_test:= [
+	#["Dad", "Morning, " + PLAYER_DATA.name + ". How are you feeling?"],
+	#["Dad", "Are you ready for your first day of work?"],
+	#[PLAYER_DATA.name, "..."],
+	#["Dad", "Hey, I know you had your heart set on that scholarship. Working as a servant in the manor won't be all that bad, though. At least you won't have to work in the mines like I did."],
+	#["Option", ["Right... I get to watch people like Gigi and George become adventurers while I sit at home and dust their silverware", "Yeah. I guess it could be worse"]],
+	#["Dad", "I'm sorry " + PLAYER_DATA.name + ". I know it's unfair that nobles are often the only ones that get to become adventurers. I would give you the money if we had it. But, I mean, we can't even afford a Familiar for the house..."]
+#]
 
-func test_func():
-	print("Hahaha")
-	
+
 func parse_text(text_array: Array, n: int):
 	# Take an array of text and remove the specified element
 	active_char = text_array[n][0]
+	print(active_char)
 	return text_array[n][1]
 
 func process_text_array(text_array: Array):
 	n_text = text_array.size()
+	print(n_text)
 	local_text_array = text_array
+	print(local_text_array)
 	generate_text(local_text_array)
 
 func generate_text(text_array: Array):
@@ -52,7 +55,7 @@ func generate_text(text_array: Array):
 
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("interact"):
-		if printing_text :
+		if printing_text:
 			if active_tween:
 				active_tween.kill()
 				active_tween = null
@@ -69,6 +72,8 @@ func _process(delta: float) -> void:
 			var func_name = local_text_array[n_cur][1]
 			if has_method(func_name):
 				call(func_name)
+		elif local_text_array[n_cur][0] == "Option":
+			pass
 		else:
 			text_box.visible_ratio = 0
 			generate_text(local_text_array)
