@@ -1,5 +1,7 @@
 extends Control
 
+signal world_change_request(to_scene_path: String)
+
 
 @onready var player_name: LineEdit = $ScrollContainer/ScrollLayer/PlayerName
 @onready var pronouns: OptionButton = $ScrollContainer/ScrollLayer/Pronouns
@@ -93,8 +95,9 @@ func _on_confirm_pressed() -> void:
 	ResourceSaver.save(player_settings, "res://saves/player_data.tres")
 	
 	Global.prev_scene = "PlayerInit"
+	Global.target_spawn = "pc_bedroom_bed_01"
 	Global.game_loaded = true
-	get_tree().change_scene_to_file("res://scenes/chapter1/locations/pc_bedroom.tscn")
+	world_change_request.emit("res://scenes/chapter1/locations/pc_bedroom.tscn")
 
 
 func _on_body_type_item_selected(index: int) -> void:

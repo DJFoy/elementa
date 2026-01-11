@@ -1,10 +1,10 @@
 extends Control
-signal new_game
-signal debug
+signal world_change_request
+
 
 func _on_new_game_pressed() -> void:
 	print("Pressed New Game")
-	new_game.emit()
+	world_change_request.emit("res://scenes/player_init.tscn")
 
 
 func _on_load_game_pressed() -> void:
@@ -20,4 +20,4 @@ func _on_exit_pressed() -> void:
 
 
 func _on_debug_pressed() -> void:
-	debug.emit() # Replace with function body.
+	world_change_request.emit("res://scenes/debug.tscn")

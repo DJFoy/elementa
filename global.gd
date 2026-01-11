@@ -3,8 +3,11 @@ extends Node
 # Check that a game is loaded for loading in presets and settings
 var game_loaded:= false
 
-# Store the last scene the player was in for spawn locations/cut scenes
+# Store the last scene the player was in for cut scenes
 var prev_scene: String
+
+# Store the target destination for spawning
+var target_spawn: String
 
 # Store the direction the PC is facing between scenes
 var pc_dir: Vector2

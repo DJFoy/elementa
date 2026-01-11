@@ -1,18 +1,18 @@
 extends Node2D
 class_name Location
 
-@onready var prev_scene: String
-const PC = preload("res://scripts/player_character.gd")
-const PLAYER_DATA = preload("res://saves/player_data.tres")
+signal world_change_request(to_scene_path: String)
 
-@onready var pc_load:= preload("res://scenes/pc.tscn")
+const PC_SCENE:= preload("res://scenes/pc.tscn")
 @onready var pc: Player_Character
-# @onready var player_data: PlayerCreationData
+@onready var player_data: PlayerCreationData
 
 @onready var scene_trans_load:= preload("res://scenes/scene_transition.tscn")
 @onready var scene_trans: Node2D
 
 @onready var spawns: Dictionary
+
+@export var default_spawn: String
 
 const INTERACT = preload("uid://bd5yex4vadwcc")
 const DIALOGUE = preload("uid://xlgquvpcpldn")
@@ -20,39 +20,47 @@ const DIALOGUE = preload("uid://xlgquvpcpldn")
 var interactables: Dictionary
 var dialogues: Dictionary
 
+const FADE_IN = "fade_in"
+const FADE_OUT = "fade_out"
+
 func _ready() -> void:
-	# Turn off monitoring for Area2D when initialising location to prevent infinite loop
-	for area in get_tree().get_nodes_in_group("Exits"):
-		area.monitoring = false
-	# Adding in a fail safe for testing - if you spawn into this scene
-	# and there was no previous scene, default spawn location
-	if !Global.prev_scene:
-		prev_scene = "PlayerInit"
-	else:
-		prev_scene = Global.prev_scene
+	# Identify all the exits in the scene, and connect to the exit request signal
+	for exit in get_tree().get_nodes_in_group("Exits"):
+		exit.exit_requested.connect(_on_exit_requested)
 	
-	pc = pc_load.instantiate()
+	# Identify all of the spawns, and add to the spawn dict for the location
+	for spawn in get_tree().get_nodes_in_group("Spawns"):
+		spawns[spawn.spawn_name] = spawn
+	
+	# If no target spawn provided, revert to the default spawn specified in each location
+	# A failsafe for debugging
+	if !Global.target_spawn:
+		Global.target_spawn = default_spawn
+	
+	# Bring in the player character and add to the scene
+	pc = PC_SCENE.instantiate()
 	add_child(pc)
-	pc.position = spawns[prev_scene].get_position()
+	
+	# Place the PC in the target spawn position
+	# Currently set to a global variable
+	pc.position = spawns[Global.target_spawn].get_position()
+	
+	# Clear out the global target spawn to prevent possible teleportation issues
+	Global.target_spawn = ""
 	# Spawn in the transition node
 	scene_trans = scene_trans_load.instantiate()
 	add_child(scene_trans)
-	scene_trans.get_node("AnimationPlayer").play("fade_in")
-	await get_tree().create_timer(0.3).timeout
-	Global.unlock()
+	play_trans(FADE_IN)
 
+func _on_exit_requested(from_scene: String, target_scene: String, target_spawn: String):
+	trigger_exit(from_scene, target_spawn, target_scene)
 
-func leave_trans_area() -> void:
-	for area in get_tree().get_nodes_in_group("Exits"):
-		area.monitoring = true
-
-func trigger_exit(cur_scene: String, file_path: String):
-	Global.lock()
-	await get_tree().create_timer(0.5).timeout
-	scene_trans.get_node("AnimationPlayer").play("fade_out")
-	await get_tree().create_timer(0.3).timeout
-	Global.prev_scene = cur_scene
-	get_tree().change_scene_to_file(file_path)
+func trigger_exit(from_scene: String, target_spawn: String, file_path: String):
+	await play_trans(FADE_OUT)
+	Global.prev_scene = from_scene
+	Global.target_spawn = target_spawn
+	
+	world_change_request.emit(file_path)
 
 func _process(delta: float) -> void:
 	if Global.interacting:
@@ -72,3 +80,18 @@ func _process(delta: float) -> void:
 				dialogue.process_text_array(dialogues[pc.interact_ray.get_collider()])
 				#print(pc.interact_ray.get_collider())
 				#print(dialogues[pc.interact_ray.get_collider()])
+
+
+func play_trans(transition: String):
+	var anim_player = scene_trans.get_node("AnimationPlayer")
+	if transition == FADE_OUT:
+		Global.lock()
+		await get_tree().create_timer(0.5).timeout
+
+	anim_player.play(transition)
+	var anim_length = anim_player.get_animation(transition).length
+	await get_tree().create_timer(anim_length).timeout
+	
+	if transition == FADE_IN:
+		Global.unlock()
+	

@@ -1,16 +1,16 @@
-[gd_resource type="Resource" script_class="PlayerCreationData" load_steps=2 format=3 uid="uid://6g4edqryqwj7"]
+[gd_resource type="Resource" script_class="PlayerCreationData" load_steps=2 format=3]
 
-[ext_resource type="Script" uid="uid://0xvhitkg70yg" path="res://resources/player_creation_data.gd" id="1_p1bc8"]
+[ext_resource type="Script" path="res://resources/player_creation_data.gd" id="1_p1bc8"]
 
 [resource]
 script = ExtResource("1_p1bc8")
-name = "Dom"
+name = "a"
 pronouns = "He/Him"
 hair = 2
-hair_colour = Color(0.3203125, 0.09509277, 0.09509277, 1)
-eye_colour = Color(0.16994476, 0.10986328, 0.87890625, 1)
-skin_colour = 1
-body_type = 2
-clothes = 1
-likes = "Steak"
+hair_colour = Color(0.546875, 0.1965332, 0.1965332, 1)
+eye_colour = Color(0.38671875, 0.10574341, 0.10574341, 1)
+skin_colour = 2
+body_type = 1
+clothes = 2
+likes = "Chocolate"
 dislikes = "Coconut"
