@@ -6,12 +6,12 @@ class_name ExitArea
 
 signal exit_requested(from_scene: String, target_scene: String, target_spawn: String)
 
-var armed := false
+var armed : bool
 
 func _ready() -> void:
 	add_to_group("Exits")
 	monitoring = true
-	armed = false
+	armed = true
 	
 	body_entered.connect(_on_body_entered)
 	body_exited.connect(_on_body_exited)

@@ -1,13 +1,10 @@
-[gd_scene load_steps=7 format=4 uid="uid://pe7bm124rb7k"]
+[gd_scene load_steps=6 format=4 uid="uid://pe7bm124rb7k"]
 
 [ext_resource type="TileSet" uid="uid://gfwi66i5se4k" path="res://assets/tilesets/backgrounds/base_inside_tiles.tres" id="1_6l15u"]
 [ext_resource type="Script" uid="uid://btvksk5oy230u" path="res://scripts/Chapter 1/pc_bedroom.gd" id="1_fhqw1"]
 [ext_resource type="Script" uid="uid://bl7o7egd7hho7" path="res://scripts/spawn.gd" id="3_f5mfs"]
 [ext_resource type="PackedScene" uid="uid://kkaqj5g0x7un" path="res://scenes/exit_area.tscn" id="3_kqpy1"]
-[ext_resource type="Texture2D" uid="uid://cos0d1elaavha" path="res://assets/locations/brackenberry village/player home/Maid Uniform Asset.png" id="3_s5vp4"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_s5vp4"]
-size = Vector2(16, 16)
+[ext_resource type="PackedScene" uid="uid://dshkcuk7rjrxn" path="res://scenes/interactable.tscn" id="5_gbqjd"]
 
 [node name="PCBedroom" type="Node2D"]
 script = ExtResource("1_fhqw1")
@@ -65,35 +62,17 @@ target_spawn = "pc_home_stairs_01"
 
 [node name="Interactables" type="Node2D" parent="."]
 
-[node name="Bookcase" type="Area2D" parent="Interactables" groups=["Interactable"]]
-collision_layer = 2
-collision_mask = 2
-input_pickable = false
-
-[node name="BookcaseCollision" type="CollisionShape2D" parent="Interactables/Bookcase"]
+[node name="Bookcase" parent="Interactables" instance=ExtResource("5_gbqjd")]
 position = Vector2(72, 24)
-shape = SubResource("RectangleShape2D_s5vp4")
+text = ["Filled with lots of home made books"]
 
-[node name="Drawer" type="Area2D" parent="Interactables" groups=["Interactable"]]
-position = Vector2(-48, 0)
-collision_layer = 2
-collision_mask = 2
-input_pickable = false
+[node name="Drawer" parent="Interactables" instance=ExtResource("5_gbqjd")]
+position = Vector2(24, 24)
+text = ["Ah, my two pairs of underwear", "Dad really did spoil me this birthday"]
 
-[node name="DrawerCollision" type="CollisionShape2D" parent="Interactables/Drawer"]
-position = Vector2(72, 24)
-shape = SubResource("RectangleShape2D_s5vp4")
+[node name="Window" parent="Interactables" instance=ExtResource("5_gbqjd")]
+position = Vector2(56, 24)
+text = ["I wish I could fly away"]
 
-[node name="Window" type="Area2D" parent="Interactables" groups=["Interactable"]]
-position = Vector2(-16, 0)
-collision_layer = 2
-collision_mask = 2
-input_pickable = false
-
-[node name="WindowCollision" type="CollisionShape2D" parent="Interactables/Window"]
-position = Vector2(72, 24)
-shape = SubResource("RectangleShape2D_s5vp4")
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Uniform" type="Sprite2D" parent="."]
 position = Vector2(7, 17)
-texture = ExtResource("3_s5vp4")

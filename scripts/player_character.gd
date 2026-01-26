@@ -1,6 +1,9 @@
 extends Character
 class_name Player_Character
 
+signal try_interact(interactable)
+signal try_dialogue(dialogue)
+
 @onready var player_data: PlayerCreationData
 
 # Since this is the player character, always initialise a camera to follow
@@ -60,6 +63,14 @@ func _process(delta: float) -> void:
 				wants_to_move_dir = inputs[dir]
 	else:
 		wants_to_move_dir = Vector2.ZERO
+	if Global.interacting:
+		return
+	if Input.is_action_just_pressed("interact"):
+		if interact_ray.is_colliding():
+			if interact_ray.get_collider().is_in_group("Interactable"):
+				try_interact.emit(interact_ray.get_collider())
+			if interact_ray.get_collider().is_in_group("Dialogue"):
+				try_dialogue.emit(interact_ray.get_collider())
 
 func _unhandled_input(event: InputEvent) -> void:
 	if is_locked:

@@ -2,10 +2,10 @@ extends Node2D
 class_name Location
 
 signal world_change_request(to_scene_path: String)
+signal interaction_request(text: Array)
 
 const PC_SCENE:= preload("res://scenes/pc.tscn")
 @onready var pc: Player_Character
-@onready var player_data: PlayerCreationData
 
 @onready var scene_trans_load:= preload("res://scenes/scene_transition.tscn")
 @onready var scene_trans: Node2D
@@ -14,28 +14,36 @@ const PC_SCENE:= preload("res://scenes/pc.tscn")
 
 @export var default_spawn: String
 
-const INTERACT = preload("uid://bd5yex4vadwcc")
-const DIALOGUE = preload("uid://xlgquvpcpldn")
-
-var interactables: Dictionary
-var dialogues: Dictionary
-
 const FADE_IN = "fade_in"
 const FADE_OUT = "fade_out"
 
 func _ready() -> void:
+	var exits := get_tree().get_nodes_in_group("Exits")
+	var spawn_points := get_tree().get_nodes_in_group("Spawns")
+	
 	# Identify all the exits in the scene, and connect to the exit request signal
-	for exit in get_tree().get_nodes_in_group("Exits"):
+	for exit in exits:
 		exit.exit_requested.connect(_on_exit_requested)
 	
 	# Identify all of the spawns, and add to the spawn dict for the location
-	for spawn in get_tree().get_nodes_in_group("Spawns"):
+	for spawn in spawn_points:
 		spawns[spawn.spawn_name] = spawn
+	
 	
 	# If no target spawn provided, revert to the default spawn specified in each location
 	# A failsafe for debugging
 	if !Global.target_spawn:
 		Global.target_spawn = default_spawn
+	
+	var active_spawn_node = spawns[Global.target_spawn]
+	print(active_spawn_node)
+	
+	var test = spawns[Global.target_spawn].get_position()
+	print(test)
+	
+	for exit in exits:
+		if is_spawn_in_exit(spawns[Global.target_spawn], exit):
+			exit.armed = false
 	
 	# Bring in the player character and add to the scene
 	pc = PC_SCENE.instantiate()
@@ -51,6 +59,9 @@ func _ready() -> void:
 	scene_trans = scene_trans_load.instantiate()
 	add_child(scene_trans)
 	play_trans(FADE_IN)
+	
+	# Connect to the PC for interacting
+	pc.connect("try_interact", _on_try_interact)
 
 func _on_exit_requested(from_scene: String, target_scene: String, target_spawn: String):
 	trigger_exit(from_scene, target_spawn, target_scene)
@@ -61,26 +72,6 @@ func trigger_exit(from_scene: String, target_spawn: String, file_path: String):
 	Global.target_spawn = target_spawn
 	
 	world_change_request.emit(file_path)
-
-func _process(delta: float) -> void:
-	if Global.interacting:
-		return
-	if Input.is_action_just_pressed("interact"):
-		if pc.interact_ray.is_colliding():
-			if pc.interact_ray.get_collider().is_in_group("Interactable"):
-				var interact = INTERACT.instantiate()
-				add_child(interact)
-				set_process_unhandled_input(false)
-				# interact.get_node("CanvasLayer/TextBox").text = str(interactables[pc.interact_ray.get_collider()].size())
-				interact.process_text_array(interactables[pc.interact_ray.get_collider()])
-			if pc.interact_ray.get_collider().is_in_group("Dialogue"):
-				var dialogue = DIALOGUE.instantiate()
-				add_child(dialogue)
-				set_process_unhandled_input(false)
-				dialogue.process_text_array(dialogues[pc.interact_ray.get_collider()])
-				#print(pc.interact_ray.get_collider())
-				#print(dialogues[pc.interact_ray.get_collider()])
-
 
 func play_trans(transition: String):
 	var anim_player = scene_trans.get_node("AnimationPlayer")
@@ -95,3 +86,19 @@ func play_trans(transition: String):
 	if transition == FADE_IN:
 		Global.unlock()
 	
+func is_spawn_in_exit(spawn: Spawn, exit: ExitArea) -> bool:
+	var space := get_world_2d().direct_space_state
+	
+	var params := PhysicsPointQueryParameters2D.new()
+	params.position = spawn.global_position
+	params.collide_with_areas = true
+	params.collision_mask = exit.collision_mask
+	
+	for hit in space.intersect_point(params):
+		if hit.collider == exit:
+			return true
+	
+	return false
+
+func _on_try_interact(interactable: Interactable):
+	interaction_request.emit(interactable.text)

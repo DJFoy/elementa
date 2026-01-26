@@ -4,7 +4,7 @@ signal world_change_request
 
 func _on_new_game_pressed() -> void:
 	print("Pressed New Game")
-	world_change_request.emit("res://scenes/player_init.tscn")
+	world_change_request.emit("res://scenes/UI/player_init.tscn")
 
 
 func _on_load_game_pressed() -> void:
@@ -20,4 +20,4 @@ func _on_exit_pressed() -> void:
 
 
 func _on_debug_pressed() -> void:
-	world_change_request.emit("res://scenes/debug.tscn")
+	world_change_request.emit("res://scenes/UI/debug.tscn")
