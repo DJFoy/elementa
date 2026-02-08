@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "type": "narration",
+    "text": "Your dreams are fading fast. This could be your only chance to escape the mundane future ahead of you. You steady the quill in your hand and complete the scholarship application."
+  },
+  {
+    "id": 2,
+    "type": "cutscene",
+    "sceneID": 1
+  },
+  {
+    "id": 3,
+    "type": "narration",
+    "text": "You sign your application and send it with the last post. Time comes and goes. Your twentieth birthday passes. But you never hear back."
+  },
+  {
+    "id": 4,
+    "type": "cutscene",
+    "sceneID": 2
+  },
+  {
+    "id": 5,
+    "type": "speech",
+    "name": "Dad",
+    "text": "Morning NAME, how are you feeling? Are you ready for your first day of work?"
+  },
+  {
+    "id": 6,
+    "type": "choice",
+    "options": [
+      {
+        "id": 1,
+        "text": "Awful",
+        "targetID": 7
+      },
+      {
+        "id": 2,
+        "text": "I'm okay...",
+        "targetID": 8
+      }
+    ]
+  }
+]

@@ -8,12 +8,16 @@
 
 config_version=5
 
+[animation]
+
+compatibility/default_parent_skeleton_in_mesh_instance_3d=true
+
 [application]
 
 config/name="Elementa"
 config/version="0.0"
 run/main_scene="uid://cen5v7yrcuney"
-config/features=PackedStringArray("4.5", "GL Compatibility")
+config/features=PackedStringArray("4.6", "C#", "GL Compatibility")
 config/icon="uid://c03j213jgqarw"
 
 [autoload]
@@ -27,10 +31,18 @@ window/size/viewport_height=270
 window/stretch/mode="viewport"
 window/stretch/scale_mode="integer"
 
+[dotnet]
+
+project/assembly_name="Elementa"
+
 [editor]
 
 version_control/plugin_name="GitPlugin"
 version_control/autoload_on_startup=true
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/YarnSpinner-Godot/plugin.cfg")
 
 [global_group]
 

@@ -6,3 +6,4 @@ class_name Interactable
 
 func _ready() -> void:
 	add_to_group("Interactable")
+	collision_layer = 2

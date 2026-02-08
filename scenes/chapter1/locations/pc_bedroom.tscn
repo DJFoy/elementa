@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=4 uid="uid://pe7bm124rb7k"]
+[gd_scene format=4 uid="uid://pe7bm124rb7k"]
 
 [ext_resource type="TileSet" uid="uid://gfwi66i5se4k" path="res://assets/tilesets/backgrounds/base_inside_tiles.tres" id="1_6l15u"]
 [ext_resource type="Script" uid="uid://btvksk5oy230u" path="res://scripts/Chapter 1/pc_bedroom.gd" id="1_fhqw1"]
@@ -6,73 +6,73 @@
 [ext_resource type="PackedScene" uid="uid://kkaqj5g0x7un" path="res://scenes/exit_area.tscn" id="3_kqpy1"]
 [ext_resource type="PackedScene" uid="uid://dshkcuk7rjrxn" path="res://scenes/interactable.tscn" id="5_gbqjd"]
 
-[node name="PCBedroom" type="Node2D"]
+[node name="PCBedroom" type="Node2D" unique_id=1455750753]
 script = ExtResource("1_fhqw1")
 default_spawn = "pc_bedroom_bed_01"
 
-[node name="TileMaps" type="Node2D" parent="."]
+[node name="TileMaps" type="Node2D" parent="." unique_id=1173443054]
 
-[node name="FloorAndWalls" type="TileMapLayer" parent="TileMaps"]
+[node name="FloorAndWalls" type="TileMapLayer" parent="TileMaps" unique_id=510226340]
 texture_filter = 1
 tile_map_data = PackedByteArray("AAAAAAAAAAALAAAAAAABAAAAAAAMAAAAAAACAAAAAAANAAAAAAADAAAAAAANAAAAAAAAAAIAAAADAAAAAAAAAAMAAAADAAAAAAAAAAQAAAADAAAAAAAAAAUAAAADAAAAAAABAAIAAAADAAAAAAABAAMAAAADAAAAAAABAAQAAAADAAAAAAABAAUAAAADAAAAAAACAAIAAAADAAAAAAACAAMAAAADAAAAAAACAAQAAAADAAAAAAACAAUAAAADAAAAAAADAAIAAAADAAAAAAADAAMAAAADAAAAAAADAAQAAAADAAAAAAADAAUAAAADAAAAAAAEAAAAAAALAAAAAAAEAAIAAAADAAAAAAAEAAMAAAADAAAAAAAEAAQAAAADAAAAAAAEAAUAAAADAAAAAAAFAAAAAAAMAAAAAAAFAAIAAAADAAAAAAAFAAMAAAADAAAAAAAFAAQAAAADAAAAAAAFAAUAAAAAAAYAAAD//wIAAAAFAAcAAAD//wMAAAAFAAcAAAD//wQAAAAFAAcAAAD//wUAAAAFAAcAAAD//wYAAAAFAAcAAAAAAAYAAAAFAAcAAAABAAYAAAAFAAcAAAACAAYAAAAFAAcAAAAFAAYAAAAFAAcAAAAGAAYAAAAFAAcAAAAGAAUAAAAFAAcAAAAGAAQAAAAFAAcAAAAGAAMAAAAFAAcAAAAGAAIAAAAFAAcAAAADAAYAAAAFAAcAAAAEAAYAAAAFAAcAAAA=")
 tile_set = ExtResource("1_6l15u")
 
-[node name="Furniture" type="TileMapLayer" parent="TileMaps"]
+[node name="Furniture" type="TileMapLayer" parent="TileMaps" unique_id=1999968689]
 texture_filter = 1
 tile_map_data = PackedByteArray("AAACAAIAAAAAAAAAAAADAAAAAAAJAAgAAAAEAAEAAAABAAcAAAABAAEAAAAGAAgAAAA=")
 tile_set = ExtResource("1_6l15u")
 
-[node name="Rug" type="TileMapLayer" parent="TileMaps"]
+[node name="Rug" type="TileMapLayer" parent="TileMaps" unique_id=77028047]
 self_modulate = Color(0, 0.560784, 0.172549, 1)
 texture_filter = 1
 tile_map_data = PackedByteArray("AAACAAQAAAAFAAAAAAA=")
 tile_set = ExtResource("1_6l15u")
 
-[node name="BedSheet" type="TileMapLayer" parent="TileMaps"]
+[node name="BedSheet" type="TileMapLayer" parent="TileMaps" unique_id=1693528948]
 self_modulate = Color(0, 0.560784, 0.172549, 1)
 z_index = 2
 texture_filter = 1
 tile_map_data = PackedByteArray("AAACAAIAAAAEAAcAAAA=")
 tile_set = ExtResource("1_6l15u")
 
-[node name="Candle" type="TileMapLayer" parent="TileMaps"]
+[node name="Candle" type="TileMapLayer" parent="TileMaps" unique_id=124637054]
 z_index = 2
 texture_filter = 1
 tile_map_data = PackedByteArray("AAABAAEAAAABAAAAAAA=")
 tile_set = ExtResource("1_6l15u")
 
-[node name="EntryPoints" type="Node2D" parent="."]
+[node name="EntryPoints" type="Node2D" parent="." unique_id=1906655310]
 
-[node name="SpawnInit" type="Marker2D" parent="EntryPoints"]
+[node name="SpawnInit" type="Marker2D" parent="EntryPoints" unique_id=826298100]
 position = Vector2(40, 40)
 script = ExtResource("3_f5mfs")
 spawn_name = "pc_bedroom_bed_01"
 metadata/_custom_type_script = "uid://bl7o7egd7hho7"
 
-[node name="SpawnStairs" type="Marker2D" parent="EntryPoints"]
+[node name="SpawnStairs" type="Marker2D" parent="EntryPoints" unique_id=1697157091]
 position = Vector2(88, 88)
 script = ExtResource("3_f5mfs")
 spawn_name = "pc_bedroom_stairs_01"
 metadata/_custom_type_script = "uid://bl7o7egd7hho7"
 
-[node name="ExitToHome" parent="." instance=ExtResource("3_kqpy1")]
+[node name="ExitToHome" parent="." unique_id=1019262647 instance=ExtResource("3_kqpy1")]
 position = Vector2(88, 88)
 target_scene = "uid://7s6n5s6n4jun"
 target_spawn = "pc_home_stairs_01"
 
-[node name="Interactables" type="Node2D" parent="."]
+[node name="Interactables" type="Node2D" parent="." unique_id=892625534]
 
-[node name="Bookcase" parent="Interactables" instance=ExtResource("5_gbqjd")]
+[node name="Bookcase" parent="Interactables" unique_id=1864490726 instance=ExtResource("5_gbqjd")]
 position = Vector2(72, 24)
 text = ["Filled with lots of home made books"]
 
-[node name="Drawer" parent="Interactables" instance=ExtResource("5_gbqjd")]
+[node name="Drawer" parent="Interactables" unique_id=1405228887 instance=ExtResource("5_gbqjd")]
 position = Vector2(24, 24)
 text = ["Ah, my two pairs of underwear", "Dad really did spoil me this birthday"]
 
-[node name="Window" parent="Interactables" instance=ExtResource("5_gbqjd")]
+[node name="Window" parent="Interactables" unique_id=202828234 instance=ExtResource("5_gbqjd")]
 position = Vector2(56, 24)
 text = ["I wish I could fly away"]
 
-[node name="Uniform" type="Sprite2D" parent="."]
+[node name="Uniform" type="Sprite2D" parent="." unique_id=1558022327]
 position = Vector2(7, 17)

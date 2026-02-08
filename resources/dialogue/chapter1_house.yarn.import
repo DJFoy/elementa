@@ -1,0 +1,14 @@
+[remap]
+
+importer="yarnscript"
+type="Resource"
+uid="uid://hwt3skeno3o2"
+path="res://.godot/imported/chapter1_house.yarn-6f154bf365dc03e9b6d21d979f7c3e78.tres"
+
+[deps]
+
+source_file="res://resources/dialogue/chapter1_house.yarn"
+dest_files=["res://.godot/imported/chapter1_house.yarn-6f154bf365dc03e9b6d21d979f7c3e78.tres"]
+
+[params]
+

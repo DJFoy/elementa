@@ -1,56 +1,55 @@
-[gd_scene load_steps=4 format=3 uid="uid://bd5yex4vadwcc"]
+[gd_scene format=3 uid="uid://bd5yex4vadwcc"]
 
 [ext_resource type="Texture2D" uid="uid://cjrwv3ydswt2i" path="res://assets/Dialogue Box wo Name Tag.png" id="1_2agik"]
 [ext_resource type="Script" uid="uid://cxbnfgt51pbv6" path="res://scripts/interact.gd" id="1_b1101"]
 [ext_resource type="Theme" uid="uid://dthhuuah0qhsg" path="res://themes/default_interact_theme.tres" id="2_jfapk"]
 
-[node name="Interact" type="Control"]
+[node name="Interact" type="Control" unique_id=95365800]
 z_index = 100
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -1.0
-offset_top = -5.0
-offset_right = -1.0
-offset_bottom = -5.0
 grow_horizontal = 2
 grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 mouse_filter = 2
 script = ExtResource("1_b1101")
 
-[node name="Panel" type="Panel" parent="."]
-layout_mode = 0
-offset_left = 68.0
-offset_top = 199.0
-offset_right = 415.0
-offset_bottom = 247.0
+[node name="Panel" type="Panel" parent="." unique_id=1499053034]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.14166667
+anchor_top = 0.73703706
+anchor_right = 0.8645833
+anchor_bottom = 0.91481483
 theme = ExtResource("2_jfapk")
 theme_type_variation = &"InteractPanel"
+metadata/_edit_use_anchors_ = true
 
-[node name="TextureRect" type="TextureRect" parent="Panel"]
+[node name="TextureRect" type="TextureRect" parent="Panel" unique_id=110373455]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -67.0
-offset_top = -194.0
-offset_right = 66.0
-offset_bottom = 28.0
+anchors_preset = -1
+anchor_left = -0.19596542
+anchor_top = -4.1458335
+anchor_right = 1.1873199
+anchor_bottom = 1.4791666
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("1_2agik")
+metadata/_edit_use_anchors_ = true
 
-[node name="TextBox" type="RichTextLabel" parent="Panel"]
+[node name="TextBox" type="RichTextLabel" parent="Panel" unique_id=1438836521]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
+anchors_preset = -1
+anchor_left = -0.0028818443
+anchor_right = 0.9971182
 anchor_bottom = 1.0
-offset_top = 6.0
-offset_bottom = 6.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_type_variation = &"InteractRichTextLabel"
 text = "This is some sample text
 Just to see what it looks like when you click"
 scroll_active = false
+metadata/_edit_use_anchors_ = true

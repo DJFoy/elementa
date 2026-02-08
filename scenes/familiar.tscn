@@ -1,6 +1,6 @@
-[gd_scene load_steps=8 format=3 uid="uid://dobby25cjkmn"]
+[gd_scene format=3 uid="uid://dobby25cjkmn"]
 
-[ext_resource type="Texture2D" uid="uid://b15uwdgqgbylr" path="res://assets/familiar_assets/Griff Overworld Sprite.png" id="1_l41qn"]
+[ext_resource type="Texture2D" uid="uid://duy2dk8ftvync" path="res://assets/familiar_assets/Frostling Overworld Sprite.png" id="1_l41qn"]
 
 [sub_resource type="Animation" id="Animation_7wgv1"]
 length = 0.001
@@ -90,14 +90,12 @@ _data = {
 &"walk_up": SubResource("Animation_kfeix")
 }
 
-[node name="Familiar" type="Node2D"]
+[node name="Familiar" type="Node2D" unique_id=2141462538]
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=531021697]
 texture = ExtResource("1_l41qn")
 hframes = 4
 vframes = 4
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_kfeix")
-}
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1039706185]
+libraries/ = SubResource("AnimationLibrary_kfeix")

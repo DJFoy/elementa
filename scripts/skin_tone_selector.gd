@@ -38,15 +38,6 @@ func update_highlight():
 	for i in range(container.get_child_count()):
 		var rect = container.get_child(i)
 		if i == selected_index:
-			rect.modulate = Color(1,1,1)
-			rect.add_theme_stylebox_override("panel", _make_highlight_box())
+			rect.modulate = Color(1,1,1, 0.7)
 		else:
-			rect.remove_theme_stylebox_override("panel")
-
-func _make_highlight_box() -> StyleBoxFlat:
-	print("Making a box")
-	var box = StyleBoxFlat.new()
-	box.border_color = Color(1.0, 0.153, 0.082, 1.0)
-	box.set_border_width_all(3)
-	box.set_corner_radius_all(0)
-	return box
+			rect.modulate = Color(1,1,1,1)

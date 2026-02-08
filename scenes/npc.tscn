@@ -1,7 +1,7 @@
-[gd_scene load_steps=11 format=3 uid="uid://c3ps2dhlyigr4"]
+[gd_scene format=3 uid="uid://c3ps2dhlyigr4"]
 
 [ext_resource type="Script" uid="uid://dqqhg26r5odn3" path="res://scripts/npc.gd" id="1_nh2m4"]
-[ext_resource type="Texture2D" uid="uid://d3odf135806mo" path="res://resources/character_sprite_tilesets/timmy_sprite.tres" id="2_abqhh"]
+[ext_resource type="Texture2D" uid="uid://by510e51jfcjh" path="res://assets/character_assets/anne/Anne Overworld Sprite.png" id="2_abqhh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tcuxl"]
 size = Vector2(13, 17)
@@ -155,28 +155,26 @@ _data = {
 &"walk_up": SubResource("Animation_4wlns")
 }
 
-[node name="NPC" type="CharacterBody2D" groups=["Dialogue"]]
+[node name="NPC" type="CharacterBody2D" unique_id=913386599 groups=["Dialogue"]]
 collision_layer = 3
 script = ExtResource("1_nh2m4")
 metadata/_custom_type_script = "uid://dqqhg26r5odn3"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=794587561]
 shape = SubResource("RectangleShape2D_tcuxl")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1158250490]
 texture_filter = 1
 texture = ExtResource("2_abqhh")
 offset = Vector2(0, -1)
 hframes = 4
 vframes = 4
 
-[node name="Accessory" type="Sprite2D" parent="."]
+[node name="Accessory" type="Sprite2D" parent="." unique_id=568807555]
 offset = Vector2(0, -1)
 hframes = 4
 vframes = 4
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_rv78h"),
-&"NPC": SubResource("AnimationLibrary_0tygy")
-}
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=722521729]
+libraries/ = SubResource("AnimationLibrary_rv78h")
+libraries/NPC = SubResource("AnimationLibrary_0tygy")

@@ -48,7 +48,7 @@ func generate_text(text_array: Array):
 		text_box, 
 		"visible_ratio", 
 		1, 
-		text_box.text.length()/14
+		text_box.text.length()/20
 	)
 	printing_text = true
 	
