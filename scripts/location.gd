@@ -100,5 +100,6 @@ func is_spawn_in_exit(spawn: Spawn, exit: ExitArea) -> bool:
 	
 	return false
 
-func _on_try_interact(interactable: Interactable):
-	interaction_request.emit(interactable.text)
+func _on_try_interact(target):
+	if target.is_in_group("Dialogue"):
+		pass

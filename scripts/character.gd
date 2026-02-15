@@ -64,8 +64,8 @@ func move(dir: Vector2):
 		_stop_movement()
 
 func position_snap():
-	if position != position.snappedf(tile_size/2):
-		position = position.snappedf(tile_size/2)
+	if position != position.snappedf(tile_size/2.0):
+		position = position.snappedf(tile_size/2.0)
 
 func direction_change(dir: Vector2):
 	# Change the current animation to make the sprite face the new direction

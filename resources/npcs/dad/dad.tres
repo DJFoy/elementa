@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="Dad_Resource" format=3 uid="uid://c3n6c7qnrumv3"]
+
+[ext_resource type="Resource" uid="uid://bcqdd8f4u32aj" path="res://resources/npcs/dad/dad_dialogue_map.tres" id="1_actnc"]
+[ext_resource type="Script" uid="uid://cxkniflals6on" path="res://resources/npcs/dad/dad_npc_resource.gd" id="2_rbkod"]
+[ext_resource type="Texture2D" uid="uid://c8ambqiqd5ppy" path="res://assets/character_assets/NPCs/dad/Dad Pixel Portrait 1.png" id="3_s7gig"]
+[ext_resource type="Texture2D" uid="uid://bupalu3g825i8" path="res://assets/character_assets/NPCs/dad/Dad Pixel Portrait 2.png" id="4_mkm85"]
+[ext_resource type="Texture2D" uid="uid://fox1eqghpujw" path="res://assets/character_assets/NPCs/dad/Dad Pixel Portrait 3.png" id="5_gkcxo"]
+[ext_resource type="Texture2D" uid="uid://b301kg4rijkih" path="res://assets/character_assets/NPCs/dad/Dad Overworld Sprite 1.png" id="6_n6opa"]
+[ext_resource type="Texture2D" uid="uid://btgdat5g0k4nx" path="res://assets/character_assets/NPCs/dad/Dad Overworld Sprite 2.png" id="7_e3eu2"]
+[ext_resource type="Texture2D" uid="uid://bwiybcqkb1nor" path="res://assets/character_assets/NPCs/dad/Dad Overworld Sprite 3.png" id="8_r5ucx"]
+
+[resource]
+script = ExtResource("2_rbkod")
+variant_sprite = Array[Texture2D]([ExtResource("6_n6opa"), ExtResource("7_e3eu2"), ExtResource("8_r5ucx")])
+variant_portrait = Array[Texture2D]([ExtResource("3_s7gig"), ExtResource("4_mkm85"), ExtResource("5_gkcxo")])
+npc_name = "Dad"
+dialogue_map = ExtResource("1_actnc")
+metadata/_custom_type_script = "uid://cxkniflals6on"

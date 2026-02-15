@@ -1,0 +1,130 @@
+[gd_scene format=3 uid="uid://qcvkhmtmh20c"]
+
+[ext_resource type="PackedScene" uid="uid://bv42g323prh5f" path="res://addons/YarnSpinner-Godot/Scenes/DefaultDialogueSystem.tscn" id="1_6d18v"]
+[ext_resource type="Resource" uid="uid://c44yclr6fs0fj" path="res://resources/dialogue/chapter1.yarnproject" id="2_782f5"]
+[ext_resource type="Texture2D" uid="uid://cblm66l2385ri" path="res://assets/Dialogue Box.png" id="3_vxr6u"]
+[ext_resource type="Theme" uid="uid://dthhuuah0qhsg" path="res://themes/default_interact_theme.tres" id="4_xl4nw"]
+
+[node name="YarnSpinnerTest" type="Control" unique_id=1852626907]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="YarnSpinnerCanvasLayer" parent="." unique_id=1774932670 instance=ExtResource("1_6d18v")]
+
+[node name="DialogueRunner" parent="YarnSpinnerCanvasLayer" index="0"]
+yarnProject = ExtResource("2_782f5")
+autoStart = true
+startNode = "chapter1_houseIntro"
+
+[node name="TextureRect" type="TextureRect" parent="YarnSpinnerCanvasLayer/LinePresenter" index="0" unique_id=933040991]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 3.0
+offset_right = 483.0
+offset_bottom = 273.0
+texture = ExtResource("3_vxr6u")
+
+[node name="PresenterControl" parent="YarnSpinnerCanvasLayer/LinePresenter" index="1"]
+metadata/_edit_use_anchors_ = true
+
+[node name="LineText" parent="YarnSpinnerCanvasLayer/LinePresenter/PresenterControl" index="0"]
+offset_left = -170.0
+offset_top = 67.0
+offset_right = 176.0
+offset_bottom = 115.0
+theme = ExtResource("4_xl4nw")
+theme_type_variation = &"InteractRichTextLabel"
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 16
+theme_override_font_sizes/bold_font_size = 16
+theme_override_font_sizes/bold_italics_font_size = 16
+theme_override_font_sizes/italics_font_size = 16
+theme_override_font_sizes/mono_font_size = 16
+
+[node name="ColorRect" parent="YarnSpinnerCanvasLayer/LinePresenter/PresenterControl/LineText" index="2"]
+visible = false
+offset_left = 0.0
+offset_right = 0.0
+offset_bottom = 0.0
+
+[node name="CharacterNameText" parent="YarnSpinnerCanvasLayer/LinePresenter/PresenterControl" index="1"]
+offset_left = -162.0
+offset_top = 38.0
+offset_right = -78.0
+offset_bottom = 52.0
+theme = ExtResource("4_xl4nw")
+theme_type_variation = &"InteractRichTextLabel"
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 16
+theme_override_font_sizes/bold_font_size = 16
+theme_override_font_sizes/bold_italics_font_size = 16
+theme_override_font_sizes/italics_font_size = 16
+theme_override_font_sizes/mono_font_size = 16
+
+[node name="ColorRect" parent="YarnSpinnerCanvasLayer/LinePresenter/PresenterControl/CharacterNameText" index="2"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ContinueButton" parent="YarnSpinnerCanvasLayer/LinePresenter/PresenterControl" index="2"]
+visible = false
+offset_left = 45.0
+offset_top = -76.0
+offset_right = 231.00003
+offset_bottom = -17.0
+
+[node name="VBoxContainer" parent="YarnSpinnerCanvasLayer/OptionsPresenter/PresenterControl" index="0"]
+offset_left = 73.0
+offset_top = -2.0
+offset_right = 239.0
+offset_bottom = 53.0
+theme = ExtResource("4_xl4nw")
+theme_type_variation = &"InteractVBoxContainer"
+
+[node name="LastLineText" parent="YarnSpinnerCanvasLayer/OptionsPresenter/PresenterControl" index="1"]
+visible = true
+offset_left = -170.0
+offset_top = 202.0
+offset_right = 176.0
+offset_bottom = 250.0
+theme = ExtResource("4_xl4nw")
+theme_type_variation = &"InteractRichTextLabel"
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 16
+theme_override_font_sizes/bold_font_size = 16
+theme_override_font_sizes/bold_italics_font_size = 16
+theme_override_font_sizes/italics_font_size = 16
+theme_override_font_sizes/mono_font_size = 16
+
+[node name="ColorRect" parent="YarnSpinnerCanvasLayer/OptionsPresenter/PresenterControl/LastLineText" index="2"]
+visible = false
+
+[node name="LastLineCharacterNameText" parent="YarnSpinnerCanvasLayer/OptionsPresenter/PresenterControl" index="2"]
+visible = true
+offset_left = -162.0
+offset_top = 38.0
+offset_right = -78.0
+offset_bottom = 52.0
+theme = ExtResource("4_xl4nw")
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 16
+theme_override_font_sizes/bold_font_size = 16
+theme_override_font_sizes/bold_italics_font_size = 16
+theme_override_font_sizes/italics_font_size = 16
+theme_override_font_sizes/mono_font_size = 16
+
+[node name="ColorRect" parent="YarnSpinnerCanvasLayer/OptionsPresenter/PresenterControl/LastLineCharacterNameText" index="2"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+offset_right = 3.0517578e-05
+grow_horizontal = 2
+grow_vertical = 2
+
+[editable path="YarnSpinnerCanvasLayer"]

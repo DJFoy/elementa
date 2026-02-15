@@ -1,65 +1,67 @@
-[gd_scene load_steps=6 format=4 uid="uid://7s6n5s6n4jun"]
+[gd_scene format=4 uid="uid://7s6n5s6n4jun"]
 
 [ext_resource type="TileSet" uid="uid://gfwi66i5se4k" path="res://assets/tilesets/backgrounds/base_inside_tiles.tres" id="1_1m1lp"]
 [ext_resource type="Script" uid="uid://d17n47ihtn6ik" path="res://scripts/Chapter 1/pc_home.gd" id="1_67net"]
 [ext_resource type="PackedScene" uid="uid://c3ps2dhlyigr4" path="res://scenes/npc.tscn" id="3_0o0db"]
 [ext_resource type="PackedScene" uid="uid://kkaqj5g0x7un" path="res://scenes/exit_area.tscn" id="3_hwnoe"]
 [ext_resource type="Script" uid="uid://bl7o7egd7hho7" path="res://scripts/spawn.gd" id="3_vfuc7"]
+[ext_resource type="Resource" uid="uid://c3n6c7qnrumv3" path="res://resources/npcs/dad/dad.tres" id="6_ke34i"]
 
-[node name="PCHome" type="Node2D"]
+[node name="PCHome" type="Node2D" unique_id=800976989]
 script = ExtResource("1_67net")
 default_spawn = "pc_home_stairs_01"
 
-[node name="TileMaps" type="Node2D" parent="."]
+[node name="TileMaps" type="Node2D" parent="." unique_id=320662024]
 
-[node name="FloorsAndWalls" type="TileMapLayer" parent="TileMaps"]
+[node name="FloorsAndWalls" type="TileMapLayer" parent="TileMaps" unique_id=1204979792]
 position = Vector2(-16, 32)
 tile_map_data = PackedByteArray("AAADAP7/AAANAAAAAAADAAAAAAADAAAAAAADAAEAAAADAAAAAAADAAIAAAADAAAAAAADAAMAAAADAAAAAAAEAP7/AAANAAAAAAAEAAAAAAADAAAAAAAEAAEAAAADAAAAAAAEAAIAAAADAAAAAAAEAAMAAAADAAAAAAAFAP7/AAALAAAAAAAFAAAAAAADAAAAAAAFAAEAAAADAAAAAAAFAAIAAAADAAAAAAAFAAMAAAADAAAAAAAGAAAAAAADAAAAAAAGAAEAAAADAAAAAAAGAAIAAAADAAAAAAAGAAMAAAAAAAYAAAAAAP7/AAALAAAAAAAAAAAAAAADAAAAAAAAAAEAAAADAAAAAAAAAAIAAAADAAAAAAAAAAMAAAADAAAAAAABAP7/AAAMAAAAAAABAAAAAAADAAAAAAABAAEAAAADAAAAAAABAAIAAAADAAAAAAABAAMAAAADAAAAAAACAP7/AAANAAAAAAACAAAAAAADAAAAAAACAAEAAAADAAAAAAACAAIAAAADAAAAAAACAAMAAAADAAAAAAAGAP7/AAAMAAAAAAD//wAAAAAFAAcAAAD//wEAAAAFAAcAAAD//wMAAAAFAAcAAAD//wQAAAAFAAcAAAAAAAQAAAAFAAcAAAABAAQAAAAFAAcAAAACAAQAAAAFAAcAAAADAAQAAAAFAAcAAAADAAUAAAAFAAcAAAAEAAUAAAAFAAcAAAAFAAUAAAAFAAcAAAAFAAQAAAAFAAcAAAAGAAQAAAAFAAcAAAAHAAQAAAAFAAcAAAAHAAMAAAAFAAcAAAAHAAIAAAAFAAcAAAAHAAEAAAAFAAcAAAAHAAAAAAAFAAcAAAD//wIAAAAFAAcAAAA=")
 tile_set = ExtResource("1_1m1lp")
 
-[node name="Furniture" type="TileMapLayer" parent="TileMaps"]
+[node name="Furniture" type="TileMapLayer" parent="TileMaps" unique_id=255455599]
 position = Vector2(-16, 32)
 tile_map_data = PackedByteArray("AAADAP7/AAAJAAgAAAAEAP7/AAAHAAAAAAAAAAIAAAACAAQAAAABAAIAAAADAAEAAAACAAIAAAACAAgAAAABAP//AAAAAAgAAAACAP//AAAAAAgAAAA=")
 tile_set = ExtResource("1_1m1lp")
 
-[node name="Sink" type="TileMapLayer" parent="TileMaps"]
+[node name="Sink" type="TileMapLayer" parent="TileMaps" unique_id=1633166552]
 position = Vector2(-16, 32)
 tile_map_data = PackedByteArray("AAACAP//AAAEAAUAAAA=")
 tile_set = ExtResource("1_1m1lp")
 
-[node name="Rug" type="TileMapLayer" parent="TileMaps"]
+[node name="Rug" type="TileMapLayer" parent="TileMaps" unique_id=2107044496]
 modulate = Color(0.847595, 0.317795, 0.3295, 1)
 position = Vector2(-16, 32)
 tile_map_data = PackedByteArray("AAADAP7/AAAKAAgAAAADAAEAAAADAAIAAAAEAAMAAAAHAAQAAAAGAAEAAAAGAAQAABA=")
 tile_set = ExtResource("1_1m1lp")
 
-[node name="EntryPoints" type="Node2D" parent="."]
+[node name="EntryPoints" type="Node2D" parent="." unique_id=274388337]
 
-[node name="SpawnStairs" type="Marker2D" parent="EntryPoints"]
+[node name="SpawnStairs" type="Marker2D" parent="EntryPoints" unique_id=282431302]
 position = Vector2(88, 88)
 script = ExtResource("3_vfuc7")
 spawn_name = "pc_home_stairs_01"
 metadata/_custom_type_script = "uid://bl7o7egd7hho7"
 
-[node name="SpawnDoor" type="Marker2D" parent="EntryPoints"]
+[node name="SpawnDoor" type="Marker2D" parent="EntryPoints" unique_id=1132516378]
 position = Vector2(56, 88)
 script = ExtResource("3_vfuc7")
 spawn_name = "pc_home_door_01"
 metadata/_custom_type_script = "uid://bl7o7egd7hho7"
 
-[node name="Exits" type="Node2D" parent="."]
+[node name="Exits" type="Node2D" parent="." unique_id=2107653368]
 
-[node name="ExitStairs" parent="Exits" instance=ExtResource("3_hwnoe")]
+[node name="ExitStairs" parent="Exits" unique_id=744792166 instance=ExtResource("3_hwnoe")]
 position = Vector2(88, 88)
 target_scene = "uid://pe7bm124rb7k"
 target_spawn = "pc_bedroom_stairs_01"
 
-[node name="ExitDoor" parent="Exits" instance=ExtResource("3_hwnoe")]
+[node name="ExitDoor" parent="Exits" unique_id=1677045929 instance=ExtResource("3_hwnoe")]
 position = Vector2(56, 104)
 target_scene = "uid://y4y1xxl7omnv"
 target_spawn = "bb_village_pc_home_01"
 
-[node name="NPCs" type="Node2D" parent="."]
+[node name="NPCs" type="Node2D" parent="." unique_id=1586322827]
 
-[node name="Dad" parent="NPCs" instance=ExtResource("3_0o0db")]
+[node name="Dad" parent="NPCs" unique_id=768815857 instance=ExtResource("3_0o0db")]
 position = Vector2(23, 39)
+npc_resource = ExtResource("6_ke34i")

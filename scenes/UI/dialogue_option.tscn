@@ -1,6 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://v7ktjmrpm6na"]
+[gd_scene format=3 uid="uid://v7ktjmrpm6na"]
 
-[ext_resource type="Script" uid="uid://mpve6bt0stl3" path="res://scripts/dialogue_option.gd" id="1_kqp0x"]
+[ext_resource type="Script" uid="uid://mpve6bt0stl3" path="res://resources/dialogue_option.gd" id="1_kqp0x"]
 [ext_resource type="Theme" uid="uid://dthhuuah0qhsg" path="res://themes/default_interact_theme.tres" id="2_ag0tr"]
 
 [node name="DialogueOption" type="Control"]
