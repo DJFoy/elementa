@@ -8,23 +8,23 @@ Narrator: Your dreams are fading fast. This could be your only chance to escape 
 Narrator: You sign your application and send it with the last post. Time comes and goes. Your twentieth birthday passes. But you never hear back.	
 Dad: Morning {$playerName}, how are you feeling? Are you ready for your first day of work?
 {$playerName}: ... 
-Dad: Hey, I know you had your heart set on that scholarship. Working as a servant in the manor won't be all that bad. At least you won't have to work in the mines like I did.
-    -> Right... I get to watch people like Gigi and George become adventurers while I sit at home and dust their silverware.
+Dad: Hey, I know you had your heart set on that scholarship. But working as a servant in the manor won't be all that bad. At least you won't have to work in the mines like I did.
+    -> Right... I get to watch Gigi and George become adventurers while I sit at home and dust their silverware.
     -> Yeah. I guess it could be worse.
-Dad: I'm sorry {$playerName}. I know it's unfair that only nobles get to become adventurers. I would give you the money if we had it. But, I mean, we can't even afford a Familiars for the house…
+Dad: I'm sorry {$playerName}. I know it's unfair. I would give you the money if we had it. But, I mean, we can't even afford a Familiar for the house…
 Dad: Here. I made you a good, hearty breakfast. And look, I want you to know that I love you and I'm very proud of you, no matter what.
     -> I can tell Dad put a lot of effort into this. I should finish it.
-        Narrator: You think you spot Dad wiping away a tear and quickly hide it behind a beaming smile.
+        Narrator: You think you spot Dad wiping away a tear and hide it behind a beaming smile.
     -> Push the food around the plate.
         Narrator: You think you hear Dad heave a forlorn sigh.
-    -> What the hell, Dad? You know I hate {$hatedFood}! Why can't you ever do anything right?
-        Dad: Oh, you're right. I'm so sorry. I was so focussed on making everything special, it must have slipped my mind. Agh, everything was supposed to be perfect!
+    -> What the hell, Dad? You know I hate {$hatedFood}! Why can't you do anything right?
+        Dad: Oh, I'm sorry. It must have slipped my mind. Agh, everything was supposed to be perfect!
 Dad: Is that a letter?
 Dad: It's for you, {$playerName}.	
 Dad: What is it?	
 {$playerName}:	It's a response to my scholarship application. And an apology for the delay. I've... I've been accepted!
 Dad: What? That's incredible! Ah! Erm... Gah! What do we do? 	
-Dad: Okay. It's still very early in the day. We have time. Firstly, who is your sponsor?	
+Dad: Okay. It's still very early. We have time. First, who is your sponsor?	
 {$playerName}:	Professor Olivia.
 Dad: Phew! She's here in the village. Go see her right away. I'll go to the manor and explain you won't be accepting the position as a servant.
     -> Thanks, Dad.
@@ -35,14 +35,14 @@ title:chapter1_profOliviaIntro
 tags:
 position: 72,-525
 ---
-Professor Olivia: {$playerName}, I'm so glad you're here! I take it you got the news too?	
-    -> A Familiars delivered the letter just now!
+Professor Olivia: {$playerName}, I'm glad you're here! I take it you got the news too?	
+    -> A Familiar delivered the letter just now!
     -> Just in time! I almost ended up a servant at the twin's manor.
-Professor Olivia: It was a surprise to me as well. To be honest with you, I hadn't even realised you'd applied. I could have helped you with your application if you'd visited me beforehand.
-    -> There wasn't time. You were away when I decided to apply.
-    -> You're never here. I obviously didn't need your help anyway.
-Professor Olivia: I see. Well, let's get started. Are you excited to meet your Familiars?	
-    -> I can't wait to meet them! 
+Professor Olivia: It was a surprise to me as well. To be honest with you, I hadn't even realised you'd applied. I could have helped you.
+    -> You were away when I decided to apply.
+    -> You're never here. 
+Professor Olivia: I see. Well, let's get started. Are you excited to meet your Familiar?	
+    -> I can't wait! 
         Professor Olivia: That's nice to hear.
     -> I just can't wait to leave this place.
         Professor Olivia: …
@@ -52,17 +52,17 @@ title:chapter1_profOliviaRelOpt1
 tags:
 position: 73,-318
 ---
-Professor Olivia: Until now, the twins were the only ones under my sponsorship. They collected their Familiars last night. Unfortunately, the best I can offer you is a choice from three Familiars that were surplus from a breeder I ran into this season. No one wanted them, so I took them in here in the hope of finding them a good home. <<once>>
-    -> What would have happened to them if you hadn't taken them in?<<once>>
-        Professor Olivia: They would have been released into the wild. The breeders say they are too costly to keep around if no one will pay good money for them. But the wilds are already teeming with so many dangerous Familiars that have been left to turn feral. It just makes the problem even worse for everyone in the long run.
-        <<jump chapter1_profOliviaRelOpt1>>
+Professor Olivia: Until now, the twins were the only ones under my sponsorship. They collected their Familiars last night. Unfortunately, the best I can offer you are surplus from a breeder. I took them in the hope of finding them a good home. <<once>>
+    -> What would have happened to them otherwise?<<once>>
+        Professor Olivia: They would have been dumped in the Wilds. But they're already teeming with dangerous Familiars left to turn feral. It just makes the problem worse.
+        <<jump chapter1_profOliviaHouseRelOpt1>>
     -> I don't want some noble's leftovers!
-        Professor Olivia: Well, I'm sorry to tell you that this is your only option. You're lucky to even get a choice at this short notice so late in the season. 
-    -> I don't care where they've come from. I'm sure they'll be perfect!
+        Professor Olivia: Well, this is your only option. You're lucky to even get a choice so late in the season. 
+    -> I don't care where they've come from. 
         Professor Olivia: Ha! That's the spirit!
     -> I guess they'll have to do.
         Professor Olivia: Indeed.
-Professor Olivia: Go ahead. Pick which one you want, then come and let me know. Take your time. I'll be working in my study over there.
+Professor Olivia: Go ahead. Pick which one you want. I'll be working in my study over there.
 ===
 
 title: chapter1_profOliviaChooseFam
@@ -70,13 +70,13 @@ tags:
 position: 326,-319
 ---
 <<declare $familiar = "Grisnir">>
-Professor Olivia: Ah, so you picked this one. Are you sure this is the one you want?
+Professor Olivia: Ah, a good choice. Are you sure this is the one you want?
     -> Yes
         {$familiar}: (heart emote)
         Professor Olivia: Excellent!
         <<jump chapter1_profOliviaConfirmChoice>>
     -> I'm not sure…
-        Professor Olivia: You can still swap them out at the pen. Take some time to think about it and come back to me when you've chosen one.
+        Professor Olivia: You can still swap them out at the pen. Take your time.
 ===
 
 title: chapter1_profOliviaConfirmChoice
@@ -84,13 +84,13 @@ tags:
 position: 327,-80
 ---
 Professor Olivia: Now you've chosen your Familiar, there's a few things in the Adventurer Scholarship that I'm obligated to remind you about. 
-Professor Olivia: Adventurers are funded by the crown and hence, you will receive increased income in the form of a regular allowance as you rise up the ranks by defeating Guild Masters and their Familiars across Gantoh. 
-Professor Olivia: If you defeat them all, then King Alfred will award you the Master rank or Diamond amulet and you will become a member of the prestigious Royal Council. 
+Professor Olivia: Adventurers are funded by the crown and hence, you will receive increased income in the form of a regular allowance. You will rise up the ranks by defeating Guild Masters and their Familiars across Gantoh. 
+Professor Olivia: If you defeat them all, then King Albert will award you the Diamond amulet and you will become a member of the prestigious Royal Council. 
 Professor Olivia: Now, your first rank is brass and with it, the first scholarship payment.
 Professor Olivia: This amulet will allow you access into the Wilds between settlements beyond Powder Town, should you wish to pass through there on foot to train with your Familiar. 
-Professor Olivia: Remember, the wilds are filled with dangerous and feral Familiars. Your Familiar is your responsibility. You can heal it at Healing Churches if it gets hurt in battle but if it ends up losing its life under your care, then you will have to pay for a replacement, which I doubt many scholarship adventurers like yourself can afford. They are tough little creatures but they're not invincible. 
-{$playerName}: Okay. So where should I go first?
-<<jump chapter1_profOliviaWhereNext>>
+Professor Olivia: Remember, the Wilds are dangerous. Your Familiar is your responsibility. You can heal it at Healing Churches if it gets injured but if it dies under your care, then your journey will end.
+{$playerName}: Okay. Where should I go first?
+<<jump chapter1_profOliviaHouseWhereNext>>
 ===
 
 title: chapter1_profOliviaWhereNext
@@ -98,8 +98,8 @@ tags:
 position: 329,147
 ---
 <<declare $ask_repeat = 0>>
-Professor Olivia: The first Guild Master you'll want to defeat is Matthias in Salt Mire City. You can take the train there from Powder Town. 
-Professor Olivia: Oh, and don't worry about money for accommodation while you're travelling. Inns across Gantoh will provide Familiars adventurers with free rooms, as per royal decree.
+Professor Olivia: The first Guild Master you'll want to defeat is Matthias in Salt Mire City. You can take the train from Powder Town. 
+Professor Olivia: Oh, and don't worry about money for accommodation while you're travelling. Inns across Gantoh will provide Familiar Adventurers with free rooms, as per royal decree.
 Professor Olivia: Did you understand all of that?
     -> Yep. I need to get the train to Salt Mire City.
         <<jump chapter1_profOliviaHelpResearch>>
@@ -113,15 +113,15 @@ title: chapter1_profOliviaHelpResearch
 tags:
 position: 326,371
 ---
-Professor Olivia: There's one more thing, since you'll be travelling all over Gantoh…
+Professor Olivia: One more thing. Since you'll be travelling all over Gantoh…
 {$playerName}: What is it?
 Professor Olivia: Do you, perchance, fancy helping me with a bit of research?
-    -> Sure. What would you like me to do?
+    -> Sure. 
     -> Huh? 
-Professor Olivia: I'm looking for some ancient elven artefacts. In particular, stone tablets with writing engraved in them in the elven language. You might find them scattered in various places around Gantoh. With three new Adventurers under my scholarship this season, I'll have to abandon my own expeditions for a while. I would very much appreciate it if you could bring any you find for me to examine. Tell you what, if you bring me an artefact, I'll even share some more details of my research with you.
+Professor Olivia: I'm looking for some ancient elven artefacts. In particular, stone tablets with writing engraved in the elven language. You may find them scattered in various places around Gantoh. With three new Adventurers under my scholarship this season, I'll have to abandon my own expeditions for a while. Bring any you find for me to examine. Tell you what, if you bring me an artefact, I'll even share some details of my research with you.
     -> Of course. That sounds really interesting. 
         Professor Olivia: I'm pleased you think the same. 
-    -> Ugh… I guess I'll consider it.
+    -> I guess I'll consider it.
         Professor Olivia: I understand not everyone is interested in history. Ah well, my offer still stands regardless.
 Professor Olivia: That should be everything you need to know for now. Remember to check back in with me here regularly so I know you're safe. Good luck! 
 ===
