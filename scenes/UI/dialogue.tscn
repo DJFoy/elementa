@@ -1,33 +1,66 @@
-[gd_scene load_steps=4 format=3 uid="uid://xlgquvpcpldn"]
+[gd_scene format=3 uid="uid://xlgquvpcpldn"]
 
 [ext_resource type="Texture2D" uid="uid://cblm66l2385ri" path="res://assets/Dialogue Box.png" id="1_3n4vj"]
-[ext_resource type="Script" uid="uid://bwfec7j5u13d1" path="res://scripts/dialogue.gd" id="1_bfpow"]
+[ext_resource type="Script" uid="uid://btqcr6thl8efl" path="res://scripts/YarnSpinner/dialogue.gd" id="1_58kjy"]
+[ext_resource type="Script" uid="uid://budnld4qd513n" path="res://addons/YarnSpinner-Godot/Runtime/DialogueRunner.cs" id="2_rgjee"]
+[ext_resource type="Resource" uid="uid://c44yclr6fs0fj" path="res://resources/dialogue/chapter1.yarnproject" id="3_58kjy"]
 [ext_resource type="Theme" uid="uid://dthhuuah0qhsg" path="res://themes/default_interact_theme.tres" id="3_bfpow"]
+[ext_resource type="Script" uid="uid://dgyuh0b4kc408" path="res://scripts/YarnSpinner/line_presenter.gd" id="5_rgose"]
+[ext_resource type="Script" uid="uid://c5gxawri864uf" path="res://addons/YarnSpinner-Godot/Runtime/LineProviders/TextLineProvider.cs" id="7_cpovq"]
+[ext_resource type="Script" uid="uid://b1o5xpu22evvx" path="res://addons/YarnSpinner-Godot/Runtime/InMemoryVariableStorage.cs" id="8_58kjy"]
 
-[node name="Dialogue" type="Control"]
+[node name="Dialogue" type="Control" unique_id=458972072]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_bfpow")
+script = ExtResource("1_58kjy")
 
-[node name="Panel" type="Panel" parent="."]
-layout_mode = 1
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=118278744]
+
+[node name="DialogueRunner" type="Control" parent="CanvasLayer" unique_id=2013577826 node_paths=PackedStringArray("variableStorage", "lineProvider", "dialoguePresenters")]
+layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("2_rgjee")
+yarnProject = ExtResource("3_58kjy")
+variableStorage = NodePath("../InMemoryVariableStorage")
+lineProvider = NodePath("../TextLineProvider")
+dialoguePresenters = [NodePath("../LinePresenter")]
+autoStart = true
+startNode = "chapter1_dadIntro"
+runSelectedOptionAsLine = true
 
-[node name="TextureRect" type="TextureRect" parent="Panel"]
-layout_mode = 0
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer" unique_id=107509792]
 offset_right = 480.0
 offset_bottom = 270.0
 texture = ExtResource("1_3n4vj")
 
-[node name="TextBox" type="RichTextLabel" parent="Panel"]
+[node name="LinePresenter" type="Control" parent="CanvasLayer" unique_id=1331012857 node_paths=PackedStringArray("character_name_label", "line_text_label", "presenter_control", "dialogue_control")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("5_rgose")
+character_name_label = NodePath("PresenterControl/CharacterName")
+line_text_label = NodePath("PresenterControl/TextBox")
+presenter_control = NodePath("PresenterControl")
+dialogue_control = NodePath("../..")
+
+[node name="PresenterControl" type="Control" parent="CanvasLayer/LinePresenter" unique_id=1379901545]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextBox" type="RichTextLabel" parent="CanvasLayer/LinePresenter/PresenterControl" unique_id=7801704]
 layout_mode = 0
 offset_left = 70.0
 offset_top = 199.0
@@ -39,7 +72,7 @@ text = "This is some sample text
 Just to see what it looks like when you click"
 scroll_active = false
 
-[node name="CharacterName" type="RichTextLabel" parent="Panel"]
+[node name="CharacterName" type="RichTextLabel" parent="CanvasLayer/LinePresenter/PresenterControl" unique_id=814287207]
 layout_mode = 0
 offset_left = 75.0
 offset_top = 170.0
@@ -49,3 +82,10 @@ theme = ExtResource("3_bfpow")
 theme_type_variation = &"InteractRichTextLabel"
 text = "Boops"
 scroll_active = false
+
+[node name="TextLineProvider" type="Node2D" parent="CanvasLayer" unique_id=2061662789]
+script = ExtResource("7_cpovq")
+YarnProject = ExtResource("3_58kjy")
+
+[node name="InMemoryVariableStorage" type="Node" parent="CanvasLayer" unique_id=1682853406]
+script = ExtResource("8_58kjy")

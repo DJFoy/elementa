@@ -1,5 +1,7 @@
 extends Node
 
+# This global is for storing game states
+
 # Check that a game is loaded for loading in presets and settings
 var game_loaded:= false
 

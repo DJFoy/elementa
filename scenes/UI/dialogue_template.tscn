@@ -5,7 +5,9 @@
 [ext_resource type="Resource" uid="uid://c44yclr6fs0fj" path="res://resources/dialogue/chapter1.yarnproject" id="2_k51di"]
 [ext_resource type="Texture2D" uid="uid://cblm66l2385ri" path="res://assets/Dialogue Box.png" id="3_667qt"]
 [ext_resource type="Theme" uid="uid://dthhuuah0qhsg" path="res://themes/default_interact_theme.tres" id="4_ofqme"]
+[ext_resource type="Texture2D" uid="uid://i10xb4ai3612" path="res://assets/character_assets/prof olivia/Prof Olivia Pixel Portrait.png" id="5_ccyds"]
 [ext_resource type="PackedScene" uid="uid://d0lemcnjah10o" path="res://scenes/default_option_view.tscn" id="6_667qt"]
+[ext_resource type="Script" uid="uid://u2q64vfosoyd" path="res://scripts/portrait_presenter.gd" id="7_f2gt8"]
 
 [node name="DialogueTemplate" type="Control" unique_id=1852626907]
 layout_mode = 3
@@ -19,20 +21,51 @@ script = ExtResource("1_k51di")
 
 [node name="YarnSpinnerCanvasLayer" parent="." unique_id=1774932670 instance=ExtResource("1_l8mj7")]
 
+[node name="DialogueRunner" parent="YarnSpinnerCanvasLayer" index="0" node_paths=PackedStringArray("dialoguePresenters")]
+yarnProject = ExtResource("2_k51di")
+dialoguePresenters = [NodePath("../LinePresenter"), NodePath("../OptionsPresenter"), NodePath("../PortraitPresenter")]
+autoStart = true
+
+[node name="VariableDebugText" parent="YarnSpinnerCanvasLayer" index="1"]
+mouse_filter = 1
+
+[node name="PortraitPresenter" type="Control" parent="YarnSpinnerCanvasLayer" unique_id=2130848990 node_paths=PackedStringArray("character_name_label", "portrait", "presenter_control")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("7_f2gt8")
+character_name_label = NodePath("../LinePresenter/PresenterControl/CharacterNameText")
+portrait = NodePath("PresenterControl/Portrait")
+presenter_control = NodePath("PresenterControl")
+
+[node name="PresenterControl" type="Control" parent="YarnSpinnerCanvasLayer/PortraitPresenter" unique_id=445885618]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Portrait" type="TextureRect" parent="YarnSpinnerCanvasLayer/PortraitPresenter/PresenterControl" unique_id=1622440983]
+layout_mode = 0
+offset_left = 42.0
+offset_top = 29.0
+offset_right = 202.0
+offset_bottom = 189.0
+texture = ExtResource("5_ccyds")
+metadata/_edit_use_anchors_ = true
+
 [node name="TextureRect" type="TextureRect" parent="YarnSpinnerCanvasLayer" unique_id=933040991]
 offset_right = 480.0
 offset_bottom = 270.0
 texture = ExtResource("3_667qt")
 
-[node name="DialogueRunner" parent="YarnSpinnerCanvasLayer" index="1"]
-yarnProject = ExtResource("2_k51di")
-autoStart = true
-startNode = "chapter1_houseIntro"
-
-[node name="VariableDebugText" parent="YarnSpinnerCanvasLayer" index="2"]
-mouse_filter = 1
-
-[node name="LinePresenter" parent="YarnSpinnerCanvasLayer" index="3"]
+[node name="LinePresenter" parent="YarnSpinnerCanvasLayer" index="4"]
 mouse_filter = 1
 
 [node name="PresenterControl" parent="YarnSpinnerCanvasLayer/LinePresenter" index="0"]
@@ -47,7 +80,6 @@ offset_bottom = 112.0
 mouse_filter = 1
 theme = ExtResource("4_ofqme")
 theme_type_variation = &"InteractRichTextLabel"
-theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 16
 theme_override_font_sizes/bold_font_size = 16
 theme_override_font_sizes/bold_italics_font_size = 16
@@ -59,6 +91,7 @@ visible = false
 offset_left = 0.0
 offset_right = 0.0
 offset_bottom = 0.0
+color = Color(0, 0, 0, 1)
 
 [node name="CharacterNameText" parent="YarnSpinnerCanvasLayer/LinePresenter/PresenterControl" index="1"]
 offset_left = -164.0
@@ -93,7 +126,7 @@ mouse_filter = 1
 [node name="LinePresenterButtonHandler" parent="YarnSpinnerCanvasLayer/LinePresenter" index="1"]
 mouse_filter = 1
 
-[node name="OptionsPresenter" parent="YarnSpinnerCanvasLayer" index="4" node_paths=PackedStringArray("lastLineText", "lastLineContainer", "lastLineCharacterNameText")]
+[node name="OptionsPresenter" parent="YarnSpinnerCanvasLayer" index="5" node_paths=PackedStringArray("lastLineText", "lastLineContainer", "lastLineCharacterNameText")]
 mouse_filter = 1
 optionItemPrefab = ExtResource("6_667qt")
 showsLastLine = true
@@ -150,5 +183,8 @@ anchors_preset = 15
 offset_right = 3.0517578e-05
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="TextLineProvider" parent="YarnSpinnerCanvasLayer" index="7"]
+YarnProject = ExtResource("2_k51di")
 
 [editable path="YarnSpinnerCanvasLayer"]

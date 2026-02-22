@@ -23,6 +23,7 @@ config/icon="uid://c03j213jgqarw"
 [autoload]
 
 Global="*res://global.gd"
+Global_World_State="*uid://btbbx80oxsmq3"
 
 [display]
 

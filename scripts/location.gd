@@ -3,6 +3,7 @@ class_name Location
 
 signal world_change_request(to_scene_path: String)
 signal interaction_request(text: Array)
+signal dialogue_request(object: Non_Player_Character)
 
 const PC_SCENE:= preload("res://scenes/pc.tscn")
 @onready var pc: Player_Character
@@ -34,12 +35,6 @@ func _ready() -> void:
 	# A failsafe for debugging
 	if !Global.target_spawn:
 		Global.target_spawn = default_spawn
-	
-	var active_spawn_node = spawns[Global.target_spawn]
-	print(active_spawn_node)
-	
-	var test = spawns[Global.target_spawn].get_position()
-	print(test)
 	
 	for exit in exits:
 		if is_spawn_in_exit(spawns[Global.target_spawn], exit):
@@ -102,4 +97,6 @@ func is_spawn_in_exit(spawn: Spawn, exit: ExitArea) -> bool:
 
 func _on_try_interact(target):
 	if target.is_in_group("Dialogue"):
-		pass
+		dialogue_request.emit(target)
+	if target.is_in_group("Interactable"):
+		interaction_request.emit(target.text)

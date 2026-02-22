@@ -57,8 +57,8 @@ func generate_text(text_array: Array):
 		active_tween = null
 	)
 
-func _process(delta: float) -> void:
-	if Input.is_action_just_pressed("interact"):
+func _unhandled_input(event: InputEvent) -> void:
+	if event.is_action_pressed("interact"):
 		if printing_text :
 			if active_tween:
 				active_tween.kill()
@@ -71,6 +71,7 @@ func _process(delta: float) -> void:
 			Global.interacting = false
 			Global.unlock()
 			get_parent().set_process_unhandled_input(true)
+			get_viewport().set_input_as_handled()
 			self.queue_free()
 		else: 
 			text_box.visible_ratio = 0

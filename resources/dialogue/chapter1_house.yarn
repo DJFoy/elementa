@@ -1,4 +1,4 @@
-﻿title: chapter1_houseIntro
+﻿title: chapter1_dadIntro
 tags:
 position: -180,-527
 ---
@@ -31,7 +31,7 @@ Dad: Phew! She's here in the village. Go see her right away. I'll go to the mano
     -> Whatever. I'm out of here!
 Dad: Meet me there to say goodbye before you leave, okay?
 ===
-title:chapter1_profOliviaHouseIntro
+title:chapter1_profOliviaIntro
 tags:
 position: 72,-525
 ---
@@ -46,16 +46,16 @@ Professor Olivia: I see. Well, let's get started. Are you excited to meet your F
         Professor Olivia: That's nice to hear.
     -> I just can't wait to leave this place.
         Professor Olivia: …
-<<jump chapter1_profOliviaHouseRelOpt1>>
+<<jump chapter1_profOliviaRelOpt1>>
 ===
-title:chapter1_profOliviaHouseRelOpt1
+title:chapter1_profOliviaRelOpt1
 tags:
 position: 73,-318
 ---
 Professor Olivia: Until now, the twins were the only ones under my sponsorship. They collected their Familiars last night. Unfortunately, the best I can offer you is a choice from three Familiars that were surplus from a breeder I ran into this season. No one wanted them, so I took them in here in the hope of finding them a good home. <<once>>
     -> What would have happened to them if you hadn't taken them in?<<once>>
         Professor Olivia: They would have been released into the wild. The breeders say they are too costly to keep around if no one will pay good money for them. But the wilds are already teeming with so many dangerous Familiars that have been left to turn feral. It just makes the problem even worse for everyone in the long run.
-        <<jump chapter1_profOliviaHouseRelOpt1>>
+        <<jump chapter1_profOliviaRelOpt1>>
     -> I don't want some noble's leftovers!
         Professor Olivia: Well, I'm sorry to tell you that this is your only option. You're lucky to even get a choice at this short notice so late in the season. 
     -> I don't care where they've come from. I'm sure they'll be perfect!
@@ -65,7 +65,7 @@ Professor Olivia: Until now, the twins were the only ones under my sponsorship. 
 Professor Olivia: Go ahead. Pick which one you want, then come and let me know. Take your time. I'll be working in my study over there.
 ===
 
-title: chapter1_profOliviaHouseChooseFam
+title: chapter1_profOliviaChooseFam
 tags:
 position: 326,-319
 ---
@@ -73,13 +73,13 @@ position: 326,-319
 Professor Olivia: Ah, so you picked this one. Are you sure this is the one you want?
     -> Yes
         {$familiar}: (heart emote)
-        OP1R2 Professor Olivia: Excellent!
-        <<jump chapter1_profOliviaHouseConfirmChoice>>
+        Professor Olivia: Excellent!
+        <<jump chapter1_profOliviaConfirmChoice>>
     -> I'm not sure…
         Professor Olivia: You can still swap them out at the pen. Take some time to think about it and come back to me when you've chosen one.
 ===
 
-title: chapter1_profOliviaHouseConfirmChoice
+title: chapter1_profOliviaConfirmChoice
 tags:
 position: 327,-80
 ---
@@ -90,10 +90,10 @@ Professor Olivia: Now, your first rank is brass and with it, the first scholarsh
 Professor Olivia: This amulet will allow you access into the Wilds between settlements beyond Powder Town, should you wish to pass through there on foot to train with your Familiar. 
 Professor Olivia: Remember, the wilds are filled with dangerous and feral Familiars. Your Familiar is your responsibility. You can heal it at Healing Churches if it gets hurt in battle but if it ends up losing its life under your care, then you will have to pay for a replacement, which I doubt many scholarship adventurers like yourself can afford. They are tough little creatures but they're not invincible. 
 {$playerName}: Okay. So where should I go first?
-<<jump chapter1_profOliviaHouseWhereNext>>
+<<jump chapter1_profOliviaWhereNext>>
 ===
 
-title: chapter1_profOliviaHouseWhereNext
+title: chapter1_profOliviaWhereNext
 tags:
 position: 329,147
 ---
@@ -102,14 +102,14 @@ Professor Olivia: The first Guild Master you'll want to defeat is Matthias in Sa
 Professor Olivia: Oh, and don't worry about money for accommodation while you're travelling. Inns across Gantoh will provide Familiars adventurers with free rooms, as per royal decree.
 Professor Olivia: Did you understand all of that?
     -> Yep. I need to get the train to Salt Mire City.
-        <<jump chapter1_profOliviaHouseHelpResearch>>
+        <<jump chapter1_profOliviaHelpResearch>>
     -> Can I hear that last bit again?
         <<set $ask_repeat += 1>>
         Professor Olivia: (angry emote) Come on, now. Pay attention. <<if $ask_repeat > 2 >>
-        <<jump chapter1_profOliviaHouseWhereNext>>
+        <<jump chapter1_profOliviaWhereNext>>
 ===
 
-title: chapter1_profOliviaHouseHelpResearch
+title: chapter1_profOliviaHelpResearch
 tags:
 position: 326,371
 ---

@@ -1,7 +1,10 @@
 [gd_resource type="Resource" script_class="DialogueMap" format=3 uid="uid://bcqdd8f4u32aj"]
 
-[ext_resource type="Script" uid="uid://byuajnnxgbg30" path="res://resources/dialogue_map.gd" id="1_eqy5x"]
+[ext_resource type="Script" uid="uid://cobol6g2sil3f" path="res://resources/dialogue/dialogue_rule.gd" id="1_cst7i"]
+[ext_resource type="Script" uid="uid://byuajnnxgbg30" path="res://resources/dialogue/dialogue_map.gd" id="1_eqy5x"]
+[ext_resource type="Resource" uid="uid://cxo68a34fkvhl" path="res://resources/npcs/dad/dialogue_rules/chapter1_dadIntro.tres" id="2_en7k6"]
 
 [resource]
 script = ExtResource("1_eqy5x")
+rules = Array[ExtResource("1_cst7i")]([ExtResource("2_en7k6")])
 metadata/_custom_type_script = "uid://byuajnnxgbg30"

@@ -48,9 +48,8 @@ func _ready() -> void:
 	# Attach player locked signal
 	
 	Global.locked_state_changed.connect(_on_locked_state_changed)
-	
-	
-func _process(delta: float) -> void:
+
+func _unhandled_input(event: InputEvent) -> void:
 	if is_locked:
 		return
 	wants_to_move = ["move_up", "move_down", "move_left", "move_right"].any(
@@ -62,17 +61,14 @@ func _process(delta: float) -> void:
 				wants_to_move_dir = inputs[dir]
 	else:
 		wants_to_move_dir = Vector2.ZERO
+	if moving:
+		return
 	if Global.interacting:
 		return
 	if Input.is_action_just_pressed("interact"):
 		if interact_ray.is_colliding():
 			try_interact.emit(interact_ray.get_collider())
-
-func _unhandled_input(event: InputEvent) -> void:
-	if is_locked:
-		return
-	if moving:
-		return
+			return
 	for dir in inputs.keys():
 		if event.is_action_pressed(dir, true):
 			Global.pc_dir = inputs[dir]

@@ -31,6 +31,8 @@ func _on_world_change_request(to_scene_path: String) -> void:
 func _connect_interact_signals(root: Node) -> void:
 	if root.has_signal("interaction_request"):
 		root.interaction_request.connect(_on_interact_request)
+	if root.has_signal("dialogue_request"):
+		root.dialogue_request.connect(_on_dialogue_request)
 	
 	for child in root.get_children():
 		_connect_interact_signals(child)
@@ -38,3 +40,6 @@ func _connect_interact_signals(root: Node) -> void:
 
 func _on_interact_request(interaction_text: Array):
 	ui.start_interact_ui(interaction_text)
+
+func _on_dialogue_request(npc: Non_Player_Character):
+	ui.start_dialogue_ui(npc)

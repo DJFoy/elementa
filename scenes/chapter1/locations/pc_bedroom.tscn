@@ -64,6 +64,7 @@ target_spawn = "pc_home_stairs_01"
 
 [node name="Bookcase" parent="Interactables" unique_id=1864490726 instance=ExtResource("5_gbqjd")]
 position = Vector2(72, 24)
+collision_layer = 3
 text = ["Filled with lots of home made books"]
 
 [node name="Drawer" parent="Interactables" unique_id=1405228887 instance=ExtResource("5_gbqjd")]
