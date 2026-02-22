@@ -5,6 +5,9 @@ extends Node
 @export var presenter_control: Node 
 @export var dialogue_control: Node
 
+@export var use_typewriter:= true
+@export var typewriter_speed:= 60
+
 signal dialogue_complete
 
 func _ready() -> void: 
