@@ -19,12 +19,9 @@ func _ready() -> void:
 	dialogue_control.request_next_line.connect(_on_next_line_requested)
 
 func on_dialogue_start_async() -> void:
-	print("Dialogue started ")
 	presenter_control.visible = true
 
 func run_line_async(line: Dictionary) -> void:
-	print('Line: ' + JSON.stringify(line))
-
 	# line is a Dictionary converted from the LocalizedLine C# Class
 	# converts to GDScript LocalizedLine
 	var localized_line : YarnSpinner.LocalizedLine = YarnSpinner.LocalizedLine.from_dictionary(line)

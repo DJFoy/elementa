@@ -5,6 +5,7 @@
 [ext_resource type="Script" uid="uid://budnld4qd513n" path="res://addons/YarnSpinner-Godot/Runtime/DialogueRunner.cs" id="2_rgjee"]
 [ext_resource type="Resource" uid="uid://c44yclr6fs0fj" path="res://resources/dialogue/chapter1.yarnproject" id="3_58kjy"]
 [ext_resource type="Theme" uid="uid://dthhuuah0qhsg" path="res://themes/default_interact_theme.tres" id="3_bfpow"]
+[ext_resource type="Script" uid="uid://u2q64vfosoyd" path="res://scripts/YarnSpinner/portrait_presenter.gd" id="4_68xmj"]
 [ext_resource type="Script" uid="uid://dgyuh0b4kc408" path="res://scripts/YarnSpinner/line_presenter.gd" id="5_rgose"]
 [ext_resource type="Script" uid="uid://dqa65boklyxj7" path="res://scripts/YarnSpinner/options_presenter.gd" id="7_68xmj"]
 [ext_resource type="Script" uid="uid://c5gxawri864uf" path="res://addons/YarnSpinner-Godot/Runtime/LineProviders/TextLineProvider.cs" id="7_cpovq"]
@@ -39,7 +40,34 @@ autoStart = true
 startNode = "chapter1_dadIntro"
 runSelectedOptionAsLine = true
 
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer" unique_id=107509792]
+[node name="PortraitPresenter" type="Control" parent="CanvasLayer" unique_id=807697803 node_paths=PackedStringArray("portrait", "presenter_control")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("4_68xmj")
+portrait = NodePath("PresenterControl/Portrait")
+presenter_control = NodePath("PresenterControl")
+
+[node name="PresenterControl" type="Control" parent="CanvasLayer/PortraitPresenter" unique_id=1496486788]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Portrait" type="TextureRect" parent="CanvasLayer/PortraitPresenter/PresenterControl" unique_id=2004763049]
+layout_mode = 0
+offset_left = 42.0
+offset_top = 29.0
+offset_right = 202.0
+offset_bottom = 189.0
+metadata/_edit_use_anchors_ = true
+
+[node name="DialogueBox" type="TextureRect" parent="CanvasLayer" unique_id=107509792]
 offset_right = 480.0
 offset_bottom = 270.0
 texture = ExtResource("1_3n4vj")
