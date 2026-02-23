@@ -71,6 +71,7 @@ theme_type_variation = &"InteractRichTextLabel"
 text = "This is some sample text
 Just to see what it looks like when you click"
 scroll_active = false
+visible_characters_behavior = 1
 
 [node name="CharacterName" type="RichTextLabel" parent="CanvasLayer/LinePresenter/PresenterControl" unique_id=814287207]
 layout_mode = 0
