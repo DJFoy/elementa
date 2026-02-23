@@ -6,8 +6,10 @@
 [ext_resource type="Resource" uid="uid://c44yclr6fs0fj" path="res://resources/dialogue/chapter1.yarnproject" id="3_58kjy"]
 [ext_resource type="Theme" uid="uid://dthhuuah0qhsg" path="res://themes/default_interact_theme.tres" id="3_bfpow"]
 [ext_resource type="Script" uid="uid://dgyuh0b4kc408" path="res://scripts/YarnSpinner/line_presenter.gd" id="5_rgose"]
+[ext_resource type="Script" uid="uid://dqa65boklyxj7" path="res://scripts/YarnSpinner/options_presenter.gd" id="7_68xmj"]
 [ext_resource type="Script" uid="uid://c5gxawri864uf" path="res://addons/YarnSpinner-Godot/Runtime/LineProviders/TextLineProvider.cs" id="7_cpovq"]
 [ext_resource type="Script" uid="uid://b1o5xpu22evvx" path="res://addons/YarnSpinner-Godot/Runtime/InMemoryVariableStorage.cs" id="8_58kjy"]
+[ext_resource type="PackedScene" uid="uid://d0lemcnjah10o" path="res://scenes/UI/default_option_view.tscn" id="8_u6dtt"]
 
 [node name="Dialogue" type="Control" unique_id=458972072]
 layout_mode = 3
@@ -32,7 +34,7 @@ script = ExtResource("2_rgjee")
 yarnProject = ExtResource("3_58kjy")
 variableStorage = NodePath("../InMemoryVariableStorage")
 lineProvider = NodePath("../TextLineProvider")
-dialoguePresenters = [NodePath("../LinePresenter")]
+dialoguePresenters = [NodePath("../LinePresenter"), NodePath("../OptionsPresenter")]
 autoStart = true
 startNode = "chapter1_dadIntro"
 runSelectedOptionAsLine = true
@@ -83,6 +85,30 @@ theme = ExtResource("3_bfpow")
 theme_type_variation = &"InteractRichTextLabel"
 text = "Boops"
 scroll_active = false
+
+[node name="OptionsPresenter" type="Control" parent="CanvasLayer" unique_id=342628035 node_paths=PackedStringArray("options_container")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("7_68xmj")
+option_item_prefab = ExtResource("8_u6dtt")
+options_container = NodePath("PresenterControl/VBoxContainer")
+
+[node name="PresenterControl" type="Control" parent="CanvasLayer/OptionsPresenter" unique_id=1632424641]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/OptionsPresenter/PresenterControl" unique_id=1426990629]
+layout_mode = 0
+offset_left = 254.0
+offset_top = 62.0
+offset_right = 449.0
+offset_bottom = 184.0
+alignment = 2
 
 [node name="TextLineProvider" type="Node2D" parent="CanvasLayer" unique_id=2061662789]
 script = ExtResource("7_cpovq")

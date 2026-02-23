@@ -2,28 +2,16 @@
 
 [ext_resource type="FontFile" uid="uid://h8n6bdxmtvcn" path="res://assets/font/m5x7.ttf" id="1_ahw81"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kj4fi"]
-bg_color = Color(1, 1, 1, 0)
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-border_color = Color(0.3137255, 0.1882353, 0.10980392, 1)
-corner_radius_top_left = 5
-corner_radius_top_right = 5
-corner_radius_bottom_right = 5
-corner_radius_bottom_left = 5
-
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ahw81"]
 content_margin_left = 1.0
 content_margin_top = 2.0
 content_margin_right = 1.0
 content_margin_bottom = 2.0
-bg_color = Color(0.83889705, 0.83889705, 0.8388969, 1)
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
+bg_color = Color(0.74978, 0.74978, 0.74977994, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
 border_color = Color(0.3137255, 0.1882353, 0.10980392, 1)
 corner_radius_top_left = 5
 corner_radius_top_right = 5
@@ -83,7 +71,7 @@ InteractButton/colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
 InteractButton/colors/icon_normal_color = Color(0, 0, 0, 1)
 InteractButton/colors/icon_pressed_color = Color(0, 0, 0, 1)
 InteractButton/constants/align_to_largest_stylebox = 1
-InteractButton/styles/focus = SubResource("StyleBoxFlat_kj4fi")
+InteractButton/styles/focus = SubResource("StyleBoxFlat_ahw81")
 InteractButton/styles/hover = SubResource("StyleBoxFlat_ahw81")
 InteractButton/styles/hover_mirrored = SubResource("StyleBoxFlat_ahw81")
 InteractButton/styles/hover_pressed = SubResource("StyleBoxFlat_bxbhg")

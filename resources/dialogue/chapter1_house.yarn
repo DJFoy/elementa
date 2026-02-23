@@ -9,15 +9,15 @@ Narrator: You sign your application and send it with the last post. Time comes a
 Dad: Morning {$playerName}, how are you feeling? Are you ready for your first day of work?
 {$playerName}: ... 
 Dad: Hey, I know you had your heart set on that scholarship. But working as a servant in the manor won't be all that bad. At least you won't have to work in the mines like I did.
-    -> Right... I get to watch Gigi and George become adventurers while I sit at home and dust their silverware.
-    -> Yeah. I guess it could be worse.
+    -> {$playerName}: Right... I get to watch Gigi and George become adventurers while I sit at home and dust their silverware.
+    -> {$playerName}: Yeah. I guess it could be worse.
 Dad: I'm sorry {$playerName}. I know it's unfair. I would give you the money if we had it. But, I mean, we can't even afford a Familiar for the house…
 Dad: Here. I made you a good, hearty breakfast. And look, I want you to know that I love you and I'm very proud of you, no matter what.
-    -> I can tell Dad put a lot of effort into this. I should finish it.
+    -> {$playerName}: I can tell Dad put a lot of effort into this. I should finish it.
         Narrator: You think you spot Dad wiping away a tear and hide it behind a beaming smile.
-    -> Push the food around the plate.
+    -> {$playerName}: Push the food around the plate.
         Narrator: You think you hear Dad heave a forlorn sigh.
-    -> What the hell, Dad? You know I hate {$hatedFood}! Why can't you do anything right?
+    -> {$playerName}: What the hell, Dad? You know I hate {$hatedFood}! Why can't you do anything right?
         Dad: Oh, I'm sorry. It must have slipped my mind. Agh, everything was supposed to be perfect!
 Dad: Is that a letter?
 Dad: It's for you, {$playerName}.	
@@ -27,8 +27,8 @@ Dad: What? That's incredible! Ah! Erm... Gah! What do we do?
 Dad: Okay. It's still very early. We have time. First, who is your sponsor?	
 {$playerName}:	Professor Olivia.
 Dad: Phew! She's here in the village. Go see her right away. I'll go to the manor and explain you won't be accepting the position as a servant.
-    -> Thanks, Dad.
-    -> Whatever. I'm out of here!
+    -> {$playerName}: Thanks, Dad.
+    -> {$playerName}: Whatever. I'm out of here!
 Dad: Meet me there to say goodbye before you leave, okay?
 ===
 title:chapter1_profOliviaIntro
@@ -36,15 +36,15 @@ tags:
 position: 72,-525
 ---
 Professor Olivia: {$playerName}, I'm glad you're here! I take it you got the news too?	
-    -> A Familiar delivered the letter just now!
-    -> Just in time! I almost ended up a servant at the twin's manor.
+    -> {$playerName}: A Familiar delivered the letter just now!
+    -> {$playerName}: Just in time! I almost ended up a servant at the twin's manor.
 Professor Olivia: It was a surprise to me as well. To be honest with you, I hadn't even realised you'd applied. I could have helped you.
-    -> You were away when I decided to apply.
-    -> You're never here. 
+    -> {$playerName}: You were away when I decided to apply.
+    -> {$playerName}: You're never here. 
 Professor Olivia: I see. Well, let's get started. Are you excited to meet your Familiar?	
-    -> I can't wait! 
+    -> {$playerName}: I can't wait! 
         Professor Olivia: That's nice to hear.
-    -> I just can't wait to leave this place.
+    -> {$playerName}: I just can't wait to leave this place.
         Professor Olivia: …
 <<jump chapter1_profOliviaRelOpt1>>
 ===
@@ -53,14 +53,14 @@ tags:
 position: 73,-318
 ---
 Professor Olivia: Until now, the twins were the only ones under my sponsorship. They collected their Familiars last night. Unfortunately, the best I can offer you are surplus from a breeder. I took them in the hope of finding them a good home. <<once>>
-    -> What would have happened to them otherwise?<<once>>
+    -> {$playerName}: What would have happened to them otherwise?<<once>>
         Professor Olivia: They would have been dumped in the Wilds. But they're already teeming with dangerous Familiars left to turn feral. It just makes the problem worse.
         <<jump chapter1_profOliviaHouseRelOpt1>>
-    -> I don't want some noble's leftovers!
+    -> {$playerName}: I don't want some noble's leftovers!
         Professor Olivia: Well, this is your only option. You're lucky to even get a choice so late in the season. 
-    -> I don't care where they've come from. 
+    -> {$playerName}: I don't care where they've come from. 
         Professor Olivia: Ha! That's the spirit!
-    -> I guess they'll have to do.
+    -> {$playerName}: I guess they'll have to do.
         Professor Olivia: Indeed.
 Professor Olivia: Go ahead. Pick which one you want. I'll be working in my study over there.
 ===
@@ -71,11 +71,11 @@ position: 326,-319
 ---
 <<declare $familiar = "Grisnir">>
 Professor Olivia: Ah, a good choice. Are you sure this is the one you want?
-    -> Yes
+    -> {$playerName}: Yes
         {$familiar}: (heart emote)
         Professor Olivia: Excellent!
         <<jump chapter1_profOliviaConfirmChoice>>
-    -> I'm not sure…
+    -> {$playerName}: I'm not sure…
         Professor Olivia: You can still swap them out at the pen. Take your time.
 ===
 
@@ -101,9 +101,9 @@ position: 329,147
 Professor Olivia: The first Guild Master you'll want to defeat is Matthias in Salt Mire City. You can take the train from Powder Town. 
 Professor Olivia: Oh, and don't worry about money for accommodation while you're travelling. Inns across Gantoh will provide Familiar Adventurers with free rooms, as per royal decree.
 Professor Olivia: Did you understand all of that?
-    -> Yep. I need to get the train to Salt Mire City.
+    -> {$playerName}: Yep. I need to get the train to Salt Mire City.
         <<jump chapter1_profOliviaHelpResearch>>
-    -> Can I hear that last bit again?
+    -> {$playerName}: Can I hear that last bit again?
         <<set $ask_repeat += 1>>
         Professor Olivia: (angry emote) Come on, now. Pay attention. <<if $ask_repeat > 2 >>
         <<jump chapter1_profOliviaWhereNext>>
@@ -116,12 +116,12 @@ position: 326,371
 Professor Olivia: One more thing. Since you'll be travelling all over Gantoh…
 {$playerName}: What is it?
 Professor Olivia: Do you, perchance, fancy helping me with a bit of research?
-    -> Sure. 
-    -> Huh? 
+    -> {$playerName}: Sure. 
+    -> {$playerName}: Huh? 
 Professor Olivia: I'm looking for some ancient elven artefacts. In particular, stone tablets with writing engraved in the elven language. You may find them scattered in various places around Gantoh. With three new Adventurers under my scholarship this season, I'll have to abandon my own expeditions for a while. Bring any you find for me to examine. Tell you what, if you bring me an artefact, I'll even share some details of my research with you.
-    -> Of course. That sounds really interesting. 
+    -> {$playerName}: Of course. That sounds really interesting. 
         Professor Olivia: I'm pleased you think the same. 
-    -> I guess I'll consider it.
+    -> {$playerName}: I guess I'll consider it.
         Professor Olivia: I understand not everyone is interested in history. Ah well, my offer still stands regardless.
 Professor Olivia: That should be everything you need to know for now. Remember to check back in with me here regularly so I know you're safe. Good luck! 
 ===
