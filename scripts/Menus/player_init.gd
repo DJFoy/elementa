@@ -93,6 +93,7 @@ func _on_confirm_pressed() -> void:
 	player_settings.dislikes = dislikes.get_item_text(dislikes.get_selected_id())
 	
 	ResourceSaver.save(player_settings, "res://saves/player_data.tres")
+	Global_World_State.character = ResourceLoader.load("res://saves/player_data.tres")
 	
 	Global.prev_scene = "PlayerInit"
 	Global.target_spawn = "pc_bedroom_bed_01"
