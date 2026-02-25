@@ -27,13 +27,13 @@ func run_line_async(line: Dictionary) -> void:
 	var localized_line : YarnSpinner.LocalizedLine = YarnSpinner.LocalizedLine.from_dictionary(line)
 	await _run_line_internal(localized_line)
 
-func dialogue_complete_async() -> void:
-	print("Dialogue complete ")
+func on_dialogue_complete_async() -> void:
+	print("Dialogue complete :)")
 	emit_signal("dialogue_complete")
 
 func _run_line_internal(localized_line: YarnSpinner.LocalizedLine) -> void:
 	character_name_label.visible = !localized_line.character_name.is_empty()
-	character_name_label.text = localized_line.character_name
+	character_name_label.text = resolve_display_name(localized_line.character_name)
 	
 	var output_line: String = localized_line.text_without_character_name.text
 
@@ -76,8 +76,13 @@ func _hurry_up_line():
 	_is_revealing = false
 
 func _on_next_line_requested():
-	print("Next line requested")
 	if _is_revealing:
 		_hurry_up_line()
 	else:
 		emit_signal("line_complete")
+
+func resolve_display_name(character_name: String) -> String:
+	if character_name == "Player":
+		return Global_World_State.character.name
+	else:
+		return character_name.capitalize()

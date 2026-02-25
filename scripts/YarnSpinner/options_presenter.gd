@@ -9,8 +9,6 @@ func _ready() -> void:
 	options_container.visible = false 
 
 func run_options_async(options: Array, on_option_selected: Callable) -> void:
-	print("Options: %s"  % JSON.stringify(options))
-
 	# options is a Dictionary converted from the LocalizedLine C# Class
 	# converts to GDScript DialogueOptions array
 	var dialogue_options := YarnSpinner.dialogue_options_from_array(options)
