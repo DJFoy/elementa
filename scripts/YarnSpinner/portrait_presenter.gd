@@ -1,7 +1,6 @@
 extends Control
 
 @export var npc_portrait: TextureRect
-@export var player_portrait: Portrait
 @export var presenter_control: Control
 
 func _ready() -> void:
@@ -19,13 +18,7 @@ func run_line_async(line: Dictionary) -> void:
 
 func _run_line_internal(localized_line: YarnSpinner.LocalizedLine) -> void:
 	presenter_control.visible = !localized_line.character_name.is_empty()
-	if localized_line.character_name == "Player":
-		npc_portrait.visible = false
-		player_portrait.visible = true
-	else:
-		npc_portrait.visible = true
-		player_portrait.visible = false
-		npc_portrait.texture = load("res://assets/character_assets/portraits/%s.png" % [resolve_character(localized_line)])
+	npc_portrait.texture = load("res://assets/character_assets/portraits/%s.png" % [resolve_character(localized_line)])
 
 
 func resolve_character(localized_line: YarnSpinner.LocalizedLine) -> String:

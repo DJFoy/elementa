@@ -7,7 +7,6 @@
 [ext_resource type="Theme" uid="uid://dthhuuah0qhsg" path="res://themes/default_interact_theme.tres" id="3_bfpow"]
 [ext_resource type="Script" uid="uid://u2q64vfosoyd" path="res://scripts/YarnSpinner/portrait_presenter.gd" id="4_68xmj"]
 [ext_resource type="Script" uid="uid://dgyuh0b4kc408" path="res://scripts/YarnSpinner/line_presenter.gd" id="5_rgose"]
-[ext_resource type="PackedScene" uid="uid://06t2iv7b2ywp" path="res://scenes/portrait.tscn" id="5_u6dtt"]
 [ext_resource type="Script" uid="uid://dqa65boklyxj7" path="res://scripts/YarnSpinner/options_presenter.gd" id="7_68xmj"]
 [ext_resource type="Script" uid="uid://c5gxawri864uf" path="res://addons/YarnSpinner-Godot/Runtime/LineProviders/TextLineProvider.cs" id="7_cpovq"]
 [ext_resource type="Script" uid="uid://b1o5xpu22evvx" path="res://addons/YarnSpinner-Godot/Runtime/InMemoryVariableStorage.cs" id="8_58kjy"]
@@ -41,9 +40,8 @@ lineProvider = NodePath("../TextLineProvider")
 dialoguePresenters = [NodePath("../LinePresenter"), NodePath("../OptionsPresenter"), NodePath("../PortraitPresenter")]
 autoStart = true
 startNode = "chapter1_dadIntro"
-runSelectedOptionAsLine = true
 
-[node name="PortraitPresenter" type="Control" parent="CanvasLayer" unique_id=807697803 node_paths=PackedStringArray("npc_portrait", "player_portrait", "presenter_control")]
+[node name="PortraitPresenter" type="Control" parent="CanvasLayer" unique_id=807697803 node_paths=PackedStringArray("npc_portrait", "presenter_control")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -52,7 +50,6 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("4_68xmj")
 npc_portrait = NodePath("PresenterControl/NPCPortrait")
-player_portrait = NodePath("PresenterControl/PlayerPortrait")
 presenter_control = NodePath("PresenterControl")
 
 [node name="PresenterControl" type="Control" parent="CanvasLayer/PortraitPresenter" unique_id=1496486788]
@@ -70,9 +67,6 @@ offset_top = 29.0
 offset_right = 202.0
 offset_bottom = 189.0
 metadata/_edit_use_anchors_ = true
-
-[node name="PlayerPortrait" parent="CanvasLayer/PortraitPresenter/PresenterControl" unique_id=445150964 instance=ExtResource("5_u6dtt")]
-position = Vector2(123, 108)
 
 [node name="DialogueBox" type="TextureRect" parent="CanvasLayer" unique_id=107509792]
 offset_right = 480.0

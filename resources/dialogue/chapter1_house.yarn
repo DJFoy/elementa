@@ -1,11 +1,17 @@
-﻿title: chapter1_dadIntro
+﻿title: chapter1_openingScene
+tags:
+---
+<<declare $playerName = "Player">>
+<<declare $hatedFood = "Apple">>
+<<declare $familiar = "Familiar">>
+Narrator: Your dreams are fading fast. This could be your only chance to escape the mundane future ahead of you. You steady the quill in your hand and complete the scholarship application.
+Narrator: You sign your application and send it with the last post. Time comes and goes. Your twentieth birthday passes. But you never hear back.
+===
+
+title: chapter1_dadIntro
 tags:
 position: -180,-527
----
-<<declare $playerName = "Natalie">>
-<<declare $hatedFood = "Beans">>
-Narrator: Your dreams are fading fast. This could be your only chance to escape the mundane future ahead of you. You steady the quill in your hand and complete the scholarship application.
-Narrator: You sign your application and send it with the last post. Time comes and goes. Your twentieth birthday passes. But you never hear back.	
+---	
 Dad: Morning {$playerName}, how are you feeling? Are you ready for your first day of work?
 Player: ... 
 Dad: Hey, I know you had your heart set on that scholarship. But working as a servant in the manor won't be all that bad. At least you won't have to work in the mines like I did.
@@ -15,7 +21,7 @@ Dad: I'm sorry {$playerName}. I know it's unfair. I would give you the money if 
 Dad: Here. I made you a good, hearty breakfast. And look, I want you to know that I love you and I'm very proud of you, no matter what.
     -> Player: I can tell Dad put a lot of effort into this. I should finish it.
         Narrator: You think you spot Dad wiping away a tear and hide it behind a beaming smile.
-    -> Player: Push the food around the plate.
+    -> Push the food around the plate.
         Narrator: You think you hear Dad heave a forlorn sigh.
     -> Player: What the hell, Dad? You know I hate {$hatedFood}! Why can't you do anything right?
         Dad: Oh, I'm sorry. It must have slipped my mind. Agh, everything was supposed to be perfect!
@@ -69,7 +75,6 @@ title: chapter1_profOliviaChooseFam
 tags:
 position: 326,-319
 ---
-<<declare $familiar = "Grisnir">>
 Professor Olivia: Ah, a good choice. Are you sure this is the one you want?
     -> Player: Yes
         Familiar: (heart emote)
