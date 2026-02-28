@@ -42,4 +42,4 @@ func _on_interact_request(interaction_text: Array):
 	ui.start_interact_ui(interaction_text)
 
 func _on_dialogue_request(npc: Non_Player_Character):
-	ui.start_dialogue_ui(npc)
+	ui.npc_start_dialogue_ui(npc)

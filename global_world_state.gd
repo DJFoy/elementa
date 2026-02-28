@@ -16,3 +16,5 @@ var chapter:= "Chapter1"
 var one_time_dialogues:= []
 
 var items_collected:= []
+
+var cutscenes:= []

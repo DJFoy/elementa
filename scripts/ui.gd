@@ -11,7 +11,7 @@ func start_interact_ui(interaction_text):
 	add_child(interact)
 	interact.process_text_array(interaction_text)
 
-func start_dialogue_ui(npc: Non_Player_Character):
+func npc_start_dialogue_ui(npc: Non_Player_Character):
 	var dialogue := dialogue_scene.instantiate()
 	_connect_dialogue_signals(dialogue)
 	add_child(dialogue)
@@ -26,3 +26,9 @@ func _on_request_dialogue_end() -> void:
 		child.queue_free()
 	Global.unlock()
 	Global.interacting = false
+
+func _cutscene_start_dialogue_ui(dialogue_id: String):
+	var dialogue := dialogue_scene.instantiate()
+	_connect_dialogue_signals(dialogue)
+	add_child(dialogue)
+	dialogue.dialogue_runner.StartDialogueForget(dialogue_id)

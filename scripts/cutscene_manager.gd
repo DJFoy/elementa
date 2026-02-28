@@ -15,4 +15,8 @@ func _run_sequence(sequence: Array):
 	for step in sequence:
 		match step.type:
 			"dialogue":
-				ui.start_dialogue_ui()
+				await ui.cutscene_start_dialogue_ui(step.dialogue_id)
+			"actor":
+				await step.actor.move(step.dir)
+			"camera":
+				pass

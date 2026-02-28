@@ -4,6 +4,7 @@ class_name Location
 signal world_change_request(to_scene_path: String)
 signal interaction_request(text: Array)
 signal dialogue_request(object: Non_Player_Character)
+signal cutscene_request(sequence: Array)
 
 const PC_SCENE:= preload("res://scenes/pc.tscn")
 @onready var pc: Player_Character
@@ -14,6 +15,8 @@ const PC_SCENE:= preload("res://scenes/pc.tscn")
 @onready var spawns: Dictionary
 
 @export var default_spawn: String
+
+var cutscenes = {}
 
 const FADE_IN = "fade_in"
 const FADE_OUT = "fade_out"
@@ -100,3 +103,15 @@ func _on_try_interact(target):
 		dialogue_request.emit(target)
 	if target.is_in_group("Interactable"):
 		interaction_request.emit(target.text)
+
+func resolve_cutscenes():
+	var cutscene_id = get_cutscene_to_play()
+	if cutscene_id != "":
+		play_cutscene(cutscene_id)
+
+func get_cutscene_to_play() -> String:
+	return ""
+
+func play_cutscene(cutscene_id: String):
+	var sequence = cutscenes[cutscene_id]
+	emit_signal("cutscene_request", sequence)
