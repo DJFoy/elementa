@@ -1,16 +1,16 @@
-[gd_resource type="Resource" script_class="PlayerCreationData" format=3 uid="uid://bome84c1e7t7o"]
+[gd_resource type="Resource" script_class="PlayerCreationData" format=3]
 
-[ext_resource type="Script" uid="uid://0xvhitkg70yg" path="res://resources/player_creation_data.gd" id="1_p1bc8"]
+[ext_resource type="Script" path="res://resources/player_creation_data.gd" id="1_p1bc8"]
 
 [resource]
 script = ExtResource("1_p1bc8")
-name = "sadf"
-pronouns = "He/Him"
-hair = 1
-hair_colour = Color(0.80078125, 0.028152466, 0.028152466, 1)
-eye_colour = Color(0.091796875, 0.5, 0.41389465, 1)
-skin_colour = 1
+name = "Beans"
+pronouns = "She/Her"
+hair = 2
+hair_colour = Color(0.93359375, 0.45950317, 0, 1)
+eye_colour = Color(0.95703125, 0.24673462, 0, 1)
+skin_colour = 2
 body_type = 1
 clothes = 2
-likes = "Coconut"
-dislikes = "Chocolate"
+likes = "Cheese"
+dislikes = "Mushrooms"

@@ -2,6 +2,7 @@ extends Node2D
 
 @onready var main_menu: PackedScene = load("scenes/UI/main_menu.tscn")
 @onready var ui: CanvasLayer = $"../UI"
+@onready var cutscene_manager: Node = $"../CutsceneManager"
 
 
 func _ready() -> void:
@@ -43,3 +44,13 @@ func _on_interact_request(interaction_text: Array):
 
 func _on_dialogue_request(npc: Non_Player_Character):
 	ui.npc_start_dialogue_ui(npc)
+
+func _connect_cutscene_signals(root: Node) -> void:
+	if root.has_signal("cutscene_request"):
+		root.cutscene_request.connect(_on_cutscene_request)
+	
+	for child in root.get_children():
+		_connect_interact_signals(child)
+
+func _on_cutscene_request(sequence: Array):
+	cutscene_manager.play_cutscene(sequence)
