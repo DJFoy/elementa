@@ -29,4 +29,4 @@ func _run_sequence(sequence: Array):
 			"fade":
 				match step["transition_type"]:
 					"fade_in":
-						
+						pass
