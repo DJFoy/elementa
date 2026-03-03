@@ -32,3 +32,4 @@ func _cutscene_start_dialogue_ui(dialogue_id: String):
 	_connect_dialogue_signals(dialogue)
 	add_child(dialogue)
 	dialogue.dialogue_runner.StartDialogueForget(dialogue_id)
+	await dialogue.request_dialogue_end

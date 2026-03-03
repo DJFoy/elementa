@@ -18,6 +18,9 @@ func _load_world(scene_path):
 	
 	_connect_world_change_signals(world_scene)
 	_connect_interact_signals(world_scene)
+	_connect_cutscene_signals(world_scene)
+	if world_scene.has_signal("cutscene_request"):
+		world_scene.resolve_cutscenes()
 
 func _connect_world_change_signals(root: Node) -> void:
 	if root.has_signal("world_change_request"):
@@ -47,10 +50,12 @@ func _on_dialogue_request(npc: Non_Player_Character):
 
 func _connect_cutscene_signals(root: Node) -> void:
 	if root.has_signal("cutscene_request"):
+		print("root has cutscene_request signal :)")
 		root.cutscene_request.connect(_on_cutscene_request)
 	
 	for child in root.get_children():
 		_connect_interact_signals(child)
 
 func _on_cutscene_request(sequence: Array):
+	print("On cutscene request triggers, playing " + str(sequence))
 	cutscene_manager.play_cutscene(sequence)

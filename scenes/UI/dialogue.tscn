@@ -39,7 +39,6 @@ variableStorage = NodePath("../InMemoryVariableStorage")
 lineProvider = NodePath("../TextLineProvider")
 dialoguePresenters = [NodePath("../LinePresenter"), NodePath("../OptionsPresenter"), NodePath("../PortraitPresenter")]
 autoStart = true
-startNode = "chapter1_dadIntro"
 
 [node name="PortraitPresenter" type="Control" parent="CanvasLayer" unique_id=807697803 node_paths=PackedStringArray("npc_portrait", "presenter_control")]
 layout_mode = 3

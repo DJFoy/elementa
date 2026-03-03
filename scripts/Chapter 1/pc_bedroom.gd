@@ -26,4 +26,3 @@ func _ready() -> void:
 	super()
 	var player_data = ResourceLoader.load("res://saves/player_data.tres")
 	uniform.texture = load("res://assets/locations/brackenberry village/player home/body_type_%d.png" % [player_data.body_type])
-	resolve_cutscenes()

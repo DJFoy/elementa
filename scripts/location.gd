@@ -107,24 +107,19 @@ func _on_try_interact(target):
 
 func resolve_cutscenes():
 	var cutscene_id = get_cutscene_to_play()
-	print("Cutscene ID retrieved: " + cutscene_id)
 	if cutscene_id != "":
 		play_cutscene(cutscene_id)
 
 func play_cutscene(cutscene_id: String):
-	print("Attempting to play cutscene")
 	var sequence = cutscenes[cutscene_id]
 	print(sequence)
 	emit_signal("cutscene_request", sequence)
 
 func get_cutscene_to_play():
-	print("Getting a cutscene to play!")
 	print(cutscene_rules)
 	for rule in cutscene_rules:
 		print(rule)
 		print(rule["conditions"])
 		if rule["conditions"].all(func(c): return c):
-			print("Found a cutscene that matches the criteria")
 			return rule["id"]
-	print("Couldn't find anything that matched boss")
 	return ""

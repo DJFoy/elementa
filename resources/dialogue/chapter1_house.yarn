@@ -4,6 +4,7 @@ tags:
 <<declare $playerName = "Player">>
 <<declare $hatedFood = "Apple">>
 <<declare $familiar = "Familiar">>
+<<declare $chapter_1_prof_olivia_ask_repeat = 0>>
 Narrator: Your dreams are fading fast. This could be your only chance to escape the mundane future ahead of you. You steady the quill in your hand and complete the scholarship application.
 Narrator: You sign your application and send it with the last post. Time comes and goes. Your twentieth birthday passes. But you never hear back.
 ===
@@ -61,7 +62,7 @@ position: 73,-318
 Professor Olivia: Until now, the twins were the only ones under my sponsorship. They collected their Familiars last night. Unfortunately, the best I can offer you are surplus from a breeder. I took them in the hope of finding them a good home. <<once>>
     -> Player: What would have happened to them otherwise?<<once>>
         Professor Olivia: They would have been dumped in the Wilds. But they're already teeming with dangerous Familiars left to turn feral. It just makes the problem worse.
-        <<jump chapter1_profOliviaHouseRelOpt1>>
+        <<jump chapter1_profOliviaRelOpt1>>
     -> Player: I don't want some noble's leftovers!
         Professor Olivia: Well, this is your only option. You're lucky to even get a choice so late in the season. 
     -> Player: I don't care where they've come from. 
@@ -95,22 +96,21 @@ Professor Olivia: Now, your first rank is brass and with it, the first scholarsh
 Professor Olivia: This amulet will allow you access into the Wilds between settlements beyond Powder Town, should you wish to pass through there on foot to train with your Familiar. 
 Professor Olivia: Remember, the Wilds are dangerous. Your Familiar is your responsibility. You can heal it at Healing Churches if it gets injured but if it dies under your care, then your journey will end.
 Player: Okay. Where should I go first?
-<<jump chapter1_profOliviaHouseWhereNext>>
+<<jump chapter1_profOliviaWhereNext>>
 ===
 
 title: chapter1_profOliviaWhereNext
 tags:
 position: 329,147
 ---
-<<declare $ask_repeat = 0>>
 Professor Olivia: The first Guild Master you'll want to defeat is Matthias in Salt Mire City. You can take the train from Powder Town. 
 Professor Olivia: Oh, and don't worry about money for accommodation while you're travelling. Inns across Gantoh will provide Familiar Adventurers with free rooms, as per royal decree.
 Professor Olivia: Did you understand all of that?
     -> Player: Yep. I need to get the train to Salt Mire City.
         <<jump chapter1_profOliviaHelpResearch>>
     -> Player: Can I hear that last bit again?
-        <<set $ask_repeat += 1>>
-        Professor Olivia: (angry emote) Come on, now. Pay attention. <<if $ask_repeat > 2 >>
+        <<set $chapter_1_prof_olivia_ask_repeat += 1>>
+        Professor Olivia: (angry emote) Come on, now. Pay attention. <<if $chapter_1_prof_olivia_ask_repeat > 2 >>
         <<jump chapter1_profOliviaWhereNext>>
 ===
 

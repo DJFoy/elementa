@@ -13,10 +13,20 @@ func play_cutscene(sequence: Array) -> void:
 
 func _run_sequence(sequence: Array):
 	for step in sequence:
+		print(step)
 		match step["type"]:
 			"dialogue":
-				await ui.cutscene_start_dialogue_ui(step["dialogue_id"])
-			"actor":
-				await step["actor"].move(step.dir)
+				await ui._cutscene_start_dialogue_ui(step["dialogue_id"])
+				print("Director says the dialogue finished, next step!")
+			"move":
+				print("Actor please!")
+				if step["await"]:
+					await step["actor"].move(step.dir)
+				else:
+					step["actor"].move(step.dir)
 			"camera":
 				pass
+			"fade":
+				match step["transition_type"]:
+					"fade_in":
+						
