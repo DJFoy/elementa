@@ -1,11 +1,13 @@
 [gd_scene format=3 uid="uid://pw0qq2j6aeu4"]
 
+[ext_resource type="Script" uid="uid://dwcwln88i8xjv" path="res://scripts/scene_transition.gd" id="1_0wykx"]
+
 [sub_resource type="Animation" id="Animation_0wykx"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("ColorRect:color")
+tracks/0/path = NodePath("CanvasLayer/ColorRect:color")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -21,7 +23,7 @@ length = 0.3
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("ColorRect:color")
+tracks/0/path = NodePath("CanvasLayer/ColorRect:color")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -37,7 +39,7 @@ length = 0.3
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("ColorRect:color")
+tracks/0/path = NodePath("CanvasLayer/ColorRect:color")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -56,13 +58,20 @@ _data = {
 
 [node name="SceneTransition" type="Node2D" unique_id=482885476]
 z_index = 10
+script = ExtResource("1_0wykx")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1110117186]
 libraries/ = SubResource("AnimationLibrary_2sgj6")
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=1669255674]
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=720448033]
+process_mode = 4
+physics_interpolation_mode = 2
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=1669255674]
 offset_left = -9000.0
 offset_top = -6000.0
 offset_right = 9000.0
 offset_bottom = 6000.0
+mouse_filter = 2
 color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true

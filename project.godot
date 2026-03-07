@@ -24,6 +24,7 @@ config/icon="uid://c03j213jgqarw"
 
 Global="*res://global.gd"
 Global_World_State="*uid://btbbx80oxsmq3"
+SceneTransition="*uid://pw0qq2j6aeu4"
 
 [display]
 

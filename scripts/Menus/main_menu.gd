@@ -1,6 +1,11 @@
 extends Control
 signal world_change_request
 
+@onready var scene_trans:= get_node("SceneTransition")
+
+func _ready() -> void:
+	SceneTransition.fade_in(2)
+
 
 func _on_new_game_pressed() -> void:
 	print("Pressed New Game")

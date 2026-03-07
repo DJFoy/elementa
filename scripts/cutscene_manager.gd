@@ -2,6 +2,7 @@ extends Node
 
 signal cutscene_finished
 @onready var ui: CanvasLayer = $"../UI"
+@onready var scene_transition: Node2D = $"../SceneTransition"
 
 func play_cutscene(sequence: Array) -> void:
 	if Global.interacting:
@@ -29,4 +30,6 @@ func _run_sequence(sequence: Array):
 			"fade":
 				match step["transition_type"]:
 					"fade_in":
-						pass
+						scene_transition.fade_in(1)
+					"fade_out":
+						scene_transition.fade_out(1)

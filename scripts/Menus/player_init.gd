@@ -17,6 +17,8 @@ signal world_change_request(to_scene_path: String)
 @onready var portrait: Portrait = $ScrollContainer/ScrollLayer/Portrait
 @onready var confirm: Button = $ScrollContainer/ScrollLayer/Confirm
 
+@onready var scene_trans:= get_node("SceneTransition")
+
 var skin_tone_selected = false
 var hair_colour_selected = false
 var eye_colour_selected = false

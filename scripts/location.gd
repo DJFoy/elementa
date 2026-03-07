@@ -7,10 +7,7 @@ signal dialogue_request(object: Non_Player_Character)
 signal cutscene_request(sequence: Array)
 
 const PC_SCENE:= preload("res://scenes/pc.tscn")
-@onready var pc: Player_Character
-
-@onready var scene_trans_load:= preload("res://scenes/scene_transition.tscn")
-@onready var scene_trans: Node2D
+@onready var pc: Player_Character 
 
 @onready var spawns: Dictionary
 
@@ -55,9 +52,7 @@ func _ready() -> void:
 	# Clear out the global target spawn to prevent possible teleportation issues
 	Global.target_spawn = ""
 	# Spawn in the transition node
-	scene_trans = scene_trans_load.instantiate()
-	add_child(scene_trans)
-	play_trans(FADE_IN)
+	SceneTransition.play_trans(FADE_IN)
 	
 	# Connect to the PC for interacting
 	pc.connect("try_interact", _on_try_interact)
@@ -66,24 +61,11 @@ func _on_exit_requested(from_scene: String, target_scene: String, target_spawn: 
 	trigger_exit(from_scene, target_spawn, target_scene)
 
 func trigger_exit(from_scene: String, target_spawn: String, file_path: String):
-	await play_trans(FADE_OUT)
+	await SceneTransition.play_trans(FADE_OUT)
 	Global.prev_scene = from_scene
 	Global.target_spawn = target_spawn
 	
 	world_change_request.emit(file_path)
-
-func play_trans(transition: String):
-	var anim_player = scene_trans.get_node("AnimationPlayer")
-	if transition == FADE_OUT:
-		Global.lock()
-		await get_tree().create_timer(0.5).timeout
-
-	anim_player.play(transition)
-	var anim_length = anim_player.get_animation(transition).length
-	await get_tree().create_timer(anim_length).timeout
-	
-	if transition == FADE_IN:
-		Global.unlock()
 	
 func is_spawn_in_exit(spawn: Spawn, exit: ExitArea) -> bool:
 	var space := get_world_2d().direct_space_state
