@@ -4,7 +4,7 @@ signal world_change_request
 @onready var scene_trans:= get_node("SceneTransition")
 
 func _ready() -> void:
-	SceneTransition.fade_in(2)
+	SceneTransition.fade_in()
 
 
 func _on_new_game_pressed() -> void:

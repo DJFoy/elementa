@@ -12,6 +12,7 @@ script = ExtResource("1_uwrxv")
 script = ExtResource("2_lnu2h")
 
 [node name="UI" type="CanvasLayer" parent="." unique_id=1513878178]
+layer = 20
 script = ExtResource("2_yqjtg")
 
 [node name="CutsceneManager" type="Node" parent="." unique_id=1179252019]

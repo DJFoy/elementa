@@ -1,8 +1,8 @@
 extends Node
+class_name CutsceneManager
 
 signal cutscene_finished
 @onready var ui: CanvasLayer = $"../UI"
-@onready var scene_transition: Node2D = $"../SceneTransition"
 
 func play_cutscene(sequence: Array) -> void:
 	if Global.interacting:
@@ -27,9 +27,11 @@ func _run_sequence(sequence: Array):
 					step["actor"].move(step.dir)
 			"camera":
 				pass
-			"fade":
+			"transition":
+				print(step["transition_type"])
 				match step["transition_type"]:
 					"fade_in":
-						scene_transition.fade_in(1)
+						await SceneTransition.fade_in(step["duration"])
 					"fade_out":
-						scene_transition.fade_out(1)
+						await SceneTransition.fade_out(step["duration"])
+	EventBus.emit_signal("cutscene_finished")

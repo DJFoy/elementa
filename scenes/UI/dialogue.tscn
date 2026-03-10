@@ -24,6 +24,7 @@ line_presenter = NodePath("CanvasLayer/LinePresenter")
 dialogue_runner = NodePath("CanvasLayer/DialogueRunner")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=118278744]
+layer = 20
 
 [node name="DialogueRunner" type="Control" parent="CanvasLayer" unique_id=2013577826 node_paths=PackedStringArray("variableStorage", "lineProvider", "dialoguePresenters")]
 layout_mode = 3

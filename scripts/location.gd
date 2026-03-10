@@ -16,12 +16,11 @@ const PC_SCENE:= preload("res://scenes/pc.tscn")
 var cutscenes = {}
 var cutscene_rules = []
 
-const FADE_IN = "fade_in"
-const FADE_OUT = "fade_out"
-
 func _ready() -> void:
 	var exits := get_tree().get_nodes_in_group("Exits")
 	var spawn_points := get_tree().get_nodes_in_group("Spawns")
+	
+	EventBus.cutscene_finished.connect(_on_cutscene_finished)
 	
 	# Identify all the exits in the scene, and connect to the exit request signal
 	for exit in exits:
@@ -51,8 +50,6 @@ func _ready() -> void:
 	
 	# Clear out the global target spawn to prevent possible teleportation issues
 	Global.target_spawn = ""
-	# Spawn in the transition node
-	SceneTransition.play_trans(FADE_IN)
 	
 	# Connect to the PC for interacting
 	pc.connect("try_interact", _on_try_interact)
@@ -61,7 +58,7 @@ func _on_exit_requested(from_scene: String, target_scene: String, target_spawn: 
 	trigger_exit(from_scene, target_spawn, target_scene)
 
 func trigger_exit(from_scene: String, target_spawn: String, file_path: String):
-	await SceneTransition.play_trans(FADE_OUT)
+	await SceneTransition.play_trans(SceneTransition.FADE_OUT)
 	Global.prev_scene = from_scene
 	Global.target_spawn = target_spawn
 	
@@ -105,3 +102,7 @@ func get_cutscene_to_play():
 		if rule["conditions"].all(func(c): return c):
 			return rule["id"]
 	return ""
+
+func _on_cutscene_finished():
+		if SceneTransition.color_rect.color.a > 0:
+			SceneTransition.play_trans(SceneTransition.FADE_IN)
