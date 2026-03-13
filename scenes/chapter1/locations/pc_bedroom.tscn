@@ -2,12 +2,25 @@
 
 [ext_resource type="TileSet" uid="uid://gfwi66i5se4k" path="res://assets/tilesets/backgrounds/base_inside_tiles.tres" id="1_6l15u"]
 [ext_resource type="Script" uid="uid://btvksk5oy230u" path="res://scripts/Chapter 1/pc_bedroom.gd" id="1_fhqw1"]
+[ext_resource type="Script" uid="uid://corntwe62a8li" path="res://resources/cutscenes/cutscene.gd" id="2_7t27p"]
 [ext_resource type="Script" uid="uid://bl7o7egd7hho7" path="res://scripts/spawn.gd" id="3_f5mfs"]
 [ext_resource type="PackedScene" uid="uid://kkaqj5g0x7un" path="res://scenes/exit_area.tscn" id="3_kqpy1"]
+[ext_resource type="Script" uid="uid://b632bpg3w7xvd" path="res://resources/cutscenes/cutscene_step.gd" id="3_owkmo"]
+[ext_resource type="Script" uid="uid://d2qfujg8qvg6f" path="res://resources/cutscenes/dialogue_step.gd" id="4_7f0qc"]
 [ext_resource type="PackedScene" uid="uid://dshkcuk7rjrxn" path="res://scenes/interactable.tscn" id="5_gbqjd"]
+
+[sub_resource type="Resource" id="Resource_dvy7t"]
+script = ExtResource("4_7f0qc")
+metadata/_custom_type_script = "uid://d2qfujg8qvg6f"
+
+[sub_resource type="Resource" id="Resource_sr57l"]
+script = ExtResource("2_7t27p")
+steps = Array[ExtResource("3_owkmo")]([SubResource("Resource_dvy7t"), null, null, null])
+metadata/_custom_type_script = "uid://corntwe62a8li"
 
 [node name="PCBedroom" type="Node2D" unique_id=1455750753]
 script = ExtResource("1_fhqw1")
+pc_bedroom_intro = SubResource("Resource_sr57l")
 default_spawn = "pc_bedroom_bed_01"
 
 [node name="TileMaps" type="Node2D" parent="." unique_id=1173443054]

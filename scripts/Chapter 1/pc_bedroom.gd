@@ -6,6 +6,8 @@ extends Location
 @onready var window: Area2D = $Interactables/Window
 @onready var bookcase: Area2D = $Interactables/Bookcase 
 
+@export var pc_bedroom_intro: Cutscene
+
 func _ready() -> void:
 	super()
 	var player_data = ResourceLoader.load("res://saves/player_data.tres")
