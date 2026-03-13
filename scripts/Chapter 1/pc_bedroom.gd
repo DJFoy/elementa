@@ -7,13 +7,17 @@ extends Location
 @onready var bookcase: Area2D = $Interactables/Bookcase 
 
 func _ready() -> void:
+	super()
+	var player_data = ResourceLoader.load("res://saves/player_data.tres")
 	cutscenes = {
 		"pc_bedroom_intro": [
 				{"type": "dialogue", "dialogue_id": "chapter1_openingScene"},
 				{"type": "transition", "transition_type": "fade_in", "duration": 2},
-				{"type": "move", "actor": pc, "await": true, "dir": Vector2.RIGHT},
-				{"type": "move", "actor": pc, "await": true, "dir": Vector2.RIGHT},
-				{"type": "move", "actor": pc, "await": true, "dir": Vector2.DOWN}
+				{"type": "action", "action": "direction", "actor": pc, "dir": Vector2.RIGHT},
+				{"type": "action", "action": "move", "actor": pc, "await": true, "dir": Vector2.RIGHT},
+				{"type": "action", "action": "move", "actor": pc, "await": true, "dir": Vector2.RIGHT},
+				{"type": "action", "action": "direction", "actor": pc, "dir": Vector2.DOWN},
+				{"type": "action", "action": "move", "actor": pc, "await": true, "dir": Vector2.DOWN}
 			]
 		}
 	cutscene_rules = [
@@ -22,6 +26,5 @@ func _ready() -> void:
 		"conditions": [!Global_World_State.cutscenes.has("pc_bedroom_intro")]
 		}
 	]
-	super()
-	var player_data = ResourceLoader.load("res://saves/player_data.tres")
 	uniform.texture = load("res://assets/locations/brackenberry village/player home/body_type_%d.png" % [player_data.body_type])
+	

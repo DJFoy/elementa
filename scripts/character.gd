@@ -47,6 +47,7 @@ func _ready() -> void:
 
 	
 func move(dir: Vector2):
+	print("Attempting to move character")
 	# Move the character one tile in specified direction,
 	# ensuring it starts and ends within a tile
 	if !move_ray.is_colliding():
@@ -60,6 +61,7 @@ func move(dir: Vector2):
 		moving = true
 		# Wait for the movement to be completed
 		tween.finished.connect(_on_tween_finished)
+		await tween.finished
 	else:
 		_stop_movement()
 
