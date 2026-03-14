@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bd5yex4vadwcc"]
 
 [ext_resource type="Texture2D" uid="uid://cjrwv3ydswt2i" path="res://assets/Dialogue Box wo Name Tag.png" id="1_2agik"]
-[ext_resource type="Script" uid="uid://cxbnfgt51pbv6" path="res://scripts/interact.gd" id="1_b1101"]
+[ext_resource type="Script" uid="uid://cxbnfgt51pbv6" path="res://scripts/UI/interact.gd" id="1_b1101"]
 [ext_resource type="Theme" uid="uid://dthhuuah0qhsg" path="res://themes/default_interact_theme.tres" id="2_jfapk"]
 
 [node name="Interact" type="Control" unique_id=95365800]

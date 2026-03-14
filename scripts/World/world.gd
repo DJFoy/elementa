@@ -4,7 +4,6 @@ extends Node2D
 @onready var ui: CanvasLayer = $"../UI"
 @onready var cutscene_manager: Node = $"../CutsceneManager"
 
-
 func _ready() -> void:
 	var main_menu_init:= main_menu.instantiate()
 	add_child(main_menu_init)
@@ -21,6 +20,7 @@ func _load_world(scene_path):
 	_connect_cutscene_signals(world_scene)
 	if world_scene.has_signal("cutscene_request"):
 		world_scene.resolve_cutscenes()
+		await EventBus.cutscene_finished
 
 func _connect_world_change_signals(root: Node) -> void:
 	if root.has_signal("world_change_request"):
@@ -50,7 +50,6 @@ func _on_dialogue_request(npc: Non_Player_Character):
 
 func _connect_cutscene_signals(root: Node) -> void:
 	if root.has_signal("cutscene_request"):
-		print("root has cutscene_request signal :)")
 		root.cutscene_request.connect(_on_cutscene_request)
 	
 	for child in root.get_children():

@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://c3ps2dhlyigr4"]
 
-[ext_resource type="Script" uid="uid://dqqhg26r5odn3" path="res://scripts/npc.gd" id="1_nh2m4"]
+[ext_resource type="Script" uid="uid://dqqhg26r5odn3" path="res://scripts/World/npc.gd" id="1_nh2m4"]
 [ext_resource type="Texture2D" uid="uid://by510e51jfcjh" path="res://assets/character_assets/anne/Anne Overworld Sprite.png" id="2_abqhh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tcuxl"]

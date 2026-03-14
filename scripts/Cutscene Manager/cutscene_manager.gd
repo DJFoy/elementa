@@ -12,7 +12,7 @@ func play_cutscene(sequence: Array) -> void:
 	Global.interacting = false
 	emit_signal("cutscene_finished")
 
-func _run_sequence(sequence: Array[CutsceneStep]):
+func _run_sequence(sequence: Array):
 	for step in sequence:
 		await step.run(self)
 	

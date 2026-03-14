@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://cen5v7yrcuney"]
 
 [ext_resource type="Script" uid="uid://bp248y7jfn8xs" path="res://scripts/main.gd" id="1_uwrxv"]
-[ext_resource type="Script" uid="uid://bgckdn1eufumn" path="res://scripts/world.gd" id="2_lnu2h"]
-[ext_resource type="Script" uid="uid://d17ninjutahvq" path="res://scripts/ui.gd" id="2_yqjtg"]
-[ext_resource type="Script" uid="uid://byhmbmxydftuq" path="res://scripts/cutscene_manager.gd" id="4_lbhrr"]
+[ext_resource type="Script" uid="uid://bgckdn1eufumn" path="res://scripts/World/world.gd" id="2_lnu2h"]
+[ext_resource type="Script" uid="uid://d17ninjutahvq" path="res://scripts/UI/ui.gd" id="2_yqjtg"]
+[ext_resource type="Script" uid="uid://byhmbmxydftuq" path="res://scripts/Cutscene Manager/cutscene_manager.gd" id="4_lbhrr"]
 
 [node name="Game" type="Node" unique_id=865898107]
 script = ExtResource("1_uwrxv")

@@ -1,6 +1,6 @@
-[gd_scene load_steps=21 format=3 uid="uid://uuc58l7tgo2i"]
+[gd_scene format=3 uid="uid://uuc58l7tgo2i"]
 
-[ext_resource type="Script" uid="uid://1j8kdo0v4c2q" path="res://scripts/player_character.gd" id="1_dm1b7"]
+[ext_resource type="Script" uid="uid://1j8kdo0v4c2q" path="res://scripts/World/player_character.gd" id="1_dm1b7"]
 [ext_resource type="Texture2D" uid="uid://cviglesp705gr" path="res://assets/Sprite Template Draft 2.png" id="2_pf8q1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cmlan"]

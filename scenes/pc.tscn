@@ -1,6 +1,6 @@
-[gd_scene load_steps=14 format=3 uid="uid://byjclgdfdac10"]
+[gd_scene format=3 uid="uid://byjclgdfdac10"]
 
-[ext_resource type="Script" uid="uid://1j8kdo0v4c2q" path="res://scripts/player_character.gd" id="1_o5wjj"]
+[ext_resource type="Script" uid="uid://1j8kdo0v4c2q" path="res://scripts/World/player_character.gd" id="1_o5wjj"]
 [ext_resource type="Texture2D" uid="uid://uwgide02jbqu" path="res://resources/character_sprite_tilesets/pc_sprite_assets/pc_skin_1.tres" id="2_uuu8i"]
 [ext_resource type="Texture2D" uid="uid://bwmo6n4rqkvql" path="res://resources/character_sprite_tilesets/pc_sprite_assets/pc_clothes_2.tres" id="3_pghs8"]
 [ext_resource type="Texture2D" uid="uid://bi882xibkxp7j" path="res://assets/character_assets/pc_assets/overworld_sprite/hair/h2.png" id="4_uuu8i"]
@@ -339,28 +339,28 @@ _data = {
 &"walk_up": SubResource("Animation_pghs8")
 }
 
-[node name="PC" type="CharacterBody2D"]
+[node name="PC" type="CharacterBody2D" unique_id=797408329]
 script = ExtResource("1_o5wjj")
 metadata/_custom_type_script = "uid://1j8kdo0v4c2q"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1835087937]
 position = Vector2(0, -1)
 shape = SubResource("RectangleShape2D_qd3p6")
 
-[node name="SkinTone" type="Sprite2D" parent="."]
+[node name="SkinTone" type="Sprite2D" parent="." unique_id=707725227]
 texture_filter = 1
 position = Vector2(0, -1)
 texture = ExtResource("2_uuu8i")
 hframes = 4
 vframes = 4
 
-[node name="Clothes" type="Sprite2D" parent="."]
+[node name="Clothes" type="Sprite2D" parent="." unique_id=1947847294]
 texture = ExtResource("3_pghs8")
 offset = Vector2(0, -1)
 hframes = 4
 vframes = 4
 
-[node name="Hair" type="Sprite2D" parent="."]
+[node name="Hair" type="Sprite2D" parent="." unique_id=951890280]
 modulate = Color(0.6130408, 0.04982481, 0.8528593, 1)
 texture_filter = 1
 position = Vector2(0, -1)
@@ -368,14 +368,14 @@ texture = ExtResource("4_uuu8i")
 hframes = 4
 vframes = 4
 
-[node name="HairShadows" type="Sprite2D" parent="."]
+[node name="HairShadows" type="Sprite2D" parent="." unique_id=1181491987]
 texture_filter = 1
 position = Vector2(0, -1)
 texture = ExtResource("5_dbnjo")
 hframes = 4
 vframes = 4
 
-[node name="Eyes" type="Sprite2D" parent="."]
+[node name="Eyes" type="Sprite2D" parent="." unique_id=2077982961]
 modulate = Color(0.05490196, 0.1882353, 1, 1)
 texture_filter = 1
 position = Vector2(0, -1)
@@ -383,7 +383,5 @@ texture = ExtResource("6_pghs8")
 hframes = 4
 vframes = 4
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_o15x3")
-}
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=70463393]
+libraries/ = SubResource("AnimationLibrary_o15x3")

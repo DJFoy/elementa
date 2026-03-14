@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://d17n47ihtn6ik" path="res://scripts/Chapter 1/pc_home.gd" id="1_67net"]
 [ext_resource type="PackedScene" uid="uid://c3ps2dhlyigr4" path="res://scenes/npc.tscn" id="3_0o0db"]
 [ext_resource type="PackedScene" uid="uid://kkaqj5g0x7un" path="res://scenes/exit_area.tscn" id="3_hwnoe"]
-[ext_resource type="Script" uid="uid://bl7o7egd7hho7" path="res://scripts/spawn.gd" id="3_vfuc7"]
+[ext_resource type="Script" uid="uid://bl7o7egd7hho7" path="res://scripts/World/spawn.gd" id="3_vfuc7"]
 [ext_resource type="Resource" uid="uid://c3n6c7qnrumv3" path="res://resources/npcs/dad/dad.tres" id="6_ke34i"]
 
 [node name="PCHome" type="Node2D" unique_id=800976989]

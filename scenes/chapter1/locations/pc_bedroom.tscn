@@ -3,7 +3,7 @@
 [ext_resource type="TileSet" uid="uid://gfwi66i5se4k" path="res://assets/tilesets/backgrounds/base_inside_tiles.tres" id="1_6l15u"]
 [ext_resource type="Script" uid="uid://btvksk5oy230u" path="res://scripts/Chapter 1/pc_bedroom.gd" id="1_fhqw1"]
 [ext_resource type="Script" uid="uid://corntwe62a8li" path="res://resources/cutscenes/cutscene.gd" id="2_7t27p"]
-[ext_resource type="Script" uid="uid://bl7o7egd7hho7" path="res://scripts/spawn.gd" id="3_f5mfs"]
+[ext_resource type="Script" uid="uid://bl7o7egd7hho7" path="res://scripts/World/spawn.gd" id="3_f5mfs"]
 [ext_resource type="PackedScene" uid="uid://kkaqj5g0x7un" path="res://scenes/exit_area.tscn" id="3_kqpy1"]
 [ext_resource type="Script" uid="uid://b632bpg3w7xvd" path="res://resources/cutscenes/cutscene_step.gd" id="3_owkmo"]
 [ext_resource type="Script" uid="uid://d2qfujg8qvg6f" path="res://resources/cutscenes/dialogue_step.gd" id="4_7f0qc"]

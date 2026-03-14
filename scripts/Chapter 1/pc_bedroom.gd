@@ -13,13 +13,13 @@ func _ready() -> void:
 	var player_data = ResourceLoader.load("res://saves/player_data.tres")
 	cutscenes = {
 		"pc_bedroom_intro": [
-				{"type": "dialogue", "dialogue_id": "chapter1_openingScene"},
-				{"type": "transition", "transition_type": "fade_in", "duration": 2},
-				{"type": "action", "action": "direction", "actor": pc, "dir": Vector2.RIGHT},
-				{"type": "action", "action": "move", "actor": pc, "await": true, "dir": Vector2.RIGHT},
-				{"type": "action", "action": "move", "actor": pc, "await": true, "dir": Vector2.RIGHT},
-				{"type": "action", "action": "direction", "actor": pc, "dir": Vector2.DOWN},
-				{"type": "action", "action": "move", "actor": pc, "await": true, "dir": Vector2.DOWN}
+				CH.say("chapter1_openingScene"),
+				CH.transition(TransitionStep.TransitionType.FADE_IN, 2),
+				CH.turn(pc, Vector2.RIGHT),
+				CH.move(pc, Vector2.RIGHT),
+				CH.move(pc, Vector2.RIGHT),
+				CH.turn(pc, Vector2.DOWN),
+				CH.move(pc, Vector2.DOWN)
 			]
 		}
 	cutscene_rules = [

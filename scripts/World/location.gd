@@ -16,6 +16,8 @@ const PC_SCENE:= preload("res://scenes/pc.tscn")
 var cutscenes = {}
 var cutscene_rules = []
 
+const CH:= preload("res://scripts/Cutscene Manager/cutscene_helpers.gd")
+
 func _ready() -> void:
 	var exits := get_tree().get_nodes_in_group("Exits")
 	var spawn_points := get_tree().get_nodes_in_group("Spawns")
@@ -104,5 +106,11 @@ func get_cutscene_to_play():
 	return ""
 
 func _on_cutscene_finished():
-		if SceneTransition.color_rect.color.a > 0:
-			SceneTransition.play_trans(SceneTransition.FADE_IN)
+	print("Cutscene finished, The colour rect's a value is currently " + str(SceneTransition.color_rect.color.a))
+	if SceneTransition.color_rect.color.a > 0:
+		SceneTransition.play_trans(SceneTransition.FADE_IN)
+
+func world_loaded() -> void:
+	print("World loaded, The colour rect's a value is currently " + str(SceneTransition.color_rect.color.a))
+	if SceneTransition.color_rect.color.a > 0:
+		SceneTransition.play_trans(SceneTransition.FADE_IN)

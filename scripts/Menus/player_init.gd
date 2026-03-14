@@ -132,3 +132,6 @@ func _on_eye_colour_color_changed(color: Color) -> void:
 func _on_outfit_item_selected(index: int) -> void:
 	portrait.clothes_choice = index + 1
 	portrait.load_textures()
+
+func world_loaded() -> void:
+	pass
