@@ -18,9 +18,10 @@ func _load_world(scene_path):
 	_connect_world_change_signals(world_scene)
 	_connect_interact_signals(world_scene)
 	_connect_cutscene_signals(world_scene)
-	if world_scene.has_signal("cutscene_request"):
-		world_scene.resolve_cutscenes()
-		await EventBus.cutscene_finished
+	
+	if world_scene.has_method("initialise"):
+		world_scene.initialise()
+
 
 func _connect_world_change_signals(root: Node) -> void:
 	if root.has_signal("world_change_request"):
@@ -53,8 +54,7 @@ func _connect_cutscene_signals(root: Node) -> void:
 		root.cutscene_request.connect(_on_cutscene_request)
 	
 	for child in root.get_children():
-		_connect_interact_signals(child)
+		_connect_cutscene_signals(child)
 
-func _on_cutscene_request(sequence: Array):
-	print("On cutscene request triggers, playing " + str(sequence))
-	cutscene_manager.play_cutscene(sequence)
+func _on_cutscene_request(sequence: Array, cutscene_id: String):
+	cutscene_manager.play_cutscene(sequence, cutscene_id)

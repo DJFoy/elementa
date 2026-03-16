@@ -1,7 +1,6 @@
 extends Location
 
-func _ready() -> void:
-	super()
+func _setup_location() -> void:
 	cutscenes = {
 		
 	}

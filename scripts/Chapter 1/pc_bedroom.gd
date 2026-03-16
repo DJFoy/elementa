@@ -2,14 +2,9 @@ extends Location
 
 @onready var uniform: Sprite2D = $Uniform
 
-@onready var drawer: Area2D = $Interactables/Drawer
-@onready var window: Area2D = $Interactables/Window
-@onready var bookcase: Area2D = $Interactables/Bookcase 
-
 @export var pc_bedroom_intro: Cutscene
 
-func _ready() -> void:
-	super()
+func _setup_location() -> void:
 	var player_data = ResourceLoader.load("res://saves/player_data.tres")
 	cutscenes = {
 		"pc_bedroom_intro": [

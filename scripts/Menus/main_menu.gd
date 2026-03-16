@@ -1,14 +1,12 @@
 extends Control
 signal world_change_request
 
-@onready var scene_trans:= get_node("SceneTransition")
 
 func _ready() -> void:
 	SceneTransition.fade_in()
 
 
 func _on_new_game_pressed() -> void:
-	print("Pressed New Game")
 	world_change_request.emit("res://scenes/UI/player_init.tscn")
 
 

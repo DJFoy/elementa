@@ -15,16 +15,11 @@ func play_trans(transition: String):
 
 
 func fade_in(duration:= 0.3):
-	print("Fading in!")
 	var tween = create_tween()
 	tween.tween_property(color_rect, "color", Color(0,0,0,0), duration)
-	print(color_rect.color)
 	await tween.finished
-	print(color_rect.color)
-	print("Complete")
 
 func fade_out(duration:= 0.3):
-	print("Fading out :(!")
 	var tween = create_tween()
 	tween.tween_property(color_rect, "color", Color(0,0,0,1), duration)
 	await tween.finished

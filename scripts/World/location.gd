@@ -4,7 +4,7 @@ class_name Location
 signal world_change_request(to_scene_path: String)
 signal interaction_request(text: Array)
 signal dialogue_request(object: Non_Player_Character)
-signal cutscene_request(sequence: Array)
+signal cutscene_request(sequence: Array, cutscene_id: String)
 
 const PC_SCENE:= preload("res://scenes/pc.tscn")
 @onready var pc: Player_Character 
@@ -56,6 +56,16 @@ func _ready() -> void:
 	# Connect to the PC for interacting
 	pc.connect("try_interact", _on_try_interact)
 
+func initialise() -> void:
+	_setup_location()
+	print("resolving cutscenes")
+	if resolve_cutscenes():
+		await EventBus.cutscene_finished
+	world_loaded()
+
+func _setup_location() -> void:
+	pass
+
 func _on_exit_requested(from_scene: String, target_scene: String, target_spawn: String):
 	trigger_exit(from_scene, target_spawn, target_scene)
 
@@ -86,29 +96,29 @@ func _on_try_interact(target):
 	if target.is_in_group("Interactable"):
 		interaction_request.emit(target.text)
 
-func resolve_cutscenes():
+func resolve_cutscenes() -> bool:
 	var cutscene_id = get_cutscene_to_play()
 	if cutscene_id != "":
 		play_cutscene(cutscene_id)
+		print("Playing a cutscene")
+		return true
+	return false
 
 func play_cutscene(cutscene_id: String):
 	var sequence = cutscenes[cutscene_id]
-	print(sequence)
-	emit_signal("cutscene_request", sequence)
+	emit_signal("cutscene_request", sequence, cutscene_id)
 
 func get_cutscene_to_play():
-	print(cutscene_rules)
 	for rule in cutscene_rules:
-		print(rule)
-		print(rule["conditions"])
 		if rule["conditions"].all(func(c): return c):
 			return rule["id"]
 	return ""
 
-func _on_cutscene_finished():
-	print("Cutscene finished, The colour rect's a value is currently " + str(SceneTransition.color_rect.color.a))
+func _on_cutscene_finished(cutscene_id: String):
 	if SceneTransition.color_rect.color.a > 0:
 		SceneTransition.play_trans(SceneTransition.FADE_IN)
+	Global_World_State.cutscenes.append(cutscene_id)
+	
 
 func world_loaded() -> void:
 	print("World loaded, The colour rect's a value is currently " + str(SceneTransition.color_rect.color.a))
