@@ -1,0 +1,83 @@
+[gd_scene format=3 uid="uid://dw8tljhvap4y2"]
+
+[ext_resource type="Texture2D" uid="uid://qnc1f5lkorca" path="res://assets/boat/SS Spam Sprite Sheet.png" id="1_0063d"]
+[ext_resource type="Texture2D" uid="uid://dod8ad04l3d5y" path="res://assets/train/Train Steam.png" id="2_qyrje"]
+
+[sub_resource type="Animation" id="Animation_qyrje"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Steam:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_lw6pk"]
+resource_name = "moving"
+length = 4.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 3, 2, 1]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Steam:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_evv4r"]
+_data = {
+&"RESET": SubResource("Animation_qyrje"),
+&"moving": SubResource("Animation_lw6pk")
+}
+
+[node name="Node2D" type="Node2D" unique_id=409938091]
+
+[node name="Boat" type="Sprite2D" parent="." unique_id=1945141007]
+position = Vector2(256, 128)
+texture = ExtResource("1_0063d")
+vframes = 5
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=936815199]
+root_node = NodePath("../Boat")
+libraries/ = SubResource("AnimationLibrary_evv4r")
+autoplay = &"moving"
+
+[node name="Steam" type="Sprite2D" parent="." unique_id=1054968807]
+position = Vector2(375, 48)
+texture = ExtResource("2_qyrje")
+vframes = 4

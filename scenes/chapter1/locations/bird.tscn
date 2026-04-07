@@ -1,52 +1,105 @@
-[gd_scene load_steps=5 format=3 uid="uid://bvw561nndaufs"]
+[gd_scene format=3 uid="uid://bvw561nndaufs"]
 
 [ext_resource type="Texture2D" uid="uid://llfibh4dknvl" path="res://assets/locations/brackenberry village/Bird with Letter Sprite.png" id="1_h3r4h"]
+[ext_resource type="Script" uid="uid://ccdgknrigccbe" path="res://scripts/Chapter 1/bird.gd" id="1_pdd8p"]
 
-[sub_resource type="Animation" id="Animation_pdd8p"]
-resource_name = "flying"
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0, 3]
-}
+[sub_resource type="AtlasTexture" id="AtlasTexture_h3r4h"]
+atlas = ExtResource("1_h3r4h")
+region = Rect2(0, 0, 16, 16)
 
-[sub_resource type="Animation" id="Animation_cdgdy"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
-}
+[sub_resource type="AtlasTexture" id="AtlasTexture_pdd8p"]
+atlas = ExtResource("1_h3r4h")
+region = Rect2(16, 0, 16, 16)
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_pmo5y"]
-_data = {
-&"RESET": SubResource("Animation_cdgdy"),
-&"flying": SubResource("Animation_pdd8p")
-}
+[sub_resource type="AtlasTexture" id="AtlasTexture_cdgdy"]
+atlas = ExtResource("1_h3r4h")
+region = Rect2(32, 0, 16, 16)
 
-[node name="Bird" type="Node2D"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_pmo5y"]
+atlas = ExtResource("1_h3r4h")
+region = Rect2(48, 0, 16, 16)
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_h3r4h")
-hframes = 4
-vframes = 4
+[sub_resource type="AtlasTexture" id="AtlasTexture_vkim2"]
+atlas = ExtResource("1_h3r4h")
+region = Rect2(0, 32, 16, 16)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_pmo5y")
-}
+[sub_resource type="AtlasTexture" id="AtlasTexture_4ems2"]
+atlas = ExtResource("1_h3r4h")
+region = Rect2(16, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_064k5"]
+atlas = ExtResource("1_h3r4h")
+region = Rect2(32, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0lx8u"]
+atlas = ExtResource("1_h3r4h")
+region = Rect2(48, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ypjtt"]
+atlas = ExtResource("1_h3r4h")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vyw04"]
+atlas = ExtResource("1_h3r4h")
+region = Rect2(0, 48, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_u44ai"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h3r4h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pdd8p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cdgdy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pmo5y")
+}],
+"loop": true,
+"name": &"flying_no_scroll",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vkim2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4ems2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_064k5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0lx8u")
+}],
+"loop": true,
+"name": &"flying_scroll",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ypjtt")
+}],
+"loop": true,
+"name": &"stationary_no_scroll",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vyw04")
+}],
+"loop": true,
+"name": &"stationary_scroll",
+"speed": 5.0
+}]
+
+[node name="Bird" type="Node2D" unique_id=346248391]
+script = ExtResource("1_pdd8p")
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="." unique_id=1206164134]
+sprite_frames = SubResource("SpriteFrames_u44ai")
+animation = &"stationary_no_scroll"
+frame_progress = 0.24157862

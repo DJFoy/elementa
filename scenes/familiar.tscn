@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dobby25cjkmn"]
 
-[ext_resource type="Texture2D" uid="uid://duy2dk8ftvync" path="res://assets/familiar_assets/Frostling Overworld Sprite.png" id="1_l41qn"]
+[ext_resource type="Texture2D" uid="uid://dmt4ef7ghvnkm" path="res://assets/familiar_assets/Lagoflops Overworld Sprite.png" id="1_l41qn"]
 
 [sub_resource type="Animation" id="Animation_7wgv1"]
 length = 0.001

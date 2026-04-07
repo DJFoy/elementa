@@ -26,6 +26,11 @@ Dad: Here. I made you a good, hearty breakfast. And look, I want you to know tha
         Narrator: You think you hear Dad heave a forlorn sigh.
     -> Player: What the hell, Dad? You know I hate {$hatedFood}! Why can't you do anything right?
         Dad: Oh, I'm sorry. It must have slipped my mind. Agh, everything was supposed to be perfect!
+===
+
+title: chapter1_dadIntro_2
+tags:
+---
 Dad: Is that a letter?
 Dad: It's for you, {$playerName}.
 Dad: What is it?
