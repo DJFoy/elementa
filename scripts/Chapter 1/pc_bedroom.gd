@@ -2,8 +2,6 @@ extends Location
 
 @onready var uniform: Sprite2D = $Uniform
 
-@export var pc_bedroom_intro: Cutscene
-
 func _setup_location() -> void:
 	var player_data = ResourceLoader.load("res://saves/player_data.tres")
 	cutscenes = {
@@ -20,6 +18,8 @@ func _setup_location() -> void:
 	cutscene_rules = [
 		{
 		"id": "pc_bedroom_intro",
+		"trigger": "on_enter",
+		"target": "",
 		"conditions": [!Global_World_State.cutscenes.has("pc_bedroom_intro")]
 		}
 	]

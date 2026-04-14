@@ -24,3 +24,8 @@ static func transition(transition_type: TransitionStep.TransitionType, duration:
 	s.transition = transition_type
 	s.duration = duration
 	return s
+
+static func animation(anim_id: String) -> CutsceneStep:
+	var s = AnimationStep.new()
+	s.anim_id = anim_id
+	return s

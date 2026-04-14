@@ -59,7 +59,7 @@ func _ready() -> void:
 func initialise() -> void:
 	_setup_location()
 	print("resolving cutscenes")
-	if resolve_cutscenes():
+	if resolve_cutscenes("on_enter"):
 		await EventBus.cutscene_finished
 	world_loaded()
 
@@ -96,8 +96,8 @@ func _on_try_interact(target):
 	if target.is_in_group("Interactable"):
 		interaction_request.emit(target.text)
 
-func resolve_cutscenes() -> bool:
-	var cutscene_id = get_cutscene_to_play()
+func resolve_cutscenes(trigger: String) -> bool:
+	var cutscene_id = get_cutscene_to_play(trigger)
 	if cutscene_id != "":
 		play_cutscene(cutscene_id)
 		print("Playing a cutscene")
@@ -108,8 +108,11 @@ func play_cutscene(cutscene_id: String):
 	var sequence = cutscenes[cutscene_id]
 	emit_signal("cutscene_request", sequence, cutscene_id)
 
-func get_cutscene_to_play():
+func get_cutscene_to_play(trigger: String) -> String:
 	for rule in cutscene_rules:
+		if rule["trigger"] != trigger:
+			return "" 
+		
 		if rule["conditions"].all(func(c): return c):
 			return rule["id"]
 	return ""
