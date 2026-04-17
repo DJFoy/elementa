@@ -9,5 +9,5 @@ class_name Non_Player_Character
 func _ready() -> void:
 	super()
 	add_to_group("Dialogue")
-	sprite_2d.texture = npc_resource.get_sprite_texture(player_data.body_type)
+	sprite_2d.texture = npc_resource.get_sprite_texture(player_data.skin_colour)
 	
