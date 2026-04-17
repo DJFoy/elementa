@@ -20,7 +20,7 @@ func _setup_location() -> void:
 		"id": "pc_bedroom_intro",
 		"trigger": "on_enter",
 		"target": "",
-		"conditions": [!Global_World_State.cutscenes.has("pc_bedroom_intro")]
+		"conditions": [func(): return !Global_World_State.cutscenes.has("pc_bedroom_intro")]
 		}
 	]
 	uniform.texture = load("res://assets/locations/brackenberry village/player home/body_type_%d.png" % [player_data.body_type])

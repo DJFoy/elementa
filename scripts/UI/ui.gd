@@ -12,6 +12,7 @@ func start_interact_ui(interaction_text):
 	interact.process_text_array(interaction_text)
 
 func npc_start_dialogue_ui(npc: Non_Player_Character):
+	Global.lock()
 	var dialogue := dialogue_scene.instantiate()
 	_connect_dialogue_signals(dialogue)
 	add_child(dialogue)
@@ -28,6 +29,7 @@ func _on_request_dialogue_end() -> void:
 	Global.interacting = false
 
 func _cutscene_start_dialogue_ui(dialogue_id: String):
+	Global.lock()
 	var dialogue := dialogue_scene.instantiate()
 	_connect_dialogue_signals(dialogue)
 	add_child(dialogue)

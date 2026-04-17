@@ -10,7 +10,7 @@ func _ready() -> void:
 	SceneTransition.fade_in()
 	
 	await get_tree().create_timer(2).timeout
-	bird.play_animation()
+	bird.play_animation("bird_enter")
 	
 
 func _on_open_window_requested() -> void:

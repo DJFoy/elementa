@@ -1,0 +1,98 @@
+[gd_scene format=4 uid="uid://t3857lqf2u32"]
+
+[ext_resource type="Script" uid="uid://cys72s7wfbn0" path="res://scripts/Testing/cutscene_animation_test.gd" id="1_ceyug"]
+[ext_resource type="TileSet" uid="uid://dfctamtnu4t5e" path="res://assets/interior_tile_set.tres" id="2_p0v1a"]
+[ext_resource type="TileSet" uid="uid://gfwi66i5se4k" path="res://assets/tilesets/backgrounds/base_inside_tiles.tres" id="2_s11lf"]
+[ext_resource type="Script" uid="uid://bl7o7egd7hho7" path="res://scripts/World/spawn.gd" id="3_p0v1a"]
+[ext_resource type="PackedScene" uid="uid://kkaqj5g0x7un" path="res://scenes/exit_area.tscn" id="4_wsl6y"]
+[ext_resource type="PackedScene" uid="uid://c3ps2dhlyigr4" path="res://scenes/npc.tscn" id="5_8mi00"]
+[ext_resource type="Resource" uid="uid://c3n6c7qnrumv3" path="res://resources/npcs/dad/dad.tres" id="6_sgiro"]
+[ext_resource type="PackedScene" uid="uid://bvw561nndaufs" path="res://scenes/chapter1/locations/bird.tscn" id="7_u3l0x"]
+
+[node name="CutsceneAnimationTest" type="Node2D" unique_id=2098315450]
+script = ExtResource("1_ceyug")
+metadata/_custom_type_script = "uid://c8im5x5qc72nu"
+
+[node name="TileMaps" type="Node2D" parent="." unique_id=57129557]
+position = Vector2(208, 64)
+
+[node name="Background" type="TileMapLayer" parent="TileMaps" unique_id=516623924]
+z_index = -2
+tile_map_data = PackedByteArray("AAACAAAAAAAJAAgAAAA=")
+tile_set = ExtResource("2_p0v1a")
+
+[node name="FloorsAndWalls" type="TileMapLayer" parent="TileMaps" unique_id=1441178965]
+position = Vector2(-16, 32)
+tile_map_data = PackedByteArray("AAADAAAAAAADAAAAAAADAAEAAAADAAAAAAADAAIAAAADAAAAAAADAAMAAAADAAAAAAAEAP7/AAANAAAAAAAEAAAAAAADAAAAAAAEAAEAAAADAAAAAAAEAAIAAAADAAAAAAAEAAMAAAADAAAAAAAFAP7/AAALAAAAAAAFAAAAAAADAAAAAAAFAAEAAAADAAAAAAAFAAIAAAADAAAAAAAFAAMAAAADAAAAAAAGAAAAAAADAAAAAAAGAAEAAAADAAAAAAAGAAIAAAADAAAAAAAGAAMAAAAAAAYAAAAAAP7/AAALAAAAAAAAAAAAAAADAAAAAAAAAAEAAAADAAAAAAAAAAIAAAADAAAAAAAAAAMAAAADAAAAAAABAP7/AAAMAAAAAAABAAAAAAADAAAAAAABAAEAAAADAAAAAAABAAIAAAADAAAAAAABAAMAAAADAAAAAAACAP7/AAANAAAAAAACAAAAAAADAAAAAAACAAEAAAADAAAAAAACAAIAAAADAAAAAAACAAMAAAADAAAAAAAGAP7/AAAMAAAAAAD//wAAAAAFAAcAAAD//wEAAAAFAAcAAAD//wMAAAAFAAcAAAD//wQAAAAFAAcAAAAAAAQAAAAFAAcAAAABAAQAAAAFAAcAAAACAAQAAAAFAAcAAAADAAQAAAAFAAcAAAADAAUAAAAFAAcAAAAEAAUAAAAFAAcAAAAFAAUAAAAFAAcAAAAFAAQAAAAFAAcAAAAGAAQAAAAFAAcAAAAHAAQAAAAFAAcAAAAHAAMAAAAFAAcAAAAHAAIAAAAFAAcAAAAHAAEAAAAFAAcAAAAHAAAAAAAFAAcAAAD//wIAAAAFAAcAAAADAP7/AAAQAAAAAAA=")
+tile_set = ExtResource("2_s11lf")
+
+[node name="Furniture" type="TileMapLayer" parent="TileMaps" unique_id=2016065624]
+position = Vector2(-16, 32)
+tile_map_data = PackedByteArray("AAAEAP7/AAAHAAAAAAAAAAIAAAACAAQAAAABAAIAAAADAAEAAAACAAIAAAACAAgAAAABAP//AAAAAAgAAAACAP//AAAAAAgAAAADAP7/AAANAAgAAAA=")
+tile_set = ExtResource("2_s11lf")
+
+[node name="Sink" type="TileMapLayer" parent="TileMaps" unique_id=528328297]
+position = Vector2(-16, 32)
+tile_map_data = PackedByteArray("AAACAP//AAAEAAUAAAA=")
+tile_set = ExtResource("2_s11lf")
+
+[node name="Rug" type="TileMapLayer" parent="TileMaps" unique_id=831978401]
+modulate = Color(0.847595, 0.317795, 0.3295, 1)
+position = Vector2(-16, 32)
+tile_map_data = PackedByteArray("AAADAP7/AAAKAAgAAAADAAEAAAADAAIAAAAEAAMAAAAHAAQAAAAGAAEAAAAGAAQAABAEAAEAAAAEAAIAAAAEAAIAAAAEAAMAAAADAAIAAAADAAMAAAA=")
+tile_set = ExtResource("2_s11lf")
+
+[node name="EntryPoints" type="Node2D" parent="." unique_id=1663031411]
+position = Vector2(208, 64)
+
+[node name="SpawnStairs" type="Marker2D" parent="EntryPoints" unique_id=1262997596]
+position = Vector2(88, 88)
+script = ExtResource("3_p0v1a")
+spawn_name = "pc_home_stairs_01"
+metadata/_custom_type_script = "uid://bl7o7egd7hho7"
+
+[node name="SpawnDoor" type="Marker2D" parent="EntryPoints" unique_id=1000420693]
+position = Vector2(56, 88)
+script = ExtResource("3_p0v1a")
+spawn_name = "pc_home_door_01"
+metadata/_custom_type_script = "uid://bl7o7egd7hho7"
+
+[node name="Exits" type="Node2D" parent="." unique_id=1554415140]
+position = Vector2(208, 64)
+
+[node name="ExitStairs" parent="Exits" unique_id=775944962 instance=ExtResource("4_wsl6y")]
+position = Vector2(88, 88)
+target_scene = "uid://pe7bm124rb7k"
+target_spawn = "pc_bedroom_stairs_01"
+
+[node name="ExitDoor" parent="Exits" unique_id=874864747 instance=ExtResource("4_wsl6y")]
+position = Vector2(56, 104)
+target_scene = "uid://y4y1xxl7omnv"
+target_spawn = "bb_village_pc_home_01"
+
+[node name="NPCs" type="Node2D" parent="." unique_id=1818035593]
+position = Vector2(208, 64)
+
+[node name="Dad" parent="NPCs" unique_id=913386599 instance=ExtResource("5_8mi00")]
+position = Vector2(23, 39)
+npc_resource = ExtResource("6_sgiro")
+
+[node name="Bird" parent="NPCs" unique_id=346248391 node_paths=PackedStringArray("window", "counter", "peek") instance=ExtResource("7_u3l0x")]
+visible = false
+z_index = -1
+position = Vector2(43, 18)
+window = NodePath("../../CutsceneMarkers/Window")
+counter = NodePath("../../CutsceneMarkers/Counter")
+peek = NodePath("../../CutsceneMarkers/Peek")
+
+[node name="CutsceneMarkers" type="Node2D" parent="." unique_id=1476923490]
+position = Vector2(208, 65)
+
+[node name="Window" type="Marker2D" parent="CutsceneMarkers" unique_id=1835646290]
+position = Vector2(40, 9)
+
+[node name="Counter" type="Marker2D" parent="CutsceneMarkers" unique_id=1506293725]
+position = Vector2(8, 20)
+
+[node name="Peek" type="Marker2D" parent="CutsceneMarkers" unique_id=519675258]
+position = Vector2(43, 17)

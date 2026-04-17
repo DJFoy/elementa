@@ -91,13 +91,18 @@ func is_spawn_in_exit(spawn: Spawn, exit: ExitArea) -> bool:
 	return false
 
 func _on_try_interact(target):
+	if target.npc_resource:
+		var npc_id = target.npc_resource.npc_name
+		if resolve_cutscenes("on_interact", npc_id):
+			await EventBus.cutscene_finished
+			return
 	if target.is_in_group("Dialogue"):
 		dialogue_request.emit(target)
 	if target.is_in_group("Interactable"):
 		interaction_request.emit(target.text)
 
-func resolve_cutscenes(trigger: String) -> bool:
-	var cutscene_id = get_cutscene_to_play(trigger)
+func resolve_cutscenes(trigger: String, target: String = "") -> bool:
+	var cutscene_id = get_cutscene_to_play(trigger, target)
 	if cutscene_id != "":
 		play_cutscene(cutscene_id)
 		print("Playing a cutscene")
@@ -108,12 +113,11 @@ func play_cutscene(cutscene_id: String):
 	var sequence = cutscenes[cutscene_id]
 	emit_signal("cutscene_request", sequence, cutscene_id)
 
-func get_cutscene_to_play(trigger: String) -> String:
+func get_cutscene_to_play(trigger: String, target: String) -> String:
 	for rule in cutscene_rules:
-		if rule["trigger"] != trigger:
-			return "" 
-		
-		if rule["conditions"].all(func(c): return c):
+		if rule["trigger"] != trigger && rule["target"] != target:
+			continue
+		if rule["conditions"].all(func(c): return c.call()):
 			return rule["id"]
 	return ""
 

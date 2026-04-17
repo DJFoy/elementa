@@ -72,10 +72,13 @@ target_spawn = "bb_village_pc_home_01"
 position = Vector2(23, 39)
 npc_resource = ExtResource("6_ke34i")
 
-[node name="Bird" parent="NPCs" unique_id=488999253 node_paths=PackedStringArray("window", "counter") instance=ExtResource("7_1dvdh")]
+[node name="Bird" parent="NPCs" unique_id=488999253 node_paths=PackedStringArray("window", "counter", "peek") instance=ExtResource("7_1dvdh")]
+visible = false
+z_index = -1
 position = Vector2(8, 21)
 window = NodePath("../../CutsceneMarkers/Window")
 counter = NodePath("../../CutsceneMarkers/Counter")
+peek = NodePath("../../CutsceneMarkers/Peek")
 
 [node name="CutsceneMarkers" type="Node2D" parent="." unique_id=1818089244]
 position = Vector2(0, 1)
@@ -85,3 +88,6 @@ position = Vector2(40, 11)
 
 [node name="Counter" type="Marker2D" parent="CutsceneMarkers" unique_id=2112266963]
 position = Vector2(8, 20)
+
+[node name="Peek" type="Marker2D" parent="CutsceneMarkers" unique_id=361572177]
+position = Vector2(43, 17)

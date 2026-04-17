@@ -25,7 +25,8 @@ static func transition(transition_type: TransitionStep.TransitionType, duration:
 	s.duration = duration
 	return s
 
-static func animation(anim_id: String) -> CutsceneStep:
+static func animation(cutscene_actor: Node2D, anim_id: String) -> CutsceneStep:
 	var s = AnimationStep.new()
+	s.anim = cutscene_actor
 	s.anim_id = anim_id
 	return s
