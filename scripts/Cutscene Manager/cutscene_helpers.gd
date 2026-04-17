@@ -30,3 +30,11 @@ static func animation(cutscene_actor: Node2D, anim_id: String) -> CutsceneStep:
 	s.anim = cutscene_actor
 	s.anim_id = anim_id
 	return s
+
+static func spawn(scene: PackedScene, position: Vector2, parent: Node, setup: Dictionary):
+	var s = SpawnStep.new()
+	s.scene = scene
+	s.position = position
+	s.parent = parent
+	s.setup = setup
+	return s

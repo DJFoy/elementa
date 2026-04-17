@@ -39,3 +39,5 @@ func play_animation(anim_id: String):
 			sprite_2d.play("stationary_scroll")
 	
 			await get_tree().create_timer(1).timeout
+		"bird_drop":
+			sprite_2d.play("stationary_no_scroll")

@@ -6,7 +6,9 @@ func _setup_location() -> void:
 	cutscenes = {
 		"chapter1_dad_intro": [
 				CH.say("chapter1_dadIntro"),
-				CH.animation(bird, "bird_enter")
+				CH.animation(bird, "bird_enter"),
+				CH.spawn(),
+				CH.animation(bird, "bird_drop")
 			]
 	}
 	cutscene_rules = [
