@@ -4,6 +4,8 @@ class_name CutsceneManager
 signal cutscene_finished(cutscene_id: String)
 @onready var ui: CanvasLayer = $"../UI"
 
+var registry := {}
+
 func play_cutscene(sequence: Array, cutscene_id: String) -> void:
 	if Global.interacting:
 		return
@@ -19,3 +21,12 @@ func _run_sequence(sequence: Array, cutscene_id: String):
 		await step.run(self)
 	
 	EventBus.emit_signal("cutscene_finished", cutscene_id)
+
+func register_actor(id: String, actor: Node):
+	registry[id] = actor
+
+func get_actor(id: String):
+	return registry[id]
+
+func clear_actor(id: String) -> void:
+	registry.erase(id)

@@ -1,14 +1,24 @@
 extends Location
 @onready var dad: Non_Player_Character = $NPCs/Dad
-@onready var bird: AnimatedCutscene = $NPCs/Bird
+@onready var window: Marker2D = $CutsceneMarkers/Window
+@onready var counter: Marker2D = $CutsceneMarkers/Counter
+@onready var peek: Marker2D = $CutsceneMarkers/Peek
 
 func _setup_location() -> void:
 	cutscenes = {
 		"chapter1_dad_intro": [
 				CH.say("chapter1_dadIntro"),
-				CH.animation(bird, "bird_enter"),
-				CH.spawn(),
-				CH.animation(bird, "bird_drop")
+				CH.spawn(
+					preload("res://scenes/chapter1/locations/bird.tscn"),
+					Vector2(32,40),
+					get_node("NPCs"),
+					{
+						"window": window,
+						"counter": counter,
+						"peek": peek
+					}),
+				CH.animation($NPCs/Bird, "bird_enter"),
+				CH.animation(get_node("NPCs/Bird"), "bird_drop")
 			]
 	}
 	cutscene_rules = [
