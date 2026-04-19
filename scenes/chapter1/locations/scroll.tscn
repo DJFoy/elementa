@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://ct40vvob70k7i"]
+
+[ext_resource type="Texture2D" uid="uid://llfibh4dknvl" path="res://assets/locations/brackenberry village/Bird with Letter Sprite.png" id="1_8klle"]
+
+[node name="Scroll" type="Node2D" unique_id=549781344]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1956530504]
+texture = ExtResource("1_8klle")
+hframes = 4
+vframes = 4
+frame = 13

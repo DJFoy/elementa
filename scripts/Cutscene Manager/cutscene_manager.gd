@@ -6,6 +6,10 @@ signal cutscene_finished(cutscene_id: String)
 
 var registry := {}
 
+func _ready() -> void:
+	EventBus.register_actor.connect(_on_register_actor_request)
+	EventBus.world_change_request.connect(_on_world_change_request)
+
 func play_cutscene(sequence: Array, cutscene_id: String) -> void:
 	if Global.interacting:
 		return
@@ -30,3 +34,12 @@ func get_actor(id: String):
 
 func clear_actor(id: String) -> void:
 	registry.erase(id)
+
+func _on_register_actor_request(actor_id: String, actor: Node) -> void:
+	if registry.has(actor_id):
+		printerr("Actor ID, Key %s, already exists" % actor_id)
+		return
+	register_actor(actor_id, actor)
+
+func _on_world_change_request() -> void:
+	registry.clear()

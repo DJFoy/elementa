@@ -44,6 +44,7 @@ func _ready() -> void:
 	
 	# Bring in the player character and add to the scene
 	pc = PC_SCENE.instantiate()
+	pc.actor_id = "Player_Character"
 	add_child(pc)
 	
 	# Place the PC in the target spawn position

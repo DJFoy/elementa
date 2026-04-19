@@ -1,16 +1,16 @@
 extends Node2D
 class_name CutsceneHelper
 
-static func move(actor: Character, direction: Vector2, wait_to_finish:= true) -> CutsceneStep:
+static func move(actor_id: String, direction: Vector2, wait_to_finish:= true) -> CutsceneStep:
 	var s = MoveStep.new()
-	s.actor = actor
+	s.actor_id = actor_id
 	s.direction = direction
 	s.wait_to_finish = wait_to_finish
 	return s
 
-static func turn(actor: Character, direction: Vector2) -> CutsceneStep:
+static func turn(actor_id: String, direction: Vector2) -> CutsceneStep:
 	var s = TurnStep.new()
-	s.actor = actor
+	s.actor_id = actor_id
 	s.direction = direction
 	return s
 
@@ -25,16 +25,22 @@ static func transition(transition_type: TransitionStep.TransitionType, duration:
 	s.duration = duration
 	return s
 
-static func animation(cutscene_actor: Node2D, anim_id: String) -> CutsceneStep:
+static func animation(actor_id: String, anim_id: String) -> CutsceneStep:
 	var s = AnimationStep.new()
-	s.anim = cutscene_actor
+	s.actor_id = actor_id
 	s.anim_id = anim_id
 	return s
 
-static func spawn(scene: PackedScene, position: Vector2, parent: Node, setup: Dictionary) -> SpawnStep:
+static func spawn(scene: PackedScene, actor_id: String, spawn_position: Vector2, parent: Node, setup: Dictionary) -> SpawnStep:
 	var s = SpawnStep.new()
 	s.scene = scene
-	s.position = position
+	s.actor_id = actor_id
+	s.position = spawn_position
 	s.parent = parent
 	s.setup = setup
+	return s
+
+static func wait(duration: float) -> WaitStep:
+	var s = WaitStep.new()
+	s.duration = duration
 	return s

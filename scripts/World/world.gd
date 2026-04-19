@@ -2,7 +2,7 @@ extends Node2D
 
 @onready var main_menu: PackedScene = load("scenes/UI/main_menu.tscn")
 @onready var ui: CanvasLayer = $"../UI"
-@onready var cutscene_manager: Node = $"../CutsceneManager"
+@onready var cutscene_manager: CutsceneManager = $"../CutsceneManager"
 
 func _ready() -> void:
 	var main_menu_init:= main_menu.instantiate()
@@ -31,6 +31,7 @@ func _connect_world_change_signals(root: Node) -> void:
 		_connect_world_change_signals(child)
 
 func _on_world_change_request(to_scene_path: String) -> void:
+	EventBus.world_change_request.emit()
 	_load_world(to_scene_path)
 
 func _connect_interact_signals(root: Node) -> void:

@@ -4,6 +4,8 @@ class_name Character
 # Set a constant tile size to fix sprites and movement to a tile structure
 const tile_size = 16
 
+@export var actor_id: String
+
 # Ensure a new RayCast2D object exists for collision detection
 @onready var move_ray:= RayCast2D.new()
 # All Character classes will require an animated sprite
@@ -44,6 +46,8 @@ func _ready() -> void:
 	# Ensure that the character is facing the same direction as the RayCast2D
 	anim.play("move_down")
 	anim.stop()
+	
+	EventBus.register_actor.emit(actor_id, self)
 
 	
 func move(dir: Vector2):

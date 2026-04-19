@@ -6,7 +6,7 @@ enum TransitionType { FADE_IN, FADE_OUT }
 @export var transition: TransitionType
 @export var duration := 0.3
 
-func run(director):
+func run(director: CutsceneManager):
 	match transition:
 		TransitionType.FADE_IN:
 			await SceneTransition.fade_in(duration)
