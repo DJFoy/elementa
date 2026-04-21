@@ -18,7 +18,18 @@ var cutscene_rules = []
 
 const CH:= preload("res://scripts/Cutscene Manager/cutscene_helpers.gd")
 
+@onready var tilemaps = [
+	$TileMaps/FloorAndWalls,
+	$TileMaps/Furniture,
+	$TileMaps/Rug,
+	$TileMaps/BedSheet,
+	$TileMaps/Candle
+]
+
+var navigation: Navigation
+
 func _ready() -> void:
+	print("Location Ready")
 	var exits := get_tree().get_nodes_in_group("Exits")
 	var spawn_points := get_tree().get_nodes_in_group("Spawns")
 	
@@ -56,6 +67,22 @@ func _ready() -> void:
 	
 	# Connect to the PC for interacting
 	pc.connect("try_interact", _on_try_interact)
+	
+	navigation = Navigation.new()
+	print("Navigation loaded in :)")
+	navigation.tilemaps = tilemaps
+	print("TileMapLayers assigned")
+	
+	navigation.build()
+	
+	var path = navigation.astar.get_id_path(
+		navigation.cell_to_id[Vector2i(0,2)],
+		navigation.cell_to_id[Vector2i(5,5)]
+	)
+	
+	for id in path:
+		print(id)
+		print(navigation.id_to_cell[id])
 
 func initialise() -> void:
 	_setup_location()
@@ -93,6 +120,7 @@ func is_spawn_in_exit(spawn: Spawn, exit: ExitArea) -> bool:
 
 func _on_try_interact(target):
 	if target.npc_resource:
+		npc_look_on_interact(target)
 		var npc_id = target.npc_resource.npc_name
 		if resolve_cutscenes("on_interact", npc_id):
 			await EventBus.cutscene_finished
@@ -132,3 +160,8 @@ func world_loaded() -> void:
 	print("World loaded, The colour rect's a value is currently " + str(SceneTransition.color_rect.color.a))
 	if SceneTransition.color_rect.color.a > 0:
 		SceneTransition.play_trans(SceneTransition.FADE_IN)
+
+func npc_look_on_interact(target: Non_Player_Character) -> void:
+	var dir_to_turn = target.global_position.direction_to(pc.global_position)
+	
+	target.direction_change(dir_to_turn)

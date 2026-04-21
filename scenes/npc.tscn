@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://c3ps2dhlyigr4"]
 
 [ext_resource type="Script" uid="uid://dqqhg26r5odn3" path="res://scripts/World/npc.gd" id="1_nh2m4"]
-[ext_resource type="Texture2D" uid="uid://by510e51jfcjh" path="res://assets/character_assets/anne/Anne Overworld Sprite.png" id="2_abqhh"]
+[ext_resource type="Texture2D" uid="uid://42bktppitape" path="res://assets/character_assets/NPCs/lady lucaria/Lady Lucaria Overworld Sprite Hat.png" id="2_abqhh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tcuxl"]
 size = Vector2(13, 17)
@@ -161,6 +161,7 @@ script = ExtResource("1_nh2m4")
 metadata/_custom_type_script = "uid://dqqhg26r5odn3"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=794587561]
+visible = false
 shape = SubResource("RectangleShape2D_tcuxl")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1158250490]
