@@ -6,9 +6,10 @@
 [ext_resource type="PackedScene" uid="uid://kkaqj5g0x7un" path="res://scenes/exit_area.tscn" id="3_kqpy1"]
 [ext_resource type="PackedScene" uid="uid://dshkcuk7rjrxn" path="res://scenes/interactable.tscn" id="5_gbqjd"]
 
-[node name="PCBedroom" type="Node2D" unique_id=1455750753]
+[node name="PCBedroom" type="Node2D" unique_id=1455750753 node_paths=PackedStringArray("tilemaps")]
 script = ExtResource("1_fhqw1")
 default_spawn = "pc_bedroom_bed_01"
+tilemaps = [NodePath("TileMaps/FloorAndWalls"), NodePath("TileMaps/Furniture"), NodePath("TileMaps/Rug"), NodePath("TileMaps/BedSheet"), NodePath("TileMaps/Candle")]
 
 [node name="TileMaps" type="Node2D" parent="." unique_id=1173443054]
 
@@ -19,7 +20,7 @@ tile_set = ExtResource("1_6l15u")
 
 [node name="Furniture" type="TileMapLayer" parent="TileMaps" unique_id=1999968689]
 texture_filter = 1
-tile_map_data = PackedByteArray("AAADAAAAAAAJAAgAAAABAAEAAAAGAAgAAAACAAEAAAAAAAAAAAAEAAAAAAABAAcAAAADAAEAAAAJAAkAAAACAAIAAAAAAAEAAAACAAMAAAAAAAIAAAABAAIAAAAGAAkAAAAEAAEAAAABAAgAAAAEAAIAAAABAAkAAAA=")
+tile_map_data = PackedByteArray("AAADAAAAAAAJAAgAAAABAAEAAAAGAAgAAAACAAEAAAAAAAAAAAAEAAAAAAABAAcAAAADAAEAAAAJAAkAAAACAAIAAAAAAAEAAAABAAIAAAAGAAkAAAAEAAEAAAABAAgAAAAEAAIAAAABAAkAAAACAAMAAAAAAAIAAAA=")
 tile_set = ExtResource("1_6l15u")
 
 [node name="Rug" type="TileMapLayer" parent="TileMaps" unique_id=77028047]

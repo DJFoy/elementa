@@ -58,5 +58,5 @@ func _setup_location() -> void:
 	]
 
 func _on_open_window_requested() -> void:
-	background.set_cell(Vector2i(2,0), 0, Vector2i(11,8))
+	background.set_cell(Vector2i(3,-2), 0, Vector2i(11,8))
 	furniture.set_cell(Vector2i(3,-2), 0, Vector2i(12,8))

@@ -18,13 +18,9 @@ var cutscene_rules = []
 
 const CH:= preload("res://scripts/Cutscene Manager/cutscene_helpers.gd")
 
-@onready var tilemaps = [
-	$TileMaps/FloorAndWalls,
-	$TileMaps/Furniture,
-	$TileMaps/Rug,
-	$TileMaps/BedSheet,
-	$TileMaps/Candle
-]
+@onready var tile_maps: Node2D = $TileMaps
+
+@export var tilemaps: Array[TileMapLayer]
 
 var navigation: Navigation
 
@@ -68,21 +64,16 @@ func _ready() -> void:
 	# Connect to the PC for interacting
 	pc.connect("try_interact", _on_try_interact)
 	
-	navigation = Navigation.new()
-	print("Navigation loaded in :)")
-	navigation.tilemaps = tilemaps
-	print("TileMapLayers assigned")
 	
+	
+	navigation = Navigation.new()
+	navigation.tilemaps = tilemaps
 	navigation.build()
 	
-	var path = navigation.astar.get_id_path(
-		navigation.cell_to_id[Vector2i(0,2)],
-		navigation.cell_to_id[Vector2i(5,5)]
-	)
+	await SceneTransition.fade_in()
 	
-	for id in path:
-		print(id)
-		print(navigation.id_to_cell[id])
+	await get_tree().create_timer(1).timeout
+	path_move_requested($NPCs/Dad, $NPCs/Dad.global_position, $EntryPoints/SpawnDoor.global_position)
 
 func initialise() -> void:
 	_setup_location()
@@ -165,3 +156,26 @@ func npc_look_on_interact(target: Non_Player_Character) -> void:
 	var dir_to_turn = target.global_position.direction_to(pc.global_position)
 	
 	target.direction_change(dir_to_turn)
+
+func path_move_requested(actor: Character, start_position: Vector2, destination: Vector2) -> void:
+	var path_array = establish_path(start_position, destination)
+	print(path_array)
+	walk_path(actor, path_array)
+	
+	
+
+func establish_path(start_position: Vector2, destination: Vector2) -> Array:
+	var start_local_coords = tilemaps[0].local_to_map(tilemaps[0].to_local(start_position))
+	var end_local_coords = tilemaps[0].local_to_map(tilemaps[0].to_local(destination))
+	
+	var start_id = navigation.cell_to_id[[start_local_coords, navigation.Dir.DOWN]]
+	var dest_id = navigation.cell_to_id[[end_local_coords, navigation.Dir.DOWN]]
+	
+	return navigation.astar.get_point_path(start_id, dest_id)
+
+func walk_path(actor: Character, path_array: Array) -> void:
+	var dir: Vector2
+	for step in path_array.size()-1:
+		dir = path_array[step].direction_to(path_array[step+1])
+		actor.direction_change(dir)
+		await actor.move(dir)

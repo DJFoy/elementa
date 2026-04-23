@@ -37,11 +37,10 @@ func _ready() -> void:
 	move_ray.target_position = Vector2.DOWN * 16
 	move_ray.enabled = true
 	move_ray.collision_mask = 1
-	
 		# On loading into the scene, ensure that the character is fixed to a tile
 	position = position.snapped(Vector2.ONE * tile_size) 
 	# Ensure it is aligned in the centre of a tile
-	position += Vector2.ONE * tile_size/2
+	position += Vector2.ONE * tile_size/2.0
 	
 	# Ensure that the character is facing the same direction as the RayCast2D
 	anim.play("move_down")

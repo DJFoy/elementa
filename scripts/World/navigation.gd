@@ -7,6 +7,13 @@ var tilemaps: Array
 var cell_to_id := {}
 var id_to_cell := {}
 
+enum Dir {
+	UP,
+	DOWN,
+	LEFT,
+	RIGHT
+}
+
 func get_tile_rules(cell: Vector2i) -> Dictionary:
 	var rules = {
 		"walkable": true,
@@ -28,14 +35,8 @@ func get_tile_rules(cell: Vector2i) -> Dictionary:
 	
 	return rules
 
-func debug_tile(cell: Vector2i) -> void:
-	var rules = get_tile_rules(cell)
-	print("Cell: ", cell, " Rules: ", rules)
-
 func build() -> void:
-	print("Build Start!")
 	var cells = get_all_used_cells()
-	print("Cells found: ", cells.size())
 	
 	_register_points(cells)
 	_connect_points(cells)
@@ -53,47 +54,68 @@ func _register_points(cells: Array) -> void:
 	var id := 0
 	
 	for cell in cells:
-		cell_to_id[cell] = id
-		id_to_cell[id] = cell
+		for dir in Dir.values():
+			var key = [cell, dir]
+			cell_to_id[key] = id
+			id_to_cell[id] = key
 		
-		astar.add_point(id, Vector2(cell))
+			astar.add_point(id, Vector2(cell))
 		
-		id += 1
+			id += 1
 		
 func _connect_points(cells: Array) -> void:
 	for cell in cells:
-		var from_id = cell_to_id[cell]
-		
-		for dir in [Vector2i.UP, Vector2i.RIGHT, Vector2i.DOWN, Vector2i.LEFT]:
-			var neighbour = cell + dir
+		for from_dir in Dir.values():
+			var from_id = cell_to_id[[cell, from_dir]]
 			
-			if not cell_to_id.has(neighbour):
-				continue
-			
-			if _can_move(neighbour, dir):
-				astar.connect_points(
-					from_id,
-					cell_to_id[neighbour],
-					false
-				)
+			for neighbour_dir in Dir.values():
+				var neighbour = cell + _dir_to_vec(neighbour_dir)
+				
+				if not cell_to_id.has([neighbour, neighbour_dir]):
+					continue
+				
+				if not _can_move(cell, neighbour, _dir_to_vec(neighbour_dir)):
+					continue
+				
+				var to_id = cell_to_id[[neighbour, neighbour_dir]]
+				
+				var cost := 1.0
+				
+				if from_dir != neighbour_dir:
+					cost += 4
+				
+				astar.connect_points(from_id, to_id, false)
+				astar.set_point_weight_scale(to_id, cost)
 
-func _can_move(to_cell: Vector2i, dir: Vector2i) -> bool:
-	var rules = get_tile_rules(to_cell)
+func _can_move(from_cell: Vector2i, to_cell: Vector2i, dir: Vector2i) -> bool:
+	var from_rules = get_tile_rules(from_cell)
+	var to_rules = get_tile_rules(to_cell)
 	
-	if rules.walkable == false:
+	if to_rules.walkable == false:
 		return false
 	
-	var dir_enum = _vec_to_dir(dir)
+	var dir_from_enum = _vec_to_str(dir)
+	var dir_to_enum = _vec_to_str(-dir)
 	
-	if dir_enum in rules.blocked_from:
+	if dir_from_enum in from_rules.blocked_from:
+		return false
+	elif dir_to_enum in to_rules.blocked_from:
 		return false
 	
 	return true
 
-func _vec_to_dir(v: Vector2i):
+func _vec_to_str(v: Vector2i) -> String:
 	match v:
 		Vector2i.UP: return "Up"
 		Vector2i.RIGHT: return "Right"
 		Vector2i.DOWN: return "Down"
 		Vector2i.LEFT: return "Left"
 	return ""
+
+func _dir_to_vec(dir: int) -> Vector2i:
+	match dir:
+		Dir.UP: return Vector2i.UP
+		Dir.DOWN: return Vector2i.DOWN
+		Dir.RIGHT: return Vector2i.RIGHT
+		Dir.LEFT: return Vector2i.LEFT
+	return Vector2i.ZERO
