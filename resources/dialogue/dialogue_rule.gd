@@ -7,7 +7,6 @@ class_name DialogueRule
 @export var items_collected: Array[String] = []
 
 func condition_met() -> bool:
-	print("Checking conditions")
 	# Is chapter greater than when this can appear?
 	print(required_chapter)
 	if required_chapter != "":

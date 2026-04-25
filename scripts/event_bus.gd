@@ -10,3 +10,6 @@ signal cutscene_finished
 
 # Request to open a window in a cutscene
 signal open_window
+
+# Finsh a movement request
+signal movement_complete

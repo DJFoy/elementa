@@ -24,7 +24,7 @@ tile_map_data = PackedByteArray("AAADAAAAAAADAAAAAAADAAEAAAADAAAAAAADAAIAAAADAAA
 tile_set = ExtResource("1_1m1lp")
 
 [node name="Furniture" type="TileMapLayer" parent="TileMaps" unique_id=547090761]
-tile_map_data = PackedByteArray("AAAEAP7/AAAHAAAAAAAAAAIAAAACAAQAAAABAAIAAAADAAEAAAACAAIAAAACAAgAAAABAP//AAAAAAgAAAACAP//AAAAAAgAAAADAP7/AAAJAAgAAAACAAAAAAAAAAkAAAABAAAAAAAAAAkAAAADAP//AAAJAAkAAAAAAAMAAAACAAUAAAACAAMAAAACAAkAAAA=")
+tile_map_data = PackedByteArray("AAAEAP7/AAAHAAAAAAAAAAIAAAACAAQAAAABAAIAAAADAAEAAAACAAIAAAACAAgAAAABAP//AAAAAAgAAAACAP//AAAAAAgAAAADAP7/AAANAAgAAAACAAAAAAAAAAkAAAABAAAAAAAAAAkAAAADAP//AAANAAkAAAAAAAMAAAACAAUAAAACAAMAAAACAAkAAAA=")
 tile_set = ExtResource("1_1m1lp")
 
 [node name="Sink" type="TileMapLayer" parent="TileMaps" unique_id=1011715080]
@@ -83,3 +83,12 @@ position = Vector2(59, -15)
 
 [node name="Leave" type="Marker2D" parent="CutsceneMarkers" unique_id=1813688448]
 position = Vector2(96, -21)
+
+[node name="PlayCueCh1Chair" type="Marker2D" parent="CutsceneMarkers" unique_id=12895110]
+position = Vector2(40, 39)
+
+[node name="DadCueCh1Table" type="Marker2D" parent="CutsceneMarkers" unique_id=603060709]
+position = Vector2(24, 23)
+
+[node name="DadCueCh1Worktop" type="Marker2D" parent="CutsceneMarkers" unique_id=551856444]
+position = Vector2(24, 7)

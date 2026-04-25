@@ -1,10 +1,11 @@
 extends Node2D
 class_name CutsceneHelper
 
-static func move(actor_id: String, direction: Vector2, wait_to_finish:= true) -> CutsceneStep:
+static func move(location: Location, actor_id: String, destination: Vector2, wait_to_finish:= true) -> CutsceneStep:
 	var s = MoveStep.new()
+	s.location = location
 	s.actor_id = actor_id
-	s.direction = direction
+	s.destination = destination
 	s.wait_to_finish = wait_to_finish
 	return s
 

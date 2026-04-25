@@ -28,7 +28,6 @@ func run_line_async(line: Dictionary) -> void:
 	await _run_line_internal(localized_line)
 
 func on_dialogue_complete_async() -> void:
-	print("Dialogue complete :)")
 	emit_signal("dialogue_complete")
 
 func _run_line_internal(localized_line: YarnSpinner.LocalizedLine) -> void:

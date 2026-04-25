@@ -19,6 +19,11 @@ Dad: Hey, I know you had your heart set on that scholarship. But working as a se
     -> Player: Right... I get to watch Gigi and George become adventurers while I sit at home and dust their silverware.
     -> Player: Yeah. I guess it could be worse.
 Dad: I'm sorry {$playerName}. I know it's unfair. I would give you the money if we had it. But, I mean, we can't even afford a Familiar for the house…
+===
+
+title: chatper1_dadBreakfast
+tags:
+---
 Dad: Here. I made you a good, hearty breakfast. And look, I want you to know that I love you and I'm very proud of you, no matter what.
     -> Player: I can tell Dad put a lot of effort into this. I should finish it.
         Narrator: You think you spot Dad wiping away a tear and hide it behind a beaming smile.

@@ -25,7 +25,7 @@ func play_animation(anim_id: String):
 			await tween.finished
 			
 		"bird_enter":
-			z_index = 1
+			z_index = 0
 			EventBus.open_window.emit()
 	
 			sprite_2d.play("stationary_scroll")	
@@ -49,7 +49,7 @@ func play_animation(anim_id: String):
 			leaving.tween_property(self, "global_position", window.global_position, 0.9)
 			await leaving.finished
 			
-			z_index = 0
+			z_index = -1
 			
 			var leaving_faster = create_tween()
 			leaving_faster.tween_property(self, "global_position", leave.global_position, 0.7)

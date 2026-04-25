@@ -18,7 +18,6 @@ func _unhandled_input(event: InputEvent) -> void:
 		get_viewport().set_input_as_handled()
 
 func _on_dialogue_complete() -> void:
-	print("Requesting to end the dialogue!")
 	emit_signal("request_dialogue_end")
 
 func _sync_game_and_yarn() -> void:

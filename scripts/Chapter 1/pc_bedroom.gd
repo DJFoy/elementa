@@ -1,6 +1,7 @@
 extends Location
 
 @onready var uniform: Sprite2D = $Uniform
+@onready var test_dest: Marker2D = $Destinations/TestDest
 
 func _setup_location() -> void:
 	var player_data = ResourceLoader.load("res://saves/player_data.tres")
@@ -8,11 +9,7 @@ func _setup_location() -> void:
 		"pc_bedroom_intro": [
 				CH.say("chapter1_openingScene"),
 				CH.transition(TransitionStep.TransitionType.FADE_IN, 2),
- 				CH.turn("Player_Character", Vector2.RIGHT),
-				CH.move("Player_Character", Vector2.RIGHT),
-				CH.move("Player_Character", Vector2.RIGHT),
-				CH.turn("Player_Character", Vector2.DOWN),
-				CH.move("Player_Character", Vector2.DOWN)
+ 				CH.move(self, "Player_Character", test_dest.global_position)
 			]
 		}
 	cutscene_rules = [

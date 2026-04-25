@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://mwdh2av7mi0l"]
+
+[ext_resource type="Script" uid="uid://cg3af0s4h4vym" path="res://test_screen.gd" id="1_aur7u"]
+[ext_resource type="Texture2D" uid="uid://ct66fve0g32ho" path="res://assets/character_assets/roy/Roy Fan Art.png" id="2_txayq"]
+
+[node name="TestScreen" type="Node2D" unique_id=242854986]
+script = ExtResource("1_aur7u")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=495244511]
+position = Vector2(240.00002, 296.00003)
+scale = Vector2(0.8047024, 0.8047026)
+texture = ExtResource("2_txayq")

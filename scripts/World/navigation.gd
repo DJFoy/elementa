@@ -119,3 +119,45 @@ func _dir_to_vec(dir: int) -> Vector2i:
 		Dir.RIGHT: return Vector2i.RIGHT
 		Dir.LEFT: return Vector2i.LEFT
 	return Vector2i.ZERO
+
+func _vec_to_dir(vec: Vector2i) -> int:
+	match vec:
+		Vector2i.UP: return Dir.UP
+		Vector2i.DOWN: return Dir.DOWN
+		Vector2i.RIGHT: return Dir.RIGHT
+		Vector2i.LEFT: return Dir.LEFT
+	return -1
+
+func get_best_path(start_cell: Vector2i, end_cell: Vector2i, actor_dir: Vector2) -> Array:
+	var facing_dir = _vec_to_dir(actor_dir)
+	var best_path = []
+	var best_cost = INF
+	
+	var start_ids = []
+	var end_ids = []
+	
+	for dir in Dir.values():
+		var key = [end_cell, dir]
+		if cell_to_id.has(key):
+			end_ids.append(cell_to_id[key])
+	
+	var preferred_start = cell_to_id.get([start_cell, facing_dir], -1)
+	if preferred_start != -1:
+		start_ids.append(preferred_start)
+	
+	for dir in Dir.values():
+		var id = cell_to_id.get([start_cell, dir], -1)
+		if id != -1 and id != preferred_start:
+			start_ids.append(id)
+	
+	for start_id in start_ids:
+		for end_id in end_ids:
+			var point_path = astar.get_point_path(start_id, end_id)
+			
+			if point_path.is_empty():
+				continue
+			
+			if point_path.size() < best_cost:
+				best_cost = point_path.size()
+				best_path = point_path
+	return best_path

@@ -25,7 +25,6 @@ const CH:= preload("res://scripts/Cutscene Manager/cutscene_helpers.gd")
 var navigation: Navigation
 
 func _ready() -> void:
-	print("Location Ready")
 	var exits := get_tree().get_nodes_in_group("Exits")
 	var spawn_points := get_tree().get_nodes_in_group("Spawns")
 	
@@ -70,14 +69,9 @@ func _ready() -> void:
 	navigation.tilemaps = tilemaps
 	navigation.build()
 	
-	await SceneTransition.fade_in()
-	
-	await get_tree().create_timer(1).timeout
-	path_move_requested($NPCs/Dad, $NPCs/Dad.global_position, $EntryPoints/SpawnDoor.global_position)
 
 func initialise() -> void:
 	_setup_location()
-	print("resolving cutscenes")
 	if resolve_cutscenes("on_enter"):
 		await EventBus.cutscene_finished
 	world_loaded()
@@ -148,7 +142,6 @@ func _on_cutscene_finished(cutscene_id: String):
 	
 
 func world_loaded() -> void:
-	print("World loaded, The colour rect's a value is currently " + str(SceneTransition.color_rect.color.a))
 	if SceneTransition.color_rect.color.a > 0:
 		SceneTransition.play_trans(SceneTransition.FADE_IN)
 
@@ -158,24 +151,24 @@ func npc_look_on_interact(target: Non_Player_Character) -> void:
 	target.direction_change(dir_to_turn)
 
 func path_move_requested(actor: Character, start_position: Vector2, destination: Vector2) -> void:
-	var path_array = establish_path(start_position, destination)
+	print("Starting position: ", start_position)
+	print("Destination: ", destination)
+	var path_array = establish_path(actor, start_position, destination)
 	print(path_array)
-	walk_path(actor, path_array)
-	
-	
+	await walk_path(actor, path_array)
+	EventBus.movement_complete.emit()
 
-func establish_path(start_position: Vector2, destination: Vector2) -> Array:
+func establish_path(actor: Character, start_position: Vector2, destination: Vector2) -> Array:
 	var start_local_coords = tilemaps[0].local_to_map(tilemaps[0].to_local(start_position))
 	var end_local_coords = tilemaps[0].local_to_map(tilemaps[0].to_local(destination))
 	
-	var start_id = navigation.cell_to_id[[start_local_coords, navigation.Dir.DOWN]]
-	var dest_id = navigation.cell_to_id[[end_local_coords, navigation.Dir.DOWN]]
-	
-	return navigation.astar.get_point_path(start_id, dest_id)
+	return navigation.get_best_path(start_local_coords, end_local_coords, actor.current_dir)
 
 func walk_path(actor: Character, path_array: Array) -> void:
 	var dir: Vector2
 	for step in path_array.size()-1:
+		if path_array.size() == 0:
+			continue
 		dir = path_array[step].direction_to(path_array[step+1])
 		actor.direction_change(dir)
 		await actor.move(dir)

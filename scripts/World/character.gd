@@ -45,12 +45,12 @@ func _ready() -> void:
 	# Ensure that the character is facing the same direction as the RayCast2D
 	anim.play("move_down")
 	anim.stop()
+	current_dir = Vector2.DOWN
 	
 	EventBus.register_actor.emit(actor_id, self)
 
 	
 func move(dir: Vector2):
-	print("Attempting to move character")
 	# Move the character one tile in specified direction,
 	# ensuring it starts and ends within a tile
 	if !move_ray.is_colliding():
