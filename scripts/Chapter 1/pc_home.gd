@@ -4,6 +4,7 @@ extends Location
 
 @onready var background: TileMapLayer = $TileMaps/Background
 @onready var furniture: TileMapLayer = $TileMaps/Furniture
+@onready var sink: TileMapLayer = $TileMaps/Sink
 
 @onready var window: Marker2D = $CutsceneMarkers/Window
 @onready var counter: Marker2D = $CutsceneMarkers/Counter
@@ -24,6 +25,9 @@ func _setup_location() -> void:
 				CH.say("chapter1_dadIntro"),
 				CH.move(self, "Dad", dad_cue_ch_1_table.global_position, false),
 				CH.move(self, "Player_Character", play_cue_ch_1_chair.global_position),
+				CH.turn("Player_Character", Vector2.LEFT),
+				CH.turn("Dad", Vector2.DOWN),
+				CH.change_tilemap(sink, Vector2i(1,2), Vector2i(1,2), ChangeTileMapStep.Transform.FLIP_H),
 				CH.say("chatper1_dadBreakfast"),
 				CH.spawn(
 					preload("res://scenes/chapter1/locations/bird.tscn"),
@@ -38,6 +42,7 @@ func _setup_location() -> void:
 					}),
 				CH.animation("chapter1_bird", "bird_peek"),
 				CH.turn("Dad", Vector2.UP),
+				CH.turn("Player_Character", Vector2.UP),
 				CH.animation("chapter1_bird", "bird_enter"),
 				CH.animation("chapter1_bird", "bird_drop"),
 				CH.spawn(
@@ -52,7 +57,11 @@ func _setup_location() -> void:
 				CH.move(self, "Dad", dad_cue_ch_1_worktop.global_position),
 				CH.turn("Dad", Vector2.UP),
 				CH.say("chapter1_dadIntro_2"),
-				CH.turn("Dad", Vector2.DOWN)
+				CH.move(self, "Player_Character", dad_cue_ch_1_table.global_position),
+				CH.turn("Dad", Vector2.DOWN),
+				CH.turn("Player_Character", Vector2.UP),
+				CH.wait(2),
+				CH.say("chapter1_dadIntro_3")
 			]
 	}
 	cutscene_rules = [

@@ -45,3 +45,12 @@ static func wait(duration: float) -> WaitStep:
 	var s = WaitStep.new()
 	s.duration = duration
 	return s
+
+static func change_tilemap(tilemap: TileMapLayer, target_tile: Vector2i, new_tile: Vector2i, transform: ChangeTileMapStep.Transform) -> ChangeTileMapStep:
+	var s = ChangeTileMapStep.new()
+	s.tilemap = tilemap
+	s.cell = target_tile
+	s.new_tile = new_tile
+	s.transform = transform
+	return s
+	

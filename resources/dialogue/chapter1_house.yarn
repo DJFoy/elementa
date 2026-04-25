@@ -39,6 +39,11 @@ tags:
 Dad: Is that a letter?
 Dad: It's for you, {$playerName}.
 Dad: What is it?
+===
+
+title: chapter1_dadIntro_3
+tags:
+---
 Player: It's a response to my scholarship application. And an apology for the delay. I've... I've been accepted!
 Dad: What? That's incredible! Ah! Erm... Gah! What do we do? 	
 Dad: Okay. It's still very early. We have time. First, who is your sponsor?	
