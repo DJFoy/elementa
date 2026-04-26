@@ -81,6 +81,8 @@ func _unhandled_input(event: InputEvent) -> void:
 			return
 
 func _continuous_movement() -> void:
+	if is_locked:
+		return
 	Global.pc_dir = wants_to_move_dir
 	if current_dir != wants_to_move_dir:
 		interact_ray.target_position = wants_to_move_dir * tile_size

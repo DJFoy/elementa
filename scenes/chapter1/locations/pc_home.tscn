@@ -92,3 +92,6 @@ position = Vector2(24, 23)
 
 [node name="DadCueCh1Worktop" type="Marker2D" parent="CutsceneMarkers" unique_id=551856444]
 position = Vector2(24, 7)
+
+[node name="DadCueCh1Chair" type="Marker2D" parent="CutsceneMarkers" unique_id=1292725111]
+position = Vector2(40, 23)

@@ -32,6 +32,7 @@ var current_dir: Vector2
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	add_to_group("actors")
 	# Add the RayCast2D object to the tree and initialise it's direction
 	add_child(move_ray)
 	move_ray.target_position = Vector2.DOWN * 16
@@ -43,7 +44,7 @@ func _ready() -> void:
 	position += Vector2.ONE * tile_size/2.0
 	
 	# Ensure that the character is facing the same direction as the RayCast2D
-	anim.play("move_down")
+	anim.play("walk_down")
 	anim.stop()
 	current_dir = Vector2.DOWN
 	
@@ -96,3 +97,13 @@ func _stop_movement():
 
 func _continuous_movement():
 	pass
+
+func trigger_emote(emote_resource: EmoteResource):
+	var emote_scene = preload("res://scenes/emote.tscn")
+	var emote = emote_scene.instantiate()
+	emote.emote_resource = emote_resource
+	add_child(emote)
+	emote.position = Vector2(10,-12)
+	await get_tree().create_timer(1).timeout
+	emote.queue_free()
+	

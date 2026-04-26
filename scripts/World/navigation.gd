@@ -161,3 +161,10 @@ func get_best_path(start_cell: Vector2i, end_cell: Vector2i, actor_dir: Vector2)
 				best_cost = point_path.size()
 				best_path = point_path
 	return best_path
+
+func set_cell_disabled(cell: Vector2i, disabled: bool) -> void:
+	for dir in Dir.values():
+		var key = [cell, dir]
+		if cell_to_id.has(key):
+			var id = cell_to_id[key]
+			astar.set_point_disabled(id, disabled)

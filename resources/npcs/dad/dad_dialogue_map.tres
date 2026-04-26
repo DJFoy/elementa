@@ -2,9 +2,14 @@
 
 [ext_resource type="Script" uid="uid://cobol6g2sil3f" path="res://resources/dialogue/dialogue_rule.gd" id="1_cst7i"]
 [ext_resource type="Script" uid="uid://byuajnnxgbg30" path="res://resources/dialogue/dialogue_map.gd" id="1_eqy5x"]
-[ext_resource type="Resource" uid="uid://cxo68a34fkvhl" path="res://resources/npcs/dad/dialogue_rules/chapter1_dadIntro.tres" id="2_en7k6"]
+
+[sub_resource type="Resource" id="Resource_pfnwg"]
+script = ExtResource("1_cst7i")
+dialogue_id = "chapter1_dadIntro"
+one_time_dialogue = Array[String](["chapter1_dadIntro"])
+metadata/_custom_type_script = "uid://cobol6g2sil3f"
 
 [resource]
 script = ExtResource("1_eqy5x")
-rules = Array[ExtResource("1_cst7i")]([ExtResource("2_en7k6")])
+rules = Array[ExtResource("1_cst7i")]([SubResource("Resource_pfnwg")])
 metadata/_custom_type_script = "uid://byuajnnxgbg30"
