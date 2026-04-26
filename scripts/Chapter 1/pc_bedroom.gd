@@ -9,13 +9,6 @@ func _setup_location() -> void:
 		"pc_bedroom_intro": [
 				CH.say("chapter1_openingScene"),
 				CH.transition(TransitionStep.TransitionType.FADE_IN, 2),
- 				CH.move(self, "Player_Character", test_dest.global_position),
-				CH.wait(0.5),
-				CH.turn("Player_Character", Vector2.RIGHT),
-				CH.wait(0.5),
-				CH.turn("Player_Character", Vector2.UP),
-				CH.wait(0.5),
-				CH.turn("Player_Character", Vector2.LEFT),
 			]
 		}
 	cutscene_rules = [

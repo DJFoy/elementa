@@ -54,3 +54,13 @@ static func change_tilemap(tilemap: TileMapLayer, target_tile: Vector2i, new_til
 	s.transform = transform
 	return s
 	
+static func despawn(actor_id: String) -> DespawnStep:
+	var s = DespawnStep.new()
+	s.actor_id = actor_id
+	return s
+
+static func emote(actor_id: String, emote_resource: EmoteResource) -> EmoteStep:
+	var s = EmoteStep.new()
+	s.actor_id = actor_id
+	s.emote = emote_resource
+	return s

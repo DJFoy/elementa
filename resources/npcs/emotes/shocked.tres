@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="EmoteResource" format=3 uid="uid://cglgh2iubqo6q"]
+
+[ext_resource type="Texture2D" uid="uid://dmym1khf8vho2" path="res://assets/cutscene_assets/emotes/shocked.png" id="1_hfgip"]
+[ext_resource type="Script" uid="uid://ddepfymi6qpm4" path="res://resources/npcs/emotes/emote_resource.gd" id="1_wjarw"]
+
+[resource]
+script = ExtResource("1_wjarw")
+image = ExtResource("1_hfgip")
+anim = "shocked"
+metadata/_custom_type_script = "uid://ddepfymi6qpm4"

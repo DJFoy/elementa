@@ -23,6 +23,7 @@ const CH:= preload("res://scripts/Cutscene Manager/cutscene_helpers.gd")
 @export var tilemaps: Array[TileMapLayer]
 
 var navigation: Navigation
+var actors_map = {}
 
 func _ready() -> void:
 	var exits := get_tree().get_nodes_in_group("Exits")
@@ -63,12 +64,11 @@ func _ready() -> void:
 	# Connect to the PC for interacting
 	pc.connect("try_interact", _on_try_interact)
 	
-	
-	
 	navigation = Navigation.new()
 	navigation.tilemaps = tilemaps
 	navigation.build()
 	
+	initialise_actor_map()
 
 func initialise() -> void:
 	_setup_location()
@@ -150,25 +150,56 @@ func npc_look_on_interact(target: Non_Player_Character) -> void:
 	
 	target.direction_change(dir_to_turn)
 
+func initialise_actor_map():
+	actors_map.clear()
+	
+	var actors = get_tree().get_nodes_in_group("actors")
+	
+	for actor in actors:
+		if not is_ancestor_of(actor):
+			continue
+		
+		var cell = tilemaps[0].local_to_map(tilemaps[0].to_local(actor.global_position))
+		actors_map[actor] = cell
+
+func update_actor_map(actor: Character):
+	var cell = tilemaps[0].local_to_map(tilemaps[0].to_local(actor.global_position))
+	actors_map[actor] = cell
+
 func path_move_requested(actor: Character, start_position: Vector2, destination: Vector2) -> void:
 	print("Starting position: ", start_position)
 	print("Destination: ", destination)
 	var path_array = establish_path(actor, start_position, destination)
 	print(path_array)
 	await walk_path(actor, path_array)
+	update_actor_map(actor)
 	EventBus.movement_complete.emit()
 
 func establish_path(actor: Character, start_position: Vector2, destination: Vector2) -> Array:
 	var start_local_coords = tilemaps[0].local_to_map(tilemaps[0].to_local(start_position))
 	var end_local_coords = tilemaps[0].local_to_map(tilemaps[0].to_local(destination))
 	
-	return navigation.get_best_path(start_local_coords, end_local_coords, actor.current_dir)
+	var blocked_cells = actors_map.values()
+	
+	blocked_cells.erase(start_local_coords)
+	blocked_cells.erase(end_local_coords)
+	
+	for cell in blocked_cells:
+		navigation.set_cell_disabled(cell, true)
+	
+	var path = navigation.get_best_path(start_local_coords, end_local_coords, actor.current_dir)
+	
+	for cell in blocked_cells:
+		navigation.set_cell_disabled(cell, false)
+	
+	return path
 
 func walk_path(actor: Character, path_array: Array) -> void:
 	var dir: Vector2
 	for step in path_array.size()-1:
 		if path_array.size() == 0:
 			continue
+		
 		dir = path_array[step].direction_to(path_array[step+1])
 		actor.direction_change(dir)
 		await actor.move(dir)
