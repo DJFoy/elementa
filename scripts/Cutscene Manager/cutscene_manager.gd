@@ -18,13 +18,11 @@ func play_cutscene(sequence: Array, cutscene_id: String) -> void:
 	await _run_sequence(sequence, cutscene_id)
 	Global.interacting = false
 	Global.unlock()
-	emit_signal("cutscene_finished", cutscene_id)
+	EventBus.emit_signal("cutscene_finished", cutscene_id)
 
 func _run_sequence(sequence: Array, cutscene_id: String):
 	for step in sequence:
 		await step.run(self)
-	
-	EventBus.emit_signal("cutscene_finished", cutscene_id)
 
 func register_actor(id: String, actor: Node):
 	registry[id] = actor

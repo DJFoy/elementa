@@ -29,3 +29,13 @@ func _on_body_entered(body: Node2D) -> void:
 func _on_body_exited(body: Node2D) -> void:
 	if body is Player_Character:
 		armed = true
+
+func lock() -> void:
+	print("Locking door!")
+	armed = false
+	collision_layer = 0b101
+
+func unlock() -> void:
+	print("Unlocking door!")
+	armed = true
+	collision_layer = 0b100

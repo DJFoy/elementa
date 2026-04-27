@@ -15,6 +15,7 @@ const PC_SCENE:= preload("res://scenes/pc.tscn")
 
 var cutscenes = {}
 var cutscene_rules = []
+var locked_doors = []
 
 const CH:= preload("res://scripts/Cutscene Manager/cutscene_helpers.gd")
 
@@ -75,6 +76,7 @@ func initialise() -> void:
 	_setup_location()
 	if resolve_cutscenes("on_enter"):
 		await EventBus.cutscene_finished
+	lock_doors()
 	world_loaded()
 
 func _setup_location() -> void:
@@ -104,8 +106,8 @@ func is_spawn_in_exit(spawn: Spawn, exit: ExitArea) -> bool:
 	
 	return false
 
-func _on_try_interact(target):
-	if target.npc_resource:
+func _on_try_interact(target: Node2D):
+	if "npc_resource" in target:
 		npc_look_on_interact(target)
 		var npc_id = target.npc_resource.npc_name
 		if resolve_cutscenes("on_interact", npc_id):
@@ -140,6 +142,7 @@ func _on_cutscene_finished(cutscene_id: String):
 	if SceneTransition.color_rect.color.a > 0:
 		SceneTransition.play_trans(SceneTransition.FADE_IN)
 	Global_World_State.cutscenes.append(cutscene_id)
+	lock_doors()
 	
 
 func world_loaded() -> void:
@@ -207,4 +210,11 @@ func walk_path(actor: Character, path_array: Array) -> void:
 
 func _on_pc_move(cur_position: Vector2, dir: Vector2i):
 	actors_map[pc] = tilemaps[0].local_to_map(tilemaps[0].to_local(cur_position)) + dir
-	print(actors_map)
+
+func lock_doors() -> void:
+	print("Locking doors")
+	for door in locked_doors:
+		print("Going to lock this door: ", door, " in these doors ", locked_doors)
+		door["door"].lock()
+		if door["unlock"].all(func(c): return c.call()):
+			door["door"].unlock()

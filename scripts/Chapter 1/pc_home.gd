@@ -15,9 +15,10 @@ extends Location
 @onready var dad_cue_ch_1_worktop: Marker2D = $CutsceneMarkers/DadCueCh1Worktop
 @onready var dad_cue_ch_1_chair: Marker2D = $CutsceneMarkers/DadCueCh1Chair
 
+@onready var exit_stairs: ExitArea = $Exits/ExitStairs
+@onready var exit_door: ExitArea = $Exits/ExitDoor
+
 func _setup_location() -> void:
-	
-	print(navigation.astar.get_point_path(navigation.cell_to_id[[Vector2i(1,1), navigation.Dir.UP]], navigation.cell_to_id[[Vector2i(1,0), navigation.Dir.UP]]))
 	
 	EventBus.open_window.connect(_on_open_window_requested)
 	
@@ -75,6 +76,14 @@ func _setup_location() -> void:
 		"trigger": "on_interact",
 		"target": dad.npc_resource.npc_name,
 		"conditions": [func(): return !Global_World_State.cutscenes.has("chapter1_dad_intro")]
+		}
+	]
+	locked_doors = [
+		{
+			"door": exit_door,
+			"unlock": [func(): 
+				print(Global_World_State.cutscenes) 
+				return Global_World_State.cutscenes.has("chaptser1_dad_intro")]
 		}
 	]
 
