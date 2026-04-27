@@ -21,7 +21,7 @@ Dad: Hey, I know you had your heart set on that scholarship.
 Dad: But working as a servant in the manor won't be all that bad. At least you won't have to work in the mines like I did.
     -> Player: Right... I get to watch Gigi and George become Adventurers while I sit at home and dust their silverware.
     -> Player: Yeah. I guess it could be worse.
-Dad: I'm sorry {$playerName}. I know it’s unfair only nobles get to become Adventurers. 
+Dad: I'm sorry {$playerName}. I know it's unfair only nobles get to become Adventurers. 
 Dad: I would give you the money if we had it. But we can't even afford a Familiar for the house.
 ===
 
@@ -62,7 +62,7 @@ Dad: Go to see her right away. I'll go to the manor and explain you won't be acc
     -> Player: Whatever. I'm out of here!
 Dad: Meet me there to say goodbye before you leave, okay?
 ===
-title:chapter1_profOliviaIntro
+title:chapter1_BrackenberryVillage_ProfOlivia
 tags:
 position: 72,-525
 ---
@@ -78,7 +78,7 @@ Professor Olivia: Are you excited to meet your Familiar?
     -> Player: I can't wait! 
         Professor Olivia: That's nice to hear.
     -> Player: I just can't wait to leave this place.
-        Professor Olivia: …
+        Professor Olivia: ...
 <<jump chapter1_profOliviaRelOpt1>>
 ===
 title:chapter1_profOliviaRelOpt1
@@ -107,7 +107,7 @@ Professor Olivia: Are you sure this is the one you want?
     -> Player: Yes
         Professor Olivia: Excellent!
         <<jump chapter1_profOliviaConfirmChoice>>
-    -> Player: I'm not sure…
+    -> Player: I'm not sure...
         Professor Olivia: You can swap them out at the pen. Take your time. This is important.
 ===
 
@@ -149,9 +149,9 @@ Player: What is it?
 Professor Olivia: Do you fancy helping me with a bit of research?
     -> Player: Sure. 
     -> Player: Huh? 
-Professor Olivia: I’m looking for some ancient elven artefacts. In particular, stone tablets with writing engraved on them. You might find them scattered in various places around Gantoh. 
-Professor Olivia: With three new Adventurers under me this season, I’ll have to abandon my own expeditions for a while. I would very much appreciate it if you let me examine any you find. 
-Professor Olivia: If you bring me an artefact, I’ll even share some more details of my research with you.
+Professor Olivia: I'm looking for some ancient elven artefacts. In particular, stone tablets with writing engraved on them. You might find them scattered in various places around Gantoh. 
+Professor Olivia: With three new Adventurers under me this season, I'll have to abandon my own expeditions for a while. I would very much appreciate it if you let me examine any you find. 
+Professor Olivia: If you bring me an artefact, I'll even share some more details of my research with you.
     -> Player: Of course. That sounds really interesting. 
         Professor Olivia: I'm pleased you think the same. 
     -> Player: I guess I'll consider it.
@@ -167,23 +167,23 @@ George: Stop right there!
 Gigi: Ho ho! Well, well. What do we have here, George?
 George: We seem to have a little mouse on our tail, Gigi. With a...
 Gigi: Is that a Familiar?!
-Player: I was accepted for a scholarship under Professor Olivia. I’m an Adventurer, just like you two.
+Player: I was accepted for a scholarship under Professor Olivia. I'm an Adventurer, just like you two.
     -> Player: Now please excuse me.
     -> Player: Now please get out of my way.
 Gigi: You are not even remotely like us two. How dare you even compare us with threadbare, penniless vermin like you.
 George: You were meant to be scrubbing our clothes and polishing our boots! 
 George: I was rather looking forward to tormenting you for the rest of our lives. How could Father allow this?
-Player: He had no choice. By the king’s decree.
+Player: He had no choice. By the king's decree.
 Gigi: Ugh! Shut up!
 George: Even after all these years, you still seem to be in need of another lesson in proper etiquette. 
-George: By the king’s decree, it’s about time you were punished and sent home.
-George: And yet, I can’t help but think we should show a little magnanimity, for the Familiar’s sake at least.
+George: By the king's decree, it's about time you were punished and sent home.
+George: And yet, I can't help but think we should show a little magnanimity, for the Familiar's sake at least.
 Gigi: I know! Let them pick which one of us will teach them their lesson.
-George: Excellent idea. We’ll let you decide how you lose.
+George: Excellent idea. We'll let you decide how you lose.
 Player: Fine. Let's do this.
-    -> Challenge Gigi.
+    -> (Challenge Gigi.)
         Gigi: Hmph!
-    -> Challenge George.
+    -> (Challenge George.)
         George: Whatever.
 ===
 
@@ -191,7 +191,7 @@ title: chapter1_TwinChoiceandBattle_PlayerLoses
 tags:
 ---
 Gigi: Ho ho! Guess you're adventure really is over.
-George: I knew you weren’t strong enough. You’d best get back to the manor and start washing those dishes.
+George: I knew you weren't strong enough. You'd best get back to the manor and start washing those dishes.
 ===
 
 title: chapter1_TwinChoiceandBattle_PlayerWins
@@ -204,28 +204,28 @@ Gigi: W-what just happened?
 title: chapter1_GeorgeBattle_PlayerWins
 tags:
 ---
-Gigi: You did not just lose to them, did you? They’re a peasant! They have no money and a joke of an education. What kind of noble are you?
-George: I-I just pretended to lose. I’m giving them a false confidence boost so it will hurt even more when we crush them later.
-Gigi: Who are you trying to fool? Your commands were weak, your strategic thinking pathetic! I noticed these shortfalls before but now they’re obvious.
+Gigi: You did not just lose to them, did you? They're a peasant! They have no money and a joke of an education. What kind of noble are you?
+George: I-I just pretended to lose. I'm giving them a false confidence boost so it will hurt even more when we crush them later.
+Gigi: Who are you trying to fool? Your commands were weak, your strategic thinking pathetic! I noticed these shortfalls before but now they're obvious.
 George: But… everyone says I have a natural talent for magic!
 Gigi: Hmph! They just say that to coddle your delicate ego. 
-Gigi: It’s a shame I have to have you clinging onto my skirts everywhere I go… 
+Gigi: It's a shame I have to have you clinging onto my skirts everywhere I go… 
 Gigi: Or do I?
 George: What are you saying?
-Gigi: I’ve made up my mind, George. 
-Gigi: I don’t wish to be associated with someone as weak as you anymore. You’ll just make me a laughing stock. 
+Gigi: I've made up my mind, George. 
+Gigi: I don't wish to be associated with someone as weak as you anymore. You'll just make me a laughing stock. 
 Gigi: You can look forward to watching from the crowd as King Alfred makes me a Royal Council member. If you even make it to Avaelon, that is.
 George: Gigi...
     -> Player: Are you alright?
-        George: Ha! Don’t worry yourself, little mouse. I’m made of stronger stuff than the likes of you.
-    -> Player: She’s right. You really are weak.
-        George: I’ll show you! As of today, I officially declare you my enemy!
-George: I’ll make sure to beat you next time. I’ll show you no more mercy.
+        George: Ha! Don't worry yourself, little mouse. I'm made of stronger stuff than the likes of you.
+    -> Player: She's right. You really are weak.
+        George: I'll show you! As of today, I officially declare you my enemy!
+George: I'll make sure to beat you next time. I'll show you no more mercy.
 Player: This is going to be really awkward when I beat you again.
 George: Play out those fantasies in your mind all you want. You got lucky this time and you know it.
-Player: Guess I’ll see you in Salt Mire City.
-George: You’d best start preparing now. Enjoy this little taste of freedom. 
-George: I’ll send you packing back to the manor soon enough.
+Player: Guess I'll see you in Salt Mire City.
+George: You'd best start preparing now. Enjoy this little taste of freedom. 
+George: I'll send you packing back to the manor soon enough.
 ===
 
 title: chapter1_GigiBattle_PlayerWins
@@ -236,23 +236,23 @@ Gigi: I must have had a momentary lapse of concentration.
 George: You needed to focus for once in your life. This was important, Gigi! Now this filthy urchin will be following us all around the kingdom. 
 Gigi: I... I tried...
 George: Not hard enough! 
-George: I’ve just about had it with you. I can’t afford to have a loser dragging me down and bringing shame upon the family. 
+George: I've just about had it with you. I can't afford to have a loser dragging me down and bringing shame upon the family. 
 George: I know, the little mouse can follow you around the kingdom instead.
 Gigi: What? George?
-George: I’m doing this on my own, Gigi. 
-George: As the firstborn son and heir to the family, I don’t have any real need for you anyway. 
+George: I'm doing this on my own, Gigi. 
+George: As the firstborn son and heir to the family, I don't have any real need for you anyway. 
 George: You can look forward to watching from the crowd as King Alfred makes me a Royal Council member. If you even make it to Avaelon, that is.
 Gigi: ...
     -> Player: Are you okay?
-        Gigi: Of course I’m okay! I never asked for your concern, peasant!
-    -> Player: He’s right. You’ll never make it on your own.
+        Gigi: Of course I'm okay! I never asked for your concern, peasant!
+    -> Player: He's right. You'll never make it on your own.
         Gigi: What do you know, peasant? No one asked for your opinion!
-Gigi: I’ll be fine. I’ve done plenty of things on my own before.
+Gigi: I'll be fine. I've done plenty of things on my own before.
 Player: Like what?
 Gigi: Like... erm... 
 Gigi: Things!
-Player: Guess I’ll see you in Salt Mire City.
-Gigi: You’ll not see me anywhere! Don’t you dare even approach me. 
+Player: Guess I'll see you in Salt Mire City.
+Gigi: You'll not see me anywhere! Don't you dare even approach me. 
 Gigi: Ugh! Gross!
 ===
 
@@ -260,7 +260,7 @@ title: chapter1_PowderTown_TrainStation
 tags:
 ---
 Town Guard Captain: I have an announcement. 
-Town Guard Captain: I’m afraid that early this morning, we discovered that the Familiar that powers the Gantoh train has been stolen.
+Town Guard Captain: I'm afraid that early this morning, we discovered that the Familiar that powers the Gantoh train has been stolen.
 Town Guard Captain: As a result, the train will not be running for the foreseeable until the Familiar is found.
 Town Guard Captain: Please accept our apologies for any inconvenience caused.
 Townsfolk: Who did this?
@@ -281,23 +281,23 @@ Roy: How may I help you today?
             -> Player: What's wrong?
                 Roy: You... really want to hear about it?
                 Player: Of course. If you feel comfortable sharing.
-                Roy: That’s kind of you. Let me heal your Familiar up for you... erm...?
+                Roy: That's kind of you. Let me heal your Familiar up for you... erm...?
                 Player: {$playerName}. What's your name?
-                Roy: I’m Roy. I’m a healer here. 
+                Roy: I'm Roy. I'm a healer here. 
                 Roy: You know how it is... you have all these hopes and dreams for your future but then...
-                Roy: Well, let’s just say I was nowhere near good enough. I need to resign myself to life here in Powder Town.
-                Player: You shouldn’t give up on your dreams so easily! 
+                Roy: Well, let's just say I was nowhere near good enough. I need to resign myself to life here in Powder Town.
+                Player: You shouldn't give up on your dreams so easily! 
                 Player: I was set to become a servant for a pompous pair of nobles in Brackenberry Village. 
-                Player: I’m only here now because I decided to submit an Adventurer scholarship application at the last minute. And now I’m going to Salt Mire City to beat the Guild Hall Master there.
+                Player: I'm only here now because I decided to submit an Adventurer scholarship application at the last minute. And now I'm going to Salt Mire City to beat the Guild Hall Master there.
                 Roy: Wow! Really?
                 Player: Yeah!
-                Player: My Familiar looks so much better. You’ve done a great job at healing them.
+                Player: My Familiar looks so much better. You've done a great job at healing them.
                 Roy: ...
                 Roy: Thanks {$playerName}. That means a lot.
                 Roy: You know, meeting you today has really given me lots to think about.
-                Roy: I’ll maybe see you around.
+                Roy: I'll maybe see you around.
                 Player: Hopefully I'll see you again sometime.
-            -> Player: To be honest, I don’t really care. 
+            -> Player: To be honest, I don't really care. 
                 Player: Can you just heal my Familiar?
                 Player: ...
                 Player: Erm... Hello?
@@ -311,25 +311,25 @@ title: chapter1_PowderTown_HealingChurch_Roy2
 tags:
 ---
 Roy: ...
-Roy: Oh… it’s you again.
+Roy: Oh… it's you again.
     -> Player: I'm sorry for being a jerk before. What's wrong?
         Roy: You... really want to hear about it?
         Player: Of course. If you feel comfortable sharing.
-        Roy: That’s kind of you. Let me heal your Familiar up for you... erm...?
+        Roy: That's kind of you. Let me heal your Familiar up for you... erm...?
         Player: {$playerName}. What's your name?
-        Roy: I’m Roy. I’m a healer here. 
+        Roy: I'm Roy. I'm a healer here. 
         Roy: You know how it is... you have all these hopes and dreams for your future but then...
-        Roy: Well, let’s just say I was nowhere near good enough. I need to resign myself to life here in Powder Town.
-        Player: You shouldn’t give up on your dreams so easily! 
+        Roy: Well, let's just say I was nowhere near good enough. I need to resign myself to life here in Powder Town.
+        Player: You shouldn't give up on your dreams so easily! 
         Player: I was set to become a servant for a pompous pair of nobles in Brackenberry Village. 
-        Player: I’m only here now because I decided to submit an Adventurer scholarship application at the last minute. And now I’m going to Salt Mire City to beat the Guild Hall Master there.
+        Player: I'm only here now because I decided to submit an Adventurer scholarship application at the last minute. And now I'm going to Salt Mire City to beat the Guild Hall Master there.
         Roy: Wow! Really?
         Player: Yeah!
-        Player: My Familiar looks so much better. You’ve done a great job at healing them.
+        Player: My Familiar looks so much better. You've done a great job at healing them.
         Roy: ...
         Roy: Thanks {$playerName}. That means a lot.
         Roy: You know, meeting you today has really given me lots to think about.
-        Roy: I’ll maybe see you around.
+        Roy: I'll maybe see you around.
         Player: Hopefully I'll see you again sometime.
     -> Player: Can you just heal my Familiar?
         Roy: ...
@@ -341,16 +341,16 @@ tags:
 Innkeeper: Hi there! Another new Adventurer, right?
     -> Player: Yep!
     -> Player: None of your business.
-Innkeeper: I’m guessing you’ve heard of the bother with the trains?
+Innkeeper: I'm guessing you've heard of the bother with the trains?
 <<if $chapter1_PowderTown_TrainStation == 1>> 
     Player: Yeah. Sounds like the StopIt! Militia have really out-done themselves. 
     Player: Do you know how I can get to Salt Mire City without the train?  
-    Innkeeper: Hmmm... If you want to get there, you’ll have to go on foot through the Wilds. 
-    Innkeeper: That shouldn’t be a problem for you with your Familiar, though, if you show your amulet to the guards at the gate. 
+    Innkeeper: Hmmm... If you want to get there, you'll have to go on foot through the Wilds. 
+    Innkeeper: That shouldn't be a problem for you with your Familiar, though, if you show your amulet to the guards at the gate. 
 <<endif>>
 <<if $chapter1_PowderTown_TrainStation == 0>> 
     Player: Huh?
-    Innkeeper: You’d best go check it out for yourself.
+    Innkeeper: You'd best go check it out for yourself.
 <<endif>>
 ===
 
@@ -358,7 +358,7 @@ title: chapter1_PowderTown_PowderSaltMireWildsGate
 tags:
 ---
 Guard: Halt! 
-Guard: It’s not safe beyond these walls.
+Guard: It's not safe beyond these walls.
 Guard: Oh! My apologies, Adventurer. You may pass through of course. 
 Guard: Please make sure to fully prepare before entering these Wilds. 
 Guard: The Familiars in this area might be milder than their cousins further North but they can still be pretty dangerous.
@@ -370,28 +370,28 @@ title: chapter1_Home_SpeaktoDad
 tags:
 ---
 Dad: Oh, Hi {$playerName}! 
-Dad: I didn’t expect to see you so soon.
+Dad: I didn't expect to see you so soon.
     -> Player: I just wanted to check in.
-        Dad: It’s always nice to see you and {$familiar}. Stay as long as you like and rest up.
-    -> Player: I’m not sure if this adventuring life is for me after all.
+        Dad: It's always nice to see you and {$familiar}. Stay as long as you like and rest up.
+    -> Player: I'm not sure if this adventuring life is for me after all.
         Dad: Oh... 
-        Dad: You know, if you want I can always ask the manor if they’ll take you back as a servant?
-            -> Player: Actually, I’ll be fine. 
-                Dad: Don’t lose heart! I know this is difficult but I believe in you.
+        Dad: You know, if you want I can always ask the manor if they'll take you back as a servant?
+            -> Player: Actually, I'll be fine. 
+                Dad: Don't lose heart! I know this is difficult but I believe in you.
             -> Player: I think that will be for the best. This is too hard.
                 Dad: Are you sure, {$playerName}?
                     -> Player: Yes, I'm sure.
                     -> Player: Actually, I'll be fine.
-                        Dad: Don’t lose heart! I know this is difficult but I believe in you.
+                        Dad: Don't lose heart! I know this is difficult but I believe in you.
 ===
 
 title: chapter1_PowderSaltMireWilds_Timmy
 tags:
 ---
-Timmy: Hi, I’m Timmy. I’ve been looking for some fossils around here. 
+Timmy: Hi, I'm Timmy. I've been looking for some fossils around here. 
 Timmy: Where is it? I thought I saw something shiny.
-Player: What’s this?
-Timmy: Hey, that’s mine! Hand it over!
+Player: What's this?
+Timmy: Hey, that's mine! Hand it over!
     -> Player: Finders keepers!
     -> Player: Woah, calm down a second!
 Timmy: ARGGGGHHHHH!
@@ -401,122 +401,122 @@ title: chapter1_PowderSaltMireWilds_TimmyBattle_PlayerLoses
 tags:
 ---
 Timmy: Ha… ha… The fossil is mine! 
-Timmy: Oh, wait. This isn’t what I thought it was. 
-Timmy: You don’t look so good, buddy. You should probably go back to Powder Town and heal up. 
-Timmy: I’m an Adventurer too, so we’ll probably run into each other again. 
+Timmy: Oh, wait. This isn't what I thought it was. 
+Timmy: You don't look so good, buddy. You should probably go back to Powder Town and heal up. 
+Timmy: I'm an Adventurer too, so we'll probably run into each other again. 
 Player:
     -> Player: You're a psycho!
     -> Player: No hard feelings.
-Timmy: I promise I’ll buy you a drink next time we meet as an apology.
+Timmy: I promise I'll buy you a drink next time we meet as an apology.
 ===
 
 title: chapter1_PowderSaltMireWilds_TimmyBattle_PlayerWins
 tags:
 ---
-Timmy: I’m sorry, buddy. I got a bit carried away there. 
-Timmy: You can have the rock. It’s not what I thought it was anyway. 
+Timmy: I'm sorry, buddy. I got a bit carried away there. 
+Timmy: You can have the rock. It's not what I thought it was anyway. 
     -> Player: Wow... Okay.
     -> Player: No hard feelings.
-Timmy: I’m an Adventurer too, so we’ll probably run into each other again. 
-Timmy: I promise I’ll buy you a drink next time we meet as an apology.
+Timmy: I'm an Adventurer too, so we'll probably run into each other again. 
+Timmy: I promise I'll buy you a drink next time we meet as an apology.
 ===
 
 title: chapter1_PowderSaltMireWilds_Anne
 tags:
 ---
 Anne: Aha! You! Yes, you! 
-Anne: I’m Anne, a merchant from Omen City. 
-Anne: I’m currently in a bit of a pickle, as you can see. A mining cart seems to have fallen down the old mountain tracks and blocked the road. My Familiar can’t get through. So we’re a bit stuck. 
+Anne: I'm Anne, a merchant from Omen City. 
+Anne: I'm currently in a bit of a pickle, as you can see. A mining cart seems to have fallen down the old mountain tracks and blocked the road. My Familiar can't get through. So we're a bit stuck. 
     -> Player: You need some help?
         Anne: I do indeed, my new Adventurer friend.
     -> Player: I fail to see how that's my problem.
         Anne: Oof! How very rude!
-Anne: Look, there’s a bargain to be had here for both of us. 
+Anne: Look, there's a bargain to be had here for both of us. 
 Anne: You want to get to Salt Mire City too, right? 
-Anne: I’ll help you out with some information. And then you can help me. Deal?
+Anne: I'll help you out with some information. And then you can help me. Deal?
     -> Player: Sure.
         Anne: Fabulous! 
         Anne: There are tunnels through the mines from the entrance just west of here, behind some bushes. 
-        Anne: You’ll be able to pass through on foot but I can’t leave my goods here unattended. 
+        Anne: You'll be able to pass through on foot but I can't leave my goods here unattended. 
         Anne: Can you go through the mines and look out for the switch to move the carts along the tracks? That should move this pesky thing!
         Anne: What do you think, brave Adventurer?
             -> Player: No problem. I'll look out for the switch.
                 Anne: Thanks! See you later! 
-                Anne: Oh, and be careful. There’s been some tremors around here lately. 
+                Anne: Oh, and be careful. There's been some tremors around here lately. 
                 Anne: Who knows what's been going on in those old mines since they were abandoned. 
             -> Player: I don't have time for that.
                 Anne: Seriously? 
-                Anne: Well, you know my information now. I guess I’ll just have to hope you change your mind.
+                Anne: Well, you know my information now. I guess I'll just have to hope you change your mind.
     -> Player: No thanks. I'm not interested.
         Anne: Eh!? 
-        Anne: Well then, I’ll have to hope that someone more helpful comes along. 
+        Anne: Well then, I'll have to hope that someone more helpful comes along. 
         Anne: Thanks for nothing.
 ===
 
 title: chapter1_GruntChoiceandBattle
 tags:
 ---
-StopIt! Militia Grunt 1: Ugh, it’s so heavy! It won’t budge.
+StopIt! Militia Grunt 1: Ugh, it's so heavy! It won't budge.
 StopIt! Militia Grunt 2: It seems to be in some sort of stasis. 
-StopIt! Militia Grunt 2: It’s probably easier for us if it doesn’t wake up. 
+StopIt! Militia Grunt 2: It's probably easier for us if it doesn't wake up. 
 StopIt! Militia Grunt 2: Maybe we can drag it out of here if we tie a rope around it and pull hard enough?
 StopIt! Militia Grunt 1: As long as we can do this quickly and get out of here before anyone spots us.
 StopIt! Militia Grunt 2: Ha! Why would anyone else be stupid enough to crawl through some abandoned mine tunnels?
-Player: They’re from the StopIt! Militia! I recognise their uniforms.
+Player: They're from the StopIt! Militia! I recognise their uniforms.
     -> Player: Stop right there!
     -> Player: Me, apparently.
     -> Player: ...
 StopIt! Militia Grunt 2: Who are you?
-StopIt! Militia Grunt 1: It doesn’t matter who they are, Damien. 
-StopIt! Militia Grunt1: Look, stranger. You’ll just turn around and pretend you didn’t see anything, if you know what’s good for you.
-    -> Player: I don’t think so. 
-        Player: You’re trying to capture that wild Familiar, aren’t you?
+StopIt! Militia Grunt 1: It doesn't matter who they are, Damien. 
+StopIt! Militia Grunt1: Look, stranger. You'll just turn around and pretend you didn't see anything, if you know what's good for you.
+    -> Player: I don't think so. 
+        Player: You're trying to capture that wild Familiar, aren't you?
         StopIt! Militia Grunt 1: So what if we are? 
-        StopIt! Militia Grunt 1: We’re part of an unstoppable, mighty cause. You don’t stand a chance against us
-        StopIt! Militia Grunt 2: Especially since there’s two of us and only one of you. 
+        StopIt! Militia Grunt 1: We're part of an unstoppable, mighty cause. You don't stand a chance against us
+        StopIt! Militia Grunt 2: Especially since there's two of us and only one of you. 
         StopIt! Militia Grunt 2: Actually, they could run and tell the guards, Eliza. 
-        StopIt! Militia Grunt 2: We’d better tie them up and leave them here.
+        StopIt! Militia Grunt 2: We'd better tie them up and leave them here.
     -> Player: Who are you to tell me what to do?
         Player: Get out of my way.
         StopIt! Militia Grunt 1: Pffft! How amusing. 
         StopIt! Militia Grunt 1: You really think you stand a chance against us?
-        StopIt! Militia Grunt 2: They’re pissing me off.
+        StopIt! Militia Grunt 2: They're pissing me off.
         StopIt! Militia Grunt 2: Eliza, they could spoil our mission too. 
-        StopIt! Militia Grunt 2: We’d better tie them up and leave them here so they don’t get in our way.
-Eliza: You’re right, Damien. Let’s get ‘em!
-Damien: It’s woken up!
+        StopIt! Militia Grunt 2: We'd better tie them up and leave them here so they don't get in our way.
+Eliza: You're right, Damien. Let's get 'em!
+Damien: It's woken up!
 Eliza: Shit! Get the rope!
 Eliza: Agh! What is it doing?
-Damien: It’s caving in the tunnel! Run!
-   -> Follow Eliza.
+Damien: It's caving in the tunnel! Run!
+   -> (Follow Eliza.)
         Eliza: That was close... 
-        Eliza: Wait, what are you doing here? Where’s Damien? 
+        Eliza: Wait, what are you doing here? Where's Damien? 
         Eliza: Argh, this is all your fault! 
         Eliza: You should have turned around while you had the chance.
-    -> Follow Damien.
+    -> (Follow Damien.)
         Damien: Tch! We nearly got buried alive back there...
-        Damien: Wait, what are you doing here? Where’s Eliza? 
+        Damien: Wait, what are you doing here? Where's Eliza? 
         Damien: Ugh, this is bad. 
-        Damien: I’d better stop you before you cause us any more trouble.
+        Damien: I'd better stop you before you cause us any more trouble.
 ===
 
 title: chapter1_ElizaBattle_PlayerLoses
 tags:
 ---
 Eliza: I warned you, stranger. 
-Eliza: The StopIt! Militia will change this kingdom forever and you’re all powerless to prevent it.
+Eliza: The StopIt! Militia will change this kingdom forever and you're all powerless to prevent it.
 ===
 
 title: chapter1_ElizaBattle_PlayerWins
 tags:
 ---
-Eliza: No... We’re an unstoppable force... 
-Player: It looks like we’re trapped down here. 
-    -> Player: Come on, let’s put our differences aside and see if we find a way out. 
+Eliza: No... We're an unstoppable force... 
+Player: It looks like we're trapped down here. 
+    -> Player: Come on, let's put our differences aside and see if we find a way out. 
     -> Player: You can either help me or you can stay here and die alone.
 Eliza: ...
-Eliza: Fine. I’ll come with you. 
-Eliza: But don’t get the wrong idea. This doesn’t make us allies or anything.
+Eliza: Fine. I'll come with you. 
+Eliza: But don't get the wrong idea. This doesn't make us allies or anything.
 Eliza: Well, this is awkward.
     -> Player: Tell me about it.
     -> Player: ...
@@ -527,46 +527,46 @@ Player: Why are you causing harm to all these Familiars?
 Eliza: Harm? You are the ones causing harm!
 Eliza: The StopIt! Militia has a noble cause. 
 Eliza: It wants to free these creatures from human slavery. 
-Eliza: Have you ever stopped to think if owning and controlling Familiars is in everyone’s best interests?
+Eliza: Have you ever stopped to think if owning and controlling Familiars is in everyone's best interests?
     -> Player: Many people love and care for their Familiars. 
-        Eliza: And what about the people that don’t?
-    -> Player: Not really. But it’s just how the world is.
+        Eliza: And what about the people that don't?
+    -> Player: Not really. But it's just how the world is.
         Eliza: Tch! How blind and shallow you must be. 
-Eliza: They’re dangerous weapons. No one should be controlling them.
-Player: You’re kidnapping them and hurting people. That’s not okay. 
+Eliza: They're dangerous weapons. No one should be controlling them.
+Player: You're kidnapping them and hurting people. That's not okay. 
 Player: Besides, you have your own Familiar right there! 
-Player: How can your organisation judge others if you aren’t living by the standards you’re preaching?
-Eliza: Whatever. You’re an Adventurer. 
-Eliza: Of course someone like you doesn’t get it.
+Player: How can your organisation judge others if you aren't living by the standards you're preaching?
+Eliza: Whatever. You're an Adventurer. 
+Eliza: Of course someone like you doesn't get it.
 Player: ...
 Eliza: ...
 Player: I think I see an exit just up ahead.
 Eliza: ...
 Eliza: Damien!
 Damien: Eliza! 
-Damien: What’s that stranger doing with you?
-Eliza: Don’t worry about it. Let’s just get out of here.
+Damien: What's that stranger doing with you?
+Eliza: Don't worry about it. Let's just get out of here.
 ===
 
 title: chapter1_DamienBattle_PlayerLoses
 tags:
 ---
-Damien: You bit off more than you could chew, didn’t you? 
-Damien: Well, this is just a taste of what’s to come. 
-Damien: The StopIt! Militia will change this kingdom forever and you’re all powerless to prevent it.
+Damien: You bit off more than you could chew, didn't you? 
+Damien: Well, this is just a taste of what's to come. 
+Damien: The StopIt! Militia will change this kingdom forever and you're all powerless to prevent it.
 ===
 
 title: chapter1_DamienBattle_PlayerWins
 tags:
 ---
 Damien: What? No! 
-Damien: This can’t be happening...
-Player: It looks like we’re trapped down here. 
-    -> Player: Come on, let’s put our differences aside and see if we find a way out. 
+Damien: This can't be happening...
+Player: It looks like we're trapped down here. 
+    -> Player: Come on, let's put our differences aside and see if we find a way out. 
     -> Player: You can either help me or you can stay here and die alone.
 Damien: ...
-Damien: Fine. I’ll come with you. 
-Damien: But don’t get the wrong idea. This doesn’t make us friends or anything.
+Damien: Fine. I'll come with you. 
+Damien: But don't get the wrong idea. This doesn't make us friends or anything.
 Damien: Well, this is awkward.
     -> Player: Yep.
     -> Player: ...
@@ -580,25 +580,25 @@ Damien: It wants to free these creatures from human slavery.
 Damien: Have you ever stopped to think if owning and controlling Familiars is what they want?
     -> Player: Many Familiars love and care for their masters. 
         Damien: And what about the masters who mistreat them?
-    -> Player: Not really. But it’s just how the world is.
-        Damien: Tch! That’s just the kind of response I expected from someone like you. 
-Damien: They’re sentient beings. No one should be controlling them.
-Player: You’re kidnapping them and hurting people. That’s not okay. 
+    -> Player: Not really. But it's just how the world is.
+        Damien: Tch! That's just the kind of response I expected from someone like you. 
+Damien: They're sentient beings. No one should be controlling them.
+Player: You're kidnapping them and hurting people. That's not okay. 
 Player: Besides, you have your own Familiar right there! 
-Player: How can your organisation judge others if you aren’t living by the standards you’re preaching?
-Damien: Whatever. You’re an Adventurer. 
-Damien: Of course someone like you doesn’t get it.
+Player: How can your organisation judge others if you aren't living by the standards you're preaching?
+Damien: Whatever. You're an Adventurer. 
+Damien: Of course someone like you doesn't get it.
 Player: ...
 Damien: ...
 Player: I think I see an exit just up ahead.
 Damien: ...
 Damien: Eliza!
 Eliza: Damien!
-Eliza: What’s that stranger doing with you?
-Damien: They’ll not cause us anymore trouble. Let’s just get out of here.
+Eliza: What's that stranger doing with you?
+Damien: They'll not cause us anymore trouble. Let's just get out of here.
 ===
 
-title: elvenrelic1_ProfessorOliviasHouse
+title: elvenrelic1_ProfOliviasHouse
 tags:
 ---
 Professor Olivia: Hi {$playerName}. Good to see you. 
@@ -611,23 +611,23 @@ Professor Olivia: What can I do for you?
         Professor Olivia: The script engraved into the stone is a well-preserved example of their written language
         Player: Written Language?
         Professor Olivia: Indeed! 
-        Professor Olivia: I’ll let you in on a little secret. The current focus of my research is creating a codex of ancient elvish.
-            -> Player: That’s fascinating!
+        Professor Olivia: I'll let you in on a little secret. The current focus of my research is creating a codex of ancient elvish.
+            -> Player: That's fascinating!
             -> Player: Why?
             Professor Olivia: If you can collect enough of these elven relics for me, then I will finally be able to fully translate Elvish into our tongue. 
             Professor Olivia: Think of the discoveries that could lead to! It can finally be spoken for the first time in hundreds of years!
-            Player: I don’t really know much about elves, except that they were cruel and evil and they’re now extinct.
+            Player: I don't really know much about elves, except that they were cruel and evil and they're now extinct.
             Professor Oliva: Cruel and evil? 
             Professor Olivia: Yes, of course. The elves tried to enslave us, so humanity rose up and defeated them in a brave, righteous war.
-            Player: That’s right.
+            Player: That's right.
             Professor Olivia: ...
             Professor Olivia: {$playerName}, are you interested in continuing to help me out with my research
                 -> Player: Definitely. I want to learn more about the elves.
                     Professor Oliva: You show a lot of promise, {$playerName}! 
-                    Professor Olivia: Ah, I don’t wish to overwhelm you. Bring me another relic and we can take it from there.
+                    Professor Olivia: Ah, I don't wish to overwhelm you. Bring me another relic and we can take it from there.
                 -> Player: Definitely. I want to help you.
-                    Professor Olivia: That’s very kind of you, {$playerName}. Bring me another relic and we can take it from there.
-                -> Player: Not really. I’m content as I am.
+                    Professor Olivia: That's very kind of you, {$playerName}. Bring me another relic and we can take it from there.
+                -> Player: Not really. I'm content as I am.
                     Professor Oliva: An interesting perspective. 
                     Professor Olivia: If you change your mind, bring me another relic and we can take it from there.
 ===
