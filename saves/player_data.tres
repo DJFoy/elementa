@@ -4,13 +4,13 @@
 
 [resource]
 script = ExtResource("1_p1bc8")
-name = "asd"
-pronouns = "He/Him"
+name = "Means"
+pronouns = "She/Her"
 hair = 2
-hair_colour = Color(0.7265625, 0.20718384, 0.20718384, 1)
-eye_colour = Color(0.48046875, 0.14263916, 0.14263916, 1)
-skin_colour = 3
-body_type = 2
+hair_colour = Color(0.65005493, 0, 0.9296875, 1)
+eye_colour = Color(0, 0.8417969, 1, 1)
+skin_colour = 2
+body_type = 1
 clothes = 2
-likes = "Chocolate"
-dislikes = "Duck a l'Orange"
+likes = "Blue Cheese"
+dislikes = "Strawberry"

@@ -24,13 +24,11 @@ func play_animation(anim_id: String):
 			tween.tween_property(self, "global_position", window.global_position, 0.3)
 			await tween.finished
 			
-		"bird_enter":
 			z_index = 0
 			EventBus.open_window.emit()
-	
-			sprite_2d.play("stationary_scroll")	
-			await get_tree().create_timer(1.5).timeout
-	
+			sprite_2d.play("stationary_scroll")
+			
+		"bird_enter":
 			sprite_2d.play("flying_scroll")
 			var tween2 = create_tween()
 			tween2.tween_property(self, "global_position", counter.global_position, 0.9)
