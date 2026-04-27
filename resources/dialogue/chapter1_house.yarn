@@ -5,8 +5,10 @@ tags:
 <<declare $hatedFood = "Apple">>
 <<declare $familiar = "Familiar">>
 <<declare $chapter_1_prof_olivia_ask_repeat = 0>>
-Narrator: Your dreams are fading fast. This could be your only chance to escape the mundane future ahead of you. You steady the quill in your hand and complete the scholarship application.
-Narrator: You sign your application and send it with the last post. Time comes and goes. Your twentieth birthday passes. But you never hear back.
+Narrator: Your dreams are fading fast. 
+Narrator: This could be your only chance to escape the mundane future ahead of you. You steady the quill in your hand and complete the scholarship application.
+Narrator: You sign your application and send it with the last post. Time comes and goes. 
+Narrator: Your twentieth birthday passes. But you never hear back.
 ===
 
 title: chapter1_dadIntro
@@ -15,22 +17,25 @@ position: -180,-527
 ---	
 Dad: Morning {$playerName}, how are you feeling? Are you ready for your first day of work?
 Player: ... 
-Dad: Hey, I know you had your heart set on that scholarship. But working as a servant in the manor won't be all that bad. At least you won't have to work in the mines like I did.
+Dad: Hey, I know you had your heart set on that scholarship. 
+Dad: But working as a servant in the manor won't be all that bad. At least you won't have to work in the mines like I did.
     -> Player: Right... I get to watch Gigi and George become Adventurers while I sit at home and dust their silverware.
     -> Player: Yeah. I guess it could be worse.
-Dad: I'm sorry {$playerName}. I know it’s unfair only nobles get to become Adventurers. I would give you the money if we had it. But we can't even afford a Familiar for the house.
+Dad: I'm sorry {$playerName}. I know it’s unfair only nobles get to become Adventurers. 
+Dad: I would give you the money if we had it. But we can't even afford a Familiar for the house.
 ===
 
 title: chatper1_dadBreakfast
 tags:
 ---
 Dad: Here. I made you a good, hearty breakfast. I want you to know that I love you and I'm very proud of you, no matter what.
-    -> Player: I can tell Dad put a lot of effort into this. I should finish it.
+    -> Player: ~ I can tell Dad put a lot of effort into this. I should finish it.
         Narrator: You think you spot Dad wiping away a tear.
-    -> Push the food around the plate.
+    -> (Push the food around the plate.)
         Narrator: You think you hear Dad heave a forlorn sigh.
     -> Player: What the hell, Dad? You know I hate {$hatedFood}! Why can't you do anything right?
-        Dad: Oh! I'm sorry. I was so focussed on making everything special. Agh, everything was supposed to be perfect!
+        Dad: Oh! I'm sorry. I was so focussed on making everything special. 
+        Dad: Agh, everything was supposed to be perfect!
 ===
 
 title: chapter1_dadIntro_2
@@ -44,11 +49,15 @@ Dad: What is it?
 title: chapter1_dadIntro_3
 tags:
 ---
-Player: It's a response to my scholarship application. And an apology for the delay. I've... I've been accepted!
-Dad: What? That's incredible! Ah! Erm... What do we do? 	
-Dad: Okay. It's still very early in the day. We have time. Firstly, who is your sponsor?	
+Player: It's a response to my scholarship application. And an apology for the delay. 
+Player: I've... I've been accepted!
+Dad: What? That's incredible! 
+Dad: Ah! Erm... What do we do? 	
+Dad: Okay. It's still very early in the day. We have time. 
+Dad: Firstly, who is your sponsor?	
 Player: Professor Olivia.
-Dad: Phew! She's here in the village right now. Go to see her right away. I'll go to the manor and explain you won't be accepting the position as a servant.
+Dad: Phew! She's here in the village right now. 
+Dad: Go to see her right away. I'll go to the manor and explain you won't be accepting the position as a servant.
     -> Player: Thanks, Dad.
     -> Player: Whatever. I'm out of here!
 Dad: Meet me there to say goodbye before you leave, okay?
@@ -60,10 +69,12 @@ position: 72,-525
 Professor Olivia: {$playerName}, I'm glad you're here! I take it you got the news too?	
     -> Player: A Familiar delivered the letter just now!
     -> Player: Just in time! I almost ended up a servant at the twin's manor.
-Professor Olivia: It was a surprise to me as well. I hadn't realised you'd applied. I could have helped you with your application.
+Professor Olivia: It was a surprise to me as well. 
+Professor Olivia: I hadn't realised you'd applied. I could have helped you with your application.
     -> Player: There wasn't time. You were away when I decided to apply.
     -> Player: You're never here. 
-Professor Olivia: I see. Well, let's get started. Are you excited to meet your Familiar?	
+Professor Olivia: I see. Well, let's get started. 
+Professor Olivia: Are you excited to meet your Familiar?	
     -> Player: I can't wait! 
         Professor Olivia: That's nice to hear.
     -> Player: I just can't wait to leave this place.
@@ -74,7 +85,8 @@ title:chapter1_profOliviaRelOpt1
 tags:
 position: 73,-318
 ---
-Professor Olivia: Until now, the twins were the only ones under my sponsorship. They collected their Familiars last night. Unfortunately, the best I can offer you is from a breeder surplus this season. I took them in the hope of finding them a good home. <<once>>
+Professor Olivia: Until now, the twins were the only ones under my sponsorship. They collected their Familiars last night. 
+Professor Olivia: Unfortunately, the best I can offer you is from a breeder surplus this season. I took them in the hope of finding them a good home. <<once>>
     -> Player: What would have happened to them otherwise?<<once>>
         Professor Olivia: They would have been dumped in the Wilds. But they're already teeming with dangerous Familiars left to turn feral. It just makes the problem worse.
         <<jump chapter1_profOliviaRelOpt1>>
@@ -93,7 +105,6 @@ position: 326,-319
 ---
 Professor Olivia: Are you sure this is the one you want?
     -> Player: Yes
-        Familiar: (heart emote)
         Professor Olivia: Excellent!
         <<jump chapter1_profOliviaConfirmChoice>>
     -> Player: I'm not sure…
@@ -255,7 +266,7 @@ Town Guard Captain: Please accept our apologies for any inconvenience caused.
 Townsfolk: Who did this?
 Town Guard Captain: The StopIt! Militia has been identified as the culprit. We cannot answer any further questions on the matter until our investigation has been completed. 
 Town Guard Captain: Thank you and apologies again.
-Player: Well, this is unexpected. I need to find another way to Salt Mire City.
+Player: ~ Well, this is unexpected. I need to find another way to Salt Mire City.
 ===
 
 title: chapter1_PowderTown_HealingChurch_Roy1
