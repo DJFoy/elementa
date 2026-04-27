@@ -63,6 +63,7 @@ func _ready() -> void:
 	
 	# Connect to the PC for interacting
 	pc.connect("try_interact", _on_try_interact)
+	pc.connect("pc_about_to_move", _on_pc_move)
 	
 	navigation = Navigation.new()
 	navigation.tilemaps = tilemaps
@@ -203,3 +204,7 @@ func walk_path(actor: Character, path_array: Array) -> void:
 		dir = path_array[step].direction_to(path_array[step+1])
 		actor.direction_change(dir)
 		await actor.move(dir)
+
+func _on_pc_move(cur_position: Vector2, dir: Vector2i):
+	actors_map[pc] = tilemaps[0].local_to_map(tilemaps[0].to_local(cur_position)) + dir
+	print(actors_map)
