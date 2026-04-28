@@ -1,0 +1,1477 @@
+title: chapter2_SaltMireCity_SSSpamTicketSeller
+tags:
+---
+<<declare $playerName = "Player">>
+<<declare $hatedFood = "Apple">>
+<<declare $familiar = "Familiar">>
+<<if $chapter2_SaltMireCity_Matthias_PlayerWins == 0>> 
+    Player: Hi, can I have a single ticket please?
+    Ticket Seller: Ah, my apologies. 
+    Ticket Seller: With the Gantoh train being out of service, I'm afraid tickets for the next voyage are all sold out. 
+    Player: What!? Sold out?
+    Ticket Seller: Wait, I can see you have an adventurer's amulet. 
+    Ticket Seller: There are still a few golden tickets to be won.
+    Player: What's a golden ticket?
+    Ticket Seller: Oh, it's an excellent prize. 
+    Ticket Seller: Not only will it get you a place on this voyage but you'll also get to dine at the Captain's table. A very prestigious prize indeed!
+    Player: How do I win one?
+    Ticket Seller: By beating the Salt Mire City Guild Master, Matthias. 
+    Ticket Seller: I hear he's pretty tough... and handsome.
+        -> Player: Okay... Thanks for the information. I'll be heading to the Guild Hall anyway.
+        -> Player: Whatever. Thanks I guess.
+    Ticket Seller: Goodbye and thank you for your custom!
+<<endif>>
+===
+
+title: chapter2_SaltMireCity_HealingChurch_Roy
+tags:
+---
+Roy: Oh! Hi {$playerName}. Let me heal your Familiar up for you.
+Player: Roy? What are you doing here?
+Roy: Oh...
+Roy: After speaking to you back in Powder Town, I decided to pack up and try to pursue my dream after all. 
+Roy: I'm staying with my cousin Sheila who works at the Familiar Nursery here.
+    -> Player: That's amazing! 
+    -> Player: This is your dream?
+Roy: Well, it's the first step anyway. 
+Roy: One day, I want to become a Bishop and open my own Healing Church. 
+Roy: I'm not a noble and don't have much money. So to do that, I'd have to get letters of recommendation from the Healing Churches across Gantoh. 
+Roy: I managed to pluck up the courage to get one from Powder Town and head here. 
+Roy: I even bought a golden ticket to Omen City on the SS Spam but...
+    -> Player: You can do it, Roy!
+        Roy: Y-you really think so?
+            -> Player: For sure. I've never seen someone heal Familiars as good as you.
+                Roy: You're really kind, {$playerName}. I-
+                Healers: *whispering*
+                Roy: ...
+                Player: What are they gossiping about?
+                Roy: ...
+                Roy: You should probably go... 
+                Roy: I'll see you in Omen City, right?
+                <<if $chapter2_SaltMireCity_Matthias_PlayerWins == 0>> 
+                    Player: I'll see you on the SS Spam if I can get a ticket.
+                <<endif>>  
+                <<if $chapter2_SaltMireCity_Matthias_PlayerWins == 1>> 
+                    Player: I have a ticket for the SS Spam too. I'll see you there!
+                <<endif>>  
+                Roy: That's great! 
+                Healers: *whispering*
+                Roy: ...
+                Roy: I don't feel so good...
+                Player: Roy? Are you alright?
+                Roy: Bye, {$playerName}. I'll see you soon.
+            ->Player: Maybe you aren't cut out for this.
+                Roy: Yeah... you're probably right. I just thought...
+                Healers: *whispering*
+                Roy: ...
+                Roy: I don't feel so good...
+    -> Player: That's a stupid dream. 
+        Player: I'm not sure why you're bothering with something like that.
+        Roy: Do you really think so? 
+        Healers: *whispering*
+        Roy: ...
+        Roy: I don't feel so good...
+===
+
+title: chapter2_SaltMireCity_FamiliarNursery_Sheila1
+tags:
+---
+Sheila: Ugh... 
+Sheila: No, Mab... 
+Sheila: Don't nibble Lady Lucaria's fingers...
+Player: Erm... Hello?
+Sheila: Gah! 
+Sheila: Sheila at Salt Mire City Familiar Nursery at your service! What kind of Familiar are you after today?
+Player: Were you sleeping?
+Sheila: Don't tell the Head Breeder, please! 
+Sheila: To tell you the truth, I'm bored stiff here. 
+Sheila: People around here only want Familiars for industry or housework... pulling carts, helping with fishing, tending to crops. 
+Sheila: No one is remotely interested in how they look!
+Player: How they look?
+Sheila: Yes! You know, like whether they have signs of good breeding. I mean...
+Sheila: Wait. What's your name again?
+Player: {$playerName}.
+Sheila: {$playerName}, see my Queen Mab here? What do you think of her?
+    -> Player: She's cute!
+        Sheila: Exactly! Can you imagine her getting dirty doing manual labour? 
+        Sheila: She's the result of all my hard work here... Err, in my free time, of course...
+    -> Player: She doesn't look very industrious.
+        Sheila: I should hope not! 
+        Sheila: It took me years to breed one as fine as she. 
+        Sheila: And what recognition does she get in a place like this? None!
+Sheila: She could even win Crusts, I tell you!
+Player: Crusts?
+Sheila: The annual Familiar beauty contest in the Capital, Avaelon. 
+Sheila: The first qualifier contest is in a few days in Omen City. 
+<<if $Roy_Activated == 1>> 
+    Sheila: My cousin, Roy, recently came to visit and bought a ticket for the SS Spam. 
+    Sheila: He said he'd met someone who had inspired him to follow his dreams. 
+    Sheila: I got all caught up in it and agreed to go with him. 
+<<endif>>  
+<<if $Roy_Activated == 0>> 
+    Sheila: I got myself all worked up and bought a ticket for the SS Spam.
+<<endif>>  
+Sheila: I even spent most of my savings on upgrading my ticket for the SS Spam when I heard Lady Lucaria was going to be on the ship. But now I'm having second thoughts...
+Sheila: What do you think I should do?
+    -> Player: You should go. You and Queen Mab have got this!
+        Sheila: You're right! We can do this! 
+        Sheila: Thanks {$playerName}.
+    -> Player: I think you should sell your ticket before you embarrass yourself.
+        Sheila: ...
+        Sheila: Sorry, Mab. I think I made a mistake.
+===
+
+title: chapter2_SaltMireCity_FamiliarNursery_Sheila2
+tags:
+---
+Sheila: I still haven't sold my ticket...
+    -> Player: I think you should enter the Omen City contest after all.
+        Sheila: Really? 
+        Sheila: You're right! We can do this! T
+        Sheila: Thanks {$playerName}.
+    -> Player: You should.
+        Sheila: I know. I will...
+===
+
+title: chapter2_SaltMireCity_Inn
+tags:
+---
+Innkeeper: Hello! Oh, another Adventurer? 
+Innkeeper: You'll be wanting a room. You can have the one upstairs on the right.
+    -> Player: Thank you.
+        Innkeeper: Now that's refreshing! 
+        Innkeeper: I was getting worried that Adventurers had begun to lose their manners. 
+        Innkeeper: Just a few hours ago, I had a red-haired noble insult my establishment and wave around a golden ticket for the SS Spam like it made them royalty or something. Tch!
+    -> Player: I want the best you have.
+        Innkeeper: You and everyone else! 
+        Innkeeper: Just earlier, I had a red-haired noble insult my establishment and wave around a golden ticket for the SS Spam like it made them royalty or something. Tch!
+===
+
+title: chapter2_SaltMireCity_Timmy1
+tags:
+---
+Timmy: Oh, hey buddy!
+    -> Player: Hi, Timmy. How are you doing?
+        Timmy: I'm good, thanks. Better now I've had a pint. 
+        Timmy: Speaking of pints, I owe you a drink!
+    -> Player: You're the hot-head who attacked me over a shiny pebble!
+        Timmy: Hey, hey! I said I was sorry, didn't I? 
+        Timmy: Come on, I owe you a drink.
+<<jump chapter2_SaltMireCity_Timmy2>>
+===
+
+title: chapter2_SaltMireCity_Timmy2
+tags:
+---
+-> (Drink with Timmy.)
+    Timmy: Here you go! Hands drink.
+    Timmy: I realised I'd never asked your name.
+    Player: Oh, I'm {$playerName}.
+    Timmy: I have an interesting question for you {$playerName}, now that we've patched things over. 
+    Timmy: How do you feel about bug-like Familiars?
+        -> Player: It depends. They can be cute or creepy.
+            Timmy: HA! You're right, there! 
+            Timmy: That's why I love them so much. 
+            Timmy: When I got a bit over-excited over that rock, I thought I might have found a fossil of one.
+            Timmy: Fossils are easier to keep stashed in my pockets than live Familiars. HA! HA!
+            Player: Yeah, I get that. 
+            Player: Fossils must be hard to find, though? 
+            Player: I don't think I've ever seen one.
+            Timmy: Well, the Wilds are the best place to look. 
+            Timmy: I haven't had much success yet but I hear a few have been found in the Omen Arrowroot Wilds recently. 
+            Timmy: I'm headed there next. 
+            Timmy: I'm after one fossil in particular. A really rare one! 
+            Timmy: So if you hear of any other good fossil spots, then let me know, buddy!
+            Player: Sure, I'll let you know, Timmy. 
+            Player: See you later!
+        -> Player: I want to squish them.
+            Timmy: AGH! How could you say that? They're the best! 
+            Timmy: Well, look here, buddy. 
+            Timmy: I'm looking for some fossils of them in the Wilds. You can't squish fossils...
+            Timmy: I'm heading to the Omen Arrowroot Wilds next to search there. 
+            Timmy: I'm after one fossil in particular. A really rare one! 
+            Timmy: So if you hear of any other good spots, then let me know, buddy!
+            Player: Okay. If you insist, Timmy.
+-> (Walk away.)
+    Timmy: Hey! No hard feelings, right? 
+    Timmy: At least let me know your name?
+    Player: It's {$playerName}. 
+    Player: You can keep your drink, Timmy.
+===
+
+title: chapter2_SaltMireCity_GuildHall
+tags:
+---
+Clerk: Greetings, Adventurer! 
+Clerk: This is your first time in a Guild Hall, right? 
+Player: How did you know?
+Clerk: You can always tell. 
+Clerk: The innocent, lost aura... The bright glint in their eyes...
+Clerk: Anyway, this is where you can challenge the Guild Master and their acolytes. 
+Clerk: You have to beat the acolytes first before you can take on Matthias. 
+Clerk: This Guild Hall is all about the water element.
+Clerk: The other thing you can do here is collect your allowance from the King. 
+Clerk: This is for subduing wild Familiars and keeping the Gantoh Kingdom safe. 
+Clerk: The higher your amulet rank, the more money you get. 
+Clerk: You can check out the rates on the notice board over there.
+Clerk: So, what would you like to do today?
+    -> Player: Take on the Salt Mire City Guild Master, Matthias.
+        Clerk: Okay. You can now proceed through the door up ahead when you're ready. 
+        Clerk: Good luck! 
+    -> Player: Collect my allowance.
+         <<if $PlayerMoney == 0>> 
+            Clerk: Looks like you haven't earned any money yet. 
+            Clerk: Best get out there and subdue some wild Familiars.
+         <<endif>>
+        <<if $PlayerMoney > 0>> 
+            Clerk: No problem. Here you go.
+        <<endif>>
+===
+
+title: chapter2_SaltMireCity_Matthias
+tags:
+---
+Matthias: Hi, there! 
+Matthias: I'm Matthias, the Guild Hall leader here. 
+Matthias: Have you come to challenge me?
+Player: Yes. I'm {$playerName}, from Brackenberry Village. 
+Player: Professor Olivia is my sponsor.
+Matthias: Professor Olivia? That's the third time I've heard that name recently. 
+Matthias: The other two were pretty strong, so I have high hopes for you, {$playerName}!
+Matthias: If you can defeat me, then you'll move up from brass to copper rank. 
+Matthias: But I'm getting ahead of myself. 
+Matthias: Come. Let's see what you can do.
+===
+
+title: chapter2_SaltMireCity_Matthias_PlayerLoses
+tags:
+---
+Matthias: Don't give up yet! 
+Matthias: I saw signs of potential in you. 
+Matthias: Promise me you'll come back for another try when you're ready?
+===
+
+title: chapter2_SaltMireCity_Matthias_PlayerWins
+tags:
+---
+Matthias: Just as I thought! 
+Matthias: The bond between you and your Familiar is strong already. Unusually so. 
+Matthias: Yes, I have faith that you will go far in your Adventuring journey, {$playerName}. 
+Matthias: Congratulations on reaching Copper Rank!
+Player: Thank you. 
+Player: What about the golden tickets for the SS Spam? I heard you were giving some away.
+Matthias: You're in luck. I have one last golden ticket here. 
+Matthias: The ship is leaving for Omen City tomorrow morning. 
+Matthias: I'll actually be travelling on the boat too!
+    -> Player: You're leaving Salt Mire City?
+    -> Player: Oh... Why?
+Matthias: I have something I need to sort out. 
+Matthias: It's something I should have really done some time ago but it cannot wait any longer. 
+Matthias: It's partly in my capacity as a Guild Master and Royal Council Member. 
+Player: What's the other part?
+Matthias: ...
+Matthias: Do you believe in legends, {$playerName}?
+    -> Player: Of course!
+        Matthias: I had a good feeling about you the moment you stepped into this room! 
+        Matthias: Look for me when you're in Omen City. I have something interesting I'd like to show you.
+    -> Player: They're nothing more than fairytales. 
+        Matthias: Hmmm... That's disappointing to hear. 
+        Matthias: Remember, all fairytales come from something. 
+        Matthias: If you change your mind, seek me out in Omen City and we can continue this discussion.
+===
+
+title: chapter2_SaltMireCity_Kenny1
+tags:
+---
+Guard: So what did you see, ma'am?
+Old Woman: Chaffy and I were just sitting in our usual spot, people watching in the town square, when we saw someone lurking.
+Guard: Lurking?
+Old Woman: Yes, lurking! 
+Old Woman: They were very suspicious-looking. 
+Guard: Do you have any details that might identify them?
+Old Woman: Oh, my memory isn't what it used to be, sonny! 
+Old Woman: They were kind of tall... I think? 
+Old Woman: Or were they short? 
+Old Woman: Maybe average-height?
+Guard: Never mind. 
+Guard: I'll see what I can do with your... information. 
+Guard: Do you have anything to add to this report or are you simply eavesdropping?
+    -> Player: Erm, no. Sorry. I was just curious.
+    -> Player: Nothing at all.
+Guard: Then be on your way, Adventurer. This is official business.
+Old Woman: Hey, sonny. What's your name?
+Guard: Kenny. 
+Guard: Kenny, ma'am.
+Old Woman: You look different to the usual city guards. 
+Old Woman: Where do you come from?
+Kenny: I must be on my way. 
+===
+
+title: chapter2_SaltMireCity_Anne
+tags:
+---
+Player: Anne?
+<<if $Agreed_Help_Anne == 1 and $Pulled_Lever == 1>>
+    Anne: Hi, {$playerName}! Good to see you made it. 
+    Anne: Thanks for helping me back there. 
+    Anne: I was hoping we would meet again. I always believe you should always treat your investors well.
+    Player: Investors?
+    Anne: A good deed is an investment in another person, is it not? 
+    Anne: I'd like to offer you a permanent discount on all my stock. 
+    Anne: You'll not find bargains like this anywhere else!
+        -> Player: Wow, thanks!
+            Anne: No problem. 
+        -> Player: Oh, okay.
+            Anne: A little bit of an underwhelming response there, {$playerName}. 
+        Anne: Anyway, feel free to have a look at my cart and see if there's anything you like.
+<<endif>>
+<<if $Agreed_Help_Anne == 0 and $Pulled_Lever == 1>>
+    Anne: Hi, {$playerName}. Fancy seeing you around here. 
+    Anne: I'm glad you changed your mind and decided to help me after all. 
+    Anne: I was hoping we would meet again. I always believe you should always reward good business sense.
+    Player: Business sense?
+    Anne: You know, natural instincts that seek out good deals and fortuitous exchanges? 
+    Anne: For pulling that lever, I'd like to give you a free healing potion.
+        -> Player: Wow, thanks!
+            Anne: No problem. 
+        -> Player: Oh, okay.
+            Anne: Don't look a gift horse... or potion... in the mouth, {$playerName}. 
+    Anne: Anyway, feel free to have a look at my cart and see if there's anything you like.
+<<endif>>
+<<if $Agreed_Help_Anne == 0 and $Pulled_Lever == 0>>
+    Anne: You!
+    Anne: Bet you didn't expect to see me here after leaving me to fend for myself in the Wilds, did you? 
+    Anne: I lost a good portion of my stock trying to move that mining cart out of the way.
+        -> Player: I'm really sorry. I shouldn't have done that.
+            Anne: No, you shouldn't. 
+            Anne: But... I can probably forgive you, if you become a regular customer of mine.
+        -> Player: I'd do it again. It was funny.
+            Anne: You're a proper piece of work, aren't you?
+    Anne: Well… You can still take a look at my cart and see if there's anything you like.
+===
+
+title: chapter2_SaltMireCity_Kenny2
+tags:
+---
+Woman: Help! They stole my Familiar!
+Kenny: You, there! 
+Kenny: Stop them!
+    -> Player: (Stop them.)
+        Player: Unhand that Familiar!
+        Team StopIt Grunt: Playing at being a Good Samaritan are you? Get out of my way!
+    -> Player: (Do Nothing.)
+        Kenny: What is wrong with you!? You just let them past!?
+        Kenny: What is your name?
+        Player: {$playerName}.
+        Kenny: {$playerName}, next time, you should think about actually helping people in need instead of just standing there! 
+        Kenny: Now move. 
+        Kenny: I need to chase this villain down before they escape with this poor woman's Familiar and she never sees it again.
+===
+
+title: chapter2_SaltMireCity_Kenny2_PlayerLoses
+tags:
+---
+StopIt! Militia Grunt: Ha! Your Familiar is mine!
+===
+
+title: chapter2_SaltMireCity_Kenny2_PlayerWins
+tags:
+---
+StopIt! Militia Grunt: Curses upon you all! 
+StopIt! Militia Grunt: The StopIt! Militia will free all Familiars from your evil clutches!
+Kenny: Good work... Erm...?
+Player: {$playerName}.
+Kenny: I'll return this Familiar to its owner and take this villain straight to the City Gaol for questioning.
+Kenny: Unfortunately, I won't be able to do it myself. I need to be on my way at once. 
+Player: What for?
+Kenny: ...
+Kenny: That's classified.
+    -> Player: You're not a Salt Mire City guard, are you?
+        Kenny: Of course I am.
+    -> Player: ...
+        Kenny: ...
+        Kenny: Thanks again for helping keep the streets safe, {$playerName}.
+===
+
+title: chapter2_SSSpam_Intro
+tags:
+---
+Butler: You seem a bit... different to our usual clientele. 
+Butler: May I ask where you are from?
+    -> Player: Brackenberry Village.
+    -> Player: Nope.
+Butler: I see...
+Butler: It's clearly your first time aboard a luxury vessel. 
+Butler: Well, you should feel privileged to have some very esteemed neighbours. 
+Butler: A noble from the Sullivan family is residing in the cabin next door. One of the twins I do believe. 
+Butler: This is your cabin. 
+Butler: As a Golden Ticket holder, you have some free time to wander about before the bell rings for lunch at the Captain' table. 
+Butler: Make sure you come back here to spruce yourself up beforehand. 
+Butler: You don't want to make everyone feel uncomfortable, especially since it must have cost you dearly to purchase such a ticket.
+Butler: Enjoy.
+Player: Wow… I hate to admit it, but this is really nice. 
+Player: I wonder how much this cabin would have normally cost?
+Player: That snooty butler said I had some time to explore before lunch. I should make the most of it.
+===
+
+title: chapter2_SSSpam_Roy_and_Sheila
+tags:
+---
+Roy: Hi, {$playerName}! 
+Roy: Are you enjoying the trip so far?
+Sheila: You know {$playerName} too, Roy?
+Roy: Yeah! We met in Powder Town. 
+Roy: They're the one who... Erm...
+Sheila: Oh! That's so funny. 
+Sheila: {$playerName} was the one who convinced me to enter the Omen City contest too!
+But {$playerName}, have you seen Lady Lucaria yet?
+Player: Who?
+Sheila: Gah! Please tell me you're joking?
+Roy: Lady Lucaria and her Familiar, Luxo, are famous Crusts winners. My cousin is quite obsessed with them.
+Sheila: And so I should be! 
+Sheila: The grace, the poise, the beauty! 
+Sheila: Queen Mab and I would give almost anything to meet her... but I have no idea where she is.
+Roy: Please don't leave me here by myself, Sheila.
+Sheila: Fine…
+    -> Player: I'll keep you company if you'd like, Roy?
+        Roy: Really?! 
+        Roy: I mean, please don't inconvenience yourself on my account! 
+        Roy: I wouldn't want to hold you back. 
+        Roy: I need to psyche myself up for lunch at the Captain's table anyway...
+    -> Player: I'll keep an eye out for Lady Lucaria, Sheila.
+        Sheila: Yay! 
+        Sheila: If you spot her, give Mab a signal and we'll be right over. 
+        Sheila: I'll drag Roy with us if I have to!
+===
+
+title: chapter2_SSSpam_Roy_No_Sheila
+tags:
+---
+Roy: Hi, {$playerName}! 
+Roy: Are you enjoying the trip so far?
+    -> Player: It's amazing. 
+        Player: Are you dining with the Captain, too?
+        Roy: Yeah. I mean, I'm a bit nervous. 
+        Roy: I'm a bit awkward around groups of strangers.
+    -> Player: It's a bit poncy, isn't it?
+        Roy: Haha, yeah! 
+        Roy: I wouldn't have bought a Golden Ticket if it hadn't been the only type left. 
+        Roy: I just really wanted to get to Omen City as quickly as possible before I had time to make myself too anxious about it.
+===
+
+title: chapter2_SSSpam_Sheila_No_Roy
+tags:
+---
+Sheila: Hi {$playerName}, have you seen Lady Lucaria yet?
+Player: Who?
+Sheila: Gah! Please tell me you're joking?
+Sheila: Lady Lucaria and her Familiar, Luxo, are famous Crusts winners!
+Sheila: They excel in everything! Grace, poise, beauty! 
+Sheila: Queen Mab and I would give almost anything to meet her... but I have no idea where she is.
+    -> Player: I'll let you know if I see her. 
+        Player: What is she like?
+        Sheila: She's beautiful, a winner on every level! 
+        Sheila: If you see her, give Mab a signal and we'll run over.
+    -> Player: Let me know if you see her. 
+        Player: I'm curious.
+        Sheila: And so you should be! 
+        Sheila: She's won several Crusts finals with Luxo, you know. 
+        Sheila: She's a real celebrity!
+===
+
+title: chapter2_SSSpam_Kenny
+tags:
+---
+Player: Kenny?
+Kenny: Y-you have the wrong person!
+Player: That was definitely Kenny...
+===
+
+title: chapter2_SSSpam_Timmy
+tags:
+---
+Timmy: Now, Digits, listen up. 
+Timmy: Protein is really important for building strength and muscle growth. W
+Timmy: We need to make sure we're eating enough so we get those GAINS.
+Digits: Skrrp!
+===
+
+title: chapter2_SSSpam_Matthias
+tags:
+---
+Player: Matthias?
+Matthias: Hey, {$playerName}! 
+Matthias: How are your sea legs? 
+Matthias: You seem to be faring better than poor Anne over there.
+    -> Player: I'm barely noticing the waves. This ship sails so smoothly.
+        Matthias: Haha, you're a natural! 
+        Matthias: You look almost as excited to be here as Nixie.
+    -> Player: I can't wait to be on dry land.
+        Matthias: Not long to go now! 
+        Matthias: Poor Nixie will be devastated. She's having so much fun being out at sea.
+===
+
+title: chapter2_SSSpam_Crew
+tags:
+---
+SS Spam Crew 1: Do you not think our Familiars seem suddenly uneasy?
+SS Spam Crew 2: For sure. One of them in the Engine Room was shaking all over and was refusing to come out to work.
+SS Spam Crew 3: The cargo at the port back there was unusually heavy too. 
+SS Spam Crew 3: What on earth did the folks up in Management order this time?
+SS Spam Crew 2: It doesn't help that the new hires we picked up in Salt Mire City are useless, not to mention unfriendly. 
+SS Spam Crew 1: Ugh. Screw 'em all, I say. 
+SS Spam Crew 1: Sometimes I even wonder if we're paid enough for this job.
+===
+
+title: chapter2_SSSpam_CaptainsTable
+tags:
+---
+Captain Drake: ... So, I think in total I've spent around ten years as Captain of this ship.
+Captain Drake: They've flown by, with us sailing all over Gantoh. Haven't they, Lichen?
+Lichen: Hop! Hop!
+Captain Drake: Now, that's enough about me. 
+Captain Drake: Where are you all from?
+<<if $Roy_Activated == 1>> 
+    Roy: Erm...
+<<endif>>
+Matthias: I'm from Salt Mire City.
+<<if $Sheila_Activated == 1>>
+    Sheila: Me too!
+<<endif>>
+<<if $George_Activated == 1>>
+    George: I'm from near Powder Town. 
+    George: Our family's estate covers vast swathes of the surrounding countryside. 
+<<endif>>
+<<if $Gigi_Activated == 1>>
+    Gigi: I'm from near Powder Town. 
+    Gigi: Our family's estate covers vast swathes of the surrounding countryside. 
+<<endif>>
+<<if $George_Activated == 1>>
+    -> Player: I'm from Brackenberry Village. Same as George.
+        George: ...
+    -> Player: I'm from a small village called Brackenberry.
+<<endif>>
+<<if $Gigi_Activated == 1>>
+    -> Player: I'm from Brackenberry Village. Same as Gigi.
+        Gigi: ...
+    -> Player: I'm from a small village called Brackenberry.
+<<endif>>
+Captain Drake: Ah, so it sounds like you're all from a similar part of Gantoh. 
+<<if $Damien_Activated == 1>> 
+    Damien: The soup course will be some time, Sir. 
+    Damien: I believe there have been some delays in the kitchen.
+    Player: ...?
+    Damien: Excuse me.
+<<endif>>
+<<if $Eliza_Activated == 1>>
+    Eliza: The soup course will be some time, Sir. 
+    Eliza: I believe there have been some delays in the kitchen.
+    Player: ...?
+    Eliza: Excuse me.
+<<endif>>
+Captain Drake: Ah, no matter. 
+Captain Drake: Why don't you all take some time to get to know each other while we wait?
+<<if $Damien_Activated == 1>> 
+    Player: I feel like I've seen that waiter before somewhere...
+<<endif>>
+<<if $Eliza_Activated == 1>>
+    Player: I feel like I've seen that waitress before somewhere...
+<<endif>>
+===
+
+title: chapter2_SSSpam_CaptainsTable_Matthias1
+tags:
+---
+Matthias: The Captain is a really interesting guy but this formal dinner is a bit stuffy, isn't it? 
+Matthias: Hey, have you heard of the Undersea Viewing Window down at the bottom of the ship? 
+Matthias: I was speaking to the Captain and he said we could go and take a look with him if we wanted. 
+Matthias: Let me know if you're interested. 
+===
+
+title: chapter2_SSSpam_CaptainsTable_Matthias2
+tags:
+---
+Matthias: So, do you want to come with me to see the Undersea Viewing Window?
+    -> Player: Sure.
+        Matthias: Great! Let's get out of here.
+    -> Player: I'm not sure yet.
+        Matthias: No worries. Just let me know if you're interested.
+===
+
+title: chapter2_SSSpam_CaptainsTable_George1
+tags:
+---
+George: I bet you've never been on a ship as fine as this before, little mouse. 
+George: Your mind is probably blown by all this luxury.
+Captain Drake: Oh, we have plenty of time. 
+Captain Drake: If that's the case, then why don't you give your friend a tour, Lord Sullivan?
+George: Friend?! 
+George: We're not- not even remotely... Ugh...
+George: Let me know if you're interested. I don't want to show up the old man.
+===
+
+title: chapter2_SSSpam_CaptainsTable_George2
+tags:
+---
+George: So, are you coming?
+    -> Player: Sure.
+        George: I was worried you'd say that. 
+        George: Fine. Follow me.
+    -> Player: I'm not sure yet.
+        George: Ha! I knew it would be too much for you.
+===
+
+title: chapter2_SSSpam_CaptainsTable_Gigi1
+tags:
+---
+Gigi: I bet you've never been on a ship as fine as this before, peasant. 
+Gigi: Your mind is probably blown by all this luxury.
+Captain Drake: Oh, we have plenty of time. 
+Captain Drake: If that's the case, then why don't you give your friend a tour, Lady Sullivan?
+Gigi: Friend?! 
+Gigi: We're not- not even remotely... Ugh...
+Gigi: Let me know if you're interested. I don't want to show up the old man.
+===
+
+title: chapter2_SSSpam_CaptainsTable_Gigi2
+tags:
+---
+Gigi: So, are you coming?
+    -> Player: Sure.
+        Gigi: I was worried you'd say that. 
+        Gigi: Fine. Follow me.
+    -> Player: I'm not sure yet.
+        Gigi: Ho Ho! I knew it would be too much for you.
+===
+
+title: chapter2_SSSpam_CaptainsTable_Roy1
+tags:
+---
+Roy: ...
+Roy: This lunch is really nice, huh?
+Roy: ...
+Roy: Truth be told, I'm feeling a bit overwhelmed. 
+Roy: I'm not very good at talking to strangers. 
+Roy: Do you maybe want to go and get some fresh air together, just the two of us?
+Roy: Just let me know if you want to sneak out of here.
+===
+
+title: chapter2_SSSpam_CaptainsTable_Roy2
+tags:
+---
+Roy: So, shall we go?
+    -> Player: Sure.
+        Roy: Phew! Let's get away for a bit.
+    -> Player: I'm not sure yet.
+        Roy: That's okay. I'll be here if you change your mind.
+===
+
+title: chapter2_SSSpam_CaptainsTable_Sheila1
+tags:
+---
+Sheila: I never found Lady Lucaria. 
+Sheila: This was probably my only chance at meeting her. 
+Sheila: I guess being on the same ship is good enough... right?
+Captain Drake: Oh, are you a big fan? 
+Captain Drake: Lady Lucaria is always happy to meet people. She's in the Diamond Suite not far from here. 
+Captain Drake: Why don't you go and pay her a visit? 
+Sheila: Gah! Really? Oh my goodness!
+Sheila: Actually, I think I might be too nervous to go and see her by myself... 
+Sheila: I think I could do it if you're with me, though.
+===
+
+title: chapter2_SSSpam_CaptainsTable_Sheila2
+tags:
+---
+Sheila: Shall we go and meet Lady Lucaria?
+    -> Player: Sure.
+        Sheila: Thank you! I owe you big time!
+    -> Player: I'm not sure yet.
+        Sheila: Oh, that's alright. 
+        Sheila: If you decide you want to, give Mab and I a nudge.
+===
+
+title: chapter2_SSSpam_CaptainsTable_Damien1
+tags:
+---
+Damien: ...
+Damien: Can I help you?
+Player: Do I know you from somewhere?
+Damien:...
+Damien: No.
+Damien: Apologies, I have to go and get something from the storeroom.
+===
+
+title: chapter2_SSSpam_CaptainsTable_Damien2
+tags:
+---
+Player: ~ Something isn't right. 
+Player: ~ Should I follow the waiter? 
+Player: ~ If I do, I probably won't have any more time before the next course.
+    -> Player: (Follow the Waiter.)
+    -> Player: ~ I'm not sure what I want to do yet.
+===
+
+title: chapter2_SSSpam_Date_Matthias
+tags:
+---
+Captain Drake: This is the Undersea Window. 
+Captain Drake: The nobles book up for weeks for a chance for a private viewing but we had a cancellation last minute. 
+Captain Drake: I'll leave you two to it. Enjoy and keep an eye out for any interesting Familiars! 
+Captain Drake: I'll just be over at the back with Lichen if you need me.
+Matthias: Wow! This is really impressive. 
+Matthias: The ocean here really is beautiful. 
+Matthias: What do you think of it, {$playerName}?
+    -> Player: This is the first time I've seen the sea, nevermind below the sea!
+        Matthias: I'm really glad we could share this moment together. 
+        Matthias: I forget how vast and unexplored the waters in Gantoh are. 
+        Matthias: Who knows what lurks within the mysterious corners of our Kingdom.
+            -> Player: It's exciting.
+                Matthias: You think so? Ha ha! 
+                Matthias: You definitely have an Adventurer's spirit, {$playerName}.
+            -> Player: It's scary.
+                Matthias: ...
+                Matthias: You know, there's a part of me that agrees with you.
+        Matthias: Woah, did you see that? 
+        Player: It's gone that way! 
+        Matthias: Ah! Where? 
+        Player: There! 
+        Player: Wait, now it's there! 
+        Player: Oh, that's actually a rock. Ha ha!
+        Matthias: Ha ha! This is a lot of fun.
+        Matthias: ...
+        Matthias: {$playerName}, you know what?
+        Player: Hmm?
+        Matthias: I think this is the first time I've genuinely laughed in a long time. 
+        Matthias: Ah! Ignore what I just said. I didn't mean to spoil the mood.
+        Player: You didn't-
+        Matthias: I meant to say, thanks for coming with me.
+        Player: Thanks for inviting me.
+        Matthias: I hope I'll get to see you again in Omen City. 
+        Matthias: We'd better head back for now or we'll miss that soup course!
+    -> Player: It's boring. I'm not really into water-type stuff.
+        Matthias: Oh...
+        Matthias: I mean, yeah it kind of is boring, isn't it? 
+        Matthias: Sorry for dragging you all the way down here with me. 
+        Matthias: I hope you'll still want to seek me out in Omen City. No hard feelings if not. 
+        Matthias: For now, we'd better head back or we'll miss that soup course!
+===
+
+title: chapter2_SSSpam_Date_George
+tags:
+---
+George: And this is the Dance Hall. 
+George: Many nobles come here for entertainment, obviously. 
+George: We'd better not get any closer or they'll think we want to join in. 
+George: I'm sure that would be pretty embarrassing for you, since you wouldn't know any of the steps.
+Player: I know the steps.
+George: You have to be joking? 
+George: Where did someone like you learn dance steps like those?
+Player: My Dad taught me. 
+Player: Us poor people do sometimes pick up some things from being around you nobles, you know.
+George: Pfft, a likely story. 
+Player: I'm telling the truth, George. 
+Player: In fact, I probably know those steps better than you.
+George: As if! 
+George: Wait… I have an idea. 
+George: I'll give you one last chance to retract that outrageous statement.
+George: Or are you willing to prove it, little mouse?
+    -> Player: You first, my Lord.
+        George: W-what? Are you sure? 
+        George: Well, I suppose it will be hilarious to watch you fall on your face.
+        George: ...
+        George: I can't believe it... You're actually good?
+        Player: Thanks for the compliment.
+        George: That wasn't a... Ugh! You're so irritating. 
+        George: Let's see if you can keep up with me if I pull out the even more advanced version of this dance!
+            -> Player: (Perform the steps flawlessy, just like Dad taught you.)
+                George: This must be some sort of twisted nightmare. 
+                George: Even Gigi doesn't dance this well!
+            -> Player: (Stamp on his foot.)
+                George: Ouch! 
+                George: What was that for?
+        George: Right, see if you can handle this spin! 
+        Player: Ooof!
+        George: Agh!
+        Player: Erm... We're a bit close...
+        George: Ugh, you're right! 
+        George: You should be grateful that I caught you after you tripped.
+        Player: You were the one who tripped! 
+        Player: You would've fallen if you hadn't grabbed onto me.
+        George: In your dreams.
+        George: Looks like the dance is over. 
+        George: That was kind of fun. 
+        George: Er, I mean, funny watching you try to compete!
+        George: ...
+        George: Let's head back before your stupid tour makes me miss the next course.
+    -> Player: On second thought, maybe I don't actually know the steps that well.
+        George: Ha! I thought so. 
+        George: Let's head back before your little tour makes me miss the next course.
+===
+
+title: chapter2_SSSpam_Date_Gigi
+tags:
+---
+Gigi: And this is the Dance Hall. 
+Gigi: Many nobles come here for entertainment, obviously. 
+Gigi: We'd better not get any closer or they'll think we want to join in. 
+Gigi: I'm sure that would be pretty embarrassing for you, since you wouldn't know any of the steps.
+Player: I know the steps.
+Gigi: You have to be joking? 
+Gigi: Where did someone like you get taught such things?
+Player: My Dad taught me. 
+Player: Us poor people do sometimes pick up some things from being around you nobles, you know.
+Gigi: Ho ho! A likely story. 
+Player: I'm telling the truth, Gigi. 
+Player: In fact, I probably know those steps better than you.
+Gigi: How dare you!
+Gigi: Wait… I have an idea. 
+Gigi: I'll give you one last chance to retract that outrageous statement.
+Gigi: Or are you willing to prove it, peasant?
+    -> Player: You first, my Lady.
+        Gigi: W-what? Are you sure? 
+        Gigi: Well, I suppose it will be hilarious to watch you fall on your face.
+        Gigi: ...
+        Gigi: I can't believe it... You're actually good?
+        Player: Thanks for the compliment.
+        Gigi: That wasn't a... Ugh! You're so annoying. 
+        Gigi: Let's see if you can keep up with me if I pull out the even more advanced version of this dance!
+            -> Player: (Perform the steps flawlessy, just like Dad taught you.)
+                Gigi: This must be some sort of hallucination. 
+                Gigi: Even George doesn't dance this well!
+            -> Player: (Stamp on her foot.)
+                Gigi: Ouch! 
+                Gigi: What was that for?
+        Gigi: Right, see if you can handle this spin! 
+        Player: Ooof!
+        Gigi: Agh!
+        Player: Erm... We're a bit close...
+        Gigi: Eew, you're right! 
+        Gigi: You should be grateful that I grabbed onto you after you tripped.
+        Player: You were the one who tripped! 
+        Player: You would've fallen if I hadn't caught you.
+        Gigi: In your dreams.
+        Gigi: Looks like the dance is over. 
+        Gigi: That was kind of fun. 
+        Gigi: Er, I mean, funny watching you try to compete!
+        Gigi: ...
+        Gigi: Let's head back before your stupid tour makes me miss the next course.
+    -> Player: On second thought, maybe I don't actually know the steps that well.
+        Gigi: Ho ho! I thought so. 
+        Gigi: Let's head back before your little tour makes me miss the next course.
+===
+
+title: chapter2_SSSpam_Date_Roy
+tags:
+---
+Roy: Sorry for dragging you away, {$playerName}. 
+Roy: I never used to be this shy around people. 
+Roy: I wish I was as brave as you. 
+Roy: You weren't even intimidated by that mean noble.
+Player: It wasn't always like that. 
+Player: They used to pick on me a lot when I was younger. 
+Player: It took me a lot of courage to finally stand up to them.
+???: Luxo? Luxo, are you alright?!
+Roy: That person sounds like they're in trouble! 
+Roy: We should go and check on them!
+    -> Player: Let's go!
+        Roy: Okay, follow me!
+        Roy: Hello? Is everything alright?
+        ???: Oh, thank the Elements! 
+        ???: Can you help us? 
+        ???: My poor Familiar, Luxo, has taken a funny turn and isn't looking right at all.
+        Roy: Don't worry! I'm from the Healing Church. 
+        Roy: Let's take a look at you.
+        Player: Luxo? 
+        Player: You're Lady Lucaria, aren't you?
+        Lady Lucaria: That's right. 
+        Lady Lucaria: It's a pleasure to meet you both. 
+        Lady Lucaria: I'm not sure where my servants have gone... 
+        Roy: Hmm... When did this start?
+        Lady Lucaria: He hasn't been right ever since he set foot on this ship. 
+        Lady Lucaria: Oh, I hope it isn't anything serious. 
+        Lady Lucaria: I don't care about the competitions, as long as he's okay.
+        Roy: Aha! 
+        Roy: I think Luxo here simply has an upset stomach. 
+        Roy: Did you maybe eat something you shouldn't have?
+        Luxo: Mwahhhhh...
+        Roy: He'll be just fine in a few days. 
+        Roy: If you give him this medicine I made, he should feel better almost immediately. 
+        Lady Lucaria: You're both so kind to stop and help us. 
+        Lady Lucaria: I don't know what we would have done, otherwise.
+        Roy: ...
+        Roy: Ah, no problem! 
+        Roy: We must be away now. Please excuse us, my Lady.
+        Lady Lucaria: Thank you both so much. 
+        Lady Lucaria: It's been a pleasure meeting such a lovely couple. 
+        Roy: Couple...?!
+        Player: Your face is flushed, Roy! 
+        Player: Are you feeling okay?
+        Roy: Oh, I-I'm fine!
+            -> Player: Maybe I should take your hand, just in case?
+                Roy: Ah, erm, sure!
+            -> Player: Give me your hand. I'll help walk you back.
+                Roy: Actually, I do feel a bit light-headed. 
+            Player: My heart is racing now too...
+            Roy: There must definitely be something going around this ship, right {$playerName}?
+            Player: Oh, erm... Definitely!
+            Roy: And look at the time! 
+            Roy: We'd better head back or you'll miss the next course. 
+    -> Player: They're in a fancy suite. They'll have plenty of servants to help them, I'm sure.
+        Roy: Oh, well, if you say so...
+        Roy: I hope they're alright in there...
+        Roy: Oh and look at the time! 
+        Roy: We'd better head back or you'll miss the next course.
+===
+
+title: chapter2_SSSpam_Date_Sheila
+tags:
+---
+Sheila: Eurgh, I'm so nervous! 
+Sheila: I don't know what to say to her.
+Player: Just be yourself. 
+Player: Her fame, beauty or status doesn't make her anything more than another human being.
+Sheila: Hehe, she's like a goddess to me! 
+Sheila: But you're right. 
+Sheila: I wonder if it's okay to ask for something from her.
+Player: Like what?
+Sheila: You know, like show tips or an autograph... 
+Sheila: Gah! Are those too much? 
+Sheila: I should play it cool.
+    -> Player: Come on, we're gonna get them all!
+        Sheila: We are? 
+        Sheila: I mean, we are! 
+        Sheila: Let's go!
+        Lady Lucaria: Oh, hello! What a lovely pair of visitors! 
+        Lady Lucaria: How can I help you both?
+        Sheila: ...
+        Sheila: I'm Sheila, your biggest fan ever, Lady Lucaria! 
+        Player: I've come as her escort, my Lady.
+        Lady Lucaria: It's wonderful to meet you. 
+        Lady Lucaria: Oh, is that your Familiar, Sheila? How cute!
+        Sheila: I'm planning on entering her in Crusts, just like your Luxo.
+        Lady Lucaria: Is that so? 
+        Lady Lucaria: I hope then that you'll be entering the Omen City contest. 
+        Lady Lucaria: I'm going to be one of the judges there.
+        Sheila: I sure am! 
+        Lady Lucaria: Excellent. 
+        Lady Lucaria: In that case, let me give you some show tips...
+        Player: Sheila seems much more comfortable now. I'll leave her to it.
+        Sheila: That was amazing! 
+        Sheila: I feel like I know so many new things now that Mab and I can practise. 
+        Sheila: Oh, and I got an autograph too!
+        Player: That's great!
+        Sheila: ...
+        Sheila: Do you think I can be like her one day, {$playerName}?
+            -> Player: I have complete faith in you and Mab.
+                Sheila: Really? 
+                Sheila: I mean, it's true that we need to be more beautiful, more poised, more graceful. 
+                Sheila: It's not impossible if we work hard.
+            -> Player: You don't need to be more like her. 
+                Player: I'm sure you'd win just by being yourself.
+                Sheila: You do flatter me, {$playerName}. 
+                Sheila: But I know we still need to do some serious work on our beauty, poise and grace. 
+            Sheila: I hope I'll get to see you cheer me on at the competition in Omen City. 
+            Player: Of course I'll be there. 
+            Player: And one day, when you're a Crusts winner, I want your autograph.
+            Sheila: You bet! I'll give you as many as you want.
+            Sheila: Gah! Have you seen the time? 
+            Sheila: We'd better head back before we miss the next course. 
+    -> Player: Ugh, all this fan-girling is making me cringe. 
+        Player: You should just go in alone.
+        Sheila: What? 
+        Sheila: But I can't do this alone... 
+        Sheila: Am I being too weird? 
+        Sheila: Maybe I shouldn't go in after all.
+        Sheila: I guess we're cutting it fine anyway...
+        Sheila: We'd better head back before we miss the next course...
+===
+
+title: chapter2_SSSpam_Date_Damien
+tags:
+---
+<<declare $DamienElizaNowayIdontwanttogetcaughtupinthis = "">>
+Damien: What are we doing here, Shadow... 
+Damien: What if...?
+Player: Damien! It's you! 
+Damien: Tch! 
+Damien: Still sticking your nose in where it doesn't belong, are you, {$playerName}? 
+Player: What are you doing here?
+Damien: I guess there's no point in hiding it now. 
+Damien: Look, something is going to happen here on this ship. 
+Damien: If you know what's good for you, you'll take your little Familiar and go hide until it's all over. 
+    -> Player: No way! 
+        <<set $DamienElizaNowayIdontwanttogetcaughtupinthis = "No way">>
+        Player: If something's going to happen, then I have to help!
+        Damien: It's too late, do you hear me? 
+        Damien: It's happening any moment now.
+        Player: People are going to get hurt, aren't they? 
+        Player: Do you still think this is what Familiars want?
+        Damien: ...
+            -> Player: You seem nervous.
+                Damien: I just have to carry out my orders like the higher-ups said, for the greater good.
+            -> Player: You seem unsure.
+                Damien: ...
+                Damien: Familiars are sentient beings who deserve their freedom. 
+                Damien: This is just one step in a larger plan.
+                Damien: I still believe in the StopIt! Militia. 
+                Damien: I've told you before, we're not friends.
+                Damien: So leave me alone and stop getting in my way.
+                Damien: I don't know why I'm even trying to...
+                Damien: Tch! Just stay out of it. 
+                Damien: You've been warned. 
+                Damien: I can't help you any more than that.
+            Player: I've lost him! 
+            Player: This is serious {$familiar}. 
+            Player: It sounds like the StopIt! Militia have infiltrated the ship. 
+    -> Player: I don't want to get caught up in this. 
+        <<set $DamienElizaNowayIdontwanttogetcaughtupinthis = "I don't want to">>
+        Player: I'll hide.
+        Damien: That wasn't the response I was expecting from you...
+        Damien: But that's good. Go out of the door behind me. 
+        Damien: I'll go another way so we're not seen together.
+        Player: This is serious {$familiar}. 
+        Player: It sounds like the StopIt! Militia have infiltrated the ship. 
+<<jump chapter2_SSSpam_StopItMilitia_Damien_or_Eliza>>
+===
+
+title: chapter2_SSSpam_Date_Eliza
+tags:
+---
+<<declare $DamienElizaNowayIdontwanttogetcaughtupinthis = "">>
+Eliza: What are we doing here, Echo... 
+Eliza: What if...?
+Player: Eliza! It's you! 
+Eliza: Hmph! 
+Eliza: Still sticking your nose in where it doesn't belong, are you, {$playerName}? 
+Player: What are you doing here?
+Eliza: I guess there's no point in hiding it now. 
+Eliza: Look, something is going to happen here on this ship. 
+Eliza: If you know what's good for you, you'll take your little Familiar and go hide until it's all over. 
+    -> Player: No way! 
+        <<set $DamienElizaNowayIdontwanttogetcaughtupinthis = "No way">>
+        Player: If something's going to happen, then I have to help!
+        Eliza: It's too late, do you hear me? 
+        Eliza: It's happening any moment now.
+        Player: People are going to get hurt, aren't they? 
+        Player: Do you still think Familiars are the ones who are dangerous?
+        Eliza: ...
+            -> Player: You seem nervous.
+                Eliza: I just have to carry out my orders like the higher-ups said, for the greater good.
+            -> Player: You seem unsure.
+                Eliza: ...
+                Eliza: Familiars are dangerous weapons. 
+                Eliza: This is just one step in a larger plan.
+                Eliza: I still believe in the StopIt! Militia. 
+                Eliza: I've told you before, we're not allies.
+                Eliza: So leave me alone and stop getting in my way.
+                Eliza: I don't know why I'm even trying to...
+                Eliza: Argh! Just stay out of it. 
+                Eliza: You've been warned. 
+                Eliza: I can't help you any more than that.
+            Player: I've lost her! 
+            Player: This is serious {$familiar}. 
+            Player: It sounds like the StopIt! Militia have infiltrated the ship. 
+    -> Player: I don't want to get caught up in this. 
+        <<set $DamienElizaNowayIdontwanttogetcaughtupinthis = "I don't want to">>
+        Player: I'll hide.
+        Eliza: That wasn't the response I was expecting from you...
+        Eliza: But that's good. Go out of the door behind me. 
+        Eliza: I'll go another way so we're not seen together.
+        Player: This is serious {$familiar}. 
+        Player: It sounds like the StopIt! Militia have infiltrated the ship. 
+<<jump chapter2_SSSpam_StopItMilitia_Damien_or_Eliza>>
+===
+
+title: chapter2_SSSpam_StopItMilitia_Attack
+tags:
+---
+Intercom: Ladies and Gentlemen, this is an official announcement. 
+Intercom: I hope you are enjoying your journey with your Familiar slaves. 
+Intercom: I regret to inform you that the StopIt! Militia have taken control of this vessel and will be seizing your Familiars shortly. 
+Intercom: Please, stay calm and do not resist, else there will be serious consequences.
+Intercom: Goodbye.
+===
+
+title: chapter2_SSSpam_StopItMilitia_Matthias
+tags:
+---
+Regiment Leader: Stop right there, all of you. We're here for your Familiar, Captain Drake.
+Captain Drake: Over my dead body!
+Regiment Leader: If you say so.
+    -> Player: We'll not let you hurt them!
+        Matthias: That's right!
+    -> Player: (Say Nothing.)
+        Matthias: Don't worry, Captain. 
+        Matthias: We'll stop them.
+Matthias: {$playerName}, you take their leader and I'll take these two grunts.
+Regiment Leader: Fine. 
+Regiment Leader: As you're both so insistent, we'll teach you a painful lesson and take your Familiars too.
+===
+
+title: chapter2_SSSpam_StopItMilitia_Matthias_PlayerLoses
+tags:
+---
+Matthias: {$playerName}! 
+Regiment Leader: Ha, ha, ha! 
+Regiment Leader: It looks like your adventuring days are over.
+===
+
+title: chapter2_SSSpam_StopItMilitia_Matthias_PlayerWins
+tags:
+---
+Matthias: I knew you could do it, {$playerName}! 
+Regiment Leader: Damn it! 
+Regiment Leader: Quick, let's get out of here!
+Captain Drake: That was close. 
+Captain Drake: My Lichen would be gone right now if it wasn't for you both.
+Matthias: It sounds like things have quietened down out there. 
+Matthias: Please wait here while I go and take a look.
+Matthias: The StopIt! Militia have fled! 
+Matthias: It turns out they met with much more resistance than expected. 
+Matthias: Unfortunately, they did manage to take some of the ship's Familiar crew with them but your defeat of their leader spooked them so much that they abandoned the rest of their scheme. 
+    -> Player: I'm glad we were able to help.
+        Matthias: I don't think we could have done it without you, {$playerName}.
+    -> Player: I can't believe they got away.
+        Matthias: I know. 
+        Matthias: But if it hadn't been for you, it would have been a lot worse.
+Captain Drake: I need to speak to the crew as soon as possible. 
+Captain Drake: We should be almost at Omen City Port. 
+Captain Drake: Please, allow me to escort you both back upstairs.
+===
+
+title: chapter2_SSSpam_StopItMilitia_George
+tags:
+---
+Regiment Leader: Stop right there, all of you. 
+Regiment Leader: We're here for your Familiars, noble scum.
+George: Ha! 
+George: We are Adventurers. 
+George: You'll have to defeat us two first.
+Regiment Leader: Copper ranks? 
+Regiment Leader: This should be easy. 
+    -> Player: We'll not let you past!
+        George: Not one step.
+    -> Player: (Say Nothing).
+        George: Don't worry, everyone. 
+        George: We'll show them.
+George: You take their leader while I take these two grunts.
+Regiment Leader: The rest of you watch while we make an example of these brats.
+===
+
+title: chapter2_SSSpam_StopItMilitia_George_PlayerLoses
+tags:
+---
+George: {$playerName}! 
+Regiment Leader: Ha, ha, ha! 
+Regiment Leader: It looks like your adventuring days are over.
+===
+
+title: chapter2_SSSpam_StopItMilitia_George_PlayerWins
+tags:
+---
+George: Good work, little mouse.
+Regiment Leader: Damn it! 
+Regiment Leader: Quick, let's get out of here!
+Noblewoman: Thank you, brave Adventurers! 
+Noblewoman: It seems like those ruffians have scarpered.
+George: It does seem suspiciously quiet. 
+George: I'll go and check what the current situation is. 
+George: You stay here.
+George: The StopIt! Militia have fled! 
+George: It turns out they met with much more resistance than expected. 
+George: Unfortunately, they did manage to take some of the ship's Familiar crew with them but it seems like our public defeat of their leader made them abandon the rest of their scheme. 
+    -> Player: I'm glad we managed to protect all these Familiars.
+        George: That will teach them to underestimate Adventurers like us... 
+        George: I mean, like me!
+    -> Player: I wish we could have stopped them escaping.
+        George:  It's not your fault. You did what you could. 
+George: We should be almost at Omen City Port. 
+George: Let's rejoin the others upstairs.
+===
+
+title: chapter2_SSSpam_StopItMilitia_Gigi
+tags:
+---
+Regiment Leader: Stop right there, all of you. 
+Regiment Leader: We're here for your Familiars, noble scum.
+Gigi: Ho ho! How droll.
+Gigi: You'll have to defeat us two Adventurers first.
+Regiment Leader: Copper ranks? 
+Regiment Leader: This should be easy. 
+    -> Player: We'll not let you past!
+        Gigi: Not one step, you boors.
+    -> Player: (Say Nothing).
+        Gigi: Stay calm, everyone.
+        Gigi: We'll handle this in no time.
+Gigi: You take their leader while I take these two grunts.
+Regiment Leader: The rest of you watch while we make an example of these brats.
+===
+
+title: chapter2_SSSpam_StopItMilitia_Gigi_PlayerLoses
+tags:
+---
+Gigi: {$playerName}! 
+Regiment Leader: Ha, ha, ha! 
+Regiment Leader: It looks like your adventuring days are over.
+===
+
+title: chapter2_SSSpam_StopItMilitia_Gigi_PlayerWins
+tags:
+---
+Gigi: Good work, peasant.
+Regiment Leader: Damn it! 
+Regiment Leader: Quick, let's get out of here!
+Noblewoman: Thank you, brave Adventurers! 
+Noblewoman: It seems like those ruffians have scarpered.
+Gigi: It does seem suspiciously quiet. 
+Gigi: I'll go and check what the current situation is. 
+Gigi: You stay here.
+Gigi: The StopIt! Militia have fled! 
+Gigi: It turns out they met with much more resistance than expected. 
+Gigi: Unfortunately, they did manage to take some of the ship's Familiar crew with them but it seems like our public defeat of their leader made them abandon the rest of their scheme. 
+    -> Player: I'm glad we managed to protect all these Familiars.
+        Gigi: That will teach them to underestimate Adventurers like us... 
+        Gigi: I mean, like me!
+    -> Player: I wish we could have stopped them escaping.
+        Gigi:  It's not your fault. You did what you could. 
+Gigi: We should be almost at Omen City Port. 
+Gigi: Let's rejoin the others upstairs.
+===
+
+title: chapter2_SSSpam_StopItMilitia_Roy
+tags:
+---
+Regiment Leader: Stop right there, all of you. 
+Regiment Leader: We're here for your Familiar, Lady Lucaria.
+Lady Lucaria: You'll never take my Luxo!
+Regiment Leader: Oh?
+Regiment Leader: You really think you stand a chance against us, my Lady?
+    -> Player: She's not alone! 
+        Player: I'll protect you and Luxo.
+        Roy: Me too!
+    -> Player: (Say Nothing).
+        Roy: Don't worry, Lady Lucaria. 
+        Roy: We won't let them lay a finger on you or Luxo.
+Roy: {$playerName}, you take their leader and I'll fight these two grunts.
+Regiment Leader: Fine. 
+Regiment Leader: As you're both so insistent, we'll teach you a painful lesson and take your Familiars too.
+===
+
+title: chapter2_SSSpam_StopItMilitia_Roy_PlayerLoses
+tags:
+---
+Roy: {$playerName}! 
+Regiment Leader: Ha, ha, ha! 
+Regiment Leader: It looks like your adventuring days are over.
+===
+
+title: chapter2_SSSpam_StopItMilitia_Roy_PlayerWins
+tags:
+---
+Roy: {$playerName} and I will make sure you don't hurt anyone else!
+Regiment Leader: Damn it! 
+Regiment Leader: Quick, let's get out of here!
+Lady Lucaria: I don't know how I can ever thank you both for defending Luxo and I.
+Roy: It sounds like things have quietened down out there. 
+Roy: I'll go and make sure it's safe.
+Roy: The StopIt! Militia have fled! 
+Roy: It turns out they met with much more resistance than expected. 
+Roy: Unfortunately, they did manage to take some of the ship's Familiar crew with them but it seems defeating their leader made them abandon the rest of their scheme. 
+    -> Player: At least we were able to do that much.
+        Roy: It seems a lot of Familiars were saved because of it.
+    -> Player: It's a shame they escaped.
+        Roy: I'm sure that won't be the last of them, either.
+Lady Lucaria: We should be almost at Omen City Port by now. 
+Roy: Let's go and rejoin the others, {$playerName}.
+===
+
+title: chapter2_SSSpam_StopItMilitia_Sheila
+tags:
+---
+Regiment Leader: Stop right there, all of you. 
+Regiment Leader: We're here for your Familiar, Lady Lucaria.
+Lady Lucaria: Luxo, get behind me!
+Regiment Leader: Oh?
+Regiment Leader: You really think that will be enough, my Lady?
+    -> Player: We'll not let you get any closer!
+        Sheila: You're no match for fans like us!
+    -> Player: (Say Nothing).
+        Sheila: As her biggest fans, we'll defend her and Luxo with our lives!
+Sheila: {$playerName}, you take their leader and I'll fight these two grunts.
+Regiment Leader: Fine. 
+Regiment Leader: As you're both so insistent, we'll teach you a painful lesson and take your Familiars too.
+===
+
+title: chapter2_SSSpam_StopItMilitia_Sheila_PlayerLoses
+tags:
+---
+Sheila: {$playerName}! 
+Regiment Leader: Ha, ha, ha! 
+Regiment Leader: It looks like your adventuring days are over.
+===
+
+title: chapter2_SSSpam_StopItMilitia_Sheila_PlayerWins
+tags:
+---
+Sheila: {$playerName}, tie them up so we can arrest them.
+Regiment Leader: Damn it! 
+Regiment Leader: Quick, let's get out of here!
+Sheila: Gah! Wait there!
+Lady Lucaria: Don't worry about them, my dears. 
+Lady Lucaria: I'm just so glad we're all safe. 
+Lady Lucaria: I don't know how I can ever repay you for helping us.
+Sheila: It sounds like things have quietened down out there. 
+Sheila: I'll go and have a peek around
+Sheila: The StopIt! Militia have fled! 
+Sheila: It turns out they met with much more resistance than expected. 
+Sheila: Unfortunately, they did manage to take some of the ship's Familiar crew with them but it seems defeating their leader made them abandon the rest of their scheme. 
+    -> Player: At least we were able to save Luxo.
+        Sheila: I'll carry that honour with me for the rest of my days!
+    -> Player: If only we had arrested them.
+        Sheila: Guess I got caught up in the moment when I said that. 
+        Sheila: Now I think about it, we didn't have any rope or anything.
+Lady Lucaria: We should be almost at Omen City Port by now. 
+Sheila: Let's go and rejoin the others, {$playerName}.
+===
+
+title: chapter2_SSSpam_StopItMilitia_Damien_or_Eliza
+tags:
+---
+<<if $DamienElizaNowayIdontwanttogetcaughtupinthis== "No way">>
+Player: ~ If they're going to kidnap Familiars, they'll need access to boats to escape. 
+Player: ~ I should run to the deck and try to stop them.
+<<endif>>
+<<if $DamienElizaNowayIdontwanttogetcaughtupinthis == "I don't want to">>
+Player: ~ If they're going to kidnap Familiars, they'll be occupied.
+Player: ~ I should try to avoid them and run to my cabin as quickly as possible.
+<<endif>>
+Regiment Leader: You, stop right there! 
+Regiment Leader: What are you doing, little Adventurer, here all alone?
+Grunt: Crush them, boss.
+Grunt 1: Yeah, let's show them what happens to those who resist us.
+Grunt 2: We have some of the Familiar crew. 
+Grunt 2: We still need to find the Captain, Lady Lucaria and take some of the nobles' Familiars.
+Grunt 1: Yeah, make this quick so we can take them all!
+Regiment Leader: What do you have to say to all that, Adventurer?
+    -> Player: Unhand those Familiars!
+        Regiment Leader: Ha, ha, ha! 
+        Regiment Leader: Why, aren't you a brave fool.
+    -> Player: I'll let you past. Just let me and my Familiar go.
+        Regiment Leader: Ha, ha, ha! 
+        Regiment Leader: You think we'd actually let you go?
+Regiment Leader: I'll make an example of you for everyone on this ship. 
+Regiment Leader: Oh, and of course I'll take your Familiar too.
+===
+
+title: chapter2_SSSpam_StopItMilitia_Damien_or_Eliza_PlayerLoses
+tags:
+---
+Player: {$familiar}!
+Regiment Leader: Ha, ha, ha! 
+Regiment Leader: It looks like your Adventuring days are about to be finished.
+===
+
+title: chapter2_SSSpam_StopItMilitia_Damien_or_Eliza_PlayerWins_Roy_Activated
+tags:
+---
+Grunt 1: Impossible!
+Grunt 2: Inconceivable!
+Regiment Leader: Damn it! 
+Regiment Leader: I didn't expect you to be so strong. 
+Regiment Leader: Quick, let's get out of here! 
+Regiment Leader: Leave the Familiars!
+Grunt 2: Run!
+Grunt 1: Aaaah!
+Regiment Leader: At least I left you with a small parting gift from me.
+Player: Oh, I'm bleeding! 
+Player: I must have got so caught up in the battle that I hadn't noticed their Familiar slash my leg.
+Player: Ugh...
+Player: I don't feel so good...
+Roy: {$playerName}, you're awake!
+Roy: How are you feeling?
+Player: I'm alright, I think. 
+Player: I injured my leg, right? 
+Player: It doesn't hurt anymore. 
+Player: What happened? 
+Player: Did the StopIt! Militia kidnap any Familiars?
+Roy: Thanks to you, the StopIt! Militia fled without a single Familiar in their clutches. 
+Roy: Unfortunately, they did manage to escape but no one was harmed during their attack. 
+Roy: Well... erm... apart from you. 
+Roy: Thankfully, Seraph and I were able to heal your wound. 
+Roy: But if your rescuer hadn't found you, it could have been much more serious.
+Player: My rescuer?
+Roy: Someone carried you to us and made sure you would be okay. 
+Roy: They seemed very distressed. 
+Player: What did they look like?
+<<if $Damien_Activated == 1>> 
+Roy: They ran off pretty quickly but I think they were male, with dark hair?
+<<endif>>
+<<if $Eliza_Activated == 1>> 
+Roy: They ran off pretty quickly but I think they were female, with dark hair in a ponytail?
+<<endif>>
+    -> Player: Interesting.
+    -> Player: (Say Nothing).
+Roy: We're almost at Omen City port. 
+Roy: You should rest up until we arrive.
+<<if $Damien_Activated == 1>> 
+Player: Damien saved me?
+Player: How strange.
+<<endif>>
+<<if $Eliza_Activated == 1>> 
+Player: Eliza saved me?
+Player: How strange.
+<<endif>>
+===
+
+title: chapter2_SSSpam_StopItMilitia_Damien_or_Eliza_PlayerWins_Roy_NotActivated
+tags:
+---
+Grunt 1: Impossible!
+Grunt 2: Inconceivable!
+Regiment Leader: Damn it! 
+Regiment Leader: I didn't expect you to be so strong. 
+Regiment Leader: Quick, let's get out of here! 
+Regiment Leader: Leave the Familiars!
+Grunt 2: Run!
+Grunt 1: Aaaah!
+Regiment Leader: At least left you with a small parting gift from me.
+Player: Oh, I'm bleeding! 
+Player: I must have got so caught up in the battle that I hadn't noticed their Familiar slash my leg.
+Player: Ugh...
+Player: I don't feel so good...
+Captain Drake: {$playerName}, you're awake!
+Captain Drake: How are you feeling?
+Player: I'm alright, I think. 
+Player: I injured my leg, right? 
+Player: It doesn't hurt anymore. 
+Player: What happened? 
+Player: Did the StopIt! Militia kidnap any Familiars?
+Captain Drake: Thanks to you, the StopIt! Militia fled without a single Familiar in their clutches. 
+Captain Drake: Unfortunately, they did manage to escape but no one was harmed during their attack. 
+Captain Drake: Well... apart from you, that is. 
+Captain Drake: Thankfully, we were able to heal your wound. 
+Captain Drake: But if your rescuer hadn't found you, it could have been much more serious.
+Player: My rescuer?
+Captain Drake: Someone carried you to us and made sure you would be okay. 
+Captain Drake: They seemed very distressed. 
+Player: What did they look like?
+<<if $Damien_Activated == 1>> 
+Captain Drake: They ran off pretty quickly but I think they were male, with dark hair?
+<<endif>>
+<<if $Eliza_Activated == 1>> 
+Captain Drake: They ran off pretty quickly but I think they were female, with dark hair in a ponytail?
+<<endif>>
+    -> Player: Interesting.
+    -> Player: (Say Nothing).
+Captain Drake: We're almost at Omen City port. 
+Captain Drake: You should rest up until we arrive.
+<<if $Damien_Activated == 1>> 
+Player: Damien saved me?
+Player: How strange.
+<<endif>>
+<<if $Eliza_Activated == 1>> 
+Player: Eliza saved me?
+Player: How strange.
+<<endif>>
+===
