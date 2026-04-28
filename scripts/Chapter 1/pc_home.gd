@@ -47,8 +47,7 @@ func _setup_location() -> void:
 				CH.animation("chapter1_bird", "bird_peek"),
 				CH.turn("Dad", Vector2.UP),
 				CH.turn("Player_Character", Vector2.UP),
-				CH.emote("Dad", EmoteLibrary.shocked),
-				CH.emote("Player_Character", EmoteLibrary.shocked),
+				CH.emote(["Player_Character", "Dad"], EmoteLibrary.shocked),
 				CH.animation("chapter1_bird", "bird_enter"),
 				CH.animation("chapter1_bird", "bird_drop"),
 				CH.spawn(

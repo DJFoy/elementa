@@ -179,9 +179,12 @@ func path_move_requested(actor: Character, start_position: Vector2, destination:
 	update_actor_map(actor)
 	EventBus.movement_complete.emit()
 
+func convert_to_local(vec: Vector2):
+	return tilemaps[0].local_to_map(tilemaps[0].to_local(vec))
+
 func establish_path(actor: Character, start_position: Vector2, destination: Vector2) -> Array:
-	var start_local_coords = tilemaps[0].local_to_map(tilemaps[0].to_local(start_position))
-	var end_local_coords = tilemaps[0].local_to_map(tilemaps[0].to_local(destination))
+	var start_local_coords = convert_to_local(start_position)
+	var end_local_coords = convert_to_local(destination)
 	
 	var blocked_cells = actors_map.values()
 	
@@ -209,7 +212,7 @@ func walk_path(actor: Character, path_array: Array) -> void:
 		await actor.move(dir)
 
 func _on_pc_move(cur_position: Vector2, dir: Vector2i):
-	var local_pos = tilemaps[0].local_to_map(tilemaps[0].to_local(cur_position))
+	var local_pos = convert_to_local(cur_position)
 	
 	if pc.move_ray.is_colliding():
 		if pc.move_ray.get_collider().is_in_group("Exits"):

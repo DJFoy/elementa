@@ -30,6 +30,8 @@ var current_anim: String
 # Current direction the Character is facing
 var current_dir: Vector2
 
+signal emote_finished
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	add_to_group("actors")
@@ -102,10 +104,11 @@ func _continuous_movement():
 
 func trigger_emote(emote_resource: EmoteResource):
 	var emote_scene = preload("res://scenes/emote.tscn")
-	var emote = emote_scene.instantiate()
+	var emote: Emote = emote_scene.instantiate()
 	emote.emote_resource = emote_resource
 	add_child(emote)
 	emote.position = Vector2(10,-12)
-	await get_tree().create_timer(1).timeout
+	await emote.animation_player.animation_finished
+	emote_finished.emit()
 	emote.queue_free()
 	
