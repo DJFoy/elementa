@@ -4,6 +4,8 @@ class_name ExitArea
 @export_file("*.tscn") var target_scene
 @export var target_spawn: String
 
+@export var lock_message: Array[String]
+
 signal exit_requested(from_scene: String, target_scene: String, target_spawn: String)
 
 var armed : bool

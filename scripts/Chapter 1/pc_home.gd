@@ -14,6 +14,7 @@ extends Location
 @onready var dad_cue_ch_1_table: Marker2D = $CutsceneMarkers/DadCueCh1Table
 @onready var dad_cue_ch_1_worktop: Marker2D = $CutsceneMarkers/DadCueCh1Worktop
 @onready var dad_cue_ch_1_chair: Marker2D = $CutsceneMarkers/DadCueCh1Chair
+@onready var spawn_door: Spawn = $EntryPoints/SpawnDoor
 
 @onready var exit_stairs: ExitArea = $Exits/ExitStairs
 @onready var exit_door: ExitArea = $Exits/ExitDoor
@@ -67,7 +68,9 @@ func _setup_location() -> void:
 				CH.turn("Dad", Vector2.DOWN),
 				CH.turn("Player_Character", Vector2.UP),
 				CH.wait(2),
-				CH.say("chapter1_dadIntro_3")
+				CH.say("chapter1_dadIntro_3"),
+				CH.move(self, "Dad", spawn_door.global_position),
+				CH.despawn("Dad")
 			]
 	}
 	cutscene_rules = [
@@ -83,7 +86,7 @@ func _setup_location() -> void:
 			"door": exit_door,
 			"unlock": [func(): 
 				print(Global_World_State.cutscenes) 
-				return Global_World_State.cutscenes.has("chaptser1_dad_intro")]
+				return Global_World_State.cutscenes.has("chapter1_dad_intro")]
 		}
 	]
 

@@ -62,9 +62,9 @@ func _unhandled_input(event: InputEvent) -> void:
 				wants_to_move_dir = inputs[dir]
 	else:
 		wants_to_move_dir = Vector2.ZERO
-	if moving:
-		return
 	if Global.interacting:
+		return
+	if moving:
 		return
 	if Input.is_action_just_pressed("interact"):
 		if interact_ray.is_colliding():
@@ -84,6 +84,7 @@ func _unhandled_input(event: InputEvent) -> void:
 
 func _continuous_movement() -> void:
 	if is_locked:
+		_stop_movement()
 		return
 	Global.pc_dir = wants_to_move_dir
 	if current_dir != wants_to_move_dir:

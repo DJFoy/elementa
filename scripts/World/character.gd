@@ -94,6 +94,7 @@ func _on_tween_finished():
 
 func _stop_movement():
 	moving = false
+	wants_to_move = false
 	anim.stop()
 
 func _continuous_movement():

@@ -61,6 +61,7 @@ target_spawn = "pc_bedroom_stairs_01"
 position = Vector2(72, 72)
 target_scene = "uid://y4y1xxl7omnv"
 target_spawn = "bb_village_pc_home_01"
+lock_message = Array[String](["I'd love to run away.", "But what would I even do if I did?"])
 
 [node name="NPCs" type="Node2D" parent="." unique_id=1586322827]
 

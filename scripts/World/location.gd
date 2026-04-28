@@ -209,7 +209,16 @@ func walk_path(actor: Character, path_array: Array) -> void:
 		await actor.move(dir)
 
 func _on_pc_move(cur_position: Vector2, dir: Vector2i):
-	actors_map[pc] = tilemaps[0].local_to_map(tilemaps[0].to_local(cur_position)) + dir
+	var local_pos = tilemaps[0].local_to_map(tilemaps[0].to_local(cur_position))
+	
+	if pc.move_ray.is_colliding():
+		if pc.move_ray.get_collider().is_in_group("Exits"):
+			var exit: ExitArea = pc.move_ray.get_collider()
+			if !exit.armed and !exit.lock_message.is_empty():
+				print("Emit the request!")
+				interaction_request.emit(exit.lock_message)
+	
+	actors_map[pc] = local_pos + dir
 
 func lock_doors() -> void:
 	print("Locking doors")
