@@ -12,7 +12,7 @@ func start_interact_ui(interaction_text):
 	interact.process_text_array(interaction_text)
 
 func npc_start_dialogue_ui(npc: Non_Player_Character):
-	Global.lock()
+	GameState.lock()
 	var dialogue := dialogue_scene.instantiate()
 	_connect_dialogue_signals(dialogue)
 	add_child(dialogue)
@@ -25,11 +25,11 @@ func _connect_dialogue_signals(root: Node) -> void:
 func _on_request_dialogue_end() -> void:
 	for child in get_children():
 		child.queue_free()
-	Global.unlock()
-	Global.interacting = false
+	GameState.unlock()
+	GameState.interacting = false
 
 func _cutscene_start_dialogue_ui(dialogue_id: String):
-	Global.lock()
+	GameState.lock()
 	var dialogue := dialogue_scene.instantiate()
 	_connect_dialogue_signals(dialogue)
 	add_child(dialogue)

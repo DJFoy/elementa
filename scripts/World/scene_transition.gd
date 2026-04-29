@@ -6,12 +6,12 @@ const FADE_OUT = "fade_out"
 
 func play_trans(transition: String):
 	if transition == FADE_OUT:
-		Global.lock()
+		GameState.lock()
 		await get_tree().create_timer(0.5).timeout
 		await fade_out()
 	if transition == FADE_IN:
 		await fade_in()
-		Global.unlock()
+		GameState.unlock()
 
 
 func fade_in(duration:= 0.3):

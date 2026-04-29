@@ -2,7 +2,6 @@
 @abstract
 class_name Save extends Resource
 
-
 const ROOT_DIR := "user://save"
 
 var _stem: String = ""      # set by loader
@@ -61,7 +60,6 @@ static func wipe_slot(slot: String) -> Error:
 	if not DirAccess.dir_exists_absolute(root):
 		return OK
 
-	Log.warn("Wiping directory %s" % root)
 	return _rm_rf(root)
 
 
@@ -93,11 +91,8 @@ static func _load_impl(stem: String, global_scope: bool, cls: GDScript, hard_slo
 	var slot := _get_slot(global_scope) if hard_slot == "" else hard_slot
 	var p := _build_path(slot, stem)
 
-	Log.info("Loading '%s', on slot %s" % [cls.get_global_name(), slot])
-
 	# Load the file if its found
 	if FileAccess.file_exists(p):
-		Log.verb("Found save file at %s" % p)
 		var r := ResourceLoader.load(p, "", ResourceLoader.CACHE_MODE_IGNORE)
 		var sf := r as Save
 		sf._stem = stem
@@ -106,7 +101,6 @@ static func _load_impl(stem: String, global_scope: bool, cls: GDScript, hard_slo
 		return sf
 
 	# File not found -- return instance
-	Log.verb("No save file found at %s, returning instance" % p)
 	var inst: Save = cls.new()
 	inst._stem = stem
 	inst._global = global_scope

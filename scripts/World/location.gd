@@ -43,11 +43,11 @@ func _ready() -> void:
 	
 	# If no target spawn provided, revert to the default spawn specified in each location
 	# A failsafe for debugging
-	if !Global.target_spawn:
-		Global.target_spawn = default_spawn
+	if !GameState.target_spawn:
+		GameState.target_spawn = default_spawn
 	
 	for exit in exits:
-		if is_spawn_in_exit(spawns[Global.target_spawn], exit):
+		if is_spawn_in_exit(spawns[GameState.target_spawn], exit):
 			exit.armed = false
 	
 	# Bring in the player character and add to the scene
@@ -57,10 +57,10 @@ func _ready() -> void:
 	
 	# Place the PC in the target spawn position
 	# Currently set to a global variable
-	pc.position = spawns[Global.target_spawn].get_position()
+	pc.position = spawns[GameState.target_spawn].get_position()
 	
 	# Clear out the global target spawn to prevent possible teleportation issues
-	Global.target_spawn = ""
+	GameState.target_spawn = ""
 	
 	# Connect to the PC for interacting
 	pc.connect("try_interact", _on_try_interact)
@@ -87,8 +87,8 @@ func _on_exit_requested(from_scene: String, target_scene: String, target_spawn: 
 
 func trigger_exit(from_scene: String, target_spawn: String, file_path: String):
 	await SceneTransition.play_trans(SceneTransition.FADE_OUT)
-	Global.prev_scene = from_scene
-	Global.target_spawn = target_spawn
+	GameState.prev_scene = from_scene
+	GameState.target_spawn = target_spawn
 	
 	world_change_request.emit(file_path)
 	

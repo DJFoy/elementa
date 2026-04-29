@@ -37,18 +37,18 @@ func _ready() -> void:
 	interact_ray.enabled = true
 	interact_ray.collide_with_areas = true
 	interact_ray.collision_mask = 2
-	if Global.game_loaded:
+	if GameState.game_loaded:
 		player_data = ResourceLoader.load("res://saves/player_data.tres")
 		if player_data:
 			apply_character_data(player_data)
 	load_textures()
-	if Global.pc_dir:
-		direction_change(Global.pc_dir)
-		interact_ray.target_position = Global.pc_dir * 16
+	if GameState.pc_dir:
+		direction_change(GameState.pc_dir)
+		interact_ray.target_position = GameState.pc_dir * 16
 	
 	# Attach player locked signal
 	
-	Global.locked_state_changed.connect(_on_locked_state_changed)
+	GameState.locked_state_changed.connect(_on_locked_state_changed)
 
 func _unhandled_input(event: InputEvent) -> void:
 	if is_locked:
@@ -62,7 +62,7 @@ func _unhandled_input(event: InputEvent) -> void:
 				wants_to_move_dir = inputs[dir]
 	else:
 		wants_to_move_dir = Vector2.ZERO
-	if Global.interacting:
+	if GameState.interacting:
 		return
 	if moving:
 		return
@@ -72,7 +72,7 @@ func _unhandled_input(event: InputEvent) -> void:
 			return
 	for dir in inputs.keys():
 		if event.is_action_pressed(dir, true):
-			Global.pc_dir = inputs[dir]
+			GameState.pc_dir = inputs[dir]
 			if current_dir != inputs[dir]:
 				interact_ray.target_position = inputs[dir] * tile_size
 				interact_ray.force_raycast_update()
@@ -86,7 +86,7 @@ func _continuous_movement() -> void:
 	if is_locked:
 		_stop_movement()
 		return
-	Global.pc_dir = wants_to_move_dir
+	GameState.pc_dir = wants_to_move_dir
 	if current_dir != wants_to_move_dir:
 		interact_ray.target_position = wants_to_move_dir * tile_size
 		direction_change(wants_to_move_dir)
