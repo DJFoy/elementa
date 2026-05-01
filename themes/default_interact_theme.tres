@@ -1,5 +1,7 @@
 [gd_resource type="Theme" format=3 uid="uid://dthhuuah0qhsg"]
 
+[ext_resource type="FontFile" uid="uid://h8n6bdxmtvcn" path="res://assets/font/m5x7.ttf" id="1_ahw81"]
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ahw81"]
 content_margin_left = 1.0
 content_margin_top = 2.0
@@ -52,6 +54,7 @@ corner_radius_bottom_left = 5
 bg_color = Color(1, 1, 1, 1)
 
 [resource]
+default_font = ExtResource("1_ahw81")
 default_font_size = 16
 InteractButton/base_type = &"Button"
 InteractButton/colors/font_color = Color(0, 0, 0, 1)
@@ -68,6 +71,7 @@ InteractButton/colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
 InteractButton/colors/icon_normal_color = Color(0, 0, 0, 1)
 InteractButton/colors/icon_pressed_color = Color(0, 0, 0, 1)
 InteractButton/constants/align_to_largest_stylebox = 1
+InteractButton/fonts/font = ExtResource("1_ahw81")
 InteractButton/styles/focus = SubResource("StyleBoxFlat_ahw81")
 InteractButton/styles/hover = SubResource("StyleBoxFlat_ahw81")
 InteractButton/styles/hover_mirrored = SubResource("StyleBoxFlat_ahw81")

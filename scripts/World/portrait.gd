@@ -19,7 +19,7 @@ class_name Portrait
 @export var clothes_choice: int = 1
 
 func _ready() -> void:
-	if Global.game_loaded:
+	if GameState.game_loaded:
 		var player_data = ResourceLoader.load("res://saves/player_data.tres")
 		if player_data:
 			apply_character_data(player_data)

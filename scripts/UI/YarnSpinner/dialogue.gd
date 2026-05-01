@@ -7,7 +7,7 @@ signal request_next_line
 signal request_dialogue_end
 
 func _ready() -> void:
-	Global.interacting = true
+	GameState.interacting = true
 	line_presenter.connect("dialogue_complete", _on_dialogue_complete)
 	_sync_game_and_yarn()
 	

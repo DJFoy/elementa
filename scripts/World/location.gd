@@ -16,6 +16,7 @@ const PC_SCENE:= preload("res://scenes/pc.tscn")
 var cutscenes = {}
 var cutscene_rules = []
 var locked_doors = []
+var npcs = []
 
 const CH:= preload("res://scripts/Cutscene Manager/cutscene_helpers.gd")
 
@@ -65,6 +66,10 @@ func _ready() -> void:
 	# Connect to the PC for interacting
 	pc.connect("try_interact", _on_try_interact)
 	pc.connect("pc_about_to_move", _on_pc_move)
+	
+	# Instance the correct NPCs
+	
+	resolve_npcs()
 	
 	navigation = Navigation.new()
 	navigation.tilemaps = tilemaps
@@ -230,3 +235,7 @@ func lock_doors() -> void:
 		door["door"].lock()
 		if door["unlock"].all(func(c): return c.call()):
 			door["door"].unlock()
+
+func resolve_npcs() -> void:
+	for npc in npcs:
+		continue

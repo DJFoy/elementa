@@ -97,9 +97,9 @@ func _on_confirm_pressed() -> void:
 	ResourceSaver.save(player_settings, "res://saves/player_data.tres")
 	Global_World_State.character = ResourceLoader.load("res://saves/player_data.tres")
 	
-	Global.prev_scene = "PlayerInit"
-	Global.target_spawn = "pc_bedroom_bed_01"
-	Global.game_loaded = true
+	GameState.prev_scene = "PlayerInit"
+	GameState.target_spawn = "pc_bedroom_bed_01"
+	GameState.game_loaded = true
 	await SceneTransition.fade_out()
 	world_change_request.emit("res://scenes/chapter1/locations/pc_bedroom.tscn")
 

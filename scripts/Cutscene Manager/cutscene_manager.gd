@@ -11,13 +11,13 @@ func _ready() -> void:
 	EventBus.world_change_request.connect(_on_world_change_request)
 
 func play_cutscene(sequence: Array, cutscene_id: String) -> void:
-	if Global.interacting:
+	if GameState.interacting:
 		return
-	Global.interacting = true
-	Global.lock()
+	GameState.interacting = true
+	GameState.lock()
 	await _run_sequence(sequence, cutscene_id)
-	Global.interacting = false
-	Global.unlock()
+	GameState.interacting = false
+	GameState.unlock()
 	EventBus.emit_signal("cutscene_finished", cutscene_id)
 
 func _run_sequence(sequence: Array, cutscene_id: String):

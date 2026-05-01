@@ -23,8 +23,8 @@ var active_tween: Tween
 
 func _ready() -> void:
 	# Set the global state to interacting and lock character input
-	Global.interacting = true
-	Global.lock()
+	GameState.interacting = true
+	GameState.lock()
 
 func parse_text(text_array: Array, n: int):
 	# Take an array of text and remove the specified element
@@ -68,8 +68,8 @@ func _unhandled_input(event: InputEvent) -> void:
 			return
 		n_cur += 1
 		if n_cur == n_text:
-			Global.interacting = false
-			Global.unlock()
+			GameState.interacting = false
+			GameState.unlock()
 			get_parent().set_process_unhandled_input(true)
 			get_viewport().set_input_as_handled()
 			self.queue_free()

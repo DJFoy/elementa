@@ -1,4 +1,4 @@
-extends Resource
+extends Node
 
 # This global is for storing game states
 

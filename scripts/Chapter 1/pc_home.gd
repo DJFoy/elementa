@@ -76,7 +76,7 @@ func _setup_location() -> void:
 		{
 		"id": "chapter1_dad_intro",
 		"trigger": "on_interact",
-		"target": dad.npc_resource.npc_name,
+		"target": "Dad",
 		"conditions": [func(): return !Global_World_State.cutscenes.has("chapter1_dad_intro")]
 		}
 	]
@@ -84,8 +84,12 @@ func _setup_location() -> void:
 		{
 			"door": exit_door,
 			"unlock": [func(): 
-				print(Global_World_State.cutscenes) 
 				return Global_World_State.cutscenes.has("chapter1_dad_intro")]
+		}
+	]
+	npcs = [
+		{
+			"npc_id": "Dad"
 		}
 	]
 

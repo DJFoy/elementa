@@ -66,6 +66,7 @@ lock_message = Array[String](["I'd love to run away.", "But what would I even do
 [node name="NPCs" type="Node2D" parent="." unique_id=1586322827]
 
 [node name="Dad" parent="NPCs" unique_id=768815857 instance=ExtResource("3_0o0db")]
+visible = false
 position = Vector2(39, 7)
 npc_resource = ExtResource("6_ke34i")
 actor_id = "Dad"
