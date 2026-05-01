@@ -1623,3 +1623,391 @@ tags:
     Charlotte: Okay, follow me.
 <<endif>>>>
 ===
+
+title: chapter3_OmenCity_Charlotte_SacredSite1
+tags:
+---
+
+Charlotte: ...
+Charlotte: Hmm...
+Charlotte: Who are you again?
+Player: I'm {$playerName}, an Adventurer? 
+Player: Remember?
+Charlotte: Oh, yes. 
+Charlotte: Apologies, someone was whispering in my ear and I became distracted...
+Charlotte: I'll stay here and try to commune with the local spirits. 
+Charlotte: They are very old and powerful, so they might not talk to me again but it's worth a try, I suppose.
+Charlotte: ...
+Charlotte: If I go into a trance again, just call my name. 
+Charlotte: You seem to be someone who can snap me out of it. 
+Charlotte: That is quite unusual...
+Charlotte: You investigate around here in the meantime and see what you can find.
+
+title: chapter3_OmenCity_Charlotte_Sacred Site2
+tags:
+---
+Charlotte: ...
+Charlotte: Hmm...
+Charlotte: I was... 
+Charlotte: Umm...
+Charlotte: Questions...
+Player: She's in a trance again.
+    -> (Wake her up.)
+        Charlotte: {$playerName}? 
+        Charlotte: Did you find anything interesting?
+            -> Player: Not yet.
+                Charlotte: A shame... 
+                Charlotte: Keep looking...
+                Charlotte: Umm...
+            <<if $chapter3_OmenCity_Charlotte_SacredSite_Shrine == 1>>
+            -> Player: The shrine offerings look like they've been rejected.
+                Charlotte: Not unexpected... Hmm...
+                Charlotte: The spirits are angry, yes indeed.
+                Charlotte: But we knew that already.
+                Charlotte: The question we must solve is why.
+            <<endif>>
+             <<if $chapter3_OmenCity_Charlotte_SacredSite_Lantern == 1>>
+            -> Player: I can feel an opressive presence.
+                Charlotte: Quite.
+                Charlotte: I tried sprinkling salt and other minor purification rituals but they cannot be appeased.
+                Charlotte: I wonder why?
+            <<endif>>
+            <<if $chapter3_OmenCity_Charlotte_SacredSite_Berries == 1>>
+            -> Player: Nearly all of the sacred berries are gone!
+                Charlotte: What?!
+                Charlotte: That's not possible!
+                <<jump chapter3_OmenCity_Charlotte_SacredSite_Berries_Continued>>
+            <<endif>>
+    -> (Leave her be.)
+===
+
+title: chapter3_OmenCity_Charlotte_SacredSite_Shrine
+tags:
+---
+Player: That's strange. 
+Player: The offerings here have rotted. 
+Player: I remember an old lady once telling me that means that they've been rejected.
+===
+
+title: chapter3_OmenCity_Charlotte_SacredSite_Lantern
+tags:
+---
+Player: There's a sudden chill over here and this lantern is flickering unnaturally.
+Player: Even the air feels oppressive.
+Player: I remember reading a book where it said that environmental disturbances like these can be a sign of angry spirits.
+===
+
+title: chapter3_OmenCity_Charlotte_SacredSite_Berries
+tags:
+---
+Player: Almost all of the berries here have been picked.
+Player: I thought these were sacred!
+Player: This must be why the spirits are angry.
+===
+
+title: chapter3_OmenCity_Charlotte_SacredSite_Berries_Continued
+tags:
+---
+Charlotte: This is terrible! 
+Charlotte: Who would steal such a thing? 
+Charlotte: No wonder they are full of wrath, hmm.
+Player: What will you do?
+Charlotte: There is not much I can do here in Omen City. 
+Charlotte: The berries are gone. 
+Charlotte: I will have to check on the other Sacred Sites in Gantoh to make sure they are safe. 
+Charlotte: I have a terrible feeling about this...
+Charlotte: To try and calm the spirits here temporarily, I will conduct another purification rite. 
+Charlotte: But I can tell their attention is pointed elsewhere and that is what worries me the most.
+Charlotte: Do not worry. 
+Charlotte: Now I have made all the progress I can here, I will battle Adventurers again so as few people as possible are disappointed while I am away. 
+Charlotte: There must be quite a queue to work through, I suppose. 
+    -> Player: That's good to hear.
+        Player: I'll see you soon and get that amulet!
+        Charlotte: You have spirit, hmm.
+    -> Would you like any help with the ritual?
+        Charlotte: What?
+        Charlotte: Really?
+        Charlotte: ...
+        Charlotte: That's very kind of you.
+        Charlotte: I would, in fact, appreciate some assistance.
+===
+
+title: chapter3_OmenCity_Charlotte_Battle
+tags:
+---
+Charlotte: Hello, {$playerName}. 
+Charlotte: We have already met, I suppose. 
+Charlotte: You intrigue me indeed. 
+Charlotte: The spirits are interested too...
+Charlotte: Let's see if you live up to our expectations.
+Charlotte: I might not have been a Guild Master for long but many find me to be considerably formidable, hmm.
+===
+
+title: chapter3_OmenCity_Charlotte_Battle_PlayerLoses
+tags:
+---
+Charlotte: Disappointing. 
+Charlotte: I would suggest dusting yourself off and trying again, I suppose.
+===
+
+title: chapter3_OmenCity_Charlotte_Battle_PlayerWins
+tags:
+---
+Charlotte: I see. 
+Charlotte: You and your Familiar are a pleasure to watch... 
+Charlotte: Congratulations on reaching Bronze Rank, {$playerName}.
+Charlotte: I am interested to see how your journey progresses... 
+Charlotte: I will be going to Arrowroot Town to assess the situation at the Sacred Site near there. 
+Charlotte: That will be your next stop, I presume? 
+Charlotte: So, I might see you again soon, hmm.
+
+title: chapter3_OmenCity_Charlotte_Battle_AfterPlayerWins
+tags:
+---
+Charlotte: I hope you enjoy the Candelight Festival...
+Charlotte: It's an ancient celebration unique to Omen City.
+===
+
+title: chapter3_OmenCity_Inn
+tags:
+---
+Innkeeper: Hi, Adventurer! 
+Innkeeper: Tonight we're hosting a special, romantic dinner for the Candlelight Festival.
+Innkeeper: Would you like me to make you a reservation?
+    -> Player: Yes.
+        <<if $Invitation_Accepted == 1>>
+            Innkeeper: Excellent! 
+            Innkeeper: Come and speak to me again once you've done all your adventuring for the day and I'll get your table ready.
+        <<endif>>
+        <<if $Invitation_Accepted == 0>>
+            Innkeeper: Ah, it seems you don't have anyone to dine with yet. 
+            Innkeeper: My apologies, it's tables for two only.
+        <<endif>>
+    -> Player: Not yet.
+        Innkeeper: You'd better hurry and pluck up the courage to ask someone before we fill up!
+===
+
+title: chapter3_OmenCity_Date_Request_Roy
+tags:
+---
+-> Player: (Ask Roy on a date.)
+    Player: Would you like to have dinner together for the festival tonight?
+        <<if $Invitation_Accepted == 1 && $Love_Interest != "Roy">>
+        Roy: It seems like you've already asked someone else. 
+        Roy: Are you asking me to join you instead?
+            -> Player: Yes.
+            -> Player: No.
+                <<stop>>
+        <<endif>>
+        <<if $Affection >= 5>>
+        Roy: Dinner? 
+        Roy: Together? 
+        Roy: I-I'd love to! 
+        <<set $Love_Interest = "Roy">>
+        <<set $Invitation_Accepted = 1>>
+        <<endif>>
+        <<if $Affection < 5>>
+        Roy: Oh...
+        Roy: Sorry, I don't think we really know each other well enough.
+        <<endif>>
+-> Player: (Don't ask Roy on a date.)
+===
+
+title: chapter3_OmenCity_Date_Request_Sheila
+tags:
+---
+-> Player: (Ask Sheila on a date.)
+    Player: Would you like to have dinner together for the festival tonight?
+        <<if $Invitation_Accepted == 1 && $Love_Interest != "Sheila">>
+        Sheila: It seems like you've already asked someone else. 
+        Sheila: Are you asking me to join you instead?
+            -> Player: Yes.
+            -> Player: No.
+                <<stop>>
+        <<endif>>
+        <<if $Affection >= 5>>
+        Sheila: Dinner for the festival? 
+        Sheila: Gah, that would be amazing!
+        <<set $Love_Interest = "Sheila">>
+        <<set $Invitation_Accepted = 1>>
+        <<endif>>
+        <<if $Affection < 5>>
+        Sheila: Erm, no thanks. 
+        Sheila: I'm washing my hair.
+        <<endif>>
+-> Player: (Don't ask Sheila on a date.)
+===
+
+title: chapter3_OmenCity_Date_Request_George
+tags:
+---
+-> Player: (Ask George on a date.)
+    Player: Would you like to have dinner together for the festival tonight?
+        <<if $Invitation_Accepted == 1 && $Love_Interest != "George">>
+        George: It seems like you've already asked someone else. 
+        George: Are you asking me to join you instead?
+            -> Player: Yes.
+            -> Player: No.
+                <<stop>>
+        <<endif>>
+        <<if $Affection >= 5>>
+        George: You're inviting me to dinner!? 
+        George: I guess I can make space in my diary. 
+        George: B-but it's only because I have nothing better to do!
+        <<set $Love_Interest = "George">>
+        <<set $Invitation_Accepted = 1>>
+        <<endif>>
+        <<if $Affection < 5>>
+        George: Ugh, with you? 
+        George: No way.
+        <<endif>>
+-> Player: (Don't ask George on a date.)
+===
+
+title: chapter3_OmenCity_Date_Request_Gigi
+tags:
+---
+-> Player: (Ask Gigi on a date.)
+    Player: Would you like to have dinner together for the festival tonight?
+        <<if $Invitation_Accepted == 1 && $Love_Interest != "Gigi">>
+        Gigi: It seems like you've already asked someone else. 
+        Gigi: Are you asking me to join you instead?
+            -> Player: Yes.
+            -> Player: No.
+                <<stop>>
+        <<endif>>
+        <<if $Affection >= 5>>
+        Gigi: You're inviting me to dinner!? 
+        Gigi: I guess I can make space in my diary. 
+        Gigi: B-but it's only because I have nothing better to do!
+        <<set $Love_Interest = "Gigi">>
+        <<set $Invitation_Accepted = 1>>
+        <<endif>>
+        <<if $Affection < 5>>
+        Gigi: Eew.
+        Gigi: Not in a million years.
+        <<endif>>
+-> Player: (Don't ask Gigi on a date.)
+===
+
+title: chapter3_OmenCity_Date_Request_Matthias
+tags:
+---
+-> Player: (Ask Matthias on a date.)
+    Player: Would you like to have dinner together for the festival tonight?
+        <<if $Invitation_Accepted == 1 && $Love_Interest != "Matthias">>
+        Matthias: It seems like you've already asked someone else. 
+        Matthias: Are you asking me to join you instead?
+            -> Player: Yes.
+            -> Player: No.
+                <<stop>>
+        <<endif>>
+        <<if $Affection >= 5>>
+        Matthias: A candlelit dinner? 
+        Matthias: I'd be honoured!
+        <<set $Love_Interest = "Matthias">>
+        <<set $Invitation_Accepted = 1>>
+        <<endif>>
+        <<if $Affection < 5>>
+        Matthias: I'm terribly sorry. 
+        Matthias: I can't make it tonight. 
+        <<endif>>
+-> Player: (Don't ask Matthias on a date.)
+===
+
+title: chapter3_OmenCity_Date_Request_Charlotte
+tags:
+---
+-> Player: (Ask Charlotte on a date.)
+    Player: Would you like to have dinner together for the festival tonight?
+        <<if $Invitation_Accepted == 1 && $Love_Interest != "Charlotte">>
+        Matthias: It seems like you've already asked someone else. 
+        Matthias: Are you asking me to join you instead?
+            -> Player: Yes.
+            -> Player: No.
+                <<stop>>
+        <<endif>>
+        <<if $Affection >= 5>>
+        Charlotte: Hmm...
+        Charlotte: I am hungry, I suppose...
+        <<set $Love_Interest = "Charlotte">>
+        <<set $Invitation_Accepted = 1>>
+        <<endif>>
+        <<if $Affection < 5>>
+        Charlotte: Sorry. 
+        Charlotte: I have other things to do, I suppose…
+        <<endif>>
+-> Player: (Don't ask Charlotte on a date.)
+===
+
+title: chapter3_OmenCity_Date_Request_Damien
+position: 1018,973
+tags:
+---
+-> Player: (Ask Damien on a date.)
+    Player: Would you like to have dinner together for the festival tonight?
+        <<if $Invitation_Accepted == 1 && $Love_Interest != "Damien">>
+        Damien: It seems like you've already asked someone else. 
+        Damien: Are you asking me to join you instead?
+            -> Player: Yes.
+            -> Player: No.
+                <<stop>>
+        <<endif>>
+        <<if $Affection >= 5>>
+        Damien: Look, I hate to ask this of you but I really need your help with something. 
+        Damien: It means we'll probably miss your dinner...
+        Damien: What do you say?
+            -> Player: Okay.
+                Damien: Thank you. 
+                Damien: Make the reservation anyway. 
+                Damien: It will give us some cover if things go wrong.
+                <<set $Love_Interest = "Damien">>
+                <<set $Invitation_Accepted = 1>>
+            -> No, sorry.
+                Damien: ...
+                Damien:  I understand. 
+                Damien: Let me know if you change your mind.
+        <<endif>>
+        <<if $Affection < 5>>
+        Damien: Have you gone insane? 
+        Damien: I can't. 
+        Damien: I have more important things to do.
+        <<endif>>
+-> Player: (Don't ask Damien on a date.)
+===
+
+title: chapter3_OmenCity_Date_Request_Eliza
+position: 1244,742
+tags:
+---
+-> Player: (Ask Eliza on a date.)
+    Player: Would you like to have dinner together for the festival tonight?
+        <<if $Invitation_Accepted == 1 && $Love_Interest != "Eliza">>
+        Eliza: It seems like you've already asked someone else. 
+        Eliza: Are you asking me to join you instead?
+            -> Player: Yes.
+            -> Player: No.
+                <<stop>>
+        <<endif>>
+        <<if $Affection >= 5>>
+        Eliza: Look, I hate to ask this of you but I really need your help with something. 
+        Eliza: It means we'll probably miss your dinner...
+        Eliza: What do you say?
+            -> Player: Okay.
+                Eliza: Thank you. 
+                Eliza: Make the reservation anyway. 
+                Eliza: It will give us some cover if things go wrong.
+                <<set $Love_Interest = "Eliza">>
+                <<set $Invitation_Accepted = 1>>
+            -> No, sorry.
+                Eliza: ...
+                Eliza:  I understand. 
+                Eliza: Let me know if you change your mind.
+        <<endif>>
+        <<if $Affection < 5>>
+        Eliza: Have you gone insane? 
+        Eliza: I can't. 
+        Eliza: I have more important things to do.
+        <<endif>>
+-> Player: (Don't ask Eliza on a date.)
+===
