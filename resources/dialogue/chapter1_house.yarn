@@ -74,7 +74,7 @@ Professor Olivia: I hadn't realised you'd applied. I could have helped you with 
     -> Player: There wasn't time. You were away when I decided to apply.
     -> Player: You're never here. 
 Professor Olivia: I see. Well, let's get started. 
-Professor Olivia: Are you excited to meet your Familiar?	
+Professor Olivia: Are you excited to meet your Familiar? #cutehappy
     -> Player: I can't wait! 
         Professor Olivia: That's nice to hear.
     -> Player: I just can't wait to leave this place.
@@ -91,9 +91,9 @@ Professor Olivia: Unfortunately, the best I can offer you is from a breeder surp
         Professor Olivia: They would have been dumped in the Wilds. But they're already teeming with dangerous Familiars left to turn feral. It just makes the problem worse.
         <<jump chapter1_profOliviaRelOpt1>>
     -> Player: I don't want some noble's leftovers!
-        Professor Olivia: Well, this is your only option. You're lucky to even get a choice at such short notice. 
+        Professor Olivia: Well, this is your only option. You're lucky to even get a choice at such short notice.  
     -> Player: I don't care where they've come from. 
-        Professor Olivia: Ha! That's the spirit!
+        Professor Olivia: Ha! That's the spirit! #cutehappy
     -> Player: I guess they'll have to do.
         Professor Olivia: Indeed.
 Professor Olivia: Go ahead. Pick which one you want. I'll just be working in my study over there.
@@ -105,7 +105,7 @@ position: 326,-319
 ---
 Professor Olivia: Are you sure this is the one you want?
     -> Player: Yes
-        Professor Olivia: Excellent!
+        Professor Olivia: Excellent! #happy 
         <<jump chapter1_profOliviaConfirmChoice>>
     -> Player: I'm not sure...
         Professor Olivia: You can swap them out at the pen. Take your time. This is important.
@@ -136,7 +136,7 @@ Professor Olivia: Did you understand all of that?
         <<jump chapter1_profOliviaHelpResearch>>
     -> Player: Can I hear that last bit again?
         <<set $chapter_1_prof_olivia_ask_repeat += 1>>
-        Professor Olivia: (angry emote) Come on, now. Pay attention. <<if $chapter_1_prof_olivia_ask_repeat > 2 >>
+        Professor Olivia: Come on, now. Pay attention. #angry <<if $chapter_1_prof_olivia_ask_repeat > 2 >>
         <<jump chapter1_profOliviaWhereNext>>
 ===
 
@@ -157,7 +157,7 @@ Professor Olivia: If you bring me an artefact, I'll even share some more details
     -> Player: I guess I'll consider it.
         Professor Olivia: I understand not everyone is interested in history. Ah well, my offer still stands regardless.
 Professor Olivia: That should be everything you need to know for now. 
-Professor Olivia: Remember to check back in with me here regularly so I know you're safe. Good luck! 
+Professor Olivia: Remember to check back in with me here regularly so I know you're safe. Good luck! #wink
 ===
 
 title: chapter1_TwinChoiceandBattle

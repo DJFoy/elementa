@@ -216,7 +216,7 @@ Clerk: The higher your amulet rank, the more money you get.
 Clerk: You can check out the rates on the notice board over there.
 Clerk: So, what would you like to do today?
     -> Player: Take on the Salt Mire City Guild Master, Matthias.
-        Clerk: Okay. You can now proceed through the door up ahead when you're ready. 
+        Clerk: Okay. You can proceed through the door up ahead when you're ready. 
         Clerk: Good luck! 
     -> Player: Collect my allowance.
          <<if $PlayerMoney == 0>> 
@@ -1474,4 +1474,152 @@ Player: How strange.
 Player: Eliza saved me?
 Player: How strange.
 <<endif>>
+===
+
+title: chapter3_OmenCity_GuildHall1
+tags:
+---
+<<if $chapter3_OmenCity_Charlotte2 == 0>> 
+Clerk: Greetings, Adventurer! 
+Clerk: Erm...
+Clerk: Please accept my apologies. 
+Clerk: The Guild Master is not accepting challengers at the moment. 
+Clerk: I'm not sure when they'll be ready to battle again.
+Player: What do you mean?
+Clerk: ...
+    -> Player: Where are they?
+        Clerk: Oh, they're just in the back room, through the usual doors.
+    -> Are they okay?
+        Clerk: They're fine... I think.
+Clerk: You can go ahead and talk to them if you want. 
+Clerk: Not sure what good it will do though. 
+Clerk: She's been like this for over a week now…
+<<endif>>>>
+===
+
+title: chapter3_OmenCity_GuildHall2
+tags:
+---
+Clerk: Greetings, Adventurer!
+Clerk: Would you like to collect your allowance?
+    -> Player: Yes.
+         <<if $PlayerMoney == 0>> 
+            Clerk: Looks like you haven't earned any money yet. 
+            Clerk: Best get out there and subdue some wild Familiars.
+         <<endif>>
+        <<if $PlayerMoney > 0>> 
+            Clerk: No problem. Here you go.
+        -> No.
+            Clerk: Come back here if you change your mind.
+        <<endif>>
+===
+
+title: chapter3_OmenCity_GuildHall3
+tags: 
+---
+<<if $chapter3_OmenCity_Charlotte2 == 1>> 
+Clerk: I have some fantastic news! 
+Clerk: Guild Master Charlotte is back to normal and is battling Adventurers again. 
+Clerk: Remember, you have to beat the acolytes first before you can take her on. 
+Clerk: This Guild Hall is all about the dark element.
+Clerk: So, what would you like to do today?
+    -> Player: Take on the Omen City Guild Master, Charlotte.
+        Clerk: Okay. 
+        Clerk: You can proceed through that door up ahead when you're ready. 
+        Clerk: Good luck! 
+    -> Player: Collect my allowance.
+          <<if $PlayerMoney == 0>> 
+            Clerk: Looks like you haven't earned any money yet. 
+            Clerk: Best get out there and subdue some wild Familiars.
+         <<endif>>
+        <<if $PlayerMoney > 0>> 
+            Clerk: No problem. Here you go.
+        <<endif>>
+===
+
+title: chapter3_OmenCity_Charlotte2
+tags:
+---
+Charlotte: Hmm... Umm... 
+Charlotte: I see... 
+Charlotte: Perhaps...
+Player: Erm, excuse me?
+Charlotte: If only...
+Charlotte: Maybe... Hmm...
+Player: Hello?
+Charlotte: Umm... Hmm...
+Charlotte: I wonder...
+Player: It's like she can't even hear me. 
+Player: Her eyes have this strange, glazed-over look too. 
+Player: It's almost as if she's talking to someone else?
+===
+
+title: chapter3_OmenCity_Charlotte_Papers
+tags:
+---
+Player: Is it something to do with these?
+Player: These papers talk about the local Sacred Site. 
+Player: There are scrawlings all over them about recent disturbances and eerie happenings across Omen City.
+===
+
+title: chapter3_OmenCity_Charlotte2
+tags:
+---
+-> Player: Hello, Lady Charlotte?
+    Charlotte: ...
+    Charlotte: I suppose...
+    Player: She still isn't responding.
+-> (Wave in Lady Charlotte's face.)
+    Charlotte: ...
+    Charlotte: I suppose...
+    Player: She still isn't responding.
+<<if $chapter3_OmenCity_Charlotte_Papers == 1>>
+-> Did something happen at the Sacred Site?
+    Charlotte: Sacred Site?!
+    Charlotte: What do you know about the Sacred Site?
+    Player: Erm, well, I just read these papers here and wondered...
+    Charlotte: Do you have the gift too?
+    Player: The gift?
+    Charlotte: ...
+    Charlotte: I got a little over-excited, I suppose...
+    Charlotte: How long has it been, hmm?
+    Player: Since what?
+    Charlotte: Exactly! 
+    Charlotte: And the spirits have told me nothing of use, either, umm...
+    Player: You can talk to spirits? 
+    Player: Is that what you meant by the gift?
+    Charlotte: Of course! 
+    Charlotte: Do you have it?
+        -> Player: No.
+            Charlotte: Meeting a fellow clairvoyant would have been too good to be true, I suppose.
+        -> Player: Yeah, sure. 
+            Player: Wooo, spooky!
+            Charlotte: Wooo? 
+            Charlotte: ...
+            Charlotte: Do not pull my leg in jest.
+    Player: I'm {$playerName}, an Adventurer. 
+    Player: I need to defeat you to get a Bronze Amulet.
+    Charlotte: Oh, I cannot possibly.
+    Player: What? 
+    Player: Why not?
+    Charlotte: I am presently, imperfectly pre-occupied. 
+    Charlotte: Hmm... I must get to the bottom of this quickly, before there are any more disturbances in the spirit world. 
+    Charlotte: Isn't that right, Grimm?
+    Grimm: Woof.
+    Charlotte: In fact, now I have been snapped out of my trance by yours truly, this would be a good opportunity to go and investigate again first-hand...
+    Charlotte: ...
+    Player: Hello?
+    Charlotte: Oh! 
+    Charlotte: Sorry, I kind of drifted back in there a bit, umm...
+    Charlotte: What was I saying?
+    Player: You were saying it was a good opportunity to investigate the Sacred Site?
+    Charlotte: That's right! 
+    Charlotte: ...
+    Charlotte: But my acolytes won't understand. 
+    Charlotte: I need someone to assist me...
+    Player: I'd be happy to help.
+    Charlotte: Really? 
+    Charlotte: Interesting, hmm.
+    Charlotte: Okay, follow me.
+<<endif>>>>
 ===
