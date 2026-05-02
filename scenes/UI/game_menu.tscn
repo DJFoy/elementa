@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://imfmklwsjtkd"]
+
+[ext_resource type="Theme" uid="uid://dthhuuah0qhsg" path="res://themes/default_interact_theme.tres" id="1_kv44u"]
+[ext_resource type="Script" uid="uid://blkpkrghjs74y" path="res://scripts/UI/game_menu.gd" id="2_isfb2"]
+
+[node name="GameMenu" type="Control" unique_id=552706908]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("1_kv44u")
+script = ExtResource("2_isfb2")
+
+[node name="TabContainer" type="TabContainer" parent="." unique_id=2003278462]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+current_tab = 0
+tab_0/title = "Save/Load"
+metadata/_edit_use_anchors_ = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="TabContainer" unique_id=1699597365]
+layout_mode = 2
+alignment = 1
+metadata/_tab_index = 0
+metadata/_tab_name = "Save/Load"
+
+[node name="Save" type="Button" parent="TabContainer/HBoxContainer" unique_id=1298961007]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 4
+text = "Save"
+
+[node name="Load" type="Button" parent="TabContainer/HBoxContainer" unique_id=2065863200]
+layout_mode = 2
+size_flags_vertical = 4
+text = "Load"
+
+[connection signal="pressed" from="TabContainer/HBoxContainer/Save" to="." method="_on_save_pressed"]

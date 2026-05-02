@@ -37,6 +37,7 @@ func _ready() -> void:
 	interact_ray.enabled = true
 	interact_ray.collide_with_areas = true
 	interact_ray.collision_mask = 2
+	Global_World_State.last_location = global_position
 	if GameState.game_loaded:
 		player_data = ResourceLoader.load("res://saves/player_data.tres")
 		if player_data:
@@ -80,6 +81,7 @@ func _unhandled_input(event: InputEvent) -> void:
 			else:
 				move(inputs[dir])
 				pc_about_to_move.emit(global_position, inputs[dir])
+				Global_World_State.last_location = global_position
 			return
 
 func _continuous_movement() -> void:
@@ -92,6 +94,7 @@ func _continuous_movement() -> void:
 		direction_change(wants_to_move_dir)
 	move(wants_to_move_dir)
 	pc_about_to_move.emit(global_position, wants_to_move_dir)
+	Global_World_State.last_location = global_position
 
 func get_sprite_asset(category: String, filename: String) -> String:
 	return "res://assets/character_assets/pc_assets/overworld_sprite/%s/%s.png" % [category, filename]

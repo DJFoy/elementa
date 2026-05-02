@@ -17,6 +17,10 @@ func get_character_portrait_variant(character_name: String) -> String:
 # Store current chapter of the game, a flag for various story based options
 var chapter:= "Chapter1"
 
+# Store the current location scene and coordinates that the character is in (for loading purposes)
+var current_scene: String
+var last_location: Vector2
+
 # Store all one time dialogues that have been completed
 var one_time_dialogues:= []
 

@@ -21,6 +21,8 @@ func _load_world(scene_path):
 	
 	if world_scene.has_method("initialise"):
 		world_scene.initialise()
+		# Set the current scene in Global World State to the intended ScenePath if it's a Location
+		Global_World_State.current_scene = scene_path
 
 
 func _connect_world_change_signals(root: Node) -> void:
