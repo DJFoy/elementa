@@ -89,7 +89,14 @@ func _setup_location() -> void:
 	]
 	npcs = [
 		{
-			"npc_id": "Dad"
+			"npc_id": "Dad",
+			"npc_location": Vector2(40, 8),
+			"spawn_conds": [
+				func():
+					return !Global_World_State.cutscenes.has("chapter1_dad_intro"),
+				func():
+					return Global_World_State.chapter == "Chapter1"
+					]
 		}
 	]
 

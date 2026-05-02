@@ -7,6 +7,7 @@ class_name Non_Player_Character
 @export var npc_resource: NPC_Resource
 
 func _ready() -> void:
+	actor_id = npc_resource.npc_name
 	super()
 	add_to_group("Dialogue")
 	sprite_2d.texture = npc_resource.get_sprite_texture(player_data.skin_colour)

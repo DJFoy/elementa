@@ -67,18 +67,14 @@ func _ready() -> void:
 	pc.connect("try_interact", _on_try_interact)
 	pc.connect("pc_about_to_move", _on_pc_move)
 	
-	# Instance the correct NPCs
-	
-	resolve_npcs()
-	
 	navigation = Navigation.new()
 	navigation.tilemaps = tilemaps
 	navigation.build()
-	
-	initialise_actor_map()
 
 func initialise() -> void:
 	_setup_location()
+	resolve_npcs()
+	initialise_actor_map()
 	if resolve_cutscenes("on_enter"):
 		await EventBus.cutscene_finished
 	lock_doors()
@@ -238,4 +234,15 @@ func lock_doors() -> void:
 
 func resolve_npcs() -> void:
 	for npc in npcs:
-		continue
+		if npc["spawn_conds"].all(func(c): return c.call()):
+			spawn_npc(npc["npc_id"], npc["npc_location"])
+
+
+func spawn_npc(npc_id: String, location: Vector2) -> void:
+	var new_npc: Non_Player_Character = preload("uid://c3ps2dhlyigr4").instantiate()
+	var npc_res = NPC_Registry.get_npc(npc_id)
+	
+	new_npc.npc_resource = npc_res
+	$NPCs.add_child(new_npc)
+	
+	new_npc.global_position = location

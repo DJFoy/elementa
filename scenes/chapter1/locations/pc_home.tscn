@@ -2,10 +2,8 @@
 
 [ext_resource type="TileSet" uid="uid://gfwi66i5se4k" path="res://assets/tilesets/backgrounds/base_inside_tiles.tres" id="1_1m1lp"]
 [ext_resource type="Script" uid="uid://d17n47ihtn6ik" path="res://scripts/Chapter 1/pc_home.gd" id="1_67net"]
-[ext_resource type="PackedScene" uid="uid://c3ps2dhlyigr4" path="res://scenes/npc.tscn" id="3_0o0db"]
 [ext_resource type="PackedScene" uid="uid://kkaqj5g0x7un" path="res://scenes/exit_area.tscn" id="3_hwnoe"]
 [ext_resource type="Script" uid="uid://bl7o7egd7hho7" path="res://scripts/World/spawn.gd" id="3_vfuc7"]
-[ext_resource type="Resource" uid="uid://c3n6c7qnrumv3" path="res://resources/npcs/dad/dad.tres" id="6_ke34i"]
 
 [node name="PCHome" type="Node2D" unique_id=800976989 node_paths=PackedStringArray("tilemaps")]
 script = ExtResource("1_67net")
@@ -64,12 +62,6 @@ target_spawn = "bb_village_pc_home_01"
 lock_message = Array[String](["I'd love to run away.", "But what would I even do if I did?"])
 
 [node name="NPCs" type="Node2D" parent="." unique_id=1586322827]
-
-[node name="Dad" parent="NPCs" unique_id=768815857 instance=ExtResource("3_0o0db")]
-visible = false
-position = Vector2(39, 7)
-npc_resource = ExtResource("6_ke34i")
-actor_id = "Dad"
 
 [node name="CutsceneMarkers" type="Node2D" parent="." unique_id=1818089244]
 position = Vector2(0, 1)
