@@ -23,6 +23,11 @@ func _setup_location() -> void:
 	
 	EventBus.open_window.connect(_on_open_window_requested)
 	
+	# Just putting this in to ensure the window remains open throughout Chapter 1. 
+	# If there are many locations with conditional maps I might need to extend location again
+	if Global_World_State.chapter == "Chapter1" && Global_World_State.cutscenes.has("chapter1_dadIntro"):
+		_on_open_window_requested()
+	
 	cutscenes = {
 		"chapter1_dad_intro": [
 				CH.say("chapter1_dadIntro"),
