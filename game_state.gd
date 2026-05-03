@@ -3,7 +3,7 @@ extends Node
 # This global is for storing game states
 
 # Set the save slot currently in use
-var current_slot: String
+var current_slot: String = "A"
 
 # Check that a game is loaded for loading in presets and settings
 var game_loaded:= false
@@ -13,6 +13,7 @@ var prev_scene: String
 
 # Store the target destination for spawning
 var target_spawn: String
+var target_vec: Vector2
 
 # Store the direction the PC is facing between scenes
 var pc_dir: Vector2

@@ -13,3 +13,6 @@ signal open_window
 
 # Finsh a movement request
 signal movement_complete
+
+# Signal player requested the game menu open
+signal open_game_menu

@@ -1,9 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://ckvr536qqht8a"]
+[gd_scene format=3 uid="uid://ckvr536qqht8a"]
 
-[ext_resource type="Script" uid="uid://cv623n10lbfok" path="res://scripts/Menus/main_menu.gd" id="1_ekxnf"]
+[ext_resource type="Script" uid="uid://cv623n10lbfok" path="res://scripts/UI/main_menu.gd" id="1_ekxnf"]
 [ext_resource type="Texture2D" uid="uid://coaf61v8cgmbe" path="res://assets/character_assets/george/George Pixel Portrait.png" id="2_bqqt6"]
 
-[node name="MainMenu" type="Control"]
+[node name="MainMenu" type="Control" unique_id=683161779]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
@@ -11,7 +11,7 @@ offset_bottom = 40.0
 mouse_filter = 1
 script = ExtResource("1_ekxnf")
 
-[node name="Background" type="TextureRect" parent="."]
+[node name="Background" type="TextureRect" parent="." unique_id=2063963098]
 layout_mode = 0
 offset_right = 480.0
 offset_bottom = 270.0
@@ -19,30 +19,29 @@ texture = ExtResource("2_bqqt6")
 expand_mode = 3
 stretch_mode = 5
 
-[node name="MenuOptions" type="VBoxContainer" parent="."]
+[node name="MenuOptions" type="VBoxContainer" parent="." unique_id=812181825]
 layout_mode = 0
 offset_right = 165.0
 offset_bottom = 270.0
 alignment = 1
 
-[node name="NewGame" type="Button" parent="MenuOptions"]
+[node name="NewGame" type="Button" parent="MenuOptions" unique_id=969316877]
 layout_mode = 2
 text = "New Game"
 
-[node name="LoadGame" type="Button" parent="MenuOptions"]
+[node name="LoadGame" type="Button" parent="MenuOptions" unique_id=1768070761]
 layout_mode = 2
-disabled = true
 text = "Load Game"
 
-[node name="Options" type="Button" parent="MenuOptions"]
+[node name="Options" type="Button" parent="MenuOptions" unique_id=1235208767]
 layout_mode = 2
 text = "Options"
 
-[node name="Exit" type="Button" parent="MenuOptions"]
+[node name="Exit" type="Button" parent="MenuOptions" unique_id=1290603380]
 layout_mode = 2
 text = "Exit Game"
 
-[node name="Debug" type="Button" parent="MenuOptions"]
+[node name="Debug" type="Button" parent="MenuOptions" unique_id=1950664409]
 layout_mode = 2
 text = "Debug"
 

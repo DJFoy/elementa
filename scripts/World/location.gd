@@ -48,7 +48,10 @@ func _ready() -> void:
 		GameState.target_spawn = default_spawn
 	
 	for exit in exits:
-		if is_spawn_in_exit(spawns[GameState.target_spawn], exit):
+		if GameState.target_spawn == "Loaded_Spawn":
+			if is_spawn_in_exit(GameState.target_vec, exit):
+				exit.armed = false
+		elif is_spawn_in_exit(spawns[GameState.target_spawn].global_position, exit):
 			exit.armed = false
 	
 	# Bring in the player character and add to the scene
@@ -58,10 +61,14 @@ func _ready() -> void:
 	
 	# Place the PC in the target spawn position
 	# Currently set to a global variable
-	pc.position = spawns[GameState.target_spawn].get_position()
+	if GameState.target_spawn == "Loaded_Spawn":
+		pc.global_position = GameState.target_vec
+	else:
+		pc.global_position = spawns[GameState.target_spawn].get_position()
 	
 	# Clear out the global target spawn to prevent possible teleportation issues
 	GameState.target_spawn = ""
+	GameState.target_vec = Vector2.ZERO
 	
 	# Connect to the PC for interacting
 	pc.connect("try_interact", _on_try_interact)
@@ -93,11 +100,11 @@ func trigger_exit(from_scene: String, target_spawn: String, file_path: String):
 	
 	world_change_request.emit(file_path)
 	
-func is_spawn_in_exit(spawn: Spawn, exit: ExitArea) -> bool:
+func is_spawn_in_exit(spawn_position: Vector2, exit: ExitArea) -> bool:
 	var space := get_world_2d().direct_space_state
 	
 	var params := PhysicsPointQueryParameters2D.new()
-	params.position = spawn.global_position
+	params.position = spawn_position
 	params.collide_with_areas = true
 	params.collision_mask = exit.collision_mask
 	

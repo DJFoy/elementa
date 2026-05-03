@@ -67,10 +67,12 @@ func _unhandled_input(event: InputEvent) -> void:
 		return
 	if moving:
 		return
-	if Input.is_action_just_pressed("interact"):
+	if Input.is_action_pressed("interact"):
 		if interact_ray.is_colliding():
 			try_interact.emit(interact_ray.get_collider())
 			return
+	if Input.is_action_just_pressed("open_menu"):
+		EventBus.open_game_menu.emit()
 	for dir in inputs.keys():
 		if event.is_action_pressed(dir, true):
 			GameState.pc_dir = inputs[dir]
@@ -81,7 +83,6 @@ func _unhandled_input(event: InputEvent) -> void:
 			else:
 				move(inputs[dir])
 				pc_about_to_move.emit(global_position, inputs[dir])
-				Global_World_State.last_location = global_position
 			return
 
 func _continuous_movement() -> void:
@@ -94,7 +95,6 @@ func _continuous_movement() -> void:
 		direction_change(wants_to_move_dir)
 	move(wants_to_move_dir)
 	pc_about_to_move.emit(global_position, wants_to_move_dir)
-	Global_World_State.last_location = global_position
 
 func get_sprite_asset(category: String, filename: String) -> String:
 	return "res://assets/character_assets/pc_assets/overworld_sprite/%s/%s.png" % [category, filename]
@@ -116,3 +116,6 @@ func load_textures():
 
 func _on_locked_state_changed(locked: bool):
 	is_locked = locked
+
+func _on_move_complete() -> void:
+	Global_World_State.last_location = global_position

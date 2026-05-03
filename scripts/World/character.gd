@@ -69,6 +69,7 @@ func move(dir: Vector2):
 		# Wait for the movement to be completed
 		tween.finished.connect(_on_tween_finished)
 		await tween.finished
+		_on_move_complete()
 	else:
 		_stop_movement()
 
@@ -112,3 +113,5 @@ func trigger_emote(emote_resource: EmoteResource):
 	emote_finished.emit()
 	emote.queue_free()
 	
+func _on_move_complete() -> void:
+	pass

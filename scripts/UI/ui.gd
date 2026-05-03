@@ -2,9 +2,10 @@ extends CanvasLayer
 
 var interact_scene = preload("uid://bd5yex4vadwcc")
 var dialogue_scene = preload("uid://xlgquvpcpldn")
+var game_menu = preload("uid://imfmklwsjtkd")
 
 func _ready() -> void:
-	pass
+	EventBus.open_game_menu.connect(_on_game_menu_request)
 
 func start_interact_ui(interaction_text):
 	var interact := interact_scene.instantiate()
@@ -35,3 +36,9 @@ func _cutscene_start_dialogue_ui(dialogue_id: String):
 	add_child(dialogue)
 	dialogue.dialogue_runner.StartDialogueForget(dialogue_id)
 	await dialogue.request_dialogue_end
+
+func _on_game_menu_request() -> void:
+	GameState.lock()
+	GameState.interacting = true
+	var gm: GameMenu = game_menu.instantiate()
+	add_child(gm)
