@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://dyg2lyh2gsj5f" path="res://scripts/World/exit_area.gd" id="1_h3otn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sbhq0"]
-size = Vector2(16, 16)
+size = Vector2(15, 15)
 
 [node name="ExitArea" type="Area2D" unique_id=404008840]
 collision_layer = 4

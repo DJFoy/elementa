@@ -63,7 +63,7 @@ func move(dir: Vector2):
 		# Move the character a tile in the specified direction
 		var tween = create_tween()
 		tween.tween_property(self, "position",
-			position + dir * tile_size, 0.4)
+			position + dir * tile_size, 0.35)
 		# Set moving to true to indicate that the character is moving
 		moving = true
 		# Wait for the movement to be completed

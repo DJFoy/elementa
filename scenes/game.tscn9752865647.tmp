@@ -5,7 +5,6 @@
 [ext_resource type="Script" uid="uid://d17ninjutahvq" path="res://scripts/UI/ui.gd" id="2_yqjtg"]
 [ext_resource type="Script" uid="uid://mn8h7kqa03ny" path="res://scripts/Testing/fps_label.gd" id="4_iywne"]
 [ext_resource type="Script" uid="uid://byhmbmxydftuq" path="res://scripts/Cutscene Manager/cutscene_manager.gd" id="4_lbhrr"]
-[ext_resource type="Theme" uid="uid://dthhuuah0qhsg" path="res://themes/default_interact_theme.tres" id="4_p57ef"]
 
 [node name="Game" type="Node" unique_id=865898107]
 script = ExtResource("1_uwrxv")
@@ -25,7 +24,6 @@ offset_left = -40.0
 offset_bottom = 23.0
 grow_horizontal = 0
 size_flags_vertical = 0
-theme = ExtResource("4_p57ef")
 script = ExtResource("4_iywne")
 metadata/_edit_use_anchors_ = true
 

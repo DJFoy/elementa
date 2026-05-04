@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://42bktppitape" path="res://assets/character_assets/NPCs/lady lucaria/Lady Lucaria Overworld Sprite Hat.png" id="2_abqhh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tcuxl"]
-size = Vector2(13, 17)
+size = Vector2(13.5, 15)
 
 [sub_resource type="Animation" id="Animation_abqhh"]
 length = 0.001
@@ -161,6 +161,7 @@ script = ExtResource("1_nh2m4")
 metadata/_custom_type_script = "uid://dqqhg26r5odn3"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=794587561]
+position = Vector2(-0.25, -0.5)
 shape = SubResource("RectangleShape2D_tcuxl")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1158250490]

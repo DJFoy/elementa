@@ -4,6 +4,4 @@
 
 [resource]
 script = ExtResource("1_2eoqp")
-dialogue_id = "chapter1_dadIntro"
-one_time_dialogue = Array[String](["chapter1_dadIntro"])
 metadata/_custom_type_script = "uid://cobol6g2sil3f"
