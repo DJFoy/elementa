@@ -10,7 +10,7 @@ func condition_met() -> bool:
 	# Is chapter greater than when this can appear?
 	print(required_chapter)
 	if required_chapter != "":
-		if Global_World_State.chapter < required_chapter:
+		if Global_World_State.chapter != required_chapter:
 			return false
 	
 	# Any dialogue in list must not have been said before

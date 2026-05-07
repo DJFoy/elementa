@@ -6,10 +6,5 @@
     "excludeFiles": [],
     "localisation": {},
     "baseLanguage": "en",
-    "compilerOptions": {
-        "yarnScriptEditor": {
-            "projectName": "Elementa"
-        }
-    },
     "definitionsFiles": []
 }

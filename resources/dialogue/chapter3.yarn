@@ -1,0 +1,1059 @@
+title: chapter3_OmenCity_GuildHall1
+tags:
+---
+<<if $chapter3_OmenCity_Charlotte2 == 0>> 
+Clerk: Greetings, Adventurer! 
+Clerk: Erm...
+Clerk: Please accept my apologies. 
+Clerk: The Guild Master is not accepting challengers at the moment. 
+Clerk: I'm not sure when they'll be ready to battle again.
+Player: What do you mean?
+Clerk: ...
+    -> Player: Where are they?
+        Clerk: Oh, they're just in the back room, through the usual doors.
+    -> Are they okay?
+        Clerk: They're fine... I think.
+Clerk: You can go ahead and talk to them if you want. 
+Clerk: Not sure what good it will do though. 
+Clerk: She's been like this for over a week now…
+<<endif>>>>
+===
+
+title: chapter3_OmenCity_GuildHall2
+tags:
+---
+Clerk: Greetings, Adventurer!
+Clerk: Would you like to collect your allowance?
+    -> Player: Yes.
+         <<if $PlayerMoney == 0>> 
+            Clerk: Looks like you haven't earned any money yet. 
+            Clerk: Best get out there and subdue some wild Familiars.
+         <<endif>>
+        <<if $PlayerMoney > 0>> 
+            Clerk: No problem. Here you go.
+        -> No.
+            Clerk: Come back here if you change your mind.
+        <<endif>>
+===
+
+title: chapter3_OmenCity_GuildHall3
+tags: 
+---
+<<if $chapter3_OmenCity_Charlotte2 == 1>> 
+Clerk: I have some fantastic news! 
+Clerk: Guild Master Charlotte is back to normal and is battling Adventurers again. 
+Clerk: Remember, you have to beat the acolytes first before you can take her on. 
+Clerk: This Guild Hall is all about the dark element.
+Clerk: So, what would you like to do today?
+    -> Player: Take on the Omen City Guild Master, Charlotte.
+        Clerk: Okay. 
+        Clerk: You can proceed through that door up ahead when you're ready. 
+        Clerk: Good luck! 
+    -> Player: Collect my allowance.
+        <<if $PlayerMoney == 0>> 
+            Clerk: Looks like you haven't earned any money yet. 
+            Clerk: Best get out there and subdue some wild Familiars.
+        <<endif>>
+        <<if $PlayerMoney > 0>> 
+            Clerk: No problem. Here you go.
+        <<endif>>
+<<endif>>
+===
+
+title: chapter3_OmenCity_Charlotte2
+tags:
+---
+Charlotte: Hmm... Umm... 
+Charlotte: I see... 
+Charlotte: Perhaps...
+Player: Erm, excuse me?
+Charlotte: If only...
+Charlotte: Maybe... Hmm...
+Player: Hello?
+Charlotte: Umm... Hmm...
+Charlotte: I wonder...
+Player: It's like she can't even hear me. 
+Player: Her eyes have this strange, glazed-over look too. 
+Player: It's almost as if she's talking to someone else?
+===
+
+title: chapter3_OmenCity_Charlotte_Papers
+tags:
+---
+Player: Is it something to do with these?
+Player: These papers talk about the local Sacred Site. 
+Player: There are scrawlings all over them about recent disturbances and eerie happenings across Omen City.
+===
+
+title: chapter3_OmenCity_Charlotte3
+tags:
+---
+-> Player: Hello, Lady Charlotte?
+    Charlotte: ...
+    Charlotte: I suppose...
+    Player: She still isn't responding.
+-> (Wave in Lady Charlotte's face.)
+    Charlotte: ...
+    Charlotte: I suppose...
+    Player: She still isn't responding.
+<<if $chapter3_OmenCity_Charlotte_Papers == 1>>
+-> Did something happen at the Sacred Site?
+    Charlotte: Sacred Site?!
+    Charlotte: What do you know about the Sacred Site?
+    Player: Erm, well, I just read these papers here and wondered...
+    Charlotte: Do you have the gift too?
+    Player: The gift?
+    Charlotte: ...
+    Charlotte: I got a little over-excited, I suppose...
+    Charlotte: How long has it been, hmm?
+    Player: Since what?
+    Charlotte: Exactly! 
+    Charlotte: And the spirits have told me nothing of use, either, umm...
+    Player: You can talk to spirits? 
+    Player: Is that what you meant by the gift?
+    Charlotte: Of course! 
+    Charlotte: Do you have it?
+        -> Player: No.
+            Charlotte: Meeting a fellow clairvoyant would have been too good to be true, I suppose.
+        -> Player: Yeah, sure. 
+            Player: Wooo, spooky!
+            Charlotte: Wooo? 
+            Charlotte: ...
+            Charlotte: Do not pull my leg in jest.
+    Player: I'm {$playerName}, an Adventurer. 
+    Player: I need to defeat you to get a Bronze Amulet.
+    Charlotte: Oh, I cannot possibly.
+    Player: What? 
+    Player: Why not?
+    Charlotte: I am presently, imperfectly pre-occupied. 
+    Charlotte: Hmm... I must get to the bottom of this quickly, before there are any more disturbances in the spirit world. 
+    Charlotte: Isn't that right, Grimm?
+    Grimm: Woof.
+    Charlotte: In fact, now I have been snapped out of my trance by yours truly, this would be a good opportunity to go and investigate again first-hand...
+    Charlotte: ...
+    Player: Hello?
+    Charlotte: Oh! 
+    Charlotte: Sorry, I kind of drifted back in there a bit, umm...
+    Charlotte: What was I saying?
+    Player: You were saying it was a good opportunity to investigate the Sacred Site?
+    Charlotte: That's right! 
+    Charlotte: ...
+    Charlotte: But my acolytes won't understand. 
+    Charlotte: I need someone to assist me...
+    Player: I'd be happy to help.
+    Charlotte: Really? 
+    Charlotte: Interesting, hmm.
+    Charlotte: Okay, follow me.
+<<endif>>>>
+===
+
+title: chapter3_OmenCity_Charlotte_SacredSite1
+tags:
+---
+
+Charlotte: ...
+Charlotte: Hmm...
+Charlotte: Who are you again?
+Player: I'm {$playerName}, an Adventurer? 
+Player: Remember?
+Charlotte: Oh, yes. 
+Charlotte: Apologies, someone was whispering in my ear and I became distracted...
+Charlotte: I'll stay here and try to commune with the local spirits. 
+Charlotte: They are very old and powerful, so they might not talk to me again but it's worth a try, I suppose.
+Charlotte: ...
+Charlotte: If I go into a trance again, just call my name. 
+Charlotte: You seem to be someone who can snap me out of it. 
+Charlotte: That is quite unusual...
+Charlotte: You investigate around here in the meantime and see what you can find.
+
+title: chapter3_OmenCity_Charlotte_Sacred Site2
+tags:
+---
+Charlotte: ...
+Charlotte: Hmm...
+Charlotte: I was... 
+Charlotte: Umm...
+Charlotte: Questions...
+Player: She's in a trance again.
+    -> (Wake her up.)
+        Charlotte: {$playerName}? 
+        Charlotte: Did you find anything interesting?
+            -> Player: Not yet.
+                Charlotte: A shame... 
+                Charlotte: Keep looking...
+                Charlotte: Umm...
+            <<if $chapter3_OmenCity_Charlotte_SacredSite_Shrine == 1>>
+            -> Player: The shrine offerings look like they've been rejected.
+                Charlotte: Not unexpected... Hmm...
+                Charlotte: The spirits are angry, yes indeed.
+                Charlotte: But we knew that already.
+                Charlotte: The question we must solve is why.
+            <<endif>>
+             <<if $chapter3_OmenCity_Charlotte_SacredSite_Lantern == 1>>
+            -> Player: I can feel an opressive presence.
+                Charlotte: Quite.
+                Charlotte: I tried sprinkling salt and other minor purification rituals but they cannot be appeased.
+                Charlotte: I wonder why?
+            <<endif>>
+            <<if $chapter3_OmenCity_Charlotte_SacredSite_Berries == 1>>
+            -> Player: Nearly all of the sacred berries are gone!
+                Charlotte: What?!
+                Charlotte: That's not possible!
+                <<jump chapter3_OmenCity_Charlotte_SacredSite_Berries_Continued>>
+            <<endif>>
+    -> (Leave her be.)
+===
+
+title: chapter3_OmenCity_Charlotte_SacredSite_Shrine
+tags:
+---
+Player: That's strange. 
+Player: The offerings here have rotted. 
+Player: I remember an old lady once telling me that means that they've been rejected.
+===
+
+title: chapter3_OmenCity_Charlotte_SacredSite_Lantern
+tags:
+---
+Player: There's a sudden chill over here and this lantern is flickering unnaturally.
+Player: Even the air feels oppressive.
+Player: I remember reading a book where it said that environmental disturbances like these can be a sign of angry spirits.
+===
+
+title: chapter3_OmenCity_Charlotte_SacredSite_Berries
+tags:
+---
+Player: Almost all of the berries here have been picked.
+Player: I thought these were sacred!
+Player: This must be why the spirits are angry.
+===
+
+title: chapter3_OmenCity_Charlotte_SacredSite_Berries_Continued
+tags:
+---
+Charlotte: This is terrible! 
+Charlotte: Who would steal such a thing? 
+Charlotte: No wonder they are full of wrath, hmm.
+Player: What will you do?
+Charlotte: There is not much I can do here in Omen City. 
+Charlotte: The berries are gone. 
+Charlotte: I will have to check on the other Sacred Sites in Gantoh to make sure they are safe. 
+Charlotte: I have a terrible feeling about this...
+Charlotte: To try and calm the spirits here temporarily, I will conduct another purification rite. 
+Charlotte: But I can tell their attention is pointed elsewhere and that is what worries me the most.
+Charlotte: Do not worry. 
+Charlotte: Now I have made all the progress I can here, I will battle Adventurers again so as few people as possible are disappointed while I am away. 
+Charlotte: There must be quite a queue to work through, I suppose. 
+    -> Player: That's good to hear.
+        Player: I'll see you soon and get that amulet!
+        Charlotte: You have spirit, hmm.
+    -> Would you like any help with the ritual?
+        Charlotte: What?
+        Charlotte: Really?
+        Charlotte: ...
+        Charlotte: That's very kind of you.
+        Charlotte: I would, in fact, appreciate some assistance.
+===
+
+title: chapter3_OmenCity_Charlotte_Battle
+tags:
+---
+Charlotte: Hello, {$playerName}. 
+Charlotte: We have already met, I suppose. 
+Charlotte: You intrigue me indeed. 
+Charlotte: The spirits are interested too...
+Charlotte: Let's see if you live up to our expectations.
+Charlotte: I might not have been a Guild Master for long but many find me to be considerably formidable, hmm.
+===
+
+title: chapter3_OmenCity_Charlotte_Battle_PlayerLoses
+tags:
+---
+Charlotte: Disappointing. 
+Charlotte: I would suggest dusting yourself off and trying again, I suppose.
+===
+
+title: chapter3_OmenCity_Charlotte_Battle_PlayerWins
+tags:
+---
+Charlotte: I see. 
+Charlotte: You and your Familiar are a pleasure to watch... 
+Charlotte: Congratulations on reaching Bronze Rank, {$playerName}.
+Charlotte: I am interested to see how your journey progresses... 
+Charlotte: I will be going to Arrowroot Town to assess the situation at the Sacred Site near there. 
+Charlotte: That will be your next stop, I presume? 
+Charlotte: So, I might see you again soon, hmm.
+
+title: chapter3_OmenCity_Charlotte_Battle_AfterPlayerWins
+tags:
+---
+Charlotte: I hope you enjoy the Candelight Festival...
+Charlotte: It's an ancient celebration unique to Omen City.
+===
+
+title: chapter3_OmenCity_HealingChurch_Roy1
+tags:
+---
+Roy: Hi {$playerName}! 
+Roy: Guess what? 
+Roy: I got this church's letter of recommendation!
+    -> Player: That's great news!
+        Roy: Right?
+        Roy: The next one I need to get is from the healing church in Arrowroot Town. 
+        Roy: You know, I'm starting to feel like I might actually be able to do this.
+    -> Player: Oh, right.
+        Roy: Yeah! 
+        Roy: Erm...
+        Roy: I was hoping you'd be a bit more excited...
+        Roy: Anyway, you know, I'm starting to feel like I might actually be able to do this.
+???: Roy?
+Roy: Deacon Lewis!
+Deacon Lewis: Well, well. 
+Deacon Lewis: Fancy seeing you here, and working in a prominent healing church again no less. 
+Deacon Lewis: I'm amazed you have the gall to show your face after what happened in Avaelon.
+Roy: I...
+Roy: I...
+Roy: ...
+Player: What's going on here, Roy?
+Roy: {$playerName}...
+Roy: I...
+Deacon Lewis: Oh? 
+<<if $pronoun == "they">>
+    Deacon Lewis: Do they not know the story of what happened, Roy? 
+<<else>>
+    Deacon Lewis: Does {$pronoun} not know the story of what happened, Roy? 
+<<endif>>
+Deacon Lewis: Thought you could just run away from your past, did you? 
+Roy: ...
+Deacon Lewis: I overheard you talking about a letter of recommendation. 
+Deacon Lewis: If I was you, I would leave that here and hurry back to that backwater town you came from. 
+Deacon Lewis: Here, I'll do you a favour. 
+Deacon Lewis: Hand it over to me and I'll ensure it gets safely disposed of. 
+Deacon Lewis: You don't want anyone else to get hurt now, do you?
+    -> Player: (Say nothing.)
+        Roy: But...
+        Roy: I...
+        Roy: ...
+        Deacon Lewis: Come on, Roy.
+        Deacon Lewis: You know this is for the best.
+            -> (Say nothing.)
+                Deacon Lewis: That was the right choice. 
+                Deacon Lewis: If I ever have the misfortune of seeing your face again, Roy, it better not be anywhere other than your little Powder Town.
+                Roy: ...
+            -> Player: Stop it! 
+                <<jump chapter3_OmenCity_HealingChurch_Roy2>>
+    -> Player: Stop it! 
+        <<jump chapter3_OmenCity_HealingChurch_Roy2>>
+===
+
+title: chapter3_OmenCity_HealingChurch_Roy2
+tags:
+---
+    Deacon Lewis: Excuse me?
+    Player: Roy, don't you dare give him that letter! 
+        Player: Look here, Roy has earned these letters of recommendation and proved himself in doing so.
+        Deacon Lewis: Letters? 
+        Deacon Lewis: No...
+        Deacon Lewis: You're not thinking of getting the Archbishop's approval to open your own healing church, are you?
+        Player: He is! 
+        Player: And I'll support him every step of the way!
+        Deacon Lewis: Why you little...
+        Roy: That's right. 
+        Roy: I'm going back to Avaelon Cathedral to finish what I started. 
+        Roy: Now, please leave or I will have to get you escorted off the premises. 
+        Roy: Your behaviour is distressing the patients.
+        Deacon Lewis: I won't forget this, either of you!
+        Player: Well he was a nasty piece of work.
+        Roy: You can say that again.
+        Roy: ...
+        Roy: Thanks for helping me back there, {$playerName}.  
+        Roy: I felt like I couldn't breathe for a moment.
+        Roy: I was terrified you'd listen to what he said and think badly of me.
+        Player: That's what friends are for!
+        Roy: Friends? 
+        Roy: Yeah, I guess you're right. 
+        Roy: We are friends! 
+===
+
+title: chapter3_OmenCity_Inn_Damien1
+tags:
+---
+<<if $Damien_Activated == 1 and $chapter2_SSSpam_Date_Damien == 1>>
+Damien: Oh, it's you.
+Damien: ...
+Damien: Listen, I didn't know they would...
+Damien: I didn't...
+Damien: I don't...
+Damien: Ugh, what am I trying to say?
+Damien: ...
+Damien: I'm sorry you got hurt, {$playerName}. 
+Damien: That wasn't what I wanted to happen.
+    -> Player: It's okay, Damien.
+        Damien: No, it's not okay!
+        Damien: This wasn't supposed to be how it was, do you understand? 
+        Damien: The StopIt! Militia...
+        Damien: Sorry, I need some time to think.
+    -> Player: It's not too late to change your mind, you know.
+        Damien: What? 
+        Damien: What do you mean?
+        Damien: ...
+        Damien: I don't know if...
+        Damien: Argh, I shouldn't even be talking to you.
+        Damien: Again...
+        Damien: Sorry, I need some time to think.
+<<endif>>
+<<if $Damien_Activated == 1 and $chapter2_SSSpam_Date_Damien == 0>>
+Damien: Oh, it's you again.
+Damien: ...
+<<endif>>
+===
+
+title: chapter3_OmenCity_Inn_Eliza1
+tags:
+---
+<<if $Eliza_Activated == 1 and $chapter2_SSSpam_Date_Eliza == 1>>
+Eliza: Oh, it's you.
+Eliza: ...
+Eliza: Listen, I didn't know they would...
+Eliza: I didn't...
+Eliza: I don't...
+Eliza: Ugh, what am I trying to say?
+Eliza: ...
+Eliza: I'm sorry you got hurt, {$playerName}. 
+Eliza: That wasn't what I wanted to happen.
+    -> Player: It's okay, Eliza.
+        Eliza: No, it's not okay!
+        Eliza: This wasn't supposed to be how it was, do you understand? 
+        Eliza: The StopIt! Militia...
+        Eliza: Sorry, I need some time to think.
+    -> Player: It's not too late to change your mind, you know.
+        Eliza: What? 
+        Eliza: What do you mean?
+        Eliza: ...
+        Eliza: I don't know if...
+        Eliza: Argh, I shouldn't even be talking to you.
+        Eliza: Again...
+        Eliza: Sorry, I need some time to think.
+<<endif>>
+<<if $Eliza_Activated == 1 and $chapter2_SSSpam_Date_Eliza == 0>>
+Eliza: Oh, it's you again.
+Eliza: ...
+<<endif>>
+===
+
+title: chapter3_OmenCity_Tailors_George1
+tags:
+---
+George: What are you doing here?
+Player: I'm just taking a look. 
+Player: Is that not allowed, my Lord?
+George: Isn't this all a little fine and expensive for someone like you? 
+George: Or are you trying to move up in the world by dressing in something more impressive than that burlap sack you always wear? 
+George: Ha! I bet you have no taste anyway.
+Player: I do have taste!
+George: Oh? 
+George: Prove it, then. 
+George: Come here and look at these ribbons.
+    -> Player: Fine! But not because you asked me to.
+        George: Ugh! 
+        George: Stop grumbling and just do as you're told for once.
+    -> Erm, okay.
+        George: No backchat? 
+        George: Maybe you are finally learning some etiquette.
+George: Now, little mouse. 
+George: What colour ribbon would you buy? 
+George: Not that you have the money, of course. 
+George: This is all completely theoretical.
+    -> Player: Red.
+      <<set $colour = "Red">>
+        George: A classic choice.
+        George: Similar to the one I'm wearing but made from a softer fabric.
+    -> Player: Blue.
+      <<set $colour = "Blue">>
+        George: A popular choice.
+        George: Personally, I don't wear a lot of blue but I hear it is quite popular amongst the nobles in the Capital, thanks to Princess Alice.
+    -> Player: Green.
+      <<set $colour = "Green">>
+        George: An interesting choice.
+        George: My sister has been known to wear green on occasion. 
+        George: People say it goes well with the colour of our eyes.
+    -> Player: Yellow.
+      <<set $colour = "Yellow">>
+        George: A bold choice.
+        George: Many nobles such as myself choose to wear gold and similar shades to signify our status.
+Player: It's not all about you!
+George: Hmm...
+George: Yes I can say from that assessment of your abilities that you do indeed have no taste in fashion at all.
+Player: What? 
+<<if $colour == "Red">>
+    <<set $descriptor = "classic">>
+<<elseif $colour == "Blue">>
+    <<set $descriptor = "popular">>
+<<elseif $colour == "Green">>
+    <<set $descriptor = "interesting">>
+<<elseif $colour == "Yellow">>
+    <<set $descriptor = "bold">>
+<<endif>>
+Player: But you said it was a {$descriptor} choice!
+George: No taste at all…
+Player: Well, I don't care what you think. 
+Player: I like that colour.
+George: Ha! 
+George: See you around, little mouse. 
+George: I think we're overdue for a rematch.
+===
+
+title: chapter3_OmenCity_Tailors_Gigi1
+tags:
+---
+Gigi: What are you doing here?
+Player: I'm just taking a look. 
+Player: Is that not allowed, my Lord?
+Gigi: Being a noble lady, I pride myself in having the most up to date knowledge of the latest fashions in the Capital.
+Gigi: Isn't this all a little over your head?
+Gigi: Or are you trying to move up in the world by dressing in something more impressive than that burlap sack you always wear? 
+Gigi: Ho ho! I bet you have no taste anyway.
+Player: I do have taste!
+Gigi: Oh? 
+Gigi: Prove it, then. 
+Gigi: Come here and look at these ribbons.
+    -> Player: Fine! But not because you asked me to.
+        Gigi: Ugh! 
+        Gigi: Stop grumbling and just do as you're told for once.
+    -> Erm, okay.
+        Gigi: No backchat? 
+        Gigi: Maybe you are finally learning some etiquette.
+Gigi: Now, peasant. 
+Gigi: What colour ribbon would you buy? 
+Gigi: Not that you have the money, of course. 
+Gigi: This is all completely theoretical.
+    -> Player: Red.
+      <<set $colour = "Red">>
+        Gigi: A classic choice.
+        Gigi: Similar to the ones I'm wearing but made from a softer fabric.
+    -> Player: Blue.
+      <<set $colour = "Blue">>
+        Gigi: A popular choice.
+        Gigi: Personally, I don't wear a lot of blue but I hear it is quite popular amongst the nobles in the Capital, thanks to Princess Alice.
+    -> Player: Green.
+      <<set $colour = "Green">>
+        Gigi: An interesting choice.
+        Gigi: My brother has been known to wear green on occasion. 
+        Gigi: People say it goes well with the colour of our eyes.
+    -> Player: Yellow.
+      <<set $colour = "Yellow">>
+        Gigi: A bold choice.
+        Gigi: Many nobles such as myself choose to wear gold and similar shades to signify our status.
+Player: It's not all about you!
+Gigi: Hmm...
+Gigi: Yes I can say from that assessment of your abilities that you do indeed have no taste in fashion at all.
+Player: What? 
+<<if $colour == "Red">>
+    <<set $descriptor = "classic">>
+<<elseif $colour == "Blue">>
+    <<set $descriptor = "popular">>
+<<elseif $colour == "Green">>
+    <<set $descriptor = "interesting">>
+<<elseif $colour == "Yellow">>
+    <<set $descriptor = "bold">>
+<<endif>>
+Player: But you said it was a {$descriptor} choice!
+Gigi: No taste at all…
+Player: Well, I don't care what you think. 
+Player: I like that colour.
+Gigi: Ho ho! 
+Gigi: See you around, peasant. 
+Gigi: I think we're overdue for a rematch.
+===
+
+title: chapter3_OmenCity_PotionShop_Anne1
+tags:
+---
+Anne: Why, hello there, {$playerName}! 
+Anne: Boy, I am glad to see you back on dry land.
+Player: Anne? 
+Player: Is this your shop?
+Anne: It is indeed. 
+Anne: Golem and I finally made it back. 
+Anne: Not sure how much longer I'll be here though. 
+Anne: Money calls! 
+Anne: My assistant, Clarice, is currently out doing an errand for me. 
+Anne: Could you help me test a new potion while you're here?
+    -> Player: Sure!
+    Anne: You're a good sport, {$playerName}.
+    Anne: Here. Open wide!
+    Anne: Well? 
+    Anne: Do you feel any different?
+    Player: Not really...
+    Anne: Hahahaha! 
+    Anne: That colour change was unexpected! 
+    Anne: Thank goodness it was temporary.
+    Player: What was it supposed to do?
+    Anne: It was supposed to make you feel warm, for colder climates like in the North. 
+    Anne: I think perhaps the addition of blueberry pie crust was overdoing it. 
+    Anne: I'll work more on that later. 
+    Anne: Thanks, {$playerName}. 
+    Anne: Here's a free healing potion for your troubles.
+    -> Player: No Way.
+    Player: Unless you promise to pay me compensation if something goes wrong?
+    Anne: I appreciate your thrifty mindset, even if it is a bit boring.
+===
+
+title: chapter3_OmenCity_PotionShop_Anne2
+tags:
+---
+Anne: While you're here, why don't you take a look at my wares?
+===
+
+title: chapter3_OmenCity_FamiliarNursery_Sheila1
+tags:
+---
+Head Breeder Minnie: And now, the final entrant to the first qualifier for the Royal Gantoh Crusts.
+Head Breeder Minnie: Miss Sheila Feywin from Salt Mire City and her wind element Familiar, Queen Mab.
+    -> Go Sheila! Go Queen Mab!
+        Head Breeder Minnie: Wow, well aren't these two popular!
+        <<set $cheer = 1>>
+    -> (Say nothing.)
+        Head Breeder Minnie: ...
+Head Breeder Minnie: Now, let's wait while the judges do their examination.
+Head Breeder Minnie: Lady Lucaria, would you do the honours of revealing the rankings? 
+Lady Lucaria: Of course. 
+Head Breeder Minnie: Remember all, only the contestant who achieves first place will go through to the next qualifier at Arrowroot Town.
+Lady Lucaria: In third place, we have the Familiar...
+Lady Lucaria: ...
+Lady Lucaria: Barnaby.
+Crowd: *Applause.*
+Lady Lucaria: In second place, we have the Familiar...
+Lady Lucaria: ...
+Lady Lucaria: Cookie.
+Crowd: *Applause.*
+Lady Lucaria: Which means, in first place...
+Lady Lucaria: We have the Familiar Queen Mab, shown by Sheila! 
+Lady Lucaria: Congratulations, my dear!
+Crowd: *Applause.*
+Sheila: ...
+Sheila: I can't believe it. 
+Sheila: We won! 
+Sheila: We did it, Mab!
+Queen Mab: Squeak!
+<<if $cheer == 1>>
+    Sheila: {$playerName}!
+    Sheila: I'm so glad you're here. 
+    Sheila: I heard you cheer for me. 
+    Sheila: That means a whole lot to Mab and I. 
+    Sheila: We're not very well known in showing circles yet.
+        -> Player: It's no problem. 
+            Player: You both deserved that win!
+            Sheila: Thanks! 
+            Sheila: You're obviously my good luck charm. Hehe!
+        -> Player: Of course. Mab did great!
+            Sheila: She did...
+            Sheila: Although she did manage to bend her third left whisker while walking to the judges. 
+            Sheila: That could have cost us the victory, Mab. 
+            Sheila: You need to be more careful. 
+            Sheila: At the later stages, they won't accept anything less than perfection!
+<<endif>>
+<<if $cheer == 0>>
+    Sheila: {$playerName}!
+    Sheila: Thanks for coming to watch me...
+    Sheila: I wish more people had cheered. 
+    Sheila: I thought you might, you know?
+        -> Player: Sorry, I was nervous.
+            Sheila: I get it. I was too.
+        -> Player: No one else did.
+            Sheila: Right...
+            Sheila: It's because Mab bent her third left whisker while walking to the judges, wasn't it? 
+            Sheila: Mab, I told you to be careful! 
+            Sheila: You need to be perfect, do you hear? 
+            Sheila: Perfect!
+<<endif>>
+===
+
+title: chapter3_OmenCity_Harbour_Matthias1
+tags:
+---
+Matthias: Hi, {$playerName}! 
+Matthias: I'm glad you came. 
+Matthias: I'm just about to take this little row boat out to a nearby cove. 
+Matthias: If it's not too much trouble, would you like to come with me?
+    -> Yeah. Lead the way!
+        Matthias: That's great! 
+        Matthias: Don't worry, I'll do all the rowing.
+        <<jump chapter3_OmenCity_Harbour_Matthias2>>
+    -> Player: No thanks.
+        Matthias: Oh...
+        Matthias: Don't worry, I understand. 
+        Matthias: Sorry to have bothered you, {$playerName}.
+===
+
+title: chapter3_OmenCity_Harbour_Matthias2
+tags:
+---
+Matthias: You see these, {$playerName}? 
+Matthias: These are ancient elvish carvings. 
+Player: Are you interested in elvish history?
+Matthias: Not really. 
+Matthias: I wish this was a visit fuelled by curiosity, rather than necessity.
+Matthias: You see, there have been some strange and dangerous weather patterns in some of the rivers and seas across Gantoh of late. 
+Matthias: They suggest a sudden shift in the natural forces at play.
+Matthias: It will take me some time to interpret these carvings. 
+Matthias: What would you like to do?
+    -> Player: I'll stay with you. 
+        Player: I want to learn more.
+        Matthias: Here, come closer. 
+        Matthias: If you wouldn't mind, of course. 
+        Matthias: Let me show you what I'm looking for in particular...
+        Matthias: These carvings refer to some special, legendary Familiars. 
+        Matthias: According to the stories, they were usually ascended ones, Familiars that had grown in power and strength and taken a new form in doing so. 
+        Matthias: They were used by the elves to help them control the elements, including the rivers and seas.
+        Player: What happened to them after the elves disappeared?
+        Matthias: In the myths and tales throughout history, they continued doing what they always had, for the most part. 
+        Matthias: They were believed to help maintain the balance. 
+        Matthias: There was apparently a legendary Familiar, this one here, whose territory covered this part of Gantoh and the seas around Salt Mire and Omen City.
+        Player: What was their name?
+        Matthias: Salix, the fabled Guardian of Gantoh's Sunset Waters.
+        Player: If there has been a sudden change, do you think that means that...
+            -> Player: The legendary Familiar abandoned its territory.
+                Matthias: Surely that's not possible...
+            -> Player: Something happened to the legendary Familiar.
+                Matthias: That is my current theory too.
+            -> Player: The legendary Familiar never really existed.
+                Matthias: No, I know that the stories are true! 
+                Matthias: I mean, it's no big deal, ha ha! 
+                Matthias: I'm sure lots of people think the same...
+        Matthias: I was hoping to narrow down the possible locations of Salix's lair according to the myths and legends. 
+        Matthias: Whilst these carvings confirm that the elves believed there was one, they don't give much else away...
+        Matthias: I think I will have to try the library in Arrowroot Town. 
+        Matthias: There might be some books or scrolls there that can help me find a place to search or...
+        Matthias: Confirm that this was nothing more than a myth, after all.
+        Matthias: Come on, let's head back for now. 
+        Matthias: Thanks for coming with me, {$playerName}. 
+        Matthias: You've been a great help. 
+        Matthias: And pleasant company, as always!
+    -> Player: I'll wait in the boat.
+        Matthias: Of course...
+        Matthias: I mean, yeah, this is pretty boring, right? 
+        Matthias: Ha ha...
+        Matthias: ...
+        Matthias: I'm sorry. 
+        Matthias: I won't be long.
+===
+
+title: chapter3_OmenCity_Harbour_Matthias3
+tags:
+---
+Matthias: Omen City has a really quaint, mystical atmosphere to it, don't you think? 
+Matthias: It's a little bit spooky too, ha ha!
+===
+
+title: chapter3_OmenCity_Alley_Kenny1
+tags:
+---
+Player: Kenny?
+Kenny: You! 
+Kenny: How did you recognise me?
+Player: What do you mean? 
+Player: You're... you.
+Kenny: Hmmm...
+Kenny: You don't look like you're being deceitful. 
+Kenny: Interesting.
+Kenny: You seem to have a keen eye, anyway, {$playerName}. 
+Kenny: Maybe you can be of use to me. 
+Kenny: This is official business remember, so don't go spouting this all over Gantoh. 
+Kenny: Do you understand?
+    -> Player: Sure?
+        Kenny: You could try to be a bit more convincing! 
+    -> Player: Of course!
+        Kenny: Ha! You're very keen, aren't you?
+Kenny: I will keep some details classified, obviously. 
+Kenny: Just in case you are a gossip.
+Kenny: I am searching for a rather special Familiar that has gone missing, currently believed to be kidnapped by the StopIt! Militia. 
+Kenny: I followed them here to Omen City. 
+Kenny: Unfortunately, the trail has gone cold.
+Kenny: If you hear of anything to do with a kidnapped Familiar or the StopIt! Militia, please tell me at once.
+    -> Player: ...
+        Kenny: ...
+        Kenny: I'm on the clock.
+        Kenny: Stop wasting my time.
+    -> Player: Will do!
+        Player: I'll keep my eyes open for you.
+        Kenny: Report back if you catch wind of anything.
+===
+
+title: chapter3_OmenCity_Alley_Kenny2
+tags:
+---
+<<if $Damien_Activated == 1 and $chapter3_OmenCity_Inn_Damien1 == 1>>
+    Player: I think there's a StopIt! Militia Grunt here at the Omen City inn, called Damien. 
+<<endif>>
+<<if $Eliza_Activated == 1 and $chapter3_OmenCity_Inn_Eliza1 == 1>>
+    Player: I think there's a StopIt! Militia Grunt here at the Omen City inn, called Eliza. 
+<<endif>>
+Kenny: Is that so?
+Kenny: I'll do some observations and see what I can dig up on them. 
+Kenny: Thanks, {$playerName}.
+===
+
+title: chapter3_OmenCity_OmenArrowrootWildsGate
+tags:
+---
+Guard: Halt!
+Guard: Amulet, please.
+<<if $AmuletRank == "Bronze" and $OmenDate == 0>>
+    Guard: Apologies, Adventurer. 
+    Guard: It is getting late. 
+    Guard: The Wilds will be too dangerous. 
+    Guard: Come back in the morning and we will let you through.
+<<endif>>
+<<if $AmuletRank != "Bronze">>
+    Guard: You're not a high enough rank to pass through on foot. 
+    Guard: I'd suggest battling the Guild Master here if you want a Bronze amulet.
+<<endif>>
+<<if $AmuletRank == "Bronze" and $OmenDate == 1>>
+    Guard: Good luck out there, Adventurer!
+<<endif>>
+===
+
+title: chapter3_OmenCity_Inn
+tags:
+---
+Innkeeper: Hi, Adventurer! 
+Innkeeper: Tonight we're hosting a special, romantic dinner for the Candlelight Festival.
+Innkeeper: Would you like me to make you a reservation?
+    -> Player: Yes.
+        <<if $Invitation_Accepted == 1>>
+            Innkeeper: Excellent! 
+            Innkeeper: Come and speak to me again once you've done all your adventuring for the day and I'll get your table ready.
+        <<endif>>
+        <<if $Invitation_Accepted == 0>>
+            Innkeeper: Ah, it seems you don't have anyone to dine with yet. 
+            Innkeeper: My apologies, it's tables for two only.
+        <<endif>>
+    -> Player: Not yet.
+        Innkeeper: You'd better hurry and pluck up the courage to ask someone before we fill up!
+===
+
+title: chapter3_OmenCity_Date_Request_Roy
+tags:
+---
+-> Player: (Ask Roy on a date.)
+    Player: Would you like to have dinner together for the festival tonight?
+        <<if $Invitation_Accepted == 1 && $Love_Interest != "Roy">>
+        Roy: It seems like you've already asked someone else. 
+        Roy: Are you asking me to join you instead?
+            -> Player: Yes.
+            -> Player: No.
+                <<stop>>
+        <<endif>>
+        <<if $Affection >= 5>>
+        Roy: Dinner? 
+        Roy: Together? 
+        Roy: I-I'd love to! 
+        <<set $Love_Interest = "Roy">>
+        <<set $Invitation_Accepted = 1>>
+        <<endif>>
+        <<if $Affection < 5>>
+        Roy: Oh...
+        Roy: Sorry, I don't think we really know each other well enough.
+        <<endif>>
+-> Player: (Don't ask Roy on a date.)
+===
+
+title: chapter3_OmenCity_Date_Request_Sheila
+tags:
+---
+-> Player: (Ask Sheila on a date.)
+    Player: Would you like to have dinner together for the festival tonight?
+        <<if $Invitation_Accepted == 1 && $Love_Interest != "Sheila">>
+        Sheila: It seems like you've already asked someone else. 
+        Sheila: Are you asking me to join you instead?
+            -> Player: Yes.
+            -> Player: No.
+                <<stop>>
+        <<endif>>
+        <<if $Affection >= 5>>
+        Sheila: Dinner for the festival? 
+        Sheila: Gah, that would be amazing!
+        <<set $Love_Interest = "Sheila">>
+        <<set $Invitation_Accepted = 1>>
+        <<endif>>
+        <<if $Affection < 5>>
+        Sheila: Erm, no thanks. 
+        Sheila: I'm washing my hair.
+        <<endif>>
+-> Player: (Don't ask Sheila on a date.)
+===
+
+title: chapter3_OmenCity_Date_Request_George
+tags:
+---
+-> Player: (Ask George on a date.)
+    Player: Would you like to have dinner together for the festival tonight?
+        <<if $Invitation_Accepted == 1 && $Love_Interest != "George">>
+        George: It seems like you've already asked someone else. 
+        George: Are you asking me to join you instead?
+            -> Player: Yes.
+            -> Player: No.
+                <<stop>>
+        <<endif>>
+        <<if $Affection >= 5>>
+        George: You're inviting me to dinner!? 
+        George: I guess I can make space in my diary. 
+        George: B-but it's only because I have nothing better to do!
+        <<set $Love_Interest = "George">>
+        <<set $Invitation_Accepted = 1>>
+        <<endif>>
+        <<if $Affection < 5>>
+        George: Ugh, with you? 
+        George: No way.
+        <<endif>>
+-> Player: (Don't ask George on a date.)
+===
+
+title: chapter3_OmenCity_Date_Request_Gigi
+tags:
+---
+-> Player: (Ask Gigi on a date.)
+    Player: Would you like to have dinner together for the festival tonight?
+        <<if $Invitation_Accepted == 1 && $Love_Interest != "Gigi">>
+        Gigi: It seems like you've already asked someone else. 
+        Gigi: Are you asking me to join you instead?
+            -> Player: Yes.
+            -> Player: No.
+                <<stop>>
+        <<endif>>
+        <<if $Affection >= 5>>
+        Gigi: You're inviting me to dinner!? 
+        Gigi: I guess I can make space in my diary. 
+        Gigi: B-but it's only because I have nothing better to do!
+        <<set $Love_Interest = "Gigi">>
+        <<set $Invitation_Accepted = 1>>
+        <<endif>>
+        <<if $Affection < 5>>
+        Gigi: Eew.
+        Gigi: Not in a million years.
+        <<endif>>
+-> Player: (Don't ask Gigi on a date.)
+===
+
+title: chapter3_OmenCity_Date_Request_Matthias
+tags:
+---
+-> Player: (Ask Matthias on a date.)
+    Player: Would you like to have dinner together for the festival tonight?
+        <<if $Invitation_Accepted == 1 && $Love_Interest != "Matthias">>
+        Matthias: It seems like you've already asked someone else. 
+        Matthias: Are you asking me to join you instead?
+            -> Player: Yes.
+            -> Player: No.
+                <<stop>>
+        <<endif>>
+        <<if $Affection >= 5>>
+        Matthias: A candlelit dinner? 
+        Matthias: I'd be honoured!
+        <<set $Love_Interest = "Matthias">>
+        <<set $Invitation_Accepted = 1>>
+        <<endif>>
+        <<if $Affection < 5>>
+        Matthias: I'm terribly sorry. 
+        Matthias: I can't make it tonight. 
+        <<endif>>
+-> Player: (Don't ask Matthias on a date.)
+===
+
+title: chapter3_OmenCity_Date_Request_Charlotte
+tags:
+---
+-> Player: (Ask Charlotte on a date.)
+    Player: Would you like to have dinner together for the festival tonight?
+        <<if $Invitation_Accepted == 1 && $Love_Interest != "Charlotte">>
+        Matthias: It seems like you've already asked someone else. 
+        Matthias: Are you asking me to join you instead?
+            -> Player: Yes.
+            -> Player: No.
+                <<stop>>
+        <<endif>>
+        <<if $Affection >= 5>>
+        Charlotte: Hmm...
+        Charlotte: I am hungry, I suppose...
+        <<set $Love_Interest = "Charlotte">>
+        <<set $Invitation_Accepted = 1>>
+        <<endif>>
+        <<if $Affection < 5>>
+        Charlotte: Sorry. 
+        Charlotte: I have other things to do, I suppose…
+        <<endif>>
+-> Player: (Don't ask Charlotte on a date.)
+===
+
+title: chapter3_OmenCity_Date_Request_Damien
+position: 1018,973
+tags:
+---
+-> Player: (Ask Damien on a date.)
+    Player: Would you like to have dinner together for the festival tonight?
+        <<if $Invitation_Accepted == 1 && $Love_Interest != "Damien">>
+        Damien: It seems like you've already asked someone else. 
+        Damien: Are you asking me to join you instead?
+            -> Player: Yes.
+            -> Player: No.
+                <<stop>>
+        <<endif>>
+        <<if $Affection >= 5>>
+        Damien: Look, I hate to ask this of you but I really need your help with something. 
+        Damien: It means we'll probably miss your dinner...
+        Damien: What do you say?
+            -> Player: Okay.
+                Damien: Thank you. 
+                Damien: Make the reservation anyway. 
+                Damien: It will give us some cover if things go wrong.
+                <<set $Love_Interest = "Damien">>
+                <<set $Invitation_Accepted = 1>>
+            -> No, sorry.
+                Damien: ...
+                Damien:  I understand. 
+                Damien: Let me know if you change your mind.
+        <<endif>>
+        <<if $Affection < 5>>
+        Damien: Have you gone insane? 
+        Damien: I can't. 
+        Damien: I have more important things to do.
+        <<endif>>
+-> Player: (Don't ask Damien on a date.)
+===
+
+title: chapter3_OmenCity_Date_Request_Eliza
+position: 1244,742
+tags:
+---
+-> Player: (Ask Eliza on a date.)
+    Player: Would you like to have dinner together for the festival tonight?
+        <<if $Invitation_Accepted == 1 && $Love_Interest != "Eliza">>
+        Eliza: It seems like you've already asked someone else. 
+        Eliza: Are you asking me to join you instead?
+            -> Player: Yes.
+            -> Player: No.
+                <<stop>>
+        <<endif>>
+        <<if $Affection >= 5>>
+        Eliza: Look, I hate to ask this of you but I really need your help with something. 
+        Eliza: It means we'll probably miss your dinner...
+        Eliza: What do you say?
+            -> Player: Okay.
+                Eliza: Thank you. 
+                Eliza: Make the reservation anyway. 
+                Eliza: It will give us some cover if things go wrong.
+                <<set $Love_Interest = "Eliza">>
+                <<set $Invitation_Accepted = 1>>
+            -> No, sorry.
+                Eliza: ...
+                Eliza:  I understand. 
+                Eliza: Let me know if you change your mind.
+        <<endif>>
+        <<if $Affection < 5>>
+        Eliza: Have you gone insane? 
+        Eliza: I can't. 
+        Eliza: I have more important things to do.
+        <<endif>>
+-> Player: (Don't ask Eliza on a date.)
+===

@@ -14,10 +14,16 @@ func start_interact_ui(interaction_text):
 
 func npc_start_dialogue_ui(npc: Non_Player_Character):
 	GameState.lock()
-	var dialogue := dialogue_scene.instantiate()
+	var dialogue: Dialogue = dialogue_scene.instantiate()
 	_connect_dialogue_signals(dialogue)
 	add_child(dialogue)
-	dialogue.dialogue_runner.StartDialogueForget(npc.npc_resource.dialogue_map.resolve_dialogue())
+	var npc_dialogue_id = npc.npc_resource.dialogue_map.resolve_dialogue()
+	print(dialogue.dialogue_runner.get_property_list())
+	print(npc_dialogue_id)
+	dialogue.dialogue_runner.StartDialogueForget(npc_dialogue_id)
+	print("Starting dialogue")
+	print(dialogue.dialogue_runner.dialoguePresenters)
+	await dialogue.request_dialogue_end
 
 func _connect_dialogue_signals(root: Node) -> void:
 	if root.has_signal("request_dialogue_end"):

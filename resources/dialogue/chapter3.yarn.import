@@ -1,0 +1,14 @@
+[remap]
+
+importer="yarnscript"
+type="Resource"
+uid="uid://dl1n6d3vdwfua"
+path="res://.godot/imported/chapter3.yarn-1b7224c6739ed79d0777747462710e2f.tres"
+
+[deps]
+
+source_file="res://resources/dialogue/chapter3.yarn"
+dest_files=["res://.godot/imported/chapter3.yarn-1b7224c6739ed79d0777747462710e2f.tres"]
+
+[params]
+

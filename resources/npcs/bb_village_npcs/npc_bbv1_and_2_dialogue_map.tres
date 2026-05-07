@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="DialogueMap" format=3 uid="uid://cs2vbhq1wjwxs"]
+
+[ext_resource type="Script" uid="uid://cobol6g2sil3f" path="res://resources/dialogue/dialogue_rule.gd" id="1_br44k"]
+[ext_resource type="Script" uid="uid://byuajnnxgbg30" path="res://resources/dialogue/dialogue_map.gd" id="2_w534i"]
+
+[sub_resource type="Resource" id="Resource_br44k"]
+script = ExtResource("1_br44k")
+dialogue_id = "chapter1_npc_villager1_and_2"
+metadata/_custom_type_script = "uid://cobol6g2sil3f"
+
+[resource]
+script = ExtResource("2_w534i")
+rules = Array[ExtResource("1_br44k")]([SubResource("Resource_br44k")])
+metadata/_custom_type_script = "uid://byuajnnxgbg30"

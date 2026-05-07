@@ -6,6 +6,7 @@ class_name Non_Player_Character
 @onready var player_data := ResourceLoader.load("res://saves/player_data.tres")
 
 @onready var skin_colour: Sprite2D = $NPCExtras/SkinColour
+@onready var outline: Sprite2D = $NPCExtras/Outline
 @onready var hair: Sprite2D = $NPCExtras/Hair
 @onready var eye_colour: Sprite2D = $NPCExtras/EyeColour
 @onready var top: Sprite2D = $NPCExtras/Top
@@ -21,6 +22,7 @@ func _ready() -> void:
 	skin_colour.texture = npc_resource.skin_tone
 	hair.texture = npc_resource.npc_hair
 	hair.modulate = npc_resource.hair_colour
+	outline.texture = npc_resource.npc_outline
 	eye_colour.texture = npc_resource.npc_eye
 	eye_colour.modulate = npc_resource.eye_colour
 	top.texture = npc_resource.npc_top

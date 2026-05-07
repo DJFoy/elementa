@@ -93,6 +93,18 @@ tracks/6/keys = {
 "update": 1,
 "values": [0]
 }
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("NPCExtras/Outline:frame")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
 
 [sub_resource type="Animation" id="Animation_rv78h"]
 resource_name = "walk_down"
@@ -176,6 +188,18 @@ tracks/6/path = NodePath("NPCExtras/Bottoms:frame")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 0]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("NPCExtras/Outline:frame")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
 "times": PackedFloat32Array(0, 0.25, 0.5, 0.75, 1),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 1,
@@ -269,6 +293,18 @@ tracks/6/keys = {
 "update": 1,
 "values": [4, 5, 6, 7, 4]
 }
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("NPCExtras/Outline:frame")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75, 0.99999994),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [4, 5, 6, 7, 4]
+}
 
 [sub_resource type="Animation" id="Animation_4wlns"]
 resource_name = "walk_right"
@@ -352,6 +388,18 @@ tracks/6/path = NodePath("NPCExtras/Bottoms:frame")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75, 0.99999994),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [8, 9, 10, 11, 8]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("NPCExtras/Outline:frame")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
 "times": PackedFloat32Array(0, 0.25, 0.5, 0.75, 0.99999994),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 1,
@@ -445,6 +493,18 @@ tracks/6/keys = {
 "update": 1,
 "values": [12, 13, 14, 15, 12]
 }
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("NPCExtras/Outline:frame")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [12, 13, 14, 15, 12]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_rv78h"]
 _data = {
@@ -482,11 +542,25 @@ libraries/ = SubResource("AnimationLibrary_rv78h")
 [node name="NPCExtras" type="Node2D" parent="." unique_id=1243771024]
 
 [node name="SkinColour" type="Sprite2D" parent="NPCExtras" unique_id=339374866]
+hframes = 4
+vframes = 4
+
+[node name="Outline" type="Sprite2D" parent="NPCExtras" unique_id=874684823]
+hframes = 4
+vframes = 4
 
 [node name="Hair" type="Sprite2D" parent="NPCExtras" unique_id=905746250]
+hframes = 4
+vframes = 4
 
 [node name="EyeColour" type="Sprite2D" parent="NPCExtras" unique_id=1201392500]
+hframes = 4
+vframes = 4
 
 [node name="Top" type="Sprite2D" parent="NPCExtras" unique_id=114512145]
+hframes = 4
+vframes = 4
 
 [node name="Bottoms" type="Sprite2D" parent="NPCExtras" unique_id=1986253675]
+hframes = 4
+vframes = 4

@@ -1,4 +1,5 @@
 extends Control
+class_name Dialogue
 
 @export var line_presenter: Control
 @export var dialogue_runner: DialogueRunner

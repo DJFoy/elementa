@@ -3,7 +3,6 @@
 [ext_resource type="Texture2D" uid="uid://cblm66l2385ri" path="res://assets/Dialogue Box.png" id="1_3n4vj"]
 [ext_resource type="Script" uid="uid://btqcr6thl8efl" path="res://scripts/UI/YarnSpinner/dialogue.gd" id="1_58kjy"]
 [ext_resource type="Script" uid="uid://budnld4qd513n" path="res://addons/YarnSpinner-Godot/Runtime/DialogueRunner.cs" id="2_rgjee"]
-[ext_resource type="Resource" path="res://resources/dialogue/chapter1.yarnproject" id="3_58kjy"]
 [ext_resource type="Theme" uid="uid://dthhuuah0qhsg" path="res://themes/default_interact_theme.tres" id="3_bfpow"]
 [ext_resource type="Resource" uid="uid://b0iw4rrlenv7d" path="res://resources/dialogue/Elementa.yarnproject" id="3_u6dtt"]
 [ext_resource type="Script" uid="uid://u2q64vfosoyd" path="res://scripts/UI/YarnSpinner/portrait_presenter.gd" id="4_68xmj"]
@@ -27,19 +26,13 @@ dialogue_runner = NodePath("CanvasLayer/DialogueRunner")
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=118278744]
 layer = 20
 
-[node name="DialogueRunner" type="Control" parent="CanvasLayer" unique_id=2013577826 node_paths=PackedStringArray("variableStorage", "lineProvider", "dialoguePresenters")]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
+[node name="DialogueRunner" type="Node" parent="CanvasLayer" unique_id=1808069002 node_paths=PackedStringArray("variableStorage", "lineProvider", "dialoguePresenters")]
 script = ExtResource("2_rgjee")
 yarnProject = ExtResource("3_u6dtt")
 variableStorage = NodePath("../InMemoryVariableStorage")
 lineProvider = NodePath("../TextLineProvider")
-dialoguePresenters = [NodePath("../LinePresenter"), NodePath("../OptionsPresenter"), NodePath("../PortraitPresenter")]
+dialoguePresenters = [NodePath("../PortraitPresenter"), NodePath("../LinePresenter"), NodePath("../OptionsPresenter")]
+metadata/_custom_type_script = "uid://budnld4qd513n"
 
 [node name="PortraitPresenter" type="Control" parent="CanvasLayer" unique_id=807697803 node_paths=PackedStringArray("npc_portrait", "presenter_control")]
 layout_mode = 3
@@ -144,7 +137,7 @@ alignment = 2
 
 [node name="TextLineProvider" type="Node2D" parent="CanvasLayer" unique_id=2061662789]
 script = ExtResource("7_cpovq")
-YarnProject = ExtResource("3_58kjy")
+YarnProject = ExtResource("3_u6dtt")
 
 [node name="InMemoryVariableStorage" type="Node" parent="CanvasLayer" unique_id=1682853406]
 script = ExtResource("8_58kjy")
