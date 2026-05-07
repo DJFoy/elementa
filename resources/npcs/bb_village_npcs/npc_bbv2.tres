@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="NPC_Resource" format=3 uid="uid://dnagkkg67x5hl"]
+
+[ext_resource type="Texture2D" uid="uid://kvpgi46fvmbw" path="res://assets/character_assets/NPCs/generic_npc_assets/H5.png" id="1_d8d4v"]
+[ext_resource type="Texture2D" uid="uid://bfh738pits064" path="res://assets/character_assets/NPCs/generic_npc_assets/H5_ST1.png" id="1_i3mpi"]
+[ext_resource type="Script" uid="uid://c8dfh7hkdo33y" path="res://resources/npcs/npc_resource.gd" id="1_lrewx"]
+[ext_resource type="Texture2D" uid="uid://dq76pym48g0e4" path="res://assets/character_assets/NPCs/generic_npc_assets/eyes.png" id="2_33mug"]
+
+[resource]
+script = ExtResource("1_lrewx")
+npc_name = "Villager 2"
+npc_hair = ExtResource("1_d8d4v")
+npc_eye = ExtResource("2_33mug")
+hair_colour = Color(0.9019608, 0.53333336, 0.2509804, 1)
+hair_shadow = ExtResource("1_i3mpi")
+eye_colour = Color(0.37254903, 0.49019608, 0.24705882, 1)
+metadata/_custom_type_script = "uid://c8dfh7hkdo33y"

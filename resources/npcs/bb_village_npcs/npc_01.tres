@@ -1,8 +1,0 @@
-[gd_resource type="Resource" script_class="NPC_Resource" format=3 uid="uid://cqp5t363nac8h"]
-
-[ext_resource type="Script" uid="uid://c8dfh7hkdo33y" path="res://resources/npcs/npc_resource.gd" id="1_o61nu"]
-
-[resource]
-script = ExtResource("1_o61nu")
-npc_name = "Villager"
-metadata/_custom_type_script = "uid://c8dfh7hkdo33y"

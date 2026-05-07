@@ -46,7 +46,7 @@ version_control/autoload_on_startup=true
 
 [editor_plugins]
 
-enabled=PackedStringArray()
+enabled=PackedStringArray("res://addons/YarnSpinner-Godot/plugin.cfg")
 
 [global_group]
 

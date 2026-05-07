@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="NPC_Resource" format=3 uid="uid://cqp5t363nac8h"]
+
+[ext_resource type="Script" uid="uid://c8dfh7hkdo33y" path="res://resources/npcs/npc_resource.gd" id="1_cttkp"]
+
+[resource]
+script = ExtResource("1_cttkp")
+npc_name = "Villager 1"
+hair_colour = Color(0.88235295, 0.8745098, 0.36862746, 1)
+eye_colour = Color(0.47843137, 0.6862745, 1, 1)
+metadata/_custom_type_script = "uid://c8dfh7hkdo33y"
