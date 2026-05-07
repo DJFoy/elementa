@@ -1,0 +1,14 @@
+[remap]
+
+importer="yarnscript"
+type="Resource"
+uid="uid://cpsmghgll24qr"
+path="res://.godot/imported/Elemaenta.yarn-4a4400360eb2b97f8cbd065385f1fc23.tres"
+
+[deps]
+
+source_file="res://resources/dialogue/Elemaenta.yarn"
+dest_files=["res://.godot/imported/Elemaenta.yarn-4a4400360eb2b97f8cbd065385f1fc23.tres"]
+
+[params]
+
