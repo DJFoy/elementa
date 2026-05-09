@@ -36,31 +36,31 @@ position: -180,-527
 ---	
 Dad: Morning {$playerName}, how are you feeling? Are you ready for your first day of work?
 Player: ... 
-Dad: Hey, I know you had your heart set on that scholarship. 
-Dad: But working as a servant in the manor won't be all that bad. At least you won't have to work in the mines like I did.
+Dad: Hey, I know you had your heart set on that scholarship. #worried_smile
+Dad: But working as a servant in the manor won't be all that bad. At least you won't have to work in the mines like I did. #worried_smile #sweatdrop
     -> Player: Right... I get to watch Gigi and George become Adventurers while I sit at home and dust their silverware.
     -> Player: Yeah. I guess it could be worse.
-Dad: I'm sorry {$playerName}. I know it's unfair only nobles get to become Adventurers. 
-Dad: I would give you the money if we had it. But we can't even afford a Familiar for the house.
+Dad: I'm sorry {$playerName}. I know it's unfair only nobles get to become Adventurers. #sad
+Dad: I would give you the money if we had it. But we can't even afford a Familiar for the house. #sad
 ===
 
 title: chatper1_dadBreakfast
 tags:
 ---
-Dad: Here. I made you a good, hearty breakfast. I want you to know that I love you and I'm very proud of you, no matter what.
+Dad: Here. I made you a good, hearty breakfast. I want you to know that I love you and I'm very proud of you, no matter what. #cute_smile
     -> Player: ~ I can tell Dad put a lot of effort into this. I should finish it.
-        Narrator: You think you spot Dad wiping away a tear.
+        Narrator: You think you spot Dad wiping away a tear. #blush
     -> (Push the food around the plate.)
-        Narrator: You think you hear Dad heave a forlorn sigh.
+        Narrator: You think you hear Dad heave a forlorn sigh. #sad
     -> Player: What the hell, Dad? You know I hate {$hatedFood}! Why can't you do anything right?
-        Dad: Oh! I'm sorry. I was so focussed on making everything special. 
-        Dad: Agh, everything was supposed to be perfect!
+        Dad: Oh! I'm sorry. I was so focussed on making everything special. #sad
+        Dad: Agh, everything was supposed to be perfect! #sad
 ===
 
 title: chapter1_dadIntro_2
 tags:
 ---
-Dad: Is that a letter?
+Dad: Is that a letter? #shocked
 Dad: It's for you, {$playerName}.
 Dad: What is it?
 ===
@@ -70,12 +70,12 @@ tags:
 ---
 Player: It's a response to my scholarship application. And an apology for the delay. 
 Player: I've... I've been accepted!
-Dad: What? That's incredible! 
-Dad: Ah! Erm... What do we do? 	
+Dad: What? That's incredible! #overjoyed
+Dad: Ah! Erm... What do we do? #worried_smile
 Dad: Okay. It's still very early in the day. We have time. 
 Dad: Firstly, who is your sponsor?	
 Player: Professor Olivia.
-Dad: Phew! She's here in the village right now. 
+Dad: Phew! She's here in the village right now. #happy
 Dad: Go to see her right away. I'll go to the manor and explain you won't be accepting the position as a servant.
     -> Player: Thanks, Dad.
     -> Player: Whatever. I'm out of here!
