@@ -7,6 +7,9 @@ static var prof_olivia = preload("uid://b03hbee147rla")
 
 static var npc_bbv_1 = preload("uid://cqp5t363nac8h")
 static var npc_bbv_2 = preload("uid://dnagkkg67x5hl")
+static var npc_bbv_3 = preload("uid://6ap18qwmf0i")
+static var npc_bbv_4 = preload("uid://cpinvovik5so0")
+
 
 
 static func get_npc(npc_id: String) -> NPC_Resource:
@@ -15,5 +18,7 @@ static func get_npc(npc_id: String) -> NPC_Resource:
 		"Prof_Olivia": return prof_olivia
 		"NPC_BBV_1": return npc_bbv_1
 		"NPC_BBV_2": return npc_bbv_2
+		"NPC_BBV_3": return npc_bbv_3
+		"NPC_BBV_4": return npc_bbv_4
 	print("Cannot resolve npc with id: ", npc_id)
 	return null

@@ -18,12 +18,9 @@ func npc_start_dialogue_ui(npc: Non_Player_Character):
 	_connect_dialogue_signals(dialogue)
 	add_child(dialogue)
 	var npc_dialogue_id = npc.npc_resource.dialogue_map.resolve_dialogue()
-	print(dialogue.dialogue_runner.get_property_list())
-	print(npc_dialogue_id)
 	dialogue.dialogue_runner.StartDialogueForget(npc_dialogue_id)
-	print("Starting dialogue")
-	print(dialogue.dialogue_runner.dialoguePresenters)
 	await dialogue.request_dialogue_end
+	Global_World_State.one_time_dialogues.append(npc_dialogue_id)
 
 func _connect_dialogue_signals(root: Node) -> void:
 	if root.has_signal("request_dialogue_end"):

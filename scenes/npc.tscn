@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://c3ps2dhlyigr4"]
 
 [ext_resource type="Script" uid="uid://dqqhg26r5odn3" path="res://scripts/World/npc.gd" id="1_nh2m4"]
-[ext_resource type="Texture2D" uid="uid://42bktppitape" path="res://assets/character_assets/NPCs/lady lucaria/Lady Lucaria Overworld Sprite Hat.png" id="2_abqhh"]
+[ext_resource type="Texture2D" uid="uid://42bktppitape" path="res://assets/character_assets/overworld_sprites/Lady Lucaria Overworld Sprite Hat.png" id="2_abqhh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tcuxl"]
 size = Vector2(13.5, 15)
@@ -100,6 +100,30 @@ tracks/7/path = NodePath("NPCExtras/Outline:frame")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("NPCExtras/HairShadow:frame")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("NPCExtras/FacialHair:frame")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
@@ -205,6 +229,30 @@ tracks/7/keys = {
 "update": 1,
 "values": [0, 1, 2, 3, 0]
 }
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("NPCExtras/HairShadow:frame")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 0]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("NPCExtras/FacialHair:frame")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 0]
+}
 
 [sub_resource type="Animation" id="Animation_7n8xq"]
 resource_name = "walk_left"
@@ -300,6 +348,30 @@ tracks/7/path = NodePath("NPCExtras/Outline:frame")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75, 0.99999994),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [4, 5, 6, 7, 4]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("NPCExtras/HairShadow:frame")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75, 0.99999994),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [4, 5, 6, 7, 4]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("NPCExtras/FacialHair:frame")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
 "times": PackedFloat32Array(0, 0.25, 0.5, 0.75, 0.99999994),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 1,
@@ -405,6 +477,30 @@ tracks/7/keys = {
 "update": 1,
 "values": [8, 9, 10, 11, 8]
 }
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("NPCExtras/HairShadow:frame")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75, 0.99999994),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [8, 9, 10, 11, 8]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("NPCExtras/FacialHair:frame")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75, 0.99999994),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [8, 9, 10, 11, 8]
+}
 
 [sub_resource type="Animation" id="Animation_tl2vt"]
 resource_name = "walk_up"
@@ -505,6 +601,30 @@ tracks/7/keys = {
 "update": 1,
 "values": [12, 13, 14, 15, 12]
 }
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("NPCExtras/HairShadow:frame")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [12, 13, 14, 15, 12]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("NPCExtras/FacialHair:frame")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [12, 13, 14, 15, 12]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_rv78h"]
 _data = {
@@ -542,25 +662,41 @@ libraries/ = SubResource("AnimationLibrary_rv78h")
 [node name="NPCExtras" type="Node2D" parent="." unique_id=1243771024]
 
 [node name="SkinColour" type="Sprite2D" parent="NPCExtras" unique_id=339374866]
+offset = Vector2(0, -1)
 hframes = 4
 vframes = 4
 
 [node name="Outline" type="Sprite2D" parent="NPCExtras" unique_id=874684823]
+offset = Vector2(0, -1)
 hframes = 4
 vframes = 4
 
 [node name="Hair" type="Sprite2D" parent="NPCExtras" unique_id=905746250]
+offset = Vector2(0, -1)
+hframes = 4
+vframes = 4
+
+[node name="HairShadow" type="Sprite2D" parent="NPCExtras" unique_id=1319200304]
+offset = Vector2(0, -1)
+hframes = 4
+vframes = 4
+
+[node name="FacialHair" type="Sprite2D" parent="NPCExtras" unique_id=25612222]
+offset = Vector2(0, -1)
 hframes = 4
 vframes = 4
 
 [node name="EyeColour" type="Sprite2D" parent="NPCExtras" unique_id=1201392500]
+offset = Vector2(0, -1)
 hframes = 4
 vframes = 4
 
 [node name="Top" type="Sprite2D" parent="NPCExtras" unique_id=114512145]
+offset = Vector2(0, -1)
 hframes = 4
 vframes = 4
 
 [node name="Bottoms" type="Sprite2D" parent="NPCExtras" unique_id=1986253675]
+offset = Vector2(0, -1)
 hframes = 4
 vframes = 4

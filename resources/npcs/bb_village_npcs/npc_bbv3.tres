@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="NPC_Resource" format=3 uid="uid://6ap18qwmf0i"]
+
+[ext_resource type="Resource" uid="uid://cdkgt5xvnr54n" path="res://resources/npcs/bb_village_npcs/npc_bbv3_dialogue_map.tres" id="1_66m74"]
+[ext_resource type="Texture2D" uid="uid://c8raiq6leksyb" path="res://assets/character_assets/pc_assets/overworld_sprite/shadows/h2_st1_shadow.png" id="1_gkgf7"]
+[ext_resource type="Script" uid="uid://c8dfh7hkdo33y" path="res://resources/npcs/npc_resource.gd" id="1_ybm3q"]
+[ext_resource type="Texture2D" uid="uid://dq76pym48g0e4" path="res://assets/character_assets/overworld_sprites/generic_npc_assets/eyes.png" id="3_oc2dw"]
+[ext_resource type="Texture2D" uid="uid://bl8x47qmy0kig" path="res://assets/character_assets/overworld_sprites/generic_npc_assets/clothes/bottom_tunic_brown.png" id="3_y2n60"]
+[ext_resource type="Texture2D" uid="uid://bi882xibkxp7j" path="res://assets/character_assets/pc_assets/overworld_sprite/hair/h2.png" id="4_y2n60"]
+[ext_resource type="Texture2D" uid="uid://dbmi7grah08nr" path="res://assets/character_assets/overworld_sprites/generic_npc_assets/character_outline.png" id="5_judla"]
+[ext_resource type="Texture2D" uid="uid://dwnxaluv4m54l" path="res://assets/character_assets/overworld_sprites/generic_npc_assets/clothes/top_tunic_orange.png" id="6_hqt27"]
+[ext_resource type="Texture2D" uid="uid://dbswv354y4ojf" path="res://assets/character_assets/overworld_sprites/generic_npc_assets/skin_tone/tone_1.png" id="8_ry1cx"]
+
+[resource]
+script = ExtResource("1_ybm3q")
+npc_name = "Charlie"
+skin_tone = ExtResource("8_ry1cx")
+npc_outline = ExtResource("5_judla")
+npc_hair = ExtResource("4_y2n60")
+npc_eye = ExtResource("3_oc2dw")
+npc_top = ExtResource("6_hqt27")
+npc_bottom = ExtResource("3_y2n60")
+hair_colour = Color(0.5294118, 0.40784314, 0.16862746, 1)
+hair_shadow = ExtResource("1_gkgf7")
+eye_colour = Color(0.5568628, 0.7411765, 0.050980393, 1)
+dialogue_map = ExtResource("1_66m74")
+metadata/_custom_type_script = "uid://c8dfh7hkdo33y"

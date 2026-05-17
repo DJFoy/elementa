@@ -2,25 +2,27 @@
 
 [ext_resource type="Resource" uid="uid://cs2vbhq1wjwxs" path="res://resources/npcs/bb_village_npcs/npc_bbv1_and_2_dialogue_map.tres" id="1_fcvfn"]
 [ext_resource type="Script" uid="uid://c8dfh7hkdo33y" path="res://resources/npcs/npc_resource.gd" id="1_lrewx"]
-[ext_resource type="Texture2D" uid="uid://bfh738pits064" path="res://assets/character_assets/NPCs/generic_npc_assets/hair/H5_ST1.png" id="1_mp7j2"]
-[ext_resource type="Texture2D" uid="uid://dq76pym48g0e4" path="res://assets/character_assets/NPCs/generic_npc_assets/eyes.png" id="2_33mug"]
-[ext_resource type="Texture2D" uid="uid://rh2tl4qomm1x" path="res://assets/character_assets/NPCs/generic_npc_assets/clothes/bottom_dress_blue.png" id="2_mp7j2"]
-[ext_resource type="Texture2D" uid="uid://kvpgi46fvmbw" path="res://assets/character_assets/NPCs/generic_npc_assets/hair/H5.png" id="4_qhstc"]
-[ext_resource type="Texture2D" uid="uid://dbmi7grah08nr" path="res://assets/character_assets/NPCs/generic_npc_assets/character_outline.png" id="5_fcvfn"]
-[ext_resource type="Texture2D" uid="uid://dsb5me0mamosm" path="res://assets/character_assets/NPCs/generic_npc_assets/clothes/top_dress_blue.png" id="5_qhstc"]
-[ext_resource type="Texture2D" uid="uid://dbswv354y4ojf" path="res://assets/character_assets/NPCs/generic_npc_assets/skin_tone/tone_1.png" id="7_fcvfn"]
+[ext_resource type="Texture2D" uid="uid://bfh738pits064" path="res://assets/character_assets/overworld_sprites/generic_npc_assets/hair/H5_ST1.png" id="2_4qmd1"]
+[ext_resource type="Texture2D" uid="uid://rh2tl4qomm1x" path="res://assets/character_assets/overworld_sprites/generic_npc_assets/clothes/bottom_dress_blue.png" id="3_5yf5v"]
+[ext_resource type="Texture2D" uid="uid://dq76pym48g0e4" path="res://assets/character_assets/overworld_sprites/generic_npc_assets/eyes.png" id="4_2awkp"]
+[ext_resource type="Texture2D" uid="uid://kvpgi46fvmbw" path="res://assets/character_assets/overworld_sprites/generic_npc_assets/hair/H5.png" id="5_bkvkq"]
+[ext_resource type="Texture2D" uid="uid://b6l84qd1xrhmr" path="res://assets/character_assets/overworld_sprites/generic_npc_assets/hair/H5 Bun_ST1.png" id="6_aekcx"]
+[ext_resource type="Texture2D" uid="uid://dbmi7grah08nr" path="res://assets/character_assets/overworld_sprites/generic_npc_assets/character_outline.png" id="7_o1n5h"]
+[ext_resource type="Texture2D" uid="uid://dsb5me0mamosm" path="res://assets/character_assets/overworld_sprites/generic_npc_assets/clothes/top_dress_blue.png" id="8_n3q1b"]
+[ext_resource type="Texture2D" uid="uid://dbswv354y4ojf" path="res://assets/character_assets/overworld_sprites/generic_npc_assets/skin_tone/tone_1.png" id="10_7bo1b"]
 
 [resource]
 script = ExtResource("1_lrewx")
 npc_name = "Christa"
-skin_tone = ExtResource("7_fcvfn")
-npc_outline = ExtResource("5_fcvfn")
-npc_hair = ExtResource("4_qhstc")
-npc_eye = ExtResource("2_33mug")
-npc_top = ExtResource("5_qhstc")
-npc_bottom = ExtResource("2_mp7j2")
-hair_colour = Color(0.9019608, 0.53333336, 0.2509804, 1)
-hair_shadow = ExtResource("1_mp7j2")
+skin_tone = ExtResource("10_7bo1b")
+npc_outline = ExtResource("7_o1n5h")
+npc_hair = ExtResource("5_bkvkq")
+npc_hair_shadow = ExtResource("6_aekcx")
+npc_eye = ExtResource("4_2awkp")
+npc_top = ExtResource("8_n3q1b")
+npc_bottom = ExtResource("3_5yf5v")
+hair_colour = Color(0.99607843, 0.8509804, 0.39607844, 1)
+hair_shadow = ExtResource("2_4qmd1")
 eye_colour = Color(0.37254903, 0.49019608, 0.24705882, 1)
 dialogue_map = ExtResource("1_fcvfn")
 metadata/_custom_type_script = "uid://c8dfh7hkdo33y"

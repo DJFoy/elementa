@@ -8,6 +8,8 @@ class_name Non_Player_Character
 @onready var skin_colour: Sprite2D = $NPCExtras/SkinColour
 @onready var outline: Sprite2D = $NPCExtras/Outline
 @onready var hair: Sprite2D = $NPCExtras/Hair
+@onready var hair_shadow: Sprite2D = $NPCExtras/HairShadow
+@onready var facial_hair: Sprite2D = $NPCExtras/FacialHair
 @onready var eye_colour: Sprite2D = $NPCExtras/EyeColour
 @onready var top: Sprite2D = $NPCExtras/Top
 @onready var bottoms: Sprite2D = $NPCExtras/Bottoms
@@ -22,6 +24,9 @@ func _ready() -> void:
 	skin_colour.texture = npc_resource.skin_tone
 	hair.texture = npc_resource.npc_hair
 	hair.modulate = npc_resource.hair_colour
+	hair_shadow.texture = npc_resource.hair_shadow
+	facial_hair.texture = npc_resource.npc_facial_hair
+	facial_hair.modulate = npc_resource.hair_colour
 	outline.texture = npc_resource.npc_outline
 	eye_colour.texture = npc_resource.npc_eye
 	eye_colour.modulate = npc_resource.eye_colour
