@@ -118,6 +118,33 @@ Professor Olivia: Unfortunately, the best I can offer you is from a breeder surp
 Professor Olivia: Go ahead. Pick which one you want. I'll just be working in my study over there.
 ===
 
+title: chapter1_profOlivia_1
+tags:
+position:
+---
+Professor Olivia: The Familiars are just in that pen over there.
+===
+
+title: chapter1_profOlivia_2
+tags:
+position:
+---
+Professor Olivia: It was nice to meet you. 
+Professor Olivia: Don't forget about those elven artefacts I mentioned.
+===
+
+title: chapter1_Dad_After_Pick_Fam
+tags:
+position:
+---
+Dad: Ah! Is this your Familiar? 
+Player: Yeah, this is {$familiar}.
+Dad: How wonderful! 
+Dad: Your mother would be so proud {$playerName}. 
+Dad: I'll miss you. 
+Dad: Goodbye for now and stay safe.
+===
+
 title: chapter1_profOliviaChooseFam
 tags:
 position: 326,-319
