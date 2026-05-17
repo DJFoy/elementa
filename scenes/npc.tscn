@@ -1,7 +1,14 @@
 [gd_scene format=3 uid="uid://c3ps2dhlyigr4"]
 
 [ext_resource type="Script" uid="uid://dqqhg26r5odn3" path="res://scripts/World/npc.gd" id="1_nh2m4"]
-[ext_resource type="Texture2D" uid="uid://42bktppitape" path="res://assets/character_assets/overworld_sprites/Lady Lucaria Overworld Sprite Hat.png" id="2_abqhh"]
+[ext_resource type="Texture2D" uid="uid://dbswv354y4ojf" path="res://assets/character_assets/overworld_sprites/generic_npc_assets/skin_tone/tone_1.png" id="2_sptji"]
+[ext_resource type="Texture2D" uid="uid://dbmi7grah08nr" path="res://assets/character_assets/overworld_sprites/generic_npc_assets/character_outline.png" id="3_v4e37"]
+[ext_resource type="Texture2D" uid="uid://5y3i0bqa4gme" path="res://assets/character_assets/overworld_sprites/generic_npc_assets/hair/H3 Updo_1.png" id="4_1h837"]
+[ext_resource type="Texture2D" uid="uid://bpl8nxbe7ty1p" path="res://assets/character_assets/overworld_sprites/generic_npc_assets/hair/H3_ST1.png" id="5_gl1un"]
+[ext_resource type="Texture2D" uid="uid://dq76pym48g0e4" path="res://assets/character_assets/overworld_sprites/generic_npc_assets/eyes.png" id="6_wuru7"]
+[ext_resource type="Texture2D" uid="uid://e64wtg1kggpx" path="res://assets/character_assets/overworld_sprites/generic_npc_assets/accessories/Moustache.png" id="7_nyaq3"]
+[ext_resource type="Texture2D" uid="uid://uhchfoth2lwx" path="res://assets/character_assets/overworld_sprites/generic_npc_assets/clothes/top_tunic_blue.png" id="8_yf2ql"]
+[ext_resource type="Texture2D" uid="uid://bl8x47qmy0kig" path="res://assets/character_assets/overworld_sprites/generic_npc_assets/clothes/bottom_tunic_brown.png" id="9_8gbmn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tcuxl"]
 size = Vector2(13.5, 15)
@@ -646,7 +653,6 @@ shape = SubResource("RectangleShape2D_tcuxl")
 
 [node name="MainSprite" type="Sprite2D" parent="." unique_id=1158250490]
 texture_filter = 1
-texture = ExtResource("2_abqhh")
 offset = Vector2(0, -1)
 hframes = 4
 vframes = 4
@@ -662,41 +668,52 @@ libraries/ = SubResource("AnimationLibrary_rv78h")
 [node name="NPCExtras" type="Node2D" parent="." unique_id=1243771024]
 
 [node name="SkinColour" type="Sprite2D" parent="NPCExtras" unique_id=339374866]
+texture = ExtResource("2_sptji")
 offset = Vector2(0, -1)
 hframes = 4
 vframes = 4
 
 [node name="Outline" type="Sprite2D" parent="NPCExtras" unique_id=874684823]
+texture = ExtResource("3_v4e37")
 offset = Vector2(0, -1)
 hframes = 4
 vframes = 4
 
 [node name="Hair" type="Sprite2D" parent="NPCExtras" unique_id=905746250]
+modulate = Color(1, 1, 0, 1)
+texture = ExtResource("4_1h837")
 offset = Vector2(0, -1)
 hframes = 4
 vframes = 4
 
 [node name="HairShadow" type="Sprite2D" parent="NPCExtras" unique_id=1319200304]
-offset = Vector2(0, -1)
-hframes = 4
-vframes = 4
-
-[node name="FacialHair" type="Sprite2D" parent="NPCExtras" unique_id=25612222]
+texture = ExtResource("5_gl1un")
 offset = Vector2(0, -1)
 hframes = 4
 vframes = 4
 
 [node name="EyeColour" type="Sprite2D" parent="NPCExtras" unique_id=1201392500]
+modulate = Color(0, 0, 1, 1)
+texture = ExtResource("6_wuru7")
+offset = Vector2(0, -1)
+hframes = 4
+vframes = 4
+
+[node name="FacialHair" type="Sprite2D" parent="NPCExtras" unique_id=25612222]
+modulate = Color(1, 1, 0, 1)
+texture = ExtResource("7_nyaq3")
 offset = Vector2(0, -1)
 hframes = 4
 vframes = 4
 
 [node name="Top" type="Sprite2D" parent="NPCExtras" unique_id=114512145]
+texture = ExtResource("8_yf2ql")
 offset = Vector2(0, -1)
 hframes = 4
 vframes = 4
 
 [node name="Bottoms" type="Sprite2D" parent="NPCExtras" unique_id=1986253675]
+texture = ExtResource("9_8gbmn")
 offset = Vector2(0, -1)
 hframes = 4
 vframes = 4

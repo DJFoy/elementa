@@ -4,13 +4,13 @@
 
 [resource]
 script = ExtResource("1_p1bc8")
-name = "Grace"
+name = "Beans"
 pronouns = "She/Her"
-hair = 1
-hair_colour = Color(0.48535156, 0.32474333, 0.21897697, 1)
-eye_colour = Color(0.05505371, 0.5392704, 0.6875, 1)
-skin_colour = 1
+hair = 2
+hair_colour = Color(1, 0.2735176, 0.06542969, 1)
+eye_colour = Color(0.013372421, 0.7207031, 0.6088012, 1)
+skin_colour = 2
 body_type = 1
 clothes = 2
-likes = "Cake"
-dislikes = "Liver"
+likes = "Bread"
+dislikes = "Salad"

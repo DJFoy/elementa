@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="NPC_Resource" format=3 uid="uid://cp2wlwwsug1q4"]
+
+[ext_resource type="Texture2D" uid="uid://b6jbq4rgkb1sc" path="res://assets/character_assets/overworld_sprites/generic_npc_assets/hair/H9 Mid_ST1.png" id="1_bb4i7"]
+[ext_resource type="Script" uid="uid://c8dfh7hkdo33y" path="res://resources/npcs/npc_resource.gd" id="1_f0kfq"]
+[ext_resource type="Resource" uid="uid://1h4ocs2c0oca" path="res://resources/npcs/bb_village_npcs/npc_bbv5_dialogue_map.tres" id="1_hid8q"]
+[ext_resource type="Texture2D" uid="uid://begbk2l1n2elp" path="res://assets/character_assets/overworld_sprites/generic_npc_assets/clothes/bottom_dress_purple.png" id="2_hid8q"]
+[ext_resource type="Texture2D" uid="uid://dq76pym48g0e4" path="res://assets/character_assets/overworld_sprites/generic_npc_assets/eyes.png" id="3_71ecm"]
+[ext_resource type="Texture2D" uid="uid://cdrenou56p141" path="res://assets/character_assets/overworld_sprites/generic_npc_assets/hair/H9 Mid.png" id="4_qntic"]
+[ext_resource type="Texture2D" uid="uid://dbmi7grah08nr" path="res://assets/character_assets/overworld_sprites/generic_npc_assets/character_outline.png" id="5_ltnt8"]
+[ext_resource type="Texture2D" uid="uid://df1tt7a51mmyd" path="res://assets/character_assets/overworld_sprites/generic_npc_assets/clothes/top_dress_purple.png" id="6_j3xt6"]
+[ext_resource type="Texture2D" uid="uid://dbswv354y4ojf" path="res://assets/character_assets/overworld_sprites/generic_npc_assets/skin_tone/tone_1.png" id="8_ewn1x"]
+
+[resource]
+script = ExtResource("1_f0kfq")
+npc_name = "Sofie"
+skin_tone = ExtResource("8_ewn1x")
+npc_outline = ExtResource("5_ltnt8")
+npc_hair = ExtResource("4_qntic")
+npc_eye = ExtResource("3_71ecm")
+npc_top = ExtResource("6_j3xt6")
+npc_bottom = ExtResource("2_hid8q")
+hair_colour = Color(0.6, 0.45882353, 0.13725491, 1)
+hair_shadow = ExtResource("1_bb4i7")
+eye_colour = Color(0.85490197, 0.52156866, 0.08235294, 1)
+dialogue_map = ExtResource("1_hid8q")
+metadata/_custom_type_script = "uid://c8dfh7hkdo33y"

@@ -3,7 +3,7 @@
 [ext_resource type="Resource" uid="uid://cxb24bqh3vpmr" path="res://resources/npcs/bb_village_npcs/npc_bbv4_dialogue_map.tres" id="1_74h5s"]
 [ext_resource type="Script" uid="uid://c8dfh7hkdo33y" path="res://resources/npcs/npc_resource.gd" id="1_jft4s"]
 [ext_resource type="Texture2D" uid="uid://e64wtg1kggpx" path="res://assets/character_assets/overworld_sprites/generic_npc_assets/accessories/Moustache.png" id="1_xgi5a"]
-[ext_resource type="Texture2D" uid="uid://nbqqb4gt2i6c" path="res://assets/character_assets/overworld_sprites/generic_npc_assets/hair/H8 Short ST1.png" id="2_74h5s"]
+[ext_resource type="Texture2D" uid="uid://brrbjeacp1kxf" path="res://assets/character_assets/overworld_sprites/generic_npc_assets/hair/H8 Short ST3.png" id="2_74h5s"]
 [ext_resource type="Texture2D" uid="uid://232whk2vrc01" path="res://assets/character_assets/overworld_sprites/generic_npc_assets/clothes/bottom_tunic_grey.png" id="3_ovbdg"]
 [ext_resource type="Texture2D" uid="uid://dq76pym48g0e4" path="res://assets/character_assets/overworld_sprites/generic_npc_assets/eyes.png" id="4_6t5r1"]
 [ext_resource type="Texture2D" uid="uid://col510vtm4w6n" path="res://assets/character_assets/overworld_sprites/generic_npc_assets/hair/H8 Short.png" id="5_1emg3"]
