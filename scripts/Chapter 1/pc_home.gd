@@ -27,6 +27,7 @@ func _setup_location() -> void:
 	# If there are many locations with conditional maps I might need to extend location again
 	if Global_World_State.chapter == "Chapter1" && Global_World_State.cutscenes.has("chapter1_dadIntro"):
 		_on_open_window_requested()
+		sink.set_cell(Vector2i(1,2), 0, Vector2i(1,2), TileSetAtlasSource.TRANSFORM_FLIP_H)
 	
 	cutscenes = {
 		"chapter1_dad_intro": [

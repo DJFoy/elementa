@@ -34,7 +34,7 @@ lineProvider = NodePath("../TextLineProvider")
 dialoguePresenters = [NodePath("../PortraitPresenter"), NodePath("../LinePresenter"), NodePath("../OptionsPresenter")]
 metadata/_custom_type_script = "uid://budnld4qd513n"
 
-[node name="PortraitPresenter" type="Control" parent="CanvasLayer" unique_id=807697803 node_paths=PackedStringArray("npc_portrait", "presenter_control")]
+[node name="PortraitPresenter" type="Control" parent="CanvasLayer" unique_id=807697803 node_paths=PackedStringArray("npc_portrait", "presenter_control", "emotion", "emote")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -44,6 +44,8 @@ grow_vertical = 2
 script = ExtResource("4_68xmj")
 npc_portrait = NodePath("PresenterControl/NPCPortrait")
 presenter_control = NodePath("PresenterControl")
+emotion = NodePath("PresenterControl/Emotion")
+emote = NodePath("PresenterControl/Emote")
 
 [node name="PresenterControl" type="Control" parent="CanvasLayer/PortraitPresenter" unique_id=1496486788]
 layout_mode = 1
@@ -54,6 +56,22 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="NPCPortrait" type="TextureRect" parent="CanvasLayer/PortraitPresenter/PresenterControl" unique_id=2004763049]
+layout_mode = 0
+offset_left = 42.0
+offset_top = 29.0
+offset_right = 202.0
+offset_bottom = 189.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Emotion" type="TextureRect" parent="CanvasLayer/PortraitPresenter/PresenterControl" unique_id=604917224]
+layout_mode = 0
+offset_left = 42.0
+offset_top = 29.0
+offset_right = 202.0
+offset_bottom = 189.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Emote" type="TextureRect" parent="CanvasLayer/PortraitPresenter/PresenterControl" unique_id=1982251344]
 layout_mode = 0
 offset_left = 42.0
 offset_top = 29.0

@@ -8,10 +8,10 @@ tags:
 <<declare $chapter_1_prof_olivia_ask_repeat = 0>>
 <<declare $George_Activated = 0>>
 <<declare $Gigi_Activated = 0>>
-<<decalre $Roy_Activated = 0>>
-<<decalre $Sheila_Activated = 0>>
-<<decalre $Damien_Activated = 0>>
-<<decalre $Eliza_Activated = 0>>
+<<declare $Roy_Activated = 0>>
+<<declare $Sheila_Activated = 0>>
+<<declare $Damien_Activated = 0>>
+<<declare $Eliza_Activated = 0>>
 <<declare $George_Affection = 0>>
 <<declare $Gigi_Affection = 0>>
 <<declare $Roy_Affection = 0>>
