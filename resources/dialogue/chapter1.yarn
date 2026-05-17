@@ -176,7 +176,7 @@ Professor Olivia: If you bring me an artefact, I'll even share some more details
     -> Player: Of course. That sounds really interesting. 
         Professor Olivia: I'm pleased you think the same. 
     -> Player: I guess I'll consider it.
-        Professor Olivia: I understand not everyone is interested in history. Ah well, my offer still stands regardless.
+        Professor Olivia: I understand not everyone is interested in history. Ah well, my offer still stands regardless. #sweatdrop
 Professor Olivia: That should be everything you need to know for now. 
 Professor Olivia: Remember to check back in with me here regularly so I know you're safe. Good luck! #wink
 ===
@@ -187,15 +187,15 @@ tags:
 George: Stop right there!
 Gigi: Ho ho! Well, well. What do we have here, George?
 George: We seem to have a little mouse on our tail, Gigi. With a...
-Gigi: Is that a Familiar?!
+Gigi: Is that a Familiar?! #shocked
 Player: I was accepted for a scholarship under Professor Olivia. I'm an Adventurer, just like you two.
     -> Player: Now please excuse me.
     -> Player: Now please get out of my way.
 Gigi: You are not even remotely like us two. How dare you even compare us with threadbare, penniless vermin like you.
-George: You were meant to be scrubbing our clothes and polishing our boots! 
-George: I was rather looking forward to tormenting you for the rest of our lives. How could Father allow this?
+George: You were meant to be scrubbing our clothes and polishing our boots! #angry
+George: I was rather looking forward to tormenting you for the rest of our lives. How could Father allow this? #pouty
 Player: He had no choice. By the king's decree.
-Gigi: Ugh! Shut up!
+Gigi: Ugh! Shut up! #angry #angryemote
 George: Even after all these years, you still seem to be in need of another lesson in proper etiquette. 
 George: By the king's decree, it's about time you were punished and sent home.
 George: And yet, I can't help but think we should show a little magnanimity, for the Familiar's sake at least.
@@ -204,10 +204,10 @@ George: Excellent idea. We'll let you decide how you lose.
 Player: Fine. Let's do this.
     -> (Challenge Gigi.)
         <<set $Gigi_Activated = 1>>
-        Gigi: Hmph!
+        Gigi: Hmph! #pouty
     -> (Challenge George.)
         <<set $George_Activated = 1>>
-        George: Whatever.
+        George: Whatever. #pouty
 ===
 
 title: chapter1_TwinChoiceandBattle_PlayerLoses
@@ -220,33 +220,33 @@ George: I knew you weren't strong enough. You'd best get back to the manor and s
 title: chapter1_TwinChoiceandBattle_PlayerWins
 tags:
 ---
-George: I can't believe it!
-Gigi: W-what just happened?
+George: I can't believe it! #shocked
+Gigi: W-what just happened? #shocked
 ===
 
 title: chapter1_GeorgeBattle_PlayerWins
 tags:
 ---
-Gigi: You did not just lose to them, did you? They're a peasant! They have no money and a joke of an education. What kind of noble are you?
-George: I-I just pretended to lose. I'm giving them a false confidence boost so it will hurt even more when we crush them later.
-Gigi: Who are you trying to fool? Your commands were weak, your strategic thinking pathetic! I noticed these shortfalls before but now they're obvious.
-George: But… everyone says I have a natural talent for magic!
-Gigi: Hmph! They just say that to coddle your delicate ego. 
+Gigi: You did not just lose to them, did you? They're a peasant! They have no money and a joke of an education. What kind of noble are you? #furious
+George: I-I just pretended to lose. I'm giving them a false confidence boost so it will hurt even more when we crush them later. #worriedsmile
+Gigi: Who are you trying to fool? Your commands were weak, your strategic thinking pathetic! I noticed these shortfalls before but now they're obvious. #angry
+George: But… everyone says I have a natural talent for magic! #sad
+Gigi: Hmph! They just say that to coddle your delicate ego. #pouty
 Gigi: It's a shame I have to have you clinging onto my skirts everywhere I go… 
 Gigi: Or do I?
-George: What are you saying?
+George: What are you saying? #sad
 Gigi: I've made up my mind, George. 
 Gigi: I don't wish to be associated with someone as weak as you anymore. You'll just make me a laughing stock. 
 Gigi: You can look forward to watching from the crowd as King Alfred makes me a Royal Council member. If you even make it to Avaelon, that is.
-George: Gigi...
+George: Gigi... #sad
     -> Player: Are you alright?
         <<set $George_affection += 1>>
-        George: Ha! Don't worry yourself, little mouse. I'm made of stronger stuff than the likes of you.
+        George: Ha! Don't worry yourself, little mouse. I'm made of stronger stuff than the likes of you. #pouty #blush
     -> Player: She's right. You really are weak.
-        George: I'll show you! As of today, I officially declare you my enemy!
-George: I'll make sure to beat you next time. I'll show you no more mercy.
+        George: I'll show you! As of today, I officially declare you my enemy! #furious #angryemote
+George: I'll make sure to beat you next time. I'll show you no more mercy. #angry
 Player: This is going to be really awkward when I beat you again.
-George: Play out those fantasies in your mind all you want. You got lucky this time and you know it.
+George: Play out those fantasies in your mind all you want. You got lucky this time and you know it. #angry
 Player: Guess I'll see you in Salt Mire City.
 George: You'd best start preparing now. Enjoy this little taste of freedom. 
 George: I'll send you packing back to the manor soon enough.
@@ -255,30 +255,30 @@ George: I'll send you packing back to the manor soon enough.
 title: chapter1_GigiBattle_PlayerWins
 tags:
 ---
-George: You lost? What even was that?!
-Gigi: I must have had a momentary lapse of concentration.
-George: You needed to focus for once in your life. This was important, Gigi! Now this filthy urchin will be following us all around the kingdom. 
-Gigi: I... I tried...
-George: Not hard enough! 
+George: You lost? What even was that?! #furious
+Gigi: I must have had a momentary lapse of concentration. #worriedsmile
+George: You needed to focus for once in your life. This was important, Gigi! Now this filthy urchin will be following us all around the kingdom. #angry
+Gigi: I... I tried... #sad
+George: Not hard enough! #angry
 George: I've just about had it with you. I can't afford to have a loser dragging me down and bringing shame upon the family. 
 George: I know, the little mouse can follow you around the kingdom instead.
-Gigi: What? George?
+Gigi: What? George? #sad
 George: I'm doing this on my own, Gigi. 
 George: As the firstborn son and heir to the family, I don't have any real need for you anyway. 
 George: You can look forward to watching from the crowd as King Alfred makes me a Royal Council member. If you even make it to Avaelon, that is.
-Gigi: ...
+Gigi: ... #sad
     -> Player: Are you okay?
          <<set $Gigi_affection += 1>>
-        Gigi: Of course I'm okay! I never asked for your concern, peasant!
+        Gigi: Of course I'm okay! I never asked for your concern, peasant! #pouty #blush
     -> Player: He's right. You'll never make it on your own.
-        Gigi: What do you know, peasant? No one asked for your opinion!
-Gigi: I'll be fine. I've done plenty of things on my own before.
+        Gigi: What do you know, peasant? No one asked for your opinion! #furious #angryemote
+Gigi: I'll be fine. I've done plenty of things on my own before. #angry
 Player: Like what?
-Gigi: Like... erm... 
-Gigi: Things!
+Gigi: Like... erm... #pouty
+Gigi: Things! #angry
 Player: Guess I'll see you in Salt Mire City.
-Gigi: You'll not see me anywhere! Don't you dare even approach me. 
-Gigi: Ugh! Gross!
+Gigi: You'll not see me anywhere! Don't you dare even approach me. #angry
+Gigi: Ugh! Gross! # angry  #angryemote
 ===
 
 title: chapter1_PowderTown_TrainStation
@@ -297,71 +297,71 @@ Player: ~ Well, this is unexpected. I need to find another way to Salt Mire City
 title: chapter1_PowderTown_HealingChurch_Roy1
 tags:
 ---
-Roy: ...
-Roy: Welcome to the Powder Town Healing Church...
-Roy: How may I help you today?
+Roy: ... #kuudere
+Roy: Welcome to the Powder Town Healing Church... #kuudere
+Roy: How may I help you today? #kuudere
     -> Player: Are you okay?
-        Roy: Am I... okay?
-        Roy: You know, you're the only person who's asked me that.
+        Roy: Am I... okay? #kuudere
+        Roy: You know, you're the only person who's asked me that. #sad
             -> Player: What's wrong?
                 <<set $Roy_Affection += 2>>
                 <<set $Roy_Activated = 1>>
-                Roy: You... really want to hear about it?
+                Roy: You... really want to hear about it? #shocked
                 Player: Of course. If you feel comfortable sharing.
                 Roy: That's kind of you. Let me heal your Familiar up for you... erm...?
                 Player: {$playerName}. What's your name?
                 Roy: I'm Roy. I'm a healer here. 
-                Roy: You know how it is... you have all these hopes and dreams for your future but then...
-                Roy: Well, let's just say I was nowhere near good enough. I need to resign myself to life here in Powder Town.
+                Roy: You know how it is... you have all these hopes and dreams for your future but then... #sad
+                Roy: Well, let's just say I was nowhere near good enough. I need to resign myself to life here in Powder Town. #sad
                 Player: You shouldn't give up on your dreams so easily! 
                 Player: I was set to become a servant for a pompous pair of nobles in Brackenberry Village. 
                 Player: I'm only here now because I decided to submit an Adventurer scholarship application at the last minute. And now I'm going to Salt Mire City to beat the Guild Hall Master there.
-                Roy: Wow! Really?
+                Roy: Wow! Really? #worriedsmile
                 Player: Yeah!
                 Player: My Familiar looks so much better. You've done a great job at healing them.
-                Roy: ...
-                Roy: Thanks {$playerName}. That means a lot.
-                Roy: You know, meeting you today has really given me lots to think about.
+                Roy: ... #blush
+                Roy: Thanks {$playerName}. That means a lot. #cutehappy
+                Roy: You know, meeting you today has really given me lots to think about. #blush #worriedsmile
                 Roy: I'll maybe see you around.
                 Player: Hopefully I'll see you again sometime.
             -> Player: To be honest, I don't really care. 
                 Player: Can you just heal my Familiar?
                 Player: ...
                 Player: Erm... Hello?
-                Roy: Do you want me to heal your Familiar or not?
+                Roy: Do you want me to heal your Familiar or not? #angry
     -> Player: Can you cheer up a bit?
-        Roy: ...
-        Roy: Do you want me to heal your Familiar up or not?
+        Roy: ... #kuudere
+        Roy: Do you want me to heal your Familiar up or not? #angry
 ===
 
 title: chapter1_PowderTown_HealingChurch_Roy2
 tags:
 ---
-Roy: ...
-Roy: Oh… it's you again.
+Roy: ... #kuudere
+Roy: Oh… it's you again. #kuudere
     -> Player: I'm sorry for being a jerk before. What's wrong?
         <<set $Roy_Affection += 1>>
         <<set $Roy_Activated = 1>>
-        Roy: You... really want to hear about it?
+        Roy: You... really want to hear about it? #sad
         Player: Of course. If you feel comfortable sharing.
         Roy: That's kind of you. Let me heal your Familiar up for you... erm...?
         Player: {$playerName}. What's your name?
-        Roy: I'm Roy. I'm a healer here. 
-        Roy: You know how it is... you have all these hopes and dreams for your future but then...
-        Roy: Well, let's just say I was nowhere near good enough. I need to resign myself to life here in Powder Town.
+        Roy: I'm Roy. I'm a healer here. #worriedsmile
+        Roy: You know how it is... you have all these hopes and dreams for your future but then... #sad
+        Roy: Well, let's just say I was nowhere near good enough. I need to resign myself to life here in Powder Town. #sad
         Player: You shouldn't give up on your dreams so easily! 
         Player: I was set to become a servant for a pompous pair of nobles in Brackenberry Village. 
         Player: I'm only here now because I decided to submit an Adventurer scholarship application at the last minute. And now I'm going to Salt Mire City to beat the Guild Hall Master there.
-        Roy: Wow! Really?
+        Roy: Wow! Really? #shocked
         Player: Yeah!
         Player: My Familiar looks so much better. You've done a great job at healing them.
-        Roy: ...
-        Roy: Thanks {$playerName}. That means a lot.
-        Roy: You know, meeting you today has really given me lots to think about.
+        Roy: ... #blush
+        Roy: Thanks {$playerName}. That means a lot. #cutehappy
+        Roy: You know, meeting you today has really given me lots to think about. #blush #worriedsmile
         Roy: I'll maybe see you around.
         Player: Hopefully I'll see you again sometime.
     -> Player: Can you just heal my Familiar?
-        Roy: ...
+        Roy: ... #kuudere
 ===
 
 title: chapter1_PowderTown_Inn
@@ -636,9 +636,88 @@ Damien: They'll not cause us anymore trouble. Let's just get out of here.
 title: chapter1_npc_villager1_and_2
 tags:
 ---
-Matilda: Have you heard of all the goings on in the news? The StopIt! Militia is at it again. It's all anyone's talking about.
-Christa: Terrible, isn't it? Kidnapping people's Familiars is just awful. I don't know what I'd do if someone took mine.
+Matilda: Have you heard of all the goings on in the news? 
+Matilda: The StopIt! Militia is at it again. It's all anyone's talking about.
+Christa: Terrible, isn't it? Kidnapping people's Familiars is just awful. 
+Christa: I don't know what I'd do if someone took mine.
 ===
+
+title: chapter1_npc_villager3_1
+tags:
+---
+Charlie: Sometimes, I catch myself wondering if the StopIt! Militia might have a point. 
+Charlie: I mean, have you ever asked your Familiar if it wants to be free? 
+Player: I don't have one.
+Charlie: What? 
+Charlie: Oh yeah, I forget about you and your Dad's... erm... situation. 
+Charlie: No matter. Loads of people can't afford their own Familiar... I think.
+===
+
+title: chapter1_npc_villager3_2
+tags:
+---
+Charlie: So, do you have to light your fires yourselves and stuff? 
+Charlie: That's wild.
+===
+
+title: chapter1_npc_villager3_3
+tags:
+---
+Charlie: What's that? 
+Charlie: You have a Familiar now and you're an Adventurer? 
+Charlie: What a day!
+===
+
+title: chapter1_npc_butler
+tags:
+---
+Butler: Hmph! 
+Butler: Too good for us were you? 
+===
+
+title: chapter1_npc_villager4_1
+tags:
+---
+Gerald: Gosh, what are you doing running around so early?
+Player: I'm looking for Professor Olivia.
+Gerald: Her house is the one to the south-west of the village, remember? 
+Gerald: I don't blame you if you've forgotten. She's quite often away on her travels.
+===
+
+title: chapter1_npc_villager4_1
+tags:
+---
+Gerald: Good day to you!
+===
+
+title: chapter1_npc_villager5
+tags:
+---
+Sofie: Hey, {$playerName}
+Sofie: Hope you and your dad are keeping well. 
+===
+
+title: chapter1_npc_NPC1
+tags:
+---
+Wallace: There's nothing better than a spot of fishing when the sun is shining!
+===
+
+title: chapter1_npc_NPC2
+tags:
+---
+Emily: Wild Familiars can be really dangerous if you're caught out on your own. 
+Emily: I'm glad this road is still so nice and safe.
+===
+
+title: chapter1_npc_NPC3
+tags:
+---
+Hubert: How do you do? 
+Hubert: Powder Town is just up ahead. 
+===
+
+How do you do? Powder Town is just up ahead. 
 
 title: elvenrelic1_ProfOliviasHouse
 tags:
