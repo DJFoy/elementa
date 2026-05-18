@@ -55,6 +55,8 @@ func _ready() -> void:
 			exit.armed = false
 	
 	# Bring in the player character and add to the scene
+	await get_tree().process_frame
+	
 	pc = PC_SCENE.instantiate()
 	pc.actor_id = "Player_Character"
 	add_child(pc)

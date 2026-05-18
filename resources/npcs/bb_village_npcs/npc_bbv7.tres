@@ -1,10 +1,10 @@
 [gd_resource type="Resource" script_class="NPC_Resource" format=3 uid="uid://bn8jmxbx47xpw"]
 
 [ext_resource type="Script" uid="uid://c8dfh7hkdo33y" path="res://resources/npcs/npc_resource.gd" id="1_5eq4n"]
-[ext_resource type="Texture2D" uid="uid://cu4pfqr6t1qnj" path="res://assets/character_assets/overworld_sprites/generic_npc_assets/hair/H6 Ponytail_ST2.png" id="1_msvk0"]
+[ext_resource type="Texture2D" uid="uid://nt7w8hna0v4i" path="res://assets/character_assets/overworld_sprites/generic_npc_assets/hair/H6 Ponytail_ST2.png" id="1_msvk0"]
 [ext_resource type="Texture2D" uid="uid://bl8x47qmy0kig" path="res://assets/character_assets/overworld_sprites/generic_npc_assets/clothes/bottom_tunic_brown.png" id="2_wndjs"]
 [ext_resource type="Texture2D" uid="uid://dq76pym48g0e4" path="res://assets/character_assets/overworld_sprites/generic_npc_assets/eyes.png" id="3_uqi7m"]
-[ext_resource type="Texture2D" uid="uid://chm34w8k3x63a" path="res://assets/character_assets/overworld_sprites/generic_npc_assets/hair/H6 Ponytail.png" id="4_6sed8"]
+[ext_resource type="Texture2D" uid="uid://d3ouq33fjjb6b" path="res://assets/character_assets/overworld_sprites/generic_npc_assets/hair/H6 Ponytail.png" id="4_6sed8"]
 [ext_resource type="Texture2D" uid="uid://dbmi7grah08nr" path="res://assets/character_assets/overworld_sprites/generic_npc_assets/character_outline.png" id="5_g3gcq"]
 [ext_resource type="Texture2D" uid="uid://b76n3p2wubfs8" path="res://assets/character_assets/overworld_sprites/generic_npc_assets/clothes/top_tunic_yellow.png" id="6_pad0l"]
 [ext_resource type="Texture2D" uid="uid://bqc2ukgwbe70k" path="res://assets/character_assets/overworld_sprites/generic_npc_assets/skin_tone/tone_2.png" id="8_nqgik"]

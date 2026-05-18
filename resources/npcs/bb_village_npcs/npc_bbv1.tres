@@ -2,10 +2,10 @@
 
 [ext_resource type="Script" uid="uid://c8dfh7hkdo33y" path="res://resources/npcs/npc_resource.gd" id="1_cttkp"]
 [ext_resource type="Resource" uid="uid://cs2vbhq1wjwxs" path="res://resources/npcs/bb_village_npcs/npc_bbv1_and_2_dialogue_map.tres" id="1_sl1mp"]
+[ext_resource type="Texture2D" uid="uid://ckqqtq7f4md8c" path="res://assets/character_assets/overworld_sprites/generic_npc_assets/hair/H3_ST2.png" id="2_56uda"]
 [ext_resource type="Texture2D" uid="uid://c8271kdxf7r8w" path="res://assets/character_assets/overworld_sprites/generic_npc_assets/clothes/bottom_dress_green.png" id="3_qh2q0"]
 [ext_resource type="Texture2D" uid="uid://dq76pym48g0e4" path="res://assets/character_assets/overworld_sprites/generic_npc_assets/eyes.png" id="4_pvmwh"]
-[ext_resource type="Texture2D" uid="uid://b3n0iekxksjmi" path="res://assets/character_assets/overworld_sprites/generic_npc_assets/hair/H3.png" id="5_jvfg3"]
-[ext_resource type="Texture2D" uid="uid://dxu6rbaod6fku" path="res://assets/character_assets/overworld_sprites/generic_npc_assets/hair/H3 and H4_ST2.png" id="6_2u6xi"]
+[ext_resource type="Texture2D" uid="uid://qw8ridt3ycod" path="res://assets/character_assets/overworld_sprites/generic_npc_assets/hair/H3 Updo_1.png" id="5_qh2q0"]
 [ext_resource type="Texture2D" uid="uid://dbmi7grah08nr" path="res://assets/character_assets/overworld_sprites/generic_npc_assets/character_outline.png" id="7_aodrv"]
 [ext_resource type="Texture2D" uid="uid://bo744l5vi587s" path="res://assets/character_assets/overworld_sprites/generic_npc_assets/clothes/top_dress_green.png" id="8_5n774"]
 [ext_resource type="Texture2D" uid="uid://bqc2ukgwbe70k" path="res://assets/character_assets/overworld_sprites/generic_npc_assets/skin_tone/tone_2.png" id="10_b8ahs"]
@@ -15,12 +15,12 @@ script = ExtResource("1_cttkp")
 npc_name = "Matilda"
 skin_tone = ExtResource("10_b8ahs")
 npc_outline = ExtResource("7_aodrv")
-npc_hair = ExtResource("5_jvfg3")
+npc_hair = ExtResource("5_qh2q0")
 npc_eye = ExtResource("4_pvmwh")
 npc_top = ExtResource("8_5n774")
 npc_bottom = ExtResource("3_qh2q0")
 hair_colour = Color(0.8862745, 0.43137255, 0.015686275, 1)
-hair_shadow = ExtResource("6_2u6xi")
+hair_shadow = ExtResource("2_56uda")
 eye_colour = Color(0.47843137, 0.6862745, 1, 1)
 dialogue_map = ExtResource("1_sl1mp")
 metadata/_custom_type_script = "uid://c8dfh7hkdo33y"

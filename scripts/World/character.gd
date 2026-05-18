@@ -41,7 +41,7 @@ func _ready() -> void:
 	move_ray.enabled = true
 	move_ray.collision_mask = 1
 	move_ray.collide_with_areas = true
-		# On loading into the scene, ensure that the character is fixed to a tile
+	# On loading into the scene, ensure that the character is fixed to a tile
 	position = position.snapped(Vector2.ONE * tile_size) 
 	# Ensure it is aligned in the centre of a tile
 	position += Vector2.ONE * tile_size/2.0

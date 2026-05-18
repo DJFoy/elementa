@@ -11,6 +11,7 @@
 [ext_resource type="Script" uid="uid://c5gxawri864uf" path="res://addons/YarnSpinner-Godot/Runtime/LineProviders/TextLineProvider.cs" id="7_cpovq"]
 [ext_resource type="Script" uid="uid://b1o5xpu22evvx" path="res://addons/YarnSpinner-Godot/Runtime/InMemoryVariableStorage.cs" id="8_58kjy"]
 [ext_resource type="PackedScene" uid="uid://d0lemcnjah10o" path="res://scenes/UI/default_option_view.tscn" id="8_u6dtt"]
+[ext_resource type="FontFile" uid="uid://bes6ottao3jvw" path="res://assets/font/Jacquard12-Regular.ttf" id="8_ypox6"]
 
 [node name="Dialogue" type="Control" unique_id=458972072 node_paths=PackedStringArray("line_presenter", "dialogue_runner")]
 layout_mode = 3
@@ -118,12 +119,17 @@ visible_characters_behavior = 1
 [node name="CharacterName" type="RichTextLabel" parent="CanvasLayer/LinePresenter/PresenterControl" unique_id=814287207]
 layout_mode = 0
 offset_left = 77.0
-offset_top = 170.0
-offset_right = 157.0
+offset_top = 168.0
+offset_right = 159.0
 offset_bottom = 184.0
 theme = ExtResource("3_bfpow")
 theme_type_variation = &"InteractRichTextLabel"
 theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_fonts/normal_font = ExtResource("8_ypox6")
+theme_override_fonts/bold_font = ExtResource("8_ypox6")
+theme_override_fonts/bold_italics_font = ExtResource("8_ypox6")
+theme_override_fonts/italics_font = ExtResource("8_ypox6")
+theme_override_fonts/mono_font = ExtResource("8_ypox6")
 text = "Boops"
 scroll_active = false
 

@@ -67,7 +67,7 @@ func _unhandled_input(event: InputEvent) -> void:
 		return
 	if moving:
 		return
-	if Input.is_action_pressed("interact"):
+	if Input.is_action_just_pressed("interact"):
 		if interact_ray.is_colliding():
 			try_interact.emit(interact_ray.get_collider())
 			return
@@ -87,6 +87,9 @@ func _unhandled_input(event: InputEvent) -> void:
 
 func _continuous_movement() -> void:
 	if is_locked:
+		_stop_movement()
+		return
+	if move_ray.is_colliding():
 		_stop_movement()
 		return
 	GameState.pc_dir = wants_to_move_dir
