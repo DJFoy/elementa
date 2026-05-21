@@ -6,86 +6,108 @@
 [ext_resource type="Script" uid="uid://bl7o7egd7hho7" path="res://scripts/World/spawn.gd" id="3_vfuc7"]
 
 [node name="PCHome" type="Node2D" unique_id=800976989 node_paths=PackedStringArray("tilemaps")]
+y_sort_enabled = true
 script = ExtResource("1_67net")
 default_spawn = "pc_home_stairs_01"
 tilemaps = [NodePath("TileMaps/Background"), NodePath("TileMaps/FloorsAndWalls"), NodePath("TileMaps/Furniture"), NodePath("TileMaps/Sink"), NodePath("TileMaps/Rug")]
 
 [node name="TileMaps" type="Node2D" parent="." unique_id=1248883215]
+y_sort_enabled = true
 
 [node name="Background" type="TileMapLayer" parent="TileMaps" unique_id=1821644982]
-z_index = -2
+y_sort_enabled = true
 tile_map_data = PackedByteArray("AAADAP7/AAALAAgAAAADAP//AAALAAkAAAAHAAAAAAAIAAIAAAAHAAEAAAAIAAIAAAAHAAIAAAAIAAIAAAAHAAMAAAAIAAIAAAAHAAQAAAAIAAIAAAAGAAQAAAAIAAIAAAAFAAQAAAAIAAIAAAAEAAQAAAAIAAIAAAADAAQAAAAIAAIAAAADAAUAAAAIAAIAAAACAAUAAAAIAAIAAAABAAUAAAAIAAIAAAABAAQAAAAIAAIAAAAAAAQAAAAIAAIAAAD//wQAAAAIAAIAAAD//wMAAAAIAAIAAAD//wIAAAAIAAIAAAD//wEAAAAIAAIAAAD//wAAAAAIAAIAAAA=")
 tile_set = ExtResource("1_1m1lp")
 
 [node name="FloorsAndWalls" type="TileMapLayer" parent="TileMaps" unique_id=1188811228]
+y_sort_enabled = true
 tile_map_data = PackedByteArray("AAADAAAAAAADAAAAAAADAAEAAAADAAAAAAADAAIAAAADAAAAAAADAAMAAAADAAAAAAAEAP7/AAANAAAAAAAEAAAAAAADAAAAAAAEAAEAAAADAAAAAAAEAAIAAAADAAAAAAAEAAMAAAADAAAAAAAFAP7/AAALAAAAAAAFAAAAAAADAAAAAAAFAAEAAAADAAAAAAAFAAIAAAADAAAAAAAFAAMAAAADAAAAAAAGAAAAAAADAAAAAAAGAAEAAAADAAAAAAAGAAIAAAADAAAAAAAGAAMAAAAAAAYAAAAAAP7/AAALAAAAAAAAAAAAAAADAAAAAAAAAAEAAAADAAAAAAAAAAIAAAADAAAAAAAAAAMAAAADAAAAAAABAP7/AAAMAAAAAAABAAAAAAADAAAAAAABAAEAAAADAAAAAAABAAIAAAADAAAAAAABAAMAAAADAAAAAAACAP7/AAANAAAAAAACAAAAAAADAAAAAAACAAEAAAADAAAAAAACAAIAAAADAAAAAAACAAMAAAADAAAAAAAGAP7/AAAMAAAAAAADAP7/AAAQAAAAAAAFAP//AAALAAEAAAAGAP//AAAMAAEAAAAAAP//AAALAAEAAAABAP//AAAMAAEAAAADAP//AAAQAAEAAAAEAP//AAANAAEAAAACAP//AAANAAEAAAA=")
 tile_set = ExtResource("1_1m1lp")
 
 [node name="Furniture" type="TileMapLayer" parent="TileMaps" unique_id=547090761]
+y_sort_enabled = true
 tile_map_data = PackedByteArray("AAAEAP7/AAAHAAAAAAAAAAIAAAACAAQAAAABAAIAAAADAAEAAAACAAIAAAACAAgAAAABAP//AAAAAAgAAAACAP//AAAAAAgAAAADAP7/AAANAAgAAAACAAAAAAAAAAkAAAABAAAAAAAAAAkAAAADAP//AAANAAkAAAAAAAMAAAACAAUAAAACAAMAAAACAAkAAAA=")
 tile_set = ExtResource("1_1m1lp")
 
 [node name="Sink" type="TileMapLayer" parent="TileMaps" unique_id=1011715080]
+y_sort_enabled = true
 tile_map_data = PackedByteArray("AAACAP//AAAEAAUAAAA=")
 tile_set = ExtResource("1_1m1lp")
 
 [node name="Rug" type="TileMapLayer" parent="TileMaps" unique_id=672096560]
 modulate = Color(0.847595, 0.317795, 0.3295, 1)
+y_sort_enabled = true
 tile_map_data = PackedByteArray("AAADAP7/AAAKAAgAAAADAAEAAAADAAIAAAAGAAEAAAAGAAQAABAEAAEAAAAEAAIAAAAEAAIAAAAEAAMAAAADAAIAAAADAAMAAAADAP//AAAKAAkAAAACAAMAAAAHAAQAAAA=")
 tile_set = ExtResource("1_1m1lp")
 
 [node name="EntryPoints" type="Node2D" parent="." unique_id=274388337]
+y_sort_enabled = true
 
 [node name="SpawnStairs" type="Marker2D" parent="EntryPoints" unique_id=282431302]
+y_sort_enabled = true
 position = Vector2(104, 56)
 script = ExtResource("3_vfuc7")
 spawn_name = "pc_home_stairs_01"
 metadata/_custom_type_script = "uid://bl7o7egd7hho7"
 
 [node name="SpawnDoor" type="Marker2D" parent="EntryPoints" unique_id=1132516378]
+y_sort_enabled = true
 position = Vector2(40, 56)
 script = ExtResource("3_vfuc7")
 spawn_name = "pc_home_door_01"
 metadata/_custom_type_script = "uid://bl7o7egd7hho7"
 
 [node name="Exits" type="Node2D" parent="." unique_id=2107653368]
+y_sort_enabled = true
 
 [node name="ExitStairs" parent="Exits" unique_id=744792166 instance=ExtResource("3_hwnoe")]
+y_sort_enabled = true
 position = Vector2(104, 56)
 target_scene = "uid://pe7bm124rb7k"
 target_spawn = "pc_bedroom_stairs_01"
 
 [node name="ExitDoor" parent="Exits" unique_id=1677045929 instance=ExtResource("3_hwnoe")]
+y_sort_enabled = true
 position = Vector2(40, 72)
 target_scene = "uid://y4y1xxl7omnv"
 target_spawn = "bb_village_pc_home_01"
 lock_message = Array[String](["I'd love to run away.", "But what would I even do if I did?"])
 
 [node name="NPCs" type="Node2D" parent="." unique_id=1586322827]
+y_sort_enabled = true
 
 [node name="CutsceneMarkers" type="Node2D" parent="." unique_id=1818089244]
+y_sort_enabled = true
 position = Vector2(0, 1)
 
 [node name="Window" type="Marker2D" parent="CutsceneMarkers" unique_id=1551221407]
+y_sort_enabled = true
 position = Vector2(56, -21)
 
 [node name="Counter" type="Marker2D" parent="CutsceneMarkers" unique_id=2112266963]
+y_sort_enabled = true
 position = Vector2(24, -12)
 
 [node name="Peek" type="Marker2D" parent="CutsceneMarkers" unique_id=361572177]
+y_sort_enabled = true
 position = Vector2(59, -15)
 
 [node name="Leave" type="Marker2D" parent="CutsceneMarkers" unique_id=1813688448]
+y_sort_enabled = true
 position = Vector2(96, -21)
 
 [node name="PlayCueCh1Chair" type="Marker2D" parent="CutsceneMarkers" unique_id=12895110]
+y_sort_enabled = true
 position = Vector2(40, 39)
 
 [node name="DadCueCh1Table" type="Marker2D" parent="CutsceneMarkers" unique_id=603060709]
+y_sort_enabled = true
 position = Vector2(24, 23)
 
 [node name="DadCueCh1Worktop" type="Marker2D" parent="CutsceneMarkers" unique_id=551856444]
+y_sort_enabled = true
 position = Vector2(24, 7)
 
 [node name="DadCueCh1Chair" type="Marker2D" parent="CutsceneMarkers" unique_id=1292725111]
+y_sort_enabled = true
 position = Vector2(40, 23)

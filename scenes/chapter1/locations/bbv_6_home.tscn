@@ -61,21 +61,26 @@ tile_map_data = PackedByteArray("AAABAP//AgAAAAAAAAABAAAAAgAAAAEAAAA=")
 tile_set = ExtResource("2_okj48")
 
 [node name="EntryPoints" type="Node2D" parent="." unique_id=1863658228]
+y_sort_enabled = true
 
 [node name="SpawnDoor" type="Marker2D" parent="EntryPoints" unique_id=1958079325]
+y_sort_enabled = true
 position = Vector2(40, 56)
 script = ExtResource("3_j5fne")
 spawn_name = "bb_village_npc_06_door"
 metadata/_custom_type_script = "uid://bl7o7egd7hho7"
 
 [node name="Exits" type="Node2D" parent="." unique_id=657998163]
+y_sort_enabled = true
 
 [node name="ExitDoor" parent="Exits" unique_id=404008840 instance=ExtResource("4_xjjss")]
+y_sort_enabled = true
 position = Vector2(40, 72)
 target_scene = "uid://y4y1xxl7omnv"
 target_spawn = "bb_village_npc_6"
 
 [node name="ExitStairs" parent="Exits" unique_id=896672503 instance=ExtResource("4_xjjss")]
+y_sort_enabled = true
 position = Vector2(104, 56)
 lock_message = Array[String](["I really shouldn't go upstairs in other people's houses."])
 
@@ -83,6 +88,8 @@ lock_message = Array[String](["I really shouldn't go upstairs in other people's 
 y_sort_enabled = true
 
 [node name="BBV5" type="Marker2D" parent="NPCs" unique_id=660644830]
+y_sort_enabled = true
 position = Vector2(40, 8)
 
 [node name="Interactables" type="Node2D" parent="." unique_id=1068055054]
+y_sort_enabled = true
