@@ -115,29 +115,48 @@ target_spawn = "sullivan_manor_door_left"
 [node name="SullivanManorRight" parent="Exits" unique_id=1991637418 instance=ExtResource("4_ymtk7")]
 position = Vector2(200, 184)
 target_spawn = "sullivan_manor_door_right"
+lock_message = Array[String](["The butler stares at you coldly... you don't think you can enter right now."])
 
 [node name="NPCHouse1" parent="Exits" unique_id=2142881857 instance=ExtResource("4_ymtk7")]
 position = Vector2(-120, -40)
 target_spawn = "bb_village_npc_01_door"
+lock_message = Array[String](["The door is locked, the owner must be out right now"])
 
 [node name="NPCHouse2" parent="Exits" unique_id=216294448 instance=ExtResource("4_ymtk7")]
 position = Vector2(152, -24)
+target_scene = "uid://dvoa5bpgafmsu"
 target_spawn = "bb_village_npc_02_door"
 
 [node name="NPCHouse3" parent="Exits" unique_id=1428061301 instance=ExtResource("4_ymtk7")]
 position = Vector2(264, -24)
 target_spawn = "bb_village_npc_03_door"
+lock_message = Array[String](["The door is locked, the owner must be out right now"])
 
 [node name="NPCHouse4" parent="Exits" unique_id=1970064607 instance=ExtResource("4_ymtk7")]
 position = Vector2(-200, 136)
+target_scene = "uid://do6v6lb3x5j2l"
 target_spawn = "bb_village_npc_04_door"
 
 [node name="NPCHouse5" parent="Exits" unique_id=132627237 instance=ExtResource("4_ymtk7")]
 position = Vector2(-120, 152)
 target_spawn = "bb_village_npc_05_door"
+lock_message = Array[String](["The door is locked, the owner must be out right now"])
 
 [node name="NPCHouse6" parent="Exits" unique_id=1362375710 instance=ExtResource("4_ymtk7")]
 position = Vector2(376, 344)
+target_scene = "uid://xc0dia5p4jh5"
 target_spawn = "bb_village_npc_06_door"
 
 [node name="NPCs" type="Node2D" parent="." unique_id=1387130358]
+
+[node name="BBV1" type="Marker2D" parent="NPCs" unique_id=1064782322]
+position = Vector2(-88, -24)
+
+[node name="BBV2" type="Marker2D" parent="NPCs" unique_id=1860057167]
+position = Vector2(-104, -24)
+
+[node name="BBV3" type="Marker2D" parent="NPCs" unique_id=614326157]
+position = Vector2(248, -8)
+
+[node name="Butler" type="Marker2D" parent="NPCs" unique_id=1689059501]
+position = Vector2(184, 200)

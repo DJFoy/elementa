@@ -78,8 +78,3 @@ text = ["I wish I could fly away"]
 
 [node name="Uniform" type="Sprite2D" parent="." unique_id=1558022327]
 position = Vector2(7, 17)
-
-[node name="Destinations" type="Node2D" parent="." unique_id=921418313]
-
-[node name="TestDest" type="Marker2D" parent="Destinations" unique_id=1600362294]
-position = Vector2(72, 56)

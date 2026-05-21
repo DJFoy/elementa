@@ -1,0 +1,81 @@
+[gd_scene format=4 uid="uid://do6v6lb3x5j2l"]
+
+[ext_resource type="Script" uid="uid://lwqvpnbhbony" path="res://scripts/Chapter 1/bbv_4_home.gd" id="1_8b6c8"]
+[ext_resource type="TileSet" uid="uid://gfwi66i5se4k" path="res://assets/tilesets/backgrounds/base_inside_tiles.tres" id="2_r7xnf"]
+[ext_resource type="Script" uid="uid://bl7o7egd7hho7" path="res://scripts/World/spawn.gd" id="3_je7kd"]
+[ext_resource type="PackedScene" uid="uid://kkaqj5g0x7un" path="res://scenes/exit_area.tscn" id="4_tmo7u"]
+
+[node name="BBV4Home" type="Node2D" unique_id=869495374 node_paths=PackedStringArray("tilemaps")]
+script = ExtResource("1_8b6c8")
+tilemaps = [NodePath("TileMaps/Background"), NodePath("TileMaps/FloorsAndWalls"), NodePath("TileMaps/Rug"), NodePath("TileMaps/Chairs"), NodePath("TileMaps/Furniture"), NodePath("TileMaps/Window"), NodePath("TileMaps/Sink"), NodePath("TileMaps/Decorations"), NodePath("TileMaps/Flowers"), NodePath("TileMaps/Cushions")]
+metadata/_custom_type_script = "uid://c8im5x5qc72nu"
+
+[node name="TileMaps" type="Node2D" parent="." unique_id=472332292]
+
+[node name="Background" type="TileMapLayer" parent="TileMaps" unique_id=348630565]
+z_index = -2
+tile_map_data = PackedByteArray("AAADAP7/AAALAAgAAAADAP//AAALAAkAAAAHAAAAAAAIAAIAAAAHAAEAAAAIAAIAAAAHAAIAAAAIAAIAAAAHAAMAAAAIAAIAAAAHAAQAAAAIAAIAAAAGAAQAAAAIAAIAAAAFAAQAAAAIAAIAAAAFAAUAAAAIAAIAAAAEAAUAAAAIAAIAAAADAAUAAAAIAAIAAAADAAQAAAAIAAIAAAACAAQAAAAIAAIAAAABAAQAAAAIAAIAAAAAAAQAAAAIAAIAAAD//wQAAAAIAAIAAAD//wMAAAAIAAIAAAD//wIAAAAIAAIAAAD//wEAAAAIAAIAAAD//wAAAAAIAAIAAAA=")
+tile_set = ExtResource("2_r7xnf")
+
+[node name="FloorsAndWalls" type="TileMapLayer" parent="TileMaps" unique_id=1339788547]
+tile_map_data = PackedByteArray("AAADAAAAAAADAAAAAAADAAEAAAADAAAAAAADAAIAAAADAAAAAAADAAMAAAADAAAAAAAEAP7/AAANAAAAAAAEAAAAAAADAAAAAAAEAAEAAAADAAAAAAAEAAIAAAADAAAAAAAEAAMAAAADAAAAAAAFAP7/AAALAAAAAAAFAAAAAAADAAAAAAAFAAEAAAADAAAAAAAFAAIAAAADAAAAAAAFAAMAAAADAAAAAAAGAAAAAAADAAAAAAAGAAEAAAADAAAAAAAGAAIAAAADAAAAAAAGAAMAAAAAAAYAAAAAAP7/AAALAAAAAAAAAAAAAAADAAAAAAAAAAEAAAADAAAAAAAAAAIAAAADAAAAAAAAAAMAAAADAAAAAAABAP7/AAAMAAAAAAABAAAAAAADAAAAAAABAAEAAAADAAAAAAABAAIAAAADAAAAAAABAAMAAAADAAAAAAACAP7/AAANAAAAAAACAAAAAAADAAAAAAACAAEAAAADAAAAAAACAAIAAAADAAAAAAACAAMAAAADAAAAAAAGAP7/AAAMAAAAAAD//wAAAAAIAAIAAAD//wEAAAAIAAIAAAD//wMAAAAIAAIAAAD//wQAAAAIAAIAAAAAAAQAAAAIAAIAAAABAAQAAAAIAAIAAAACAAQAAAAIAAIAAAADAAQAAAAIAAIAAAADAAUAAAAIAAIAAAAEAAUAAAAIAAIAAAAFAAUAAAAIAAIAAAAFAAQAAAAIAAIAAAAGAAQAAAAIAAIAAAAHAAQAAAAIAAIAAAAHAAMAAAAIAAIAAAAHAAIAAAAIAAIAAAAHAAEAAAAIAAIAAAAHAAAAAAAIAAIAAAD//wIAAAAIAAIAAAADAP7/AAANAAAAAAAFAP//AAALAAEAAAAGAP//AAAMAAEAAAAAAP//AAALAAEAAAABAP//AAAMAAEAAAADAP//AAANAAEAAAAEAP//AAANAAEAAAACAP//AAANAAEAAAA=")
+tile_set = ExtResource("2_r7xnf")
+
+[node name="Rug" type="TileMapLayer" parent="TileMaps" unique_id=1491460800]
+modulate = Color(0.23529412, 0.64705884, 0.54509807, 1)
+tile_map_data = PackedByteArray("AAADAAEAAAALAAYAACAEAAMAAAAHAAQAAAAGAAEAAAAGAAQAABAEAAEAAAAEAAIAAAAEAAIAAAAEAAMAAAADAAIAAAALAAYAAAACAAEAAAADAAIAAAACAAIAAAADAAMAAAA=")
+tile_set = ExtResource("2_r7xnf")
+
+[node name="Chairs" type="TileMapLayer" parent="TileMaps" unique_id=98346123]
+tile_map_data = PackedByteArray("AAABAAEAAAABAAQAAAABAAIAAAABAAUAAAACAAEAAAABAAQAAAACAAIAAAABAAUAAAA=")
+tile_set = ExtResource("2_r7xnf")
+
+[node name="Furniture" type="TileMapLayer" parent="TileMaps" unique_id=89712946]
+tile_map_data = PackedByteArray("AAABAAIAAAAAAAMAAAACAAIAAAABAAMAAAADAP7/AQAAAAAAAAADAP//AQAAAAEAAAADAAAAAQAAAAIAAAACAP//AAAAAAgAAAACAAAAAAAAAAkAAAAEAP//AAAAAAgAAAAEAAAAAAAAAAkAAAAFAP//AAAAAAgAAAAFAAAAAAAAAAkAAAABAP//AAAAAAgAAAABAAAAAAAAAAkAAAAAAP7/AAABAAcAAAAAAP//AAABAAgAAAAAAAAAAAABAAkAAAAGAP7/AAAHAAEAAAAGAP//AAAHAAIAAAADAAIAAAACAAgAAAADAAMAAAACAAkAAAAAAAIAAAACAAQAAAAAAAMAAAACAAUAAAA=")
+tile_set = ExtResource("2_r7xnf")
+
+[node name="Window" type="TileMapLayer" parent="TileMaps" unique_id=1363743100]
+tile_map_data = PackedByteArray("AAACAP//AAAJAAkAAAAEAP//AAAJAAkAAAAEAP7/AAAJAAgAAAACAP7/AAAJAAgAAAA=")
+tile_set = ExtResource("2_r7xnf")
+
+[node name="Sink" type="TileMapLayer" parent="TileMaps" unique_id=1484817117]
+tile_map_data = PackedByteArray("AAACAP//AAAEAAUAAAA=")
+tile_set = ExtResource("2_r7xnf")
+
+[node name="Decorations" type="TileMapLayer" parent="TileMaps" unique_id=278202511]
+tile_map_data = PackedByteArray("AAAGAP//AAACAAsAAAAGAAAAAAACAAwAAAA=")
+tile_set = ExtResource("2_r7xnf")
+
+[node name="Flowers" type="TileMapLayer" parent="TileMaps" unique_id=655480370]
+tile_set = ExtResource("2_r7xnf")
+
+[node name="Cushions" type="TileMapLayer" parent="TileMaps" unique_id=789202781]
+modulate = Color(0.23529412, 0.64705884, 0.54509807, 1)
+tile_map_data = PackedByteArray("AAACAP//AAAKAAkAAAAEAP7/AAAKAAgAAAAEAP//AAAKAAkAAAACAP7/AAAKAAgAAAA=")
+tile_set = ExtResource("2_r7xnf")
+
+[node name="EntryPoints" type="Node2D" parent="." unique_id=1260575787]
+
+[node name="SpawnDoor" type="Marker2D" parent="EntryPoints" unique_id=1228433333]
+position = Vector2(72, 56)
+script = ExtResource("3_je7kd")
+spawn_name = "bb_village_npc_04_door"
+metadata/_custom_type_script = "uid://bl7o7egd7hho7"
+
+[node name="Exits" type="Node2D" parent="." unique_id=591126629]
+
+[node name="ExitDoor" parent="Exits" unique_id=404008840 instance=ExtResource("4_tmo7u")]
+position = Vector2(72, 72)
+target_scene = "uid://y4y1xxl7omnv"
+target_spawn = "bb_village_npc_4"
+
+[node name="ExitStairs" parent="Exits" unique_id=712345905 instance=ExtResource("4_tmo7u")]
+position = Vector2(104, 56)
+lock_message = Array[String](["I really shouldn't go upstairs in other people's houses."])
+
+[node name="NPCs" type="Node2D" parent="." unique_id=1741053287]
+
+[node name="BBV4" type="Marker2D" parent="NPCs" unique_id=1554109155]
+position = Vector2(56, 40)
+
+[node name="Interactables" type="Node2D" parent="." unique_id=1382741175]
