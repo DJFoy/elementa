@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://byjclgdfdac10"]
 
 [ext_resource type="Script" uid="uid://1j8kdo0v4c2q" path="res://scripts/World/player_character.gd" id="1_o5wjj"]
+[ext_resource type="Texture2D" uid="uid://dbmi7grah08nr" path="res://assets/character_assets/overworld_sprites/generic_npc_assets/character_outline.png" id="2_o5wjj"]
 [ext_resource type="Texture2D" uid="uid://cf7iv60kmw2ux" path="res://assets/character_assets/pc_assets/overworld_sprite/eyes.png" id="6_pghs8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qd3p6"]
@@ -63,6 +64,18 @@ tracks/4/path = NodePath("Eyes:frame")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Outline:frame")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
@@ -133,6 +146,18 @@ tracks/4/keys = {
 "update": 1,
 "values": [0, 1, 2, 3, 3]
 }
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Outline:frame")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 3]
+}
 
 [sub_resource type="Animation" id="Animation_heffb"]
 resource_name = "walk_left"
@@ -192,6 +217,18 @@ tracks/4/path = NodePath("Eyes:frame")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [4, 5, 6, 7, 4]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Outline:frame")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
 "times": PackedFloat32Array(0, 0.25, 0.5, 0.75, 1),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 1,
@@ -261,6 +298,18 @@ tracks/4/keys = {
 "update": 1,
 "values": [8, 9, 10, 11, 8]
 }
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Outline:frame")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [8, 9, 10, 11, 8]
+}
 
 [sub_resource type="Animation" id="Animation_pghs8"]
 resource_name = "walk_up"
@@ -325,6 +374,18 @@ tracks/4/keys = {
 "update": 1,
 "values": [12, 13, 14, 15, 12]
 }
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Outline:frame")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.74, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [12, 13, 14, 15, 12]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_o15x3"]
 _data = {
@@ -346,6 +407,12 @@ shape = SubResource("RectangleShape2D_qd3p6")
 [node name="SkinTone" type="Sprite2D" parent="." unique_id=707725227]
 y_sort_enabled = true
 texture_filter = 1
+offset = Vector2(0, -1)
+hframes = 4
+vframes = 4
+
+[node name="Outline" type="Sprite2D" parent="." unique_id=1596419084]
+texture = ExtResource("2_o5wjj")
 offset = Vector2(0, -1)
 hframes = 4
 vframes = 4
