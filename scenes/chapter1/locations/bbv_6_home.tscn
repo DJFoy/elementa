@@ -1,0 +1,95 @@
+[gd_scene format=4 uid="uid://xc0dia5p4jh5"]
+
+[ext_resource type="Script" uid="uid://de85hwkdj7v15" path="res://scripts/Chapter 1/bbv_6_home.gd" id="1_l38ay"]
+[ext_resource type="TileSet" uid="uid://gfwi66i5se4k" path="res://assets/tilesets/backgrounds/base_inside_tiles.tres" id="2_okj48"]
+[ext_resource type="Script" uid="uid://bl7o7egd7hho7" path="res://scripts/World/spawn.gd" id="3_j5fne"]
+[ext_resource type="PackedScene" uid="uid://kkaqj5g0x7un" path="res://scenes/exit_area.tscn" id="4_xjjss"]
+
+[node name="BBV6Home" type="Node2D" unique_id=1957793688 node_paths=PackedStringArray("tilemaps")]
+y_sort_enabled = true
+script = ExtResource("1_l38ay")
+tilemaps = [NodePath("TileMaps/FloorsAndWalls"), NodePath("TileMaps/Window"), NodePath("TileMaps/Rug"), NodePath("TileMaps/Furniture"), NodePath("TileMaps/Sink"), NodePath("TileMaps/Decorations"), NodePath("TileMaps/Flowers"), NodePath("TileMaps/Candle"), NodePath("TileMaps/Fire")]
+metadata/_custom_type_script = "uid://c8im5x5qc72nu"
+
+[node name="TileMaps" type="Node2D" parent="." unique_id=161029554]
+y_sort_enabled = true
+
+[node name="FloorsAndWalls" type="TileMapLayer" parent="TileMaps" unique_id=1208062590]
+y_sort_enabled = true
+tile_map_data = PackedByteArray("AAADAAAAAAADAAAAAAADAAEAAAADAAAAAAADAAIAAAADAAAAAAADAAMAAAADAAAAAAAEAP7/AAAKAAAAAAAEAAAAAAADAAAAAAAEAAEAAAADAAAAAAAEAAIAAAADAAAAAAAEAAMAAAADAAAAAAAFAP7/AAAIAAAAAAAFAAAAAAADAAAAAAAFAAEAAAADAAAAAAAFAAIAAAADAAAAAAAFAAMAAAADAAAAAAAGAAAAAAADAAAAAAAGAAEAAAADAAAAAAAGAAIAAAADAAAAAAAAAP7/AAAIAAAAAAAAAAAAAAADAAAAAAAAAAEAAAADAAAAAAAAAAIAAAADAAAAAAAAAAMAAAADAAAAAAABAP7/AAAJAAAAAAABAAAAAAADAAAAAAABAAEAAAADAAAAAAABAAIAAAADAAAAAAABAAMAAAADAAAAAAACAP7/AAAKAAAAAAACAAAAAAADAAAAAAACAAEAAAADAAAAAAACAAIAAAADAAAAAAACAAMAAAADAAAAAAAGAP7/AAAJAAAAAAD//wAAAAAIAAIAAAD//wEAAAAIAAIAAAD//wMAAAAIAAIAAAAHAAIAAAAIAAIAAAAHAAEAAAAIAAIAAAAHAAAAAAAIAAIAAAD//wIAAAAIAAIAAAADAP7/AAAKAAAAAAAFAP//AAAIAAEAAAAGAP//AAAJAAEAAAAAAP//AAAIAAEAAAABAP//AAAJAAEAAAADAP//AAAKAAEAAAAEAP//AAAKAAEAAAACAP//AAAKAAEAAAAGAAMAAAAAAAYAAAA=")
+tile_set = ExtResource("2_okj48")
+
+[node name="Window" type="TileMapLayer" parent="TileMaps" unique_id=660927366]
+y_sort_enabled = true
+tile_map_data = PackedByteArray("AAAEAP7/AAAJAAgAAAAEAP//AAAJAAkAAAA=")
+tile_set = ExtResource("2_okj48")
+
+[node name="Rug" type="TileMapLayer" parent="TileMaps" unique_id=1125235745]
+modulate = Color(0.4627451, 0.36078432, 0.54901963, 1)
+y_sort_enabled = true
+tile_map_data = PackedByteArray("AAAGAAEAAAAGAAQAABAAAAEAAAADAAIAAAAAAAIAAAADAAMAAAABAAEAAAAEAAIAAAABAAIAAAAEAAMAAAAEAP7/AAAKAAgAAAAEAP//AAAKAAkAAAACAAMAAAAHAAQAAAA=")
+tile_set = ExtResource("2_okj48")
+
+[node name="Furniture" type="TileMapLayer" parent="TileMaps" unique_id=347623160]
+y_sort_enabled = true
+tile_map_data = PackedByteArray("AAABAP7/AAAJAAQAAAABAP//AAAJAAUAAAABAAAAAAAJAAYAAAABAAEAAAACAAIAAAABAAIAAAAAAAQAAAACAP7/AAABAAcAAAACAP//AAABAAgAAAACAAAAAAABAAkAAAAFAP//AAAAAAgAAAAFAAAAAAAAAAkAAAAGAP//AAAAAAgAAAAGAAAAAAAAAAkAAAAAAP7/AAABAAcAAAAAAP//AAABAAgAAAAAAAAAAAABAAkAAAAAAAEAAAACAAQAAAAAAAIAAAACAAUAAAAEAP//AAAAAAgAAAAEAAAAAAAAAAkAAAA=")
+tile_set = ExtResource("2_okj48")
+
+[node name="Sink" type="TileMapLayer" parent="TileMaps" unique_id=1480973610]
+y_sort_enabled = true
+tile_map_data = PackedByteArray("AAAEAP//AAAEAAUAAAABAP7/AAAKAAQAAAA=")
+tile_set = ExtResource("2_okj48")
+
+[node name="Decorations" type="TileMapLayer" parent="TileMaps" unique_id=2011485202]
+y_sort_enabled = true
+tile_map_data = PackedByteArray("AAADAP7/AAABAAYAAAABAAEAAAABAAIAAAA=")
+tile_set = ExtResource("2_okj48")
+
+[node name="Flowers" type="TileMapLayer" parent="TileMaps" unique_id=1259486523]
+y_sort_enabled = true
+tile_map_data = PackedByteArray("AAADAP7/AAADAAYAAAA=")
+tile_set = ExtResource("2_okj48")
+
+[node name="Candle" type="TileMapLayer" parent="TileMaps" unique_id=834920040]
+y_sort_enabled = true
+tile_map_data = PackedByteArray("AAAGAP//AAACAAAAAAA=")
+tile_set = ExtResource("2_okj48")
+
+[node name="Fire" type="TileMapLayer" parent="TileMaps" unique_id=2766969]
+y_sort_enabled = true
+tile_map_data = PackedByteArray("AAABAP//AgAAAAAAAAABAAAAAgAAAAEAAAA=")
+tile_set = ExtResource("2_okj48")
+
+[node name="EntryPoints" type="Node2D" parent="." unique_id=1863658228]
+y_sort_enabled = true
+
+[node name="SpawnDoor" type="Marker2D" parent="EntryPoints" unique_id=1958079325]
+y_sort_enabled = true
+position = Vector2(40, 56)
+script = ExtResource("3_j5fne")
+spawn_name = "bb_village_npc_06_door"
+metadata/_custom_type_script = "uid://bl7o7egd7hho7"
+
+[node name="Exits" type="Node2D" parent="." unique_id=657998163]
+y_sort_enabled = true
+
+[node name="ExitDoor" parent="Exits" unique_id=404008840 instance=ExtResource("4_xjjss")]
+y_sort_enabled = true
+position = Vector2(40, 72)
+target_scene = "uid://y4y1xxl7omnv"
+target_spawn = "bb_village_npc_6"
+
+[node name="ExitStairs" parent="Exits" unique_id=896672503 instance=ExtResource("4_xjjss")]
+y_sort_enabled = true
+position = Vector2(104, 56)
+lock_message = Array[String](["I really shouldn't go upstairs in other people's houses."])
+
+[node name="NPCs" type="Node2D" parent="." unique_id=503869943]
+y_sort_enabled = true
+
+[node name="BBV5" type="Marker2D" parent="NPCs" unique_id=660644830]
+y_sort_enabled = true
+position = Vector2(40, 8)
+
+[node name="Interactables" type="Node2D" parent="." unique_id=1068055054]
+y_sort_enabled = true

@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="DialogueMap" format=3 uid="uid://cdkgt5xvnr54n"]
+
+[ext_resource type="Script" uid="uid://cobol6g2sil3f" path="res://resources/dialogue/dialogue_rule.gd" id="1_0dje0"]
+[ext_resource type="Script" uid="uid://byuajnnxgbg30" path="res://resources/dialogue/dialogue_map.gd" id="2_72tey"]
+
+[sub_resource type="Resource" id="Resource_0dje0"]
+script = ExtResource("1_0dje0")
+dialogue_id = "chapter1_npc_villager3_1"
+one_time_dialogue = Array[String](["chapter1_npc_villager3_1", "chapter1_profOliviaHelpResearch"])
+metadata/_custom_type_script = "uid://cobol6g2sil3f"
+
+[sub_resource type="Resource" id="Resource_72tey"]
+script = ExtResource("1_0dje0")
+dialogue_id = "chapter1_npc_villager3_2"
+one_time_dialogue = Array[String](["chapter1_profOliviaHelpResearch"])
+metadata/_custom_type_script = "uid://cobol6g2sil3f"
+
+[sub_resource type="Resource" id="Resource_l0d3p"]
+script = ExtResource("1_0dje0")
+dialogue_id = "chapter1_npc_villager3_3"
+metadata/_custom_type_script = "uid://cobol6g2sil3f"
+
+[resource]
+script = ExtResource("2_72tey")
+rules = Array[ExtResource("1_0dje0")]([SubResource("Resource_0dje0"), SubResource("Resource_72tey"), SubResource("Resource_l0d3p")])
+metadata/_custom_type_script = "uid://byuajnnxgbg30"

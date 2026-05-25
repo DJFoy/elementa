@@ -8,6 +8,7 @@ class_name NPC_Resource
 @export var skin_tone: Texture2D
 @export var npc_outline: Texture2D
 @export var npc_hair: Texture2D
+@export var npc_facial_hair: Texture2D
 @export var npc_eye: Texture2D
 @export var npc_top: Texture2D
 @export var npc_bottom: Texture2D

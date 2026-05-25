@@ -1,16 +1,17 @@
 [gd_scene format=3 uid="uid://xlgquvpcpldn"]
 
-[ext_resource type="Texture2D" uid="uid://cblm66l2385ri" path="res://assets/Dialogue Box.png" id="1_3n4vj"]
 [ext_resource type="Script" uid="uid://btqcr6thl8efl" path="res://scripts/UI/YarnSpinner/dialogue.gd" id="1_58kjy"]
 [ext_resource type="Script" uid="uid://budnld4qd513n" path="res://addons/YarnSpinner-Godot/Runtime/DialogueRunner.cs" id="2_rgjee"]
 [ext_resource type="Theme" uid="uid://dthhuuah0qhsg" path="res://themes/default_interact_theme.tres" id="3_bfpow"]
 [ext_resource type="Resource" uid="uid://b0iw4rrlenv7d" path="res://resources/dialogue/Elementa.yarnproject" id="3_u6dtt"]
 [ext_resource type="Script" uid="uid://u2q64vfosoyd" path="res://scripts/UI/YarnSpinner/portrait_presenter.gd" id="4_68xmj"]
+[ext_resource type="Texture2D" uid="uid://dbhxqjv1x3vxg" path="res://assets/base_assets/Dialogue Box - v2.png" id="5_68xmj"]
 [ext_resource type="Script" uid="uid://dgyuh0b4kc408" path="res://scripts/UI/YarnSpinner/line_presenter.gd" id="5_rgose"]
 [ext_resource type="Script" uid="uid://dqa65boklyxj7" path="res://scripts/UI/YarnSpinner/options_presenter.gd" id="7_68xmj"]
 [ext_resource type="Script" uid="uid://c5gxawri864uf" path="res://addons/YarnSpinner-Godot/Runtime/LineProviders/TextLineProvider.cs" id="7_cpovq"]
 [ext_resource type="Script" uid="uid://b1o5xpu22evvx" path="res://addons/YarnSpinner-Godot/Runtime/InMemoryVariableStorage.cs" id="8_58kjy"]
 [ext_resource type="PackedScene" uid="uid://d0lemcnjah10o" path="res://scenes/UI/default_option_view.tscn" id="8_u6dtt"]
+[ext_resource type="FontFile" uid="uid://bes6ottao3jvw" path="res://assets/font/Jacquard12-Regular.ttf" id="8_ypox6"]
 
 [node name="Dialogue" type="Control" unique_id=458972072 node_paths=PackedStringArray("line_presenter", "dialogue_runner")]
 layout_mode = 3
@@ -82,7 +83,7 @@ metadata/_edit_use_anchors_ = true
 [node name="DialogueBox" type="TextureRect" parent="CanvasLayer" unique_id=107509792]
 offset_right = 480.0
 offset_bottom = 270.0
-texture = ExtResource("1_3n4vj")
+texture = ExtResource("5_68xmj")
 
 [node name="LinePresenter" type="Control" parent="CanvasLayer" unique_id=1331012857 node_paths=PackedStringArray("character_name_label", "line_text_label", "presenter_control", "dialogue_control")]
 layout_mode = 3
@@ -117,12 +118,23 @@ visible_characters_behavior = 1
 
 [node name="CharacterName" type="RichTextLabel" parent="CanvasLayer/LinePresenter/PresenterControl" unique_id=814287207]
 layout_mode = 0
-offset_left = 75.0
-offset_top = 170.0
+offset_left = 77.0
+offset_top = 167.0
 offset_right = 159.0
-offset_bottom = 184.0
+offset_bottom = 187.0
 theme = ExtResource("3_bfpow")
 theme_type_variation = &"InteractRichTextLabel"
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_fonts/normal_font = ExtResource("8_ypox6")
+theme_override_fonts/bold_font = ExtResource("8_ypox6")
+theme_override_fonts/bold_italics_font = ExtResource("8_ypox6")
+theme_override_fonts/italics_font = ExtResource("8_ypox6")
+theme_override_fonts/mono_font = ExtResource("8_ypox6")
+theme_override_font_sizes/normal_font_size = 21
+theme_override_font_sizes/bold_font_size = 21
+theme_override_font_sizes/bold_italics_font_size = 21
+theme_override_font_sizes/italics_font_size = 21
+theme_override_font_sizes/mono_font_size = 21
 text = "Boops"
 scroll_active = false
 

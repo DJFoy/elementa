@@ -55,6 +55,8 @@ func _ready() -> void:
 			exit.armed = false
 	
 	# Bring in the player character and add to the scene
+	await get_tree().process_frame
+	
 	pc = PC_SCENE.instantiate()
 	pc.actor_id = "Player_Character"
 	add_child(pc)
@@ -219,9 +221,7 @@ func walk_path(actor: Character, path_array: Array) -> void:
 		actor.direction_change(dir)
 		await actor.move(dir)
 
-func _on_pc_move(cur_position: Vector2, dir: Vector2i):
-	var local_pos = convert_to_local(cur_position)
-	
+func _on_pc_move():	
 	if pc.move_ray.is_colliding():
 		if pc.move_ray.get_collider().is_in_group("Exits"):
 			var exit: ExitArea = pc.move_ray.get_collider()
@@ -229,7 +229,7 @@ func _on_pc_move(cur_position: Vector2, dir: Vector2i):
 				print("Emit the request!")
 				interaction_request.emit(exit.lock_message)
 	
-	actors_map[pc] = local_pos + dir
+	update_actor_map(pc)
 
 func lock_doors() -> void:
 	print("Locking doors")
@@ -242,10 +242,10 @@ func lock_doors() -> void:
 func resolve_npcs() -> void:
 	for npc in npcs:
 		if npc["spawn_conds"].all(func(c): return c.call()):
-			spawn_npc(npc["npc_id"], npc["npc_location"])
+			spawn_npc(npc["npc_id"], npc["npc_location"], npc["default_direction"])
 
 
-func spawn_npc(npc_id: String, location: Vector2) -> void:
+func spawn_npc(npc_id: String, location: Vector2, direction: Vector2) -> void:
 	var new_npc: Non_Player_Character = preload("uid://c3ps2dhlyigr4").instantiate()
 	var npc_res = NPC_Registry.get_npc(npc_id)
 	
@@ -253,3 +253,4 @@ func spawn_npc(npc_id: String, location: Vector2) -> void:
 	$NPCs.add_child(new_npc)
 	
 	new_npc.global_position = location
+	new_npc.direction_change(direction)

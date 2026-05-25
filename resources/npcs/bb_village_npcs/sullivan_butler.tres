@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="NPC_Resource" format=3 uid="uid://c6de045gnpr0g"]
+
+[ext_resource type="Script" uid="uid://c8dfh7hkdo33y" path="res://resources/npcs/npc_resource.gd" id="1_8lhhd"]
+[ext_resource type="Texture2D" uid="uid://cpuclxdpkrkl1" path="res://assets/character_assets/overworld_sprites/Sullivan Butler Overworld Sprite.png" id="1_vha3a"]
+[ext_resource type="Resource" uid="uid://b5avflsko3j7v" path="res://resources/npcs/bb_village_npcs/sullivan_butler_dialogue_map.tres" id="1_wurdl"]
+
+[resource]
+script = ExtResource("1_8lhhd")
+npc_name = "Butler"
+npc_sprite = ExtResource("1_vha3a")
+dialogue_map = ExtResource("1_wurdl")
+metadata/_custom_type_script = "uid://c8dfh7hkdo33y"

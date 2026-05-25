@@ -1,0 +1,86 @@
+[gd_scene format=4 uid="uid://dvoa5bpgafmsu"]
+
+[ext_resource type="Script" uid="uid://c8im5x5qc72nu" path="res://scripts/World/location.gd" id="1_ub33i"]
+[ext_resource type="TileSet" uid="uid://gfwi66i5se4k" path="res://assets/tilesets/backgrounds/base_inside_tiles.tres" id="2_0gddh"]
+[ext_resource type="Script" uid="uid://bl7o7egd7hho7" path="res://scripts/World/spawn.gd" id="3_kbup0"]
+[ext_resource type="PackedScene" uid="uid://kkaqj5g0x7un" path="res://scenes/exit_area.tscn" id="4_mt6ud"]
+
+[node name="BBV2Home" type="Node2D" unique_id=438960761]
+y_sort_enabled = true
+script = ExtResource("1_ub33i")
+metadata/_custom_type_script = "uid://c8im5x5qc72nu"
+
+[node name="TileMaps" type="Node2D" parent="." unique_id=201471921]
+y_sort_enabled = true
+
+[node name="FloorsAndWalls" type="TileMapLayer" parent="TileMaps" unique_id=40427002]
+y_sort_enabled = true
+tile_map_data = PackedByteArray("AAADAAAAAAADAAAAAAADAAEAAAADAAAAAAADAAIAAAADAAAAAAADAAMAAAADAAAAAAAEAP7/AAANAAAAAAAEAAAAAAADAAAAAAAEAAEAAAADAAAAAAAEAAIAAAADAAAAAAAEAAMAAAADAAAAAAAFAP7/AAALAAAAAAAFAAAAAAADAAAAAAAFAAEAAAADAAAAAAAFAAIAAAADAAAAAAAFAAMAAAADAAAAAAAGAAAAAAADAAAAAAAGAAEAAAADAAAAAAAGAAIAAAADAAAAAAAGAAMAAAADAAAAAAAAAP7/AAALAAAAAAAAAAAAAAADAAAAAAAAAAEAAAADAAAAAAAAAAIAAAADAAAAAAAAAAMAAAADAAAAAAABAP7/AAAMAAAAAAABAAAAAAADAAAAAAABAAEAAAADAAAAAAABAAIAAAADAAAAAAABAAMAAAADAAAAAAACAP7/AAANAAAAAAACAAAAAAADAAAAAAACAAEAAAADAAAAAAACAAIAAAADAAAAAAACAAMAAAADAAAAAAAGAP7/AAAMAAAAAAD//wAAAAAIAAIAAAD//wEAAAAIAAIAAAD//wMAAAAIAAIAAAD//wQAAAAIAAIAAAAAAAQAAAAIAAIAAAABAAQAAAAIAAIAAAACAAQAAAAIAAIAAAADAAQAAAAIAAIAAAADAAUAAAAIAAIAAAAEAAUAAAAIAAIAAAAFAAUAAAAIAAIAAAAFAAQAAAAIAAIAAAAGAAQAAAAIAAIAAAAHAAQAAAAIAAIAAAAHAAMAAAAIAAIAAAAHAAIAAAAIAAIAAAAHAAEAAAAIAAIAAAAHAAAAAAAIAAIAAAD//wIAAAAIAAIAAAADAP7/AAANAAAAAAAFAP//AAALAAEAAAAGAP//AAAMAAEAAAAAAP//AAALAAEAAAABAP//AAAMAAEAAAADAP//AAANAAEAAAAEAP//AAANAAEAAAACAP//AAANAAEAAAA=")
+tile_set = ExtResource("2_0gddh")
+
+[node name="Rug" type="TileMapLayer" parent="TileMaps" unique_id=927336570]
+modulate = Color(0.16078432, 0.3647059, 0.12941177, 1)
+y_sort_enabled = true
+tile_map_data = PackedByteArray("AAAEAAMAAAAHAAQAAAACAAIAAAAFAAAAAAADAAIAAAAGAAAAAAAAAAEAAAAGAAQAAAA=")
+tile_set = ExtResource("2_0gddh")
+
+[node name="Chairs" type="TileMapLayer" parent="TileMaps" unique_id=1017237747]
+y_sort_enabled = true
+tile_map_data = PackedByteArray("AAACAAEAAAABAAQAAAACAAIAAAABAAUAAAADAAEAAAABAAQAAAADAAIAAAABAAUAAAA=")
+tile_set = ExtResource("2_0gddh")
+
+[node name="Furniture" type="TileMapLayer" parent="TileMaps" unique_id=662286070]
+y_sort_enabled = true
+tile_map_data = PackedByteArray("AAAEAP//AAAGAAgAAAAEAAAAAAAGAAkAAAADAP//AAAAAAgAAAADAAAAAAAAAAkAAAACAP7/AQAAAAAAAAACAP//AQAAAAEAAAACAAAAAQAAAAIAAAABAP//AAAAAAgAAAABAAAAAAAAAAkAAAACAAIAAAAAAAMAAAADAAIAAAABAAMAAAABAAIAAAACAAQAAAABAAMAAAACAAUAAAAEAAIAAAACAAgAAAAEAAMAAAACAAkAAAAGAP//AAAFAAEAAAAGAAAAAAAFAAIAAAAFAP//AAAAAAgAAAAFAAAAAAAAAAkAAAA=")
+tile_set = ExtResource("2_0gddh")
+
+[node name="Window" type="TileMapLayer" parent="TileMaps" unique_id=478848675]
+y_sort_enabled = true
+tile_map_data = PackedByteArray("AAADAP7/AAALAAgAAAADAP//AAALAAkAAAA=")
+tile_set = ExtResource("2_0gddh")
+
+[node name="Sink" type="TileMapLayer" parent="TileMaps" unique_id=347459706]
+y_sort_enabled = true
+tile_map_data = PackedByteArray("AAADAP//AAAEAAUAAAAGAAAAAAAHAAgAAAAGAAEAAAAHAAkAAAA=")
+tile_set = ExtResource("2_0gddh")
+
+[node name="Decorations" type="TileMapLayer" parent="TileMaps" unique_id=1569136777]
+y_sort_enabled = true
+tile_map_data = PackedByteArray("AAAFAP//AAABAAAAAAAAAP7/AAACAAYAAAAAAP//AAACAAcAAAAEAP7/AAAHAAAAAAA=")
+tile_set = ExtResource("2_0gddh")
+
+[node name="Flowers" type="TileMapLayer" parent="TileMaps" unique_id=517241680]
+y_sort_enabled = true
+tile_map_data = PackedByteArray("AAAAAP//AAADAAYAAAA=")
+tile_set = ExtResource("2_0gddh")
+
+[node name="Cushions" type="TileMapLayer" parent="TileMaps" unique_id=1172164656]
+modulate = Color(0.16078432, 0.3647059, 0.12941177, 1)
+y_sort_enabled = true
+tile_map_data = PackedByteArray("AAADAP7/AAAKAAgAAAADAP//AAAKAAkAAAA=")
+tile_set = ExtResource("2_0gddh")
+
+[node name="EntryPoints" type="Node2D" parent="." unique_id=1200891865]
+y_sort_enabled = true
+
+[node name="SpawnDoor" type="Marker2D" parent="EntryPoints" unique_id=1576037667]
+y_sort_enabled = true
+position = Vector2(72, 56)
+script = ExtResource("3_kbup0")
+spawn_name = "bb_village_npc_02_door"
+metadata/_custom_type_script = "uid://bl7o7egd7hho7"
+
+[node name="Exits" type="Node2D" parent="." unique_id=533837231]
+y_sort_enabled = true
+
+[node name="ExitDoor" parent="Exits" unique_id=404008840 instance=ExtResource("4_mt6ud")]
+y_sort_enabled = true
+position = Vector2(72, 72)
+target_scene = "uid://y4y1xxl7omnv"
+target_spawn = "bb_village_npc_2"
+
+[node name="NPCs" type="Node2D" parent="." unique_id=759768737]
+y_sort_enabled = true
+
+[node name="Interactables" type="Node2D" parent="." unique_id=1221292899]
+y_sort_enabled = true

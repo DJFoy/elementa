@@ -97,6 +97,7 @@ func _setup_location() -> void:
 		{
 			"npc_id": "Dad",
 			"npc_location": Vector2(40, 8),
+			"default_direction": Vector2.DOWN,
 			"spawn_conds": [
 				func():
 					return !Global_World_State.cutscenes.has("chapter1_dad_intro"),

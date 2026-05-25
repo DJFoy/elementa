@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="DialogueMap" format=3 uid="uid://cxb24bqh3vpmr"]
+
+[ext_resource type="Script" uid="uid://cobol6g2sil3f" path="res://resources/dialogue/dialogue_rule.gd" id="1_ef3en"]
+[ext_resource type="Script" uid="uid://byuajnnxgbg30" path="res://resources/dialogue/dialogue_map.gd" id="2_jte70"]
+
+[sub_resource type="Resource" id="Resource_ef3en"]
+script = ExtResource("1_ef3en")
+dialogue_id = "chapter1_npc_villager4_1"
+one_time_dialogue = Array[String](["chapter1_profOliviaHelpResearch"])
+metadata/_custom_type_script = "uid://cobol6g2sil3f"
+
+[sub_resource type="Resource" id="Resource_jte70"]
+script = ExtResource("1_ef3en")
+dialogue_id = "chapter1_npc_villager4_2"
+metadata/_custom_type_script = "uid://cobol6g2sil3f"
+
+[resource]
+script = ExtResource("2_jte70")
+rules = Array[ExtResource("1_ef3en")]([SubResource("Resource_ef3en"), SubResource("Resource_jte70")])
+metadata/_custom_type_script = "uid://byuajnnxgbg30"

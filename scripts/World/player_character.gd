@@ -2,7 +2,7 @@ extends Character
 class_name Player_Character
 
 signal try_interact(interactable)
-signal pc_about_to_move(cur_position: Vector2, dir: Vector2i)
+signal pc_about_to_move()
 
 @onready var player_data: PlayerCreationData
 
@@ -67,7 +67,7 @@ func _unhandled_input(event: InputEvent) -> void:
 		return
 	if moving:
 		return
-	if Input.is_action_pressed("interact"):
+	if Input.is_action_just_pressed("interact"):
 		if interact_ray.is_colliding():
 			try_interact.emit(interact_ray.get_collider())
 			return
@@ -82,11 +82,14 @@ func _unhandled_input(event: InputEvent) -> void:
 				direction_change(inputs[dir])
 			else:
 				move(inputs[dir])
-				pc_about_to_move.emit(global_position, inputs[dir])
+				pc_about_to_move.emit()
 			return
 
 func _continuous_movement() -> void:
 	if is_locked:
+		_stop_movement()
+		return
+	if move_ray.is_colliding():
 		_stop_movement()
 		return
 	GameState.pc_dir = wants_to_move_dir
@@ -94,7 +97,7 @@ func _continuous_movement() -> void:
 		interact_ray.target_position = wants_to_move_dir * tile_size
 		direction_change(wants_to_move_dir)
 	move(wants_to_move_dir)
-	pc_about_to_move.emit(global_position, wants_to_move_dir)
+	pc_about_to_move.emit()
 
 func get_sprite_asset(category: String, filename: String) -> String:
 	return "res://assets/character_assets/pc_assets/overworld_sprite/%s/%s.png" % [category, filename]
