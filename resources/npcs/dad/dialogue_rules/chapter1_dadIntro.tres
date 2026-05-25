@@ -1,7 +1,0 @@
-[gd_resource type="Resource" script_class="DialogueRule" format=3 uid="uid://cxo68a34fkvhl"]
-
-[ext_resource type="Script" uid="uid://cobol6g2sil3f" path="res://resources/dialogue/dialogue_rule.gd" id="1_2eoqp"]
-
-[resource]
-script = ExtResource("1_2eoqp")
-metadata/_custom_type_script = "uid://cobol6g2sil3f"

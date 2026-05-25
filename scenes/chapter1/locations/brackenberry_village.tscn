@@ -60,6 +60,13 @@ script = ExtResource("3_6dxnj")
 spawn_name = "bb_village_prof_olivia"
 metadata/_custom_type_script = "uid://bl7o7egd7hho7"
 
+[node name="ProfOliviaGarden" type="Marker2D" parent="EntryPoints" unique_id=610355454]
+y_sort_enabled = true
+position = Vector2(-184, 312)
+script = ExtResource("3_6dxnj")
+spawn_name = "bb_village_prof_olivia_garden"
+metadata/_custom_type_script = "uid://bl7o7egd7hho7"
+
 [node name="SullivanManorRight" type="Marker2D" parent="EntryPoints" unique_id=1741718945]
 y_sort_enabled = true
 position = Vector2(200, 184)
@@ -116,10 +123,15 @@ script = ExtResource("3_6dxnj")
 spawn_name = "bb_village_npc_6"
 metadata/_custom_type_script = "uid://bl7o7egd7hho7"
 
+[node name="ExitArea" parent="EntryPoints" unique_id=404008840 instance=ExtResource("4_ymtk7")]
+position = Vector2(-200, 312)
+target_scene = "uid://bomem7ewboadv"
+target_spawn = "prof_olivia_backdoor"
+
 [node name="Exits" type="Node2D" parent="." unique_id=149356442]
 y_sort_enabled = true
 
-[node name="PCHome" parent="Exits" unique_id=404008840 instance=ExtResource("4_ymtk7")]
+[node name="PCHome" parent="Exits" unique_id=619020679 instance=ExtResource("4_ymtk7")]
 y_sort_enabled = true
 position = Vector2(-248, -24)
 target_scene = "uid://7s6n5s6n4jun"
@@ -128,6 +140,7 @@ target_spawn = "pc_home_door_01"
 [node name="ProfOlivia" parent="Exits" unique_id=816623222 instance=ExtResource("4_ymtk7")]
 y_sort_enabled = true
 position = Vector2(-232, 360)
+target_scene = "uid://bomem7ewboadv"
 target_spawn = "prof_olivia_door"
 
 [node name="SullivanManorLeft" parent="Exits" unique_id=241067538 instance=ExtResource("4_ymtk7")]

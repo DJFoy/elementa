@@ -5,6 +5,7 @@ class_name DialogueRule
 @export var required_chapter: String = ""
 @export var one_time_dialogue: Array[String] = []
 @export var items_collected: Array[String] = []
+@export var significant_events: Array[String] = []
 
 func condition_met() -> bool:
 	# Is chapter greater than when this can appear?
@@ -30,6 +31,10 @@ func condition_met() -> bool:
 	# Then check that if the number of items gathered is less than the number of required items, return false
 	if items_gathered < items_collected.size() && items_collected.size() > 0:
 		return false
+	
+	for event in significant_events:
+		if Global_World_State.significant_events.has(event):
+			return false
 	
 	# Otherwise, return true
 	return true

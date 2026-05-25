@@ -6,7 +6,6 @@ extends Node
 @export var dialogue_control: Node
 
 @export var use_typewriter:= true
-@export var typewriter_speed:= 60
 
 var _is_revealing:= false
 var active_tween: Tween
@@ -51,7 +50,7 @@ func _run_typewriter(text: String) -> void:
 	line_text_label.visible_characters = 0
 	
 	var total_chars := text.length()
-	var duration := float(total_chars) / typewriter_speed
+	var duration := float(total_chars) / GameState.text_speed
 	
 	if active_tween:
 		active_tween.kill()

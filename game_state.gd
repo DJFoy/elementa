@@ -43,3 +43,7 @@ func unlock():
 
 func is_locked() -> bool:
 	return lock_count > 0
+
+
+# Game Options
+var text_speed := 60.0

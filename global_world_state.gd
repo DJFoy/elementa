@@ -29,3 +29,6 @@ var items_collected:= []
 
 # Store which cutscenes have been played so as to prevent them repeating
 var cutscenes:= []
+
+# Store major game events as strings, such as collecting your familiar (so a familiar should appear behind the PC
+var significant_events = []
