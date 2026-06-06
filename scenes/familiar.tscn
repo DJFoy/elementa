@@ -1,13 +1,20 @@
 [gd_scene format=3 uid="uid://dobby25cjkmn"]
 
-[ext_resource type="Texture2D" uid="uid://d21v0qd6x775d" path="res://assets/familiar_assets/Mukade Overworld Sprite.png" id="1_l41qn"]
+[ext_resource type="Script" uid="uid://bvxtwa138y6ed" path="res://scripts/World/familiar.gd" id="1_l41qn"]
+[ext_resource type="Texture2D" uid="uid://5wh5jyd0cqg1" path="res://assets/familiar_assets/Knucker Overworld Sprite.png" id="2_jfdty"]
+[ext_resource type="Script" uid="uid://tuj5cq6ma4dc" path="res://scripts/State Machine/state_machine.gd" id="3_sb71v"]
+[ext_resource type="Script" uid="uid://dnvxsfxve118g" path="res://scripts/World/familiar_states/follow_state.gd" id="4_kfeix"]
+[ext_resource type="Script" uid="uid://c1skscy2hwpj2" path="res://scripts/World/familiar_states/idle_state.gd" id="5_kfeix"]
 
-[sub_resource type="Animation" id="Animation_7wgv1"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7wgv1"]
+size = Vector2(16, 16)
+
+[sub_resource type="Animation" id="Animation_sb71v"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/path = NodePath("MainSprite:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -17,85 +24,100 @@ tracks/0/keys = {
 "values": [0]
 }
 
-[sub_resource type="Animation" id="Animation_jfdty"]
-resource_name = "walk_down"
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.25, 0.5, 0.75, 1),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
-"update": 1,
-"values": [0, 1, 2, 3, 0]
-}
-
-[sub_resource type="Animation" id="Animation_sb71v"]
-resource_name = "walk_left"
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.25, 0.5, 0.75, 1),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
-"update": 1,
-"values": [4, 5, 6, 7, 4]
-}
-
-[sub_resource type="Animation" id="Animation_l41qn"]
-resource_name = "walk_right"
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.25, 0.5, 0.75, 1),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
-"update": 1,
-"values": [8, 9, 10, 11, 8]
-}
-
 [sub_resource type="Animation" id="Animation_kfeix"]
-resource_name = "walk_up"
+resource_name = "move_down"
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/path = NodePath("MainSprite:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.25, 0.5, 0.75, 1),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
-"values": [12, 13, 14, 15, 12]
+"values": [0, 1, 2, 3]
 }
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_kfeix"]
+[sub_resource type="Animation" id="Animation_pwhil"]
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MainSprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [4, 5, 6, 7]
+}
+
+[sub_resource type="Animation" id="Animation_74pb8"]
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MainSprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [8, 9, 10, 11]
+}
+
+[sub_resource type="Animation" id="Animation_mt8tp"]
+resource_name = "move_up"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MainSprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [12, 13, 14, 15]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ww270"]
 _data = {
-&"RESET": SubResource("Animation_7wgv1"),
-&"walk_down": SubResource("Animation_jfdty"),
-&"walk_left": SubResource("Animation_sb71v"),
-&"walk_right": SubResource("Animation_l41qn"),
-&"walk_up": SubResource("Animation_kfeix")
+&"RESET": SubResource("Animation_sb71v"),
+&"walk_down": SubResource("Animation_kfeix"),
+&"walk_left": SubResource("Animation_pwhil"),
+&"walk_right": SubResource("Animation_74pb8"),
+&"walk_up": SubResource("Animation_mt8tp")
 }
 
-[node name="Familiar" type="Node2D" unique_id=2141462538]
+[node name="Familiar" type="CharacterBody2D" unique_id=827594492]
+script = ExtResource("1_l41qn")
+metadata/_custom_type_script = "uid://bay74y2qy5h1r"
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=531021697]
-texture = ExtResource("1_l41qn")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=844177318]
+shape = SubResource("RectangleShape2D_7wgv1")
+
+[node name="MainSprite" type="Sprite2D" parent="." unique_id=94238915]
+texture = ExtResource("2_jfdty")
 hframes = 4
 vframes = 4
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1039706185]
-libraries/ = SubResource("AnimationLibrary_kfeix")
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1649865969]
+libraries/ = SubResource("AnimationLibrary_ww270")
+
+[node name="StateMachine" type="Node" parent="." unique_id=927310149]
+script = ExtResource("3_sb71v")
+metadata/_custom_type_script = "uid://tuj5cq6ma4dc"
+
+[node name="Follow" type="Node" parent="StateMachine" unique_id=205893962]
+script = ExtResource("4_kfeix")
+metadata/_custom_type_script = "uid://deks3howwqchj"
+
+[node name="Idle" type="Node" parent="StateMachine" unique_id=1879689139]
+script = ExtResource("5_kfeix")
+metadata/_custom_type_script = "uid://deks3howwqchj"

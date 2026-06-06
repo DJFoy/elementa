@@ -31,7 +31,6 @@ func _on_load_game_pressed() -> void:
 				world_save.get(property_name)
 			)
 	
-	Global_World_State.character = ResourceLoader.load("res://saves/player_data.tres")
 	GameState.target_spawn = "Loaded_Spawn"
 	GameState.target_vec = world_save.last_location
 	world_change_request.emit(world_save.current_scene)

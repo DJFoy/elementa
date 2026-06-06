@@ -61,6 +61,11 @@ func _ready() -> void:
 	pc.actor_id = "Player_Character"
 	add_child(pc)
 	
+	if Global_World_State.significant_events.has("familiar_collected"):
+		var familiar_scene = preload("uid://dobby25cjkmn")
+		var familiar = familiar_scene.instantiate()
+		add_child(familiar)
+	
 	# Place the PC in the target spawn position
 	# Currently set to a global variable
 	if GameState.target_spawn == "Loaded_Spawn":
@@ -232,9 +237,7 @@ func _on_pc_move():
 	update_actor_map(pc)
 
 func lock_doors() -> void:
-	print("Locking doors")
 	for door in locked_doors:
-		print("Going to lock this door: ", door, " in these doors ", locked_doors)
 		door["door"].lock()
 		if door["unlock"].all(func(c): return c.call()):
 			door["door"].unlock()

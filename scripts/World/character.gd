@@ -31,6 +31,7 @@ var current_anim: String
 var current_dir: Vector2
 
 signal emote_finished
+signal character_moving(dir: Vector2)
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -57,21 +58,33 @@ func _ready() -> void:
 func move(dir: Vector2):
 	# Move the character one tile in specified direction,
 	# ensuring it starts and ends within a tile
-	if !move_ray.is_colliding():
+	if move_legal():
 		if !anim.current_animation == current_anim || !anim.is_playing():
 				anim.play(current_anim)
-		# Move the character a tile in the specified direction
-		var tween = create_tween()
-		tween.tween_property(self, "position",
-			position + dir * tile_size, 0.35)
-		# Set moving to true to indicate that the character is moving
-		moving = true
-		# Wait for the movement to be completed
-		tween.finished.connect(_on_tween_finished)
-		await tween.finished
+		resolve_move(dir)
 		_on_move_complete()
 	else:
 		_stop_movement()
+
+func force_move(dir: Vector2) -> void:
+	if !anim.current_animation == current_anim || !anim.is_playing():
+		anim.play(current_anim)
+	resolve_move(dir)
+	_on_move_complete()
+
+func move_legal() -> bool:
+	return !move_ray.is_colliding()
+
+func resolve_move(dir: Vector2) -> void:
+	# Move the character a tile in the specified direction
+	var tween = create_tween()
+	tween.tween_property(self, "position", position + dir * tile_size, 0.35)
+	# Set moving to true to indicate that the character is moving
+	moving = true
+	character_moving.emit(dir)
+	# Wait for the movement to be completed
+	tween.finished.connect(_on_tween_finished)
+	await tween.finished
 
 func position_snap():
 	if position != position.snappedf(tile_size/2.0):
