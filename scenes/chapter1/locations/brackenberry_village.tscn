@@ -208,3 +208,12 @@ position = Vector2(248, -8)
 [node name="Butler" type="Marker2D" parent="NPCs" unique_id=1689059501]
 y_sort_enabled = true
 position = Vector2(184, 200)
+
+[node name="FrostlingStarter" type="Marker2D" parent="NPCs" unique_id=482936598]
+position = Vector2(-152, 312)
+
+[node name="GrisningStarter" type="Marker2D" parent="NPCs" unique_id=631209006]
+position = Vector2(-136, 296)
+
+[node name="TsarinStarter" type="Marker2D" parent="NPCs" unique_id=1745496492]
+position = Vector2(-184, 280)

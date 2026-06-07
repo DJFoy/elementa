@@ -97,7 +97,6 @@ line_text_label = NodePath("PresenterControl/TextBox")
 presenter_control = NodePath("PresenterControl")
 dialogue_control = NodePath("../..")
 use_typewriter = null
-typewriter_speed = null
 
 [node name="PresenterControl" type="Control" parent="CanvasLayer/LinePresenter" unique_id=1379901545]
 anchors_preset = 0

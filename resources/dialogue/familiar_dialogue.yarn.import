@@ -1,0 +1,14 @@
+[remap]
+
+importer="yarnscript"
+type="Resource"
+uid="uid://d3e0q5340ovod"
+path="res://.godot/imported/familiar_dialogue.yarn-744e3aee5e9e6ca7fa043dde794fa67e.tres"
+
+[deps]
+
+source_file="res://resources/dialogue/familiar_dialogue.yarn"
+dest_files=["res://.godot/imported/familiar_dialogue.yarn-744e3aee5e9e6ca7fa043dde794fa67e.tres"]
+
+[params]
+

@@ -4,6 +4,9 @@ extends Location
 @onready var bbv_2: Marker2D = $NPCs/BBV2
 @onready var bbv_3: Marker2D = $NPCs/BBV3
 @onready var butler: Marker2D = $NPCs/Butler
+@onready var frostling_starter: Marker2D = $NPCs/FrostlingStarter
+@onready var grisning_starter: Marker2D = $NPCs/GrisningStarter
+@onready var tsarin_starter: Marker2D = $NPCs/TsarinStarter
 
 @onready var npc_house_1: ExitArea = $Exits/NPCHouse1
 @onready var npc_house_3: ExitArea = $Exits/NPCHouse3
@@ -45,6 +48,30 @@ func _setup_location() -> void:
 			"spawn_conds": [
 				func(): return !Global_World_State.cutscenes.has("chapter1_prof_olivia_intro")
 					]
+		},
+		{
+			"npc_id": "Frostling",
+			"npc_location": frostling_starter.global_position,
+			"default_direction": Vector2.DOWN,
+			"spawn_conds": [
+				func(): return !Global_World_State.familiar_chosen == "Frostling"
+			]
+		},
+		{
+			"npc_id": "Grisnir",
+			"npc_location": grisning_starter.global_position,
+			"default_direction": Vector2.DOWN,
+			"spawn_conds": [
+				func(): return !Global_World_State.familiar_chosen == "Grisning"
+			]
+		},
+		{
+			"npc_id": "Tsarin",
+			"npc_location": tsarin_starter.global_position,
+			"default_direction": Vector2.DOWN,
+			"spawn_conds": [
+				func(): return !Global_World_State.familiar_chosen == "Tsarin"
+			]
 		}
 	]
 	
