@@ -24,6 +24,7 @@ tags:
 <<declare $colour = "">>
 <<declare $descriptor = "">>
 <<declare $cheer = 0>>
+<<declare $chosen_familiar= "">>
 Narrator: Your dreams are fading fast. 
 Narrator: This could be your only chance to escape the mundane future ahead of you. You steady the quill in your hand and complete the scholarship application.
 Narrator: You sign your application and send it with the last post. Time comes and goes. 
@@ -788,4 +789,33 @@ Prof Olivia: What can I do for you?
                 -> Player: Not really. I'm content as I am.
                     Professor Oliva: An interesting perspective. 
                     Prof Olivia: If you change your mind, bring me another relic and we can take it from there.
+===
+
+
+title: chapter1_choose_famliar_frostling
+tags:
+---
+Narrator: Do you choose this familiar?
+    -> Yes 
+        <<update_gamestate "familiar_chosen" "frostling">>
+        <<update_gamestate "significant_events" "test">>
+    -> No
+===
+
+title: chapter1_choose_famliar_grisnir
+tags:
+---
+Narrator: Do you choose this familiar?
+    -> Yes 
+        <<update_gamestate "familiar_chosen" "grisnir">>
+    -> No
+===
+
+title: chapter1_choose_famliar_tsarin
+tags:
+---
+Narrator: Do you choose this familiar?
+    -> Yes 
+        <<update_gamestate "familiar_chosen" "tsarin">>
+    -> No
 ===

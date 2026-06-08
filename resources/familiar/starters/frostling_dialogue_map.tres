@@ -3,6 +3,11 @@
 [ext_resource type="Script" uid="uid://cobol6g2sil3f" path="res://resources/dialogue/dialogue_rule.gd" id="1_ig0jf"]
 [ext_resource type="Script" uid="uid://byuajnnxgbg30" path="res://resources/dialogue/dialogue_map.gd" id="2_ujcui"]
 
+[sub_resource type="Resource" id="Resource_ig0jf"]
+script = ExtResource("1_ig0jf")
+dialogue_id = "chapter1_choose_famliar_frostling"
+metadata/_custom_type_script = "uid://cobol6g2sil3f"
+
 [sub_resource type="Resource" id="Resource_dd88a"]
 script = ExtResource("1_ig0jf")
 dialogue_id = "familiar_frostling_1"
@@ -22,5 +27,5 @@ metadata/_custom_type_script = "uid://cobol6g2sil3f"
 
 [resource]
 script = ExtResource("2_ujcui")
-rules = Array[ExtResource("1_ig0jf")]([SubResource("Resource_dd88a"), SubResource("Resource_s2dn6"), SubResource("Resource_5ml7g")])
+rules = Array[ExtResource("1_ig0jf")]([SubResource("Resource_ig0jf"), SubResource("Resource_dd88a"), SubResource("Resource_s2dn6"), SubResource("Resource_5ml7g")])
 metadata/_custom_type_script = "uid://byuajnnxgbg30"
