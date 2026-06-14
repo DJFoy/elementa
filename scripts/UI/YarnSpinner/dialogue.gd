@@ -27,10 +27,7 @@ func _sync_game_and_yarn() -> void:
 	vars.SetValue("$playerName", Global_World_State.character.name)
 	vars.SetValue("$hatedFood", Global_World_State.character.dislikes)
 	vars.SetValue("$lovedFood", Global_World_State.character.likes)
-
-func _sync_yarn_and_game() -> void:
-	var vars = dialogue_runner.variableStorage
-	Global_World_State.familiar = vars.GetVariantValue("$chosen_familiar")
+	vars.SetValue("$dialogueTarget", GameState.dialogue_target)
 
 func _yarnspinner_update_gamestate(key, value) -> void:
 	for prop in Global_World_State.get_property_list():

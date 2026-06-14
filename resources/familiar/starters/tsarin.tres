@@ -5,6 +5,23 @@
 [ext_resource type="Script" uid="uid://byuajnnxgbg30" path="res://resources/dialogue/dialogue_map.gd" id="2_y4bjm"]
 [ext_resource type="Texture2D" uid="uid://biu4nn3sjasum" path="res://resources/character_sprite_tilesets/familiar_sprites/tsarin_sprite.tres" id="3_0ranl"]
 
+[sub_resource type="Resource" id="Resource_hskud"]
+script = ExtResource("1_hskud")
+dialogue_id = "chapter1_choose_famliar"
+one_time_dialogue = Array[String](["chapter1_profOliviaHelpResearch"])
+significant_events = Array[String](["familiar_chosen"])
+metadata/_custom_type_script = "uid://cobol6g2sil3f"
+
+[sub_resource type="Resource" id="Resource_y4bjm"]
+script = ExtResource("1_hskud")
+dialogue_id = "chapter1_choose_different_familiar"
+one_time_dialogue = Array[String](["chapter1_profOliviaHelpResearch"])
+check_criteria = Array[Dictionary]([{
+"check": "Tsarin",
+"key": "familiar_chosen"
+}])
+metadata/_custom_type_script = "uid://cobol6g2sil3f"
+
 [sub_resource type="Resource" id="Resource_d0jv4"]
 script = ExtResource("1_hskud")
 dialogue_id = "familiar_tsarin_1"
@@ -24,7 +41,7 @@ metadata/_custom_type_script = "uid://cobol6g2sil3f"
 
 [sub_resource type="Resource" id="Resource_aj71g"]
 script = ExtResource("2_y4bjm")
-rules = Array[ExtResource("1_hskud")]([SubResource("Resource_d0jv4"), SubResource("Resource_c6j8p"), SubResource("Resource_igbim")])
+rules = Array[ExtResource("1_hskud")]([SubResource("Resource_hskud"), SubResource("Resource_y4bjm"), SubResource("Resource_d0jv4"), SubResource("Resource_c6j8p"), SubResource("Resource_igbim")])
 metadata/_custom_type_script = "uid://byuajnnxgbg30"
 
 [resource]

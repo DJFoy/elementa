@@ -5,7 +5,19 @@
 
 [sub_resource type="Resource" id="Resource_ig0jf"]
 script = ExtResource("1_ig0jf")
-dialogue_id = "chapter1_choose_famliar_frostling"
+dialogue_id = "chapter1_choose_famliar"
+one_time_dialogue = Array[String](["chapter1_profOliviaHelpResearch"])
+significant_events = Array[String](["familiar_chosen"])
+metadata/_custom_type_script = "uid://cobol6g2sil3f"
+
+[sub_resource type="Resource" id="Resource_ujcui"]
+script = ExtResource("1_ig0jf")
+dialogue_id = "chapter1_choose_different_familiar"
+one_time_dialogue = Array[String](["chapter1_profOliviaHelpResearch"])
+check_criteria = Array[Dictionary]([{
+"check": "Frostling",
+"key": "familiar_chosen"
+}])
 metadata/_custom_type_script = "uid://cobol6g2sil3f"
 
 [sub_resource type="Resource" id="Resource_dd88a"]
@@ -27,5 +39,5 @@ metadata/_custom_type_script = "uid://cobol6g2sil3f"
 
 [resource]
 script = ExtResource("2_ujcui")
-rules = Array[ExtResource("1_ig0jf")]([SubResource("Resource_ig0jf"), SubResource("Resource_dd88a"), SubResource("Resource_s2dn6"), SubResource("Resource_5ml7g")])
+rules = Array[ExtResource("1_ig0jf")]([SubResource("Resource_ig0jf"), SubResource("Resource_ujcui"), SubResource("Resource_dd88a"), SubResource("Resource_s2dn6"), SubResource("Resource_5ml7g")])
 metadata/_custom_type_script = "uid://byuajnnxgbg30"

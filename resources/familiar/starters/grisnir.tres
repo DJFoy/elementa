@@ -5,6 +5,23 @@
 [ext_resource type="Script" uid="uid://byuajnnxgbg30" path="res://resources/dialogue/dialogue_map.gd" id="2_re4f4"]
 [ext_resource type="Texture2D" uid="uid://bcm1ncrpku5bo" path="res://resources/character_sprite_tilesets/familiar_sprites/grisnir_sprite.tres" id="3_tfil8"]
 
+[sub_resource type="Resource" id="Resource_lxppu"]
+script = ExtResource("1_lxppu")
+dialogue_id = "chapter1_choose_famliar"
+one_time_dialogue = Array[String](["chapter1_profOliviaHelpResearch"])
+significant_events = Array[String](["familiar_chosen"])
+metadata/_custom_type_script = "uid://cobol6g2sil3f"
+
+[sub_resource type="Resource" id="Resource_re4f4"]
+script = ExtResource("1_lxppu")
+dialogue_id = "chapter1_choose_different_familiar"
+one_time_dialogue = Array[String](["chapter1_profOliviaHelpResearch"])
+check_criteria = Array[Dictionary]([{
+"check": "Grisnir",
+"key": "familiar_chosen"
+}])
+metadata/_custom_type_script = "uid://cobol6g2sil3f"
+
 [sub_resource type="Resource" id="Resource_mduhb"]
 script = ExtResource("1_lxppu")
 dialogue_id = "familiar_grisnir_1"
@@ -24,7 +41,7 @@ metadata/_custom_type_script = "uid://cobol6g2sil3f"
 
 [sub_resource type="Resource" id="Resource_24vsj"]
 script = ExtResource("2_re4f4")
-rules = Array[ExtResource("1_lxppu")]([SubResource("Resource_mduhb"), SubResource("Resource_u81qw"), SubResource("Resource_trwd4")])
+rules = Array[ExtResource("1_lxppu")]([SubResource("Resource_lxppu"), SubResource("Resource_re4f4"), SubResource("Resource_mduhb"), SubResource("Resource_u81qw"), SubResource("Resource_trwd4")])
 metadata/_custom_type_script = "uid://byuajnnxgbg30"
 
 [resource]

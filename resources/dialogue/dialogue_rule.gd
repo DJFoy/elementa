@@ -6,6 +6,7 @@ class_name DialogueRule
 @export var one_time_dialogue: Array[String] = []
 @export var items_collected: Array[String] = []
 @export var significant_events: Array[String] = []
+@export var check_criteria: Array[Dictionary] = []
 @export var random_chance: float
 
 func condition_met() -> bool:
@@ -33,6 +34,18 @@ func condition_met() -> bool:
 	for event in significant_events:
 		if Global_World_State.significant_events.has(event):
 			return false
+	
+	for criteria in check_criteria:
+		# This checks whether a particular value in the Global state is equal to a condition, and will not play dialogue if true
+		# This is different to significant_events that checks if a specific event has occured in a list
+		var key = criteria["key"]
+		var check = criteria["check"]
+		
+		for prop in Global_World_State.get_property_list():
+			if prop.name == key:
+				if Global_World_State.get(key) == check:
+					# If the property exists, and the value matches the check, do not run dialogue
+					return false
 	
 	if random_chance > randf():
 		return false

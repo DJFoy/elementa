@@ -4,6 +4,7 @@ tags:
 <<declare $playerName = "Player">>
 <<declare $hatedFood = "Apple">>
 <<declare $lovedFood = "Pie">>
+<<declare $dialogueTarget = "Test">>
 <<declare $familiar = "Familiar">>
 <<declare $chapter_1_prof_olivia_ask_repeat = 0>>
 <<declare $George_Activated = 0>>
@@ -106,10 +107,25 @@ tags:
 position: 73,-318
 ---
 Prof Olivia: Until now, the twins were the only ones under my sponsorship. They collected their Familiars last night. 
-Prof Olivia: Unfortunately, the best I can offer you is from a breeder surplus this season. I took them in the hope of finding them a good home. <<once>>
-    -> Player: What would have happened to them otherwise?<<once>>
+Prof Olivia: Unfortunately, the best I can offer you is from a breeder surplus this season. I took them in the hope of finding them a good home.
+    -> Player: What would have happened to them otherwise?
         Prof Olivia: They would have been dumped in the Wilds. But they're already teeming with dangerous Familiars left to turn feral. It just makes the problem worse.
-        <<jump chapter1_profOliviaRelOpt1>>
+        <<jump chapter1_profOliviaRelOpt2>>
+    -> Player: I don't want some noble's leftovers!
+        Prof Olivia: Well, this is your only option. You're lucky to even get a choice at such short notice.  
+    -> Player: I don't care where they've come from. 
+        Prof Olivia: Ha! That's the spirit! #cutehappy
+    -> Player: I guess they'll have to do.
+        Prof Olivia: Indeed.
+Prof Olivia: The Familiars are in the garden outside. You can get there through that door to the right of the bookshelves. Pick whichever one you want. I'll just be working in my study over there.
+Prof Olivia: Oh! Before I forget, here's your Adventurer Handbook. It has several chapters on things like your inventory, the different Familiars you've seen and the spells you've mastered through your Familiar. 
+Prof Olivia: Make sure to take a good look. 
+Prof Olivia: It will be indispensable during your journey. #wink
+===
+
+title:chapter1_profOliviaRelOpt2
+tags:
+---
     -> Player: I don't want some noble's leftovers!
         Prof Olivia: Well, this is your only option. You're lucky to even get a choice at such short notice.  
     -> Player: I don't care where they've come from. 
@@ -166,6 +182,7 @@ Prof Olivia: Are you sure this is the one you want?
     -> Player: Yes
         Prof Olivia: Excellent! #happy 
         <<jump chapter1_profOliviaConfirmChoice>>
+        <<update_gamestate "significant_events" "familiar_confirmed">>
     -> Player: I'm not sure...
         Prof Olivia: You can swap them out in the garden. Take your time. This is important.
 ===
@@ -798,24 +815,26 @@ tags:
 Narrator: Do you choose this familiar?
     -> Yes 
         <<update_gamestate "familiar_chosen" "frostling">>
-        <<update_gamestate "significant_events" "test">>
+        <<update_gamestate "significant_events" "familiar_chosen">>
     -> No
 ===
 
-title: chapter1_choose_famliar_grisnir
+title: chapter1_choose_famliar
 tags:
 ---
-Narrator: Do you choose this familiar?
+Narrator: Do you choose {$dialogueTarget} as your familiar?
     -> Yes 
-        <<update_gamestate "familiar_chosen" "grisnir">>
+        <<update_gamestate "familiar_chosen" {$dialogueTarget}>>
+        <<update_gamestate "significant_events" "familiar_chosen">>
     -> No
 ===
 
-title: chapter1_choose_famliar_tsarin
+title: chapter1_choose_different_familiar
 tags:
 ---
-Narrator: Do you choose this familiar?
-    -> Yes 
-        <<update_gamestate "familiar_chosen" "tsarin">>
+Player: The others look kind of sad now. I almost feel bad for not choosing them.
+Player: Do I want to pick {$dialogueTarget} instead?
+    -> Yes
+        <<update_gamestate "familiar_chosen" {$dialogueTarget}>>
     -> No
 ===

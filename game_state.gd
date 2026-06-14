@@ -18,6 +18,9 @@ var target_vec: Vector2
 # Store the direction the PC is facing between scenes
 var pc_dir: Vector2
 
+# Store the current dialogue target
+var dialogue_target: String
+
 # Check whether a scene transition is occuring to prevent character input
 var scene_transitioning:= false
 
