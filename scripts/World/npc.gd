@@ -60,3 +60,14 @@ func follow() -> void:
 
 func idle() -> void:
 	idle_request.emit()
+
+func _continuous_movement():
+	if GameState.is_locked():
+		_stop_movement()
+		return
+	if target.move_ray.is_colliding():
+		_stop_movement()
+		return
+	if current_dir != wants_to_move_dir:
+		direction_change(wants_to_move_dir)
+	force_move(wants_to_move_dir)
