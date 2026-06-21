@@ -1,8 +1,8 @@
 [gd_resource type="Resource" script_class="NPC_Resource" format=3 uid="uid://dx2rd4pit7gtj"]
 
 [ext_resource type="Script" uid="uid://c8dfh7hkdo33y" path="res://resources/npcs/npc_resource.gd" id="1_57at3"]
-[ext_resource type="Script" uid="uid://cobol6g2sil3f" path="res://resources/dialogue/dialogue_rule.gd" id="1_lxppu"]
-[ext_resource type="Script" uid="uid://byuajnnxgbg30" path="res://resources/dialogue/dialogue_map.gd" id="2_re4f4"]
+[ext_resource type="Script" uid="uid://cobol6g2sil3f" path="res://scripts/UI/dialogue_rule.gd" id="1_lxppu"]
+[ext_resource type="Script" uid="uid://byuajnnxgbg30" path="res://scripts/UI/dialogue_map.gd" id="2_re4f4"]
 [ext_resource type="Texture2D" uid="uid://bcm1ncrpku5bo" path="res://resources/character_sprite_tilesets/familiar_sprites/grisnir_sprite.tres" id="3_tfil8"]
 
 [sub_resource type="Resource" id="Resource_lxppu"]
@@ -49,4 +49,5 @@ script = ExtResource("1_57at3")
 npc_name = "Grisnir"
 npc_sprite = ExtResource("3_tfil8")
 dialogue_map = SubResource("Resource_24vsj")
+follow_target = "Player_Character"
 metadata/_custom_type_script = "uid://c8dfh7hkdo33y"

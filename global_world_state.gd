@@ -7,7 +7,11 @@ extends Node
 var character: PlayerCreationData
 var familiar: NPC_Resource
 
-var familiar_chosen: String
+var familiar_chosen: String:
+	set(value):
+		var prev_familiar = familiar_chosen
+		familiar_chosen = value
+		EventBus.familiar_changed.emit(familiar_chosen, prev_familiar)
 
 func get_character_portrait_variant(character_name: String) -> String:
 	# Used by the portrait presenter, needs to access the player character resource for checking skin tone

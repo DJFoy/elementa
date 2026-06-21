@@ -14,7 +14,7 @@ func start_interact_ui(interaction_text):
 
 func npc_start_dialogue_ui(npc: Non_Player_Character):
 	GameState.lock()
-	GameState.dialogue_target = npc.npc_resource.npc_name
+	GameState.dialogue_target = npc
 	var dialogue: Dialogue = dialogue_scene.instantiate()
 	_connect_dialogue_signals(dialogue)
 	add_child(dialogue)
@@ -30,7 +30,7 @@ func _connect_dialogue_signals(root: Node) -> void:
 		root.request_dialogue_end.connect(_on_request_dialogue_end)
 
 func _on_request_dialogue_end() -> void:
-	GameState.dialogue_target = ""
+	GameState.dialogue_target = null
 	for child in get_children():
 		child.queue_free()
 	GameState.unlock()

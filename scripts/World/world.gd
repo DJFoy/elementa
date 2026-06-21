@@ -20,6 +20,7 @@ func _load_world(scene_path):
 	_connect_cutscene_signals(world_scene)
 	
 	if world_scene.has_method("initialise"):
+		await get_tree().process_frame
 		world_scene.initialise()
 		# Set the current scene in Global World State to the intended ScenePath if it's a Location
 		if Global_World_State.current_scene != scene_path:

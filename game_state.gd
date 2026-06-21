@@ -19,7 +19,7 @@ var target_vec: Vector2
 var pc_dir: Vector2
 
 # Store the current dialogue target
-var dialogue_target: String
+var dialogue_target: Character
 
 # Check whether a scene transition is occuring to prevent character input
 var scene_transitioning:= false

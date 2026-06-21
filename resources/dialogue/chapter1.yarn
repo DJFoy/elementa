@@ -808,17 +808,6 @@ Prof Olivia: What can I do for you?
                     Prof Olivia: If you change your mind, bring me another relic and we can take it from there.
 ===
 
-
-title: chapter1_choose_famliar_frostling
-tags:
----
-Narrator: Do you choose this familiar?
-    -> Yes 
-        <<update_gamestate "familiar_chosen" "frostling">>
-        <<update_gamestate "significant_events" "familiar_chosen">>
-    -> No
-===
-
 title: chapter1_choose_famliar
 tags:
 ---

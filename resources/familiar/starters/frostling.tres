@@ -9,4 +9,5 @@ script = ExtResource("1_g8gjv")
 npc_name = "Frostling"
 npc_sprite = ExtResource("1_oy4pq")
 dialogue_map = ExtResource("1_a1scx")
+follow_target = "Player_Character"
 metadata/_custom_type_script = "uid://c8dfh7hkdo33y"

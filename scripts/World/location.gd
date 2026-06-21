@@ -84,6 +84,8 @@ func _ready() -> void:
 	navigation = Navigation.new()
 	navigation.tilemaps = tilemaps
 	navigation.build()
+	
+	EventBus.familiar_changed.connect(_on_familiar_changed)
 
 func initialise() -> void:
 	_setup_location()
@@ -92,6 +94,7 @@ func initialise() -> void:
 	if resolve_cutscenes("on_enter"):
 		await EventBus.cutscene_finished
 	lock_doors()
+	EventBus.register_followers.emit()
 	world_loaded()
 
 func _setup_location() -> void:
@@ -257,3 +260,10 @@ func spawn_npc(npc_id: String, location: Vector2, direction: Vector2) -> void:
 	
 	new_npc.global_position = location
 	new_npc.direction_change(direction)
+
+func _on_familiar_changed(familiar: String, prev_familiar: String):
+	if GameState.dialogue_target.actor_id == familiar:
+		GameState.dialogue_target.follow()
+	if prev_familiar:
+		var prev_actor = ActorManager.get_actor(prev_familiar)
+		prev_actor.idle()

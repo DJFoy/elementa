@@ -26,6 +26,7 @@ GameState="*res://game_state.gd"
 Global_World_State="*uid://btbbx80oxsmq3"
 SceneTransition="*uid://pw0qq2j6aeu4"
 EventBus="*uid://om5lbxqnad3a"
+ActorManager="*uid://2wewih87og6q"
 
 [display]
 

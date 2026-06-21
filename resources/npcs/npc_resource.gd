@@ -20,6 +20,8 @@ class_name NPC_Resource
 @export var npc_portrait: Texture2D
 @export var dialogue_map: DialogueMap
 
+@export var follow_target: String
+
 func get_sprite_texture(pc_body_type: int):
 	return npc_sprite
 

@@ -27,7 +27,7 @@ func _sync_game_and_yarn() -> void:
 	vars.SetValue("$playerName", Global_World_State.character.name)
 	vars.SetValue("$hatedFood", Global_World_State.character.dislikes)
 	vars.SetValue("$lovedFood", Global_World_State.character.likes)
-	vars.SetValue("$dialogueTarget", GameState.dialogue_target)
+	vars.SetValue("$dialogueTarget", GameState.dialogue_target.actor_id)
 
 func _yarnspinner_update_gamestate(key, value) -> void:
 	for prop in Global_World_State.get_property_list():

@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="DialogueMap" format=3 uid="uid://cdkgt5xvnr54n"]
 
-[ext_resource type="Script" uid="uid://cobol6g2sil3f" path="res://resources/dialogue/dialogue_rule.gd" id="1_0dje0"]
-[ext_resource type="Script" uid="uid://byuajnnxgbg30" path="res://resources/dialogue/dialogue_map.gd" id="2_72tey"]
+[ext_resource type="Script" uid="uid://cobol6g2sil3f" path="res://scripts/UI/dialogue_rule.gd" id="1_0dje0"]
+[ext_resource type="Script" uid="uid://byuajnnxgbg30" path="res://scripts/UI/dialogue_map.gd" id="2_72tey"]
 
 [sub_resource type="Resource" id="Resource_0dje0"]
 script = ExtResource("1_0dje0")
