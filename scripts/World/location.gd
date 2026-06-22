@@ -36,6 +36,7 @@ func _ready() -> void:
 	# Identify all the exits in the scene, and connect to the exit request signal
 	for exit in exits:
 		exit.exit_requested.connect(_on_exit_requested)
+		exit.exit_vacated.connect(_on_exit_vacated)
 	
 	# Identify all of the spawns, and add to the spawn dict for the location
 	for spawn in spawn_points:
@@ -61,10 +62,6 @@ func _ready() -> void:
 	pc.actor_id = "Player_Character"
 	add_child(pc)
 	
-	if Global_World_State.significant_events.has("familiar_collected"):
-		var familiar_scene = preload("uid://dobby25cjkmn")
-		var familiar = familiar_scene.instantiate()
-		add_child(familiar)
 	
 	# Place the PC in the target spawn position
 	# Currently set to a global variable
@@ -261,9 +258,21 @@ func spawn_npc(npc_id: String, location: Vector2, direction: Vector2) -> void:
 	new_npc.global_position = location
 	new_npc.direction_change(direction)
 
-func _on_familiar_changed(familiar: String, prev_familiar: String):
-	if GameState.dialogue_target.actor_id == familiar:
-		GameState.dialogue_target.follow()
+func _on_familiar_changed(familiar_id: String, prev_familiar: String):
+	var familiar = ActorManager.get_actor(familiar_id)
+	if GameState.dialogue_target.actor_id == familiar.actor_id:
+		familiar.follow()
+		Global_World_State.familiar = familiar.npc_resource
 	if prev_familiar:
 		var prev_actor = ActorManager.get_actor(prev_familiar)
 		prev_actor.idle()
+
+func _on_exit_vacated(exit: ExitArea) -> void:
+	# okay so this didn't work because not all spawns are in exits... will need a trigger in the location but most of the code is good
+	if Global_World_State.familiar_chosen && !exit.armed:
+		var familiar_scene = preload("uid://dobby25cjkmn")
+		var familiar: Non_Player_Character = familiar_scene.instantiate()
+		familiar.npc_resource = Global_World_State.familiar
+		familiar.follow()
+		add_child(familiar)
+		familiar.global_position = spawns[GameState.target_spawn].get_position()
