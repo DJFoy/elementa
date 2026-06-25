@@ -28,7 +28,7 @@ metadata/_custom_type_script = "uid://cobol6g2sil3f"
 
 [sub_resource type="Resource" id="Resource_s2dn6"]
 script = ExtResource("1_ig0jf")
-dialogue_id = "familiar_frostling_1"
+dialogue_id = "familiar_frostling_2"
 random_chance = 0.3
 metadata/_custom_type_script = "uid://cobol6g2sil3f"
 

@@ -5,5 +5,5 @@ class_name Familiar
 
 @export var target_char: Character
 
-func _ready() -> void:
+func initialise_familiar() -> void:
 	main_sprite.texture = familiar_resource.sprite_sheet

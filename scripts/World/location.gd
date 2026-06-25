@@ -27,6 +27,8 @@ const CH:= preload("res://scripts/Cutscene Manager/cutscene_helpers.gd")
 var navigation: Navigation
 var actors_map = {}
 
+var familiar_spawn: String
+
 func _ready() -> void:
 	var exits := get_tree().get_nodes_in_group("Exits")
 	var spawn_points := get_tree().get_nodes_in_group("Spawns")
@@ -36,7 +38,6 @@ func _ready() -> void:
 	# Identify all the exits in the scene, and connect to the exit request signal
 	for exit in exits:
 		exit.exit_requested.connect(_on_exit_requested)
-		exit.exit_vacated.connect(_on_exit_vacated)
 	
 	# Identify all of the spawns, and add to the spawn dict for the location
 	for spawn in spawn_points:
@@ -70,6 +71,10 @@ func _ready() -> void:
 	else:
 		pc.global_position = spawns[GameState.target_spawn].get_position()
 	
+	# If a familiar has been chosen in the game, where should it spawn (to keep separate from the Global game state)
+	if Global_World_State.familiar_chosen:
+		familiar_spawn = GameState.target_spawn
+	
 	# Clear out the global target spawn to prevent possible teleportation issues
 	GameState.target_spawn = ""
 	GameState.target_vec = Vector2.ZERO
@@ -83,6 +88,7 @@ func _ready() -> void:
 	navigation.build()
 	
 	EventBus.familiar_changed.connect(_on_familiar_changed)
+	GameState.familiar_loaded = false
 
 func initialise() -> void:
 	_setup_location()
@@ -226,7 +232,10 @@ func walk_path(actor: Character, path_array: Array) -> void:
 		actor.direction_change(dir)
 		await actor.move(dir)
 
-func _on_pc_move():	
+func _on_pc_move():
+	if Global_World_State.familiar_chosen && !GameState.familiar_loaded:
+		await pc.move_tween.finished
+		spawn_familiar()
 	if pc.move_ray.is_colliding():
 		if pc.move_ray.get_collider().is_in_group("Exits"):
 			var exit: ExitArea = pc.move_ray.get_collider()
@@ -266,13 +275,14 @@ func _on_familiar_changed(familiar_id: String, prev_familiar: String):
 	if prev_familiar:
 		var prev_actor = ActorManager.get_actor(prev_familiar)
 		prev_actor.idle()
+	GameState.familiar_loaded = true
 
-func _on_exit_vacated(exit: ExitArea) -> void:
-	# okay so this didn't work because not all spawns are in exits... will need a trigger in the location but most of the code is good
-	if Global_World_State.familiar_chosen && !exit.armed:
-		var familiar_scene = preload("uid://dobby25cjkmn")
-		var familiar: Non_Player_Character = familiar_scene.instantiate()
-		familiar.npc_resource = Global_World_State.familiar
-		familiar.follow()
-		add_child(familiar)
-		familiar.global_position = spawns[GameState.target_spawn].get_position()
+func spawn_familiar() -> void:
+	GameState.familiar_loaded = true
+	var familiar_scene = preload("uid://c3ps2dhlyigr4")
+	var familiar: Non_Player_Character = familiar_scene.instantiate()
+	familiar.npc_resource = Global_World_State.familiar
+	familiar._initialise_following()
+	add_child(familiar)
+	familiar.follow()
+	familiar.global_position = spawns[familiar_spawn].get_position()
