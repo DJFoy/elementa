@@ -62,7 +62,7 @@ func _setup_location() -> void:
 			"npc_location": grisning_starter.global_position,
 			"default_direction": Vector2.DOWN,
 			"spawn_conds": [
-				func(): return !Global_World_State.familiar_chosen == "Grisning"
+				func(): return !Global_World_State.familiar_chosen == "Grisnir"
 			]
 		},
 		{

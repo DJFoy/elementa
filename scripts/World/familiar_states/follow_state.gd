@@ -3,7 +3,7 @@ extends State
 func Enter() -> void:
 	owner.target.character_moving.connect(_on_target_moving)
 	owner.idle_request.connect(_on_stop_following)
-	owner.collision_layer = 0
+	owner.collision_layer = 0b10
 
 func Exit() -> void:
 	owner.target.character_moving.disconnect(_on_target_moving)
