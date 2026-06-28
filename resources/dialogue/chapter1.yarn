@@ -181,8 +181,8 @@ position: 326,-319
 Prof Olivia: Are you sure this is the one you want?
     -> Player: Yes
         Prof Olivia: Excellent! #happy 
-        <<jump chapter1_profOliviaConfirmChoice>>
         <<update_gamestate "significant_events" "familiar_confirmed">>
+        <<jump chapter1_profOliviaConfirmChoice>>
     -> Player: I'm not sure...
         Prof Olivia: You can swap them out in the garden. Take your time. This is important.
 ===

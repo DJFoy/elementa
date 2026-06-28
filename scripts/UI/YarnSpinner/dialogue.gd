@@ -21,6 +21,7 @@ func _unhandled_input(event: InputEvent) -> void:
 
 func _on_dialogue_complete() -> void:
 	emit_signal("request_dialogue_end")
+	EventBus.dialogue_finished.emit()
 
 func _sync_game_and_yarn() -> void:
 	var vars = dialogue_runner.variableStorage

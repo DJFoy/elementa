@@ -10,6 +10,8 @@ signal register_followers()
 
 signal cutscene_finished
 
+signal dialogue_finished
+
 # Request to open a window in a cutscene
 signal open_window
 

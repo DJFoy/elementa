@@ -18,11 +18,11 @@ func _setup_location() -> void:
 		},
 		{
 			"door": front_door_left,
-			"unlock": [func(): return Global_World_State.one_time_dialogues.has("chapter1_profOliviaHelpResearch")]
+			"unlock": [func(): return Global_World_State.significant_events.has("familiar_confirmed")]
 		},
 		{
 			"door": front_door_right,
-			"unlock": [func(): return Global_World_State.one_time_dialogues.has("chapter1_profOliviaHelpResearch")]
+			"unlock": [func(): return Global_World_State.significant_events.has("familiar_confirmed")]
 		}
 	]
 	

@@ -19,7 +19,7 @@ metadata/_custom_type_script = "uid://cobol6g2sil3f"
 [sub_resource type="Resource" id="Resource_ro2ea"]
 script = ExtResource("1_wakoq")
 dialogue_id = "chapter1_profOliviaChooseFam"
-significant_events = Array[String](["familiar_collected"])
+significant_events = Array[String](["familiar_confirmed"])
 metadata/_custom_type_script = "uid://cobol6g2sil3f"
 
 [sub_resource type="Resource" id="Resource_oyaty"]

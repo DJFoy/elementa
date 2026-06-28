@@ -34,6 +34,7 @@ func _ready() -> void:
 	var spawn_points := get_tree().get_nodes_in_group("Spawns")
 	
 	EventBus.cutscene_finished.connect(_on_cutscene_finished)
+	EventBus.dialogue_finished.connect(_on_dialogue_finished)
 	
 	# Identify all the exits in the scene, and connect to the exit request signal
 	for exit in exits:
@@ -164,7 +165,9 @@ func _on_cutscene_finished(cutscene_id: String):
 		SceneTransition.play_trans(SceneTransition.FADE_IN)
 	Global_World_State.cutscenes.append(cutscene_id)
 	lock_doors()
-	
+
+func _on_dialogue_finished():
+	lock_doors()
 
 func world_loaded() -> void:
 	if SceneTransition.color_rect.color.a > 0:
