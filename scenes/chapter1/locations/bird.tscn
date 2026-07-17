@@ -97,7 +97,7 @@ animations = [{
 }]
 
 [node name="Bird" type="Node2D" unique_id=346248391]
-z_index = -1
+z_index = -2
 script = ExtResource("1_pdd8p")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="." unique_id=1206164134]
