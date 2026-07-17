@@ -12,11 +12,14 @@ func _on_save_pressed() -> void:
 func save_game() -> void:
 	var world_save := WorldStateSave.load()
 	world_save.character = Global_World_State.character
+	world_save.familiar = Global_World_State.familiar
+	world_save.familiar_chosen = Global_World_State.familiar_chosen
 	
 	world_save.chapter = Global_World_State.chapter
 	world_save.cutscenes = Global_World_State.cutscenes
 	world_save.items_collected = Global_World_State.items_collected
 	world_save.one_time_dialogues = Global_World_State.one_time_dialogues
+	world_save.significant_events = Global_World_State.significant_events
 	
 	world_save.current_scene = Global_World_State.current_scene
 	world_save.last_location = Global_World_State.last_location

@@ -1,6 +1,8 @@
 extends Resource
 class_name NPC_Resource
 
+@export var chosen_familiar: bool
+
 @export var npc_name: String
 @export var npc_sprite: Texture2D
 @export var accessory: Texture2D

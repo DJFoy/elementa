@@ -27,6 +27,7 @@ var chapter:= "Chapter1"
 # Store the current location scene and coordinates that the character is in (for loading purposes)
 var current_scene: String
 var last_location: Vector2
+var fam_last_location: Vector2
 
 # Store all one time dialogues that have been completed
 var one_time_dialogues:= []

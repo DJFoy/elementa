@@ -64,17 +64,20 @@ func _ready() -> void:
 	pc.actor_id = "Player_Character"
 	add_child(pc)
 	
+	# If a familiar has been chosen in the game, where should it spawn (to keep separate from the Global game state)
+	if Global_World_State.familiar:
+		familiar_spawn = GameState.target_spawn
 	
 	# Place the PC in the target spawn position
 	# Currently set to a global variable
 	if GameState.target_spawn == "Loaded_Spawn":
 		pc.global_position = GameState.target_vec
+		if Global_World_State.familiar:
+			spawn_familiar()
 	else:
 		pc.global_position = spawns[GameState.target_spawn].get_position()
 	
-	# If a familiar has been chosen in the game, where should it spawn (to keep separate from the Global game state)
-	if Global_World_State.familiar_chosen:
-		familiar_spawn = GameState.target_spawn
+
 	
 	# Clear out the global target spawn to prevent possible teleportation issues
 	GameState.target_spawn = ""
@@ -227,16 +230,22 @@ func establish_path(actor: Character, start_position: Vector2, destination: Vect
 
 func walk_path(actor: Character, path_array: Array) -> void:
 	var dir: Vector2
+	print(path_array.size()-1)
 	for step in path_array.size()-1:
+		print(step)
 		if path_array.size() == 0:
 			continue
 		
 		dir = path_array[step].direction_to(path_array[step+1])
 		actor.direction_change(dir)
+		print("Moving in direction: %s" % dir)
 		await actor.move(dir)
+		print("Finished that movement")
 
 func _on_pc_move():
-	if Global_World_State.familiar_chosen && !GameState.familiar_loaded:
+	var familiar_loaded_check:= false
+	if Global_World_State.familiar && !GameState.familiar_loaded:
+		familiar_loaded_check = true
 		await pc.move_tween.finished
 		spawn_familiar()
 	if pc.move_ray.is_colliding():
@@ -247,6 +256,12 @@ func _on_pc_move():
 				interaction_request.emit(exit.lock_message)
 	
 	update_actor_map(pc)
+	if GameState.familiar_loaded:
+		var familiar = ActorManager.get_actor("Chosen_Familiar")
+		if !familiar_loaded_check:
+			await familiar.movement_finished
+		update_actor_map(familiar)
+		Global_World_State.fam_last_location = familiar.global_position
 
 func lock_doors() -> void:
 	for door in locked_doors:
@@ -271,13 +286,21 @@ func spawn_npc(npc_id: String, location: Vector2, direction: Vector2) -> void:
 	new_npc.direction_change(direction)
 
 func _on_familiar_changed(familiar_id: String, prev_familiar: String):
+	if prev_familiar:
+		var prev_actor: Character = ActorManager.get_actor("Chosen_Familiar")
+		ActorManager.clear_actor("Chosen_Familiar")
+		prev_actor.actor_id = prev_actor.npc_resource.npc_name
+		ActorManager.register_actor(prev_actor.actor_id, prev_actor)
+		prev_actor.npc_resource.chosen_familiar = false
+		prev_actor.idle()
 	var familiar = ActorManager.get_actor(familiar_id)
+	familiar.npc_resource.chosen_familiar = true
 	if GameState.dialogue_target.actor_id == familiar.actor_id:
+		ActorManager.clear_actor(familiar.actor_id)
+		familiar.actor_id = "Chosen_Familiar"
+		ActorManager.register_actor("Chosen_Familiar", familiar)
 		familiar.follow()
 		Global_World_State.familiar = familiar.npc_resource
-	if prev_familiar:
-		var prev_actor = ActorManager.get_actor(prev_familiar)
-		prev_actor.idle()
 	GameState.familiar_loaded = true
 
 func spawn_familiar() -> void:
@@ -288,4 +311,14 @@ func spawn_familiar() -> void:
 	familiar._initialise_following()
 	add_child(familiar)
 	familiar.follow()
-	familiar.global_position = spawns[familiar_spawn].get_position()
+	if familiar_spawn == "Loaded_Spawn":
+		if GameState.familiar_vec == Vector2.ZERO:
+			ActorManager.clear_actor(familiar.actor_id)
+			familiar.queue_free()
+			GameState.familiar_loaded = false
+			printerr("Could not load familiar, coordinates invalid")
+			return
+		familiar.global_position = GameState.familiar_vec
+		GameState.familiar_vec = Vector2.ZERO
+	else:
+		familiar.global_position = spawns[familiar_spawn].get_position()

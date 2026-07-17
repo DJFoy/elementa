@@ -58,25 +58,25 @@ grow_vertical = 2
 [node name="NPCPortrait" type="TextureRect" parent="CanvasLayer/PortraitPresenter/PresenterControl" unique_id=2004763049]
 layout_mode = 0
 offset_left = 42.0
-offset_top = 29.0
+offset_top = 5.0
 offset_right = 202.0
-offset_bottom = 189.0
+offset_bottom = 165.0
 metadata/_edit_use_anchors_ = true
 
 [node name="Emotion" type="TextureRect" parent="CanvasLayer/PortraitPresenter/PresenterControl" unique_id=604917224]
 layout_mode = 0
 offset_left = 42.0
-offset_top = 29.0
+offset_top = 5.0
 offset_right = 202.0
-offset_bottom = 189.0
+offset_bottom = 165.0
 metadata/_edit_use_anchors_ = true
 
 [node name="Emote" type="TextureRect" parent="CanvasLayer/PortraitPresenter/PresenterControl" unique_id=1982251344]
 layout_mode = 0
 offset_left = 42.0
-offset_top = 29.0
+offset_top = 5.0
 offset_right = 202.0
-offset_bottom = 189.0
+offset_bottom = 165.0
 metadata/_edit_use_anchors_ = true
 
 [node name="DialogueBox" type="TextureRect" parent="CanvasLayer" unique_id=107509792]
@@ -144,8 +144,6 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -3.0
-offset_bottom = -3.0
 grow_horizontal = 2
 grow_vertical = 2
 

@@ -26,7 +26,10 @@ signal follow_request
 signal idle_request
 
 func _ready() -> void:
-	actor_id = npc_resource.npc_name
+	if npc_resource.chosen_familiar:
+		actor_id = "Chosen_Familiar"
+	else:
+		actor_id = npc_resource.npc_name
 	super()
 	add_to_group("Dialogue")
 	main_sprite.texture = npc_resource.get_sprite_texture(player_data.skin_colour)

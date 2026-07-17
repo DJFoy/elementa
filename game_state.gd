@@ -15,7 +15,7 @@ var prev_scene: String
 var target_spawn: String
 var target_vec: Vector2
 
-var familiar_target_spawn: String
+var familiar_vec: Vector2
 
 # Store the direction the PC is facing between scenes
 var pc_dir: Vector2

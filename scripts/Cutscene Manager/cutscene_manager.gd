@@ -16,4 +16,5 @@ func play_cutscene(sequence: Array, cutscene_id: String) -> void:
 
 func _run_sequence(sequence: Array, cutscene_id: String):
 	for step in sequence:
+		print("Running step %s" % step)
 		await step.run(self)

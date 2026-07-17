@@ -32,7 +32,6 @@ func _run_line_internal(localized_line: YarnSpinner.LocalizedLine) -> void:
 func resolve_variant(character_name: String) -> String:
 	return Global_World_State.get_character_portrait_variant(character_name)
 
-
 func resolve_expression(localized_line: YarnSpinner.LocalizedLine) -> String:
 	for tag in localized_line.metadata:
 		match tag:

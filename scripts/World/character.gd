@@ -34,6 +34,7 @@ var move_tween: Tween
 
 signal emote_finished
 signal character_moving()
+signal movement_finished
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -63,7 +64,7 @@ func move(dir: Vector2):
 	if move_legal():
 		if !anim.current_animation == current_anim || !anim.is_playing():
 				anim.play(current_anim)
-		resolve_move(dir)
+		await resolve_move(dir)
 		_on_move_complete()
 	else:
 		_stop_movement()
@@ -119,6 +120,7 @@ func _stop_movement():
 	moving = false
 	wants_to_move = false
 	anim.stop()
+	movement_finished.emit()
 
 func _continuous_movement():
 	pass
