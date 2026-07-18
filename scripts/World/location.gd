@@ -293,8 +293,11 @@ func _on_familiar_changed(familiar_id: String, prev_familiar: String):
 		ActorManager.register_actor(prev_actor.actor_id, prev_actor)
 		prev_actor.npc_resource.chosen_familiar = false
 		prev_actor.idle()
+		
 	var familiar = ActorManager.get_actor(familiar_id)
+	
 	familiar.npc_resource.chosen_familiar = true
+	
 	if GameState.dialogue_target.actor_id == familiar.actor_id:
 		ActorManager.clear_actor(familiar.actor_id)
 		familiar.actor_id = "Chosen_Familiar"

@@ -20,3 +20,4 @@ static func load(slot: String = "") -> WorldStateSave:
 
 @export var current_scene: String
 @export var last_location: Vector2
+@export var fam_last_location: Vector2

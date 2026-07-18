@@ -33,6 +33,11 @@ func _on_load_game_pressed() -> void:
 	
 	GameState.target_spawn = "Loaded_Spawn"
 	GameState.target_vec = world_save.last_location
+	GameState.familiar_vec = world_save.fam_last_location
+	
+	if Global_World_State.familiar:
+		Global_World_State.familiar.chosen_familiar = true
+	
 	world_change_request.emit(world_save.current_scene)
 
 

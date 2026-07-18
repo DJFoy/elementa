@@ -23,6 +23,7 @@ func save_game() -> void:
 	
 	world_save.current_scene = Global_World_State.current_scene
 	world_save.last_location = Global_World_State.last_location
+	world_save.fam_last_location = Global_World_State.fam_last_location
 	
 	world_save.save()
 	

@@ -46,6 +46,7 @@ metadata/_custom_type_script = "uid://byuajnnxgbg30"
 
 [resource]
 script = ExtResource("1_57at3")
+chosen_familiar = true
 npc_name = "Grisnir"
 npc_sprite = ExtResource("3_tfil8")
 dialogue_map = SubResource("Resource_24vsj")
