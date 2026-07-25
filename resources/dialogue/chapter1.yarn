@@ -68,13 +68,13 @@ Dad: What is it?
 title: chapter1_dadIntro_3
 tags:
 ---
-Player: It's a response to my scholarship application. And an apology for the delay. 
+Player: It's a response to my scholarship application! And an apology for the delay. 
 Player: I've... I've been accepted!
 Dad: What? That's incredible! #overjoyed
 Dad: Ah! Erm... What do we do? #worried_smile
 Dad: Okay. It's still very early in the day. We have time. 
 Dad: Firstly, who is your sponsor?	
-Player: Prof Olivia.
+Player: Professor Olivia.
 Dad: Phew! She's here in the village right now. #happy
 Dad: Go to see her right away. I'll go to the manor and explain you won't be accepting the position as a servant.
     -> Player: Thanks, Dad.
@@ -104,19 +104,25 @@ title:chapter1_profOliviaRelOpt1
 tags:
 position: 73,-318
 ---
-Prof Olivia: Until now, the twins were the only ones under my sponsorship. They collected their Familiars last night. 
+Prof Olivia: Until now, the twins were the only ones under my sponsorship. 
+Prof Olivia: They collected their Familiars last night. 
 Prof Olivia: Unfortunately, the best I can offer you is from a breeder surplus this season. I took them in the hope of finding them a good home. <<once>>
     -> Player: What would have happened to them otherwise?<<once>>
-        Prof Olivia: They would have been dumped in the Wilds. But they're already teeming with dangerous Familiars left to turn feral. It just makes the problem worse.
+        Prof Olivia: They would have been dumped in the Wilds. But they're already teeming with dangerous Familiars left to turn feral. 
+        Prof Olivia: It just makes the problem worse.
         <<jump chapter1_profOliviaRelOpt1>>
     -> Player: I don't want some noble's leftovers!
-        Prof Olivia: Well, this is your only option. You're lucky to even get a choice at such short notice.  
+        Prof Olivia: Well, this is your only option. 
+        Prof Olivia: You're lucky to even get a choice at such short notice.  
     -> Player: I don't care where they've come from. 
         Prof Olivia: Ha! That's the spirit! #cutehappy
     -> Player: I guess they'll have to do.
         Prof Olivia: Indeed.
-Prof Olivia: The Familiars are in the garden outside. You can get there through that door to the right of the bookshelves. Pick whichever one you want. I'll just be working in my study over there.
-Prof Olivia: Oh! Before I forget, here's your Adventurer Handbook. It has several chapters on things like your inventory, the different Familiars you've seen and the spells you've mastered through your Familiar. 
+Prof Olivia: The Familiars are in the garden outside. 
+Prof Olivia: You can get there through that door to the right of the bookshelves. 
+Prof Olivia: Pick whichever one you want. I'll just be working in my study over there.
+Prof Olivia: Oh! Before I forget, here's your Adventurer Handbook. 
+Prof Olivia: It has several chapters on things like your inventory, the different Familiars you've seen and the spells you've mastered through your Familiar. 
 Prof Olivia: Make sure to take a good look. 
 Prof Olivia: It will be indispensable during your journey. #wink
 ===
@@ -178,7 +184,8 @@ Prof Olivia: Adventurers are funded by the crown and hence, you will receive an 
 Prof Olivia: If you defeat them all, then King Albert will award you the Diamond amulet and you will become a member of the prestigious Royal Council. #cutehappy
 Prof Olivia: Now, your first rank is brass and with it, the first scholarship payment.
 Prof Olivia: This amulet will allow you access into the Wilds between settlements beyond Powder Town, should you wish to pass through there on foot to train with your Familiar. 
-Prof Olivia: Remember, the Wilds are dangerous. Your Familiar is your responsibility. You can heal it at Healing Churches if it gets injured but if it dies under your care, then your journey will end. #sad
+Prof Olivia: Remember, the Wilds are dangerous. Your Familiar is your responsibility. 
+Prof Olivia: You can heal it at Healing Churches if it gets injured but if it dies under your care, then your journey will end. #sad
 Player: Okay. Where should I go first?
 <<jump chapter1_profOliviaWhereNext>>
 ===
@@ -209,8 +216,10 @@ Player: What is it?
 Prof Olivia: Do you fancy helping me with a bit of research?
     -> Player: Sure. 
     -> Player: Huh? 
-Prof Olivia: I'm looking for some ancient elven artefacts. In particular, stone tablets with writing engraved on them. You might find them scattered in various places around Gantoh. 
-Prof Olivia: With three new Adventurers under me this season, I'll have to abandon my own expeditions for a while. I would very much appreciate it if you let me examine any you find. 
+Prof Olivia: I'm looking for some ancient elven artefacts. 
+Prof Olivia: In particular, stone tablets with writing engraved on them. You might find them scattered in various places around Gantoh. 
+Prof Olivia: With three new Adventurers under me this season, I'll have to abandon my own expeditions for a while.
+Prof Olivia: I would very much appreciate it if you let me examine any you find. 
 Prof Olivia: If you bring me an artefact, I'll even share some more details of my research with you.
     -> Player: Of course. That sounds really interesting. 
         Prof Olivia: I'm pleased you think the same. 
