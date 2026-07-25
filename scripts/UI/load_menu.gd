@@ -17,12 +17,11 @@ func _ready() -> void:
 		var load_tile_scene = preload("res://scenes/UI/load_game_tile.tscn")
 		
 		for slot in slots:
-			var load_tile: Control = load_tile_scene.instantiate()
+			var load_tile: LoadGameTile = load_tile_scene.instantiate()
 			load_tile.custom_minimum_size = Vector2(408, 81)
 			v_box_container.add_child(load_tile)
 			await get_tree().process_frame
 			initialise_load_tile(load_tile, slot)
-
 	else:
 		printerr("Cannot find user save directory")
 
