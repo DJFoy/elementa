@@ -2,7 +2,7 @@ extends Character
 class_name Player_Character
 
 signal try_interact(interactable)
-signal pc_about_to_move()
+signal pc_about_to_move
 
 @onready var player_data: PlayerCreationData
 
@@ -39,7 +39,7 @@ func _ready() -> void:
 	interact_ray.collision_mask = 2
 	Global_World_State.last_location = global_position
 	if GameState.game_loaded:
-		player_data = ResourceLoader.load("res://saves/player_data.tres")
+		player_data = Global_World_State.character
 		if player_data:
 			apply_character_data(player_data)
 	load_textures()

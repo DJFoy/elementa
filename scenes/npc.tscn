@@ -1,6 +1,9 @@
 [gd_scene format=3 uid="uid://c3ps2dhlyigr4"]
 
 [ext_resource type="Script" uid="uid://dqqhg26r5odn3" path="res://scripts/World/npc.gd" id="1_nh2m4"]
+[ext_resource type="Script" uid="uid://tuj5cq6ma4dc" path="res://scripts/State Machine/state_machine.gd" id="2_7n8xq"]
+[ext_resource type="Script" uid="uid://c1skscy2hwpj2" path="res://scripts/World/familiar_states/idle_state.gd" id="3_4wlns"]
+[ext_resource type="Script" uid="uid://dnvxsfxve118g" path="res://scripts/World/familiar_states/follow_state.gd" id="4_tl2vt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tcuxl"]
 size = Vector2(13.5, 15)
@@ -712,3 +715,16 @@ y_sort_enabled = true
 offset = Vector2(0, -1)
 hframes = 4
 vframes = 4
+
+[node name="StateMachine" type="Node" parent="." unique_id=670086434 node_paths=PackedStringArray("initial_state")]
+script = ExtResource("2_7n8xq")
+initial_state = NodePath("Idle")
+metadata/_custom_type_script = "uid://tuj5cq6ma4dc"
+
+[node name="Idle" type="Node" parent="StateMachine" unique_id=1528039284]
+script = ExtResource("3_4wlns")
+metadata/_custom_type_script = "uid://deks3howwqchj"
+
+[node name="Following" type="Node" parent="StateMachine" unique_id=1828388580]
+script = ExtResource("4_tl2vt")
+metadata/_custom_type_script = "uid://deks3howwqchj"

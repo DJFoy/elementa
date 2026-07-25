@@ -29,8 +29,12 @@ var anims = {Vector2.DOWN: "walk_down",
 var current_anim: String
 # Current direction the Character is facing
 var current_dir: Vector2
+# Add a move_tween to prevent multiple tweens conflicting
+var move_tween: Tween
 
 signal emote_finished
+signal character_moving()
+signal movement_finished
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -57,21 +61,37 @@ func _ready() -> void:
 func move(dir: Vector2):
 	# Move the character one tile in specified direction,
 	# ensuring it starts and ends within a tile
-	if !move_ray.is_colliding():
+	if move_legal():
 		if !anim.current_animation == current_anim || !anim.is_playing():
 				anim.play(current_anim)
-		# Move the character a tile in the specified direction
-		var tween = create_tween()
-		tween.tween_property(self, "position",
-			position + dir * tile_size, 0.35)
-		# Set moving to true to indicate that the character is moving
-		moving = true
-		# Wait for the movement to be completed
-		tween.finished.connect(_on_tween_finished)
-		await tween.finished
+		await resolve_move(dir)
 		_on_move_complete()
 	else:
 		_stop_movement()
+
+func force_move(dir: Vector2) -> void:
+	if current_dir != dir:
+		direction_change(dir)
+	if !anim.current_animation == current_anim || !anim.is_playing():
+		anim.play(current_anim)
+	resolve_move(dir)
+	_on_move_complete()
+
+func move_legal() -> bool:
+	return !move_ray.is_colliding()
+
+func resolve_move(dir: Vector2) -> void:
+	if move_tween:
+		move_tween.kill()
+	# Move the character a tile in the specified direction
+	move_tween = create_tween()
+	move_tween.tween_property(self, "position", position + dir * tile_size, 0.35)
+	# Set moving to true to indicate that the character is moving
+	moving = true
+	character_moving.emit()
+	# Wait for the movement to be completed
+	move_tween.finished.connect(_on_tween_finished)
+	await move_tween.finished
 
 func position_snap():
 	if position != position.snappedf(tile_size/2.0):
@@ -89,6 +109,7 @@ func direction_change(dir: Vector2):
 	current_dir = dir
 
 func _on_tween_finished():
+	await get_tree().process_frame
 	position_snap()
 	if wants_to_move:
 		_continuous_movement()
@@ -99,6 +120,7 @@ func _stop_movement():
 	moving = false
 	wants_to_move = false
 	anim.stop()
+	movement_finished.emit()
 
 func _continuous_movement():
 	pass

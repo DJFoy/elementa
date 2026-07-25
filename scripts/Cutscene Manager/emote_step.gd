@@ -8,7 +8,7 @@ func run(director: CutsceneManager) -> void:
 	var signals: Array
 	var signal_group = SignalGroup.new()
 	for actor_id in actor_ids:
-		var actor = director.get_actor(actor_id)
+		var actor = ActorManager.get_actor(actor_id)
 		signals.append(actor.emote_finished)
 		
 		actor.trigger_emote(emote)

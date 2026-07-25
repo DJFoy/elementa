@@ -9,11 +9,15 @@ static func load(slot: String = "") -> WorldStateSave:
 # --------------- SAVE DATA ---------------
 
 @export var character: PlayerCreationData
+@export var familiar: NPC_Resource
+@export var familiar_chosen: String
 
 @export var chapter: String
 @export var one_time_dialogues: Array
 @export var items_collected: Array
 @export var cutscenes: Array
+@export var significant_events: Array
 
 @export var current_scene: String
 @export var last_location: Vector2
+@export var fam_last_location: Vector2

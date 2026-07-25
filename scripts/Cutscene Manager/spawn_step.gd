@@ -12,7 +12,7 @@ func run(director: CutsceneManager):
 	parent.add_child(instance)
 	instance.global_position = position
 	
-	director.register_actor(actor_id, instance)
+	ActorManager.register_actor(actor_id, instance)
 	
 	for key in setup:
 		instance.set(key, setup[key])

@@ -1,10 +1,13 @@
 [gd_scene format=4 uid="uid://bomem7ewboadv"]
 
-[ext_resource type="Script" uid="uid://c8im5x5qc72nu" path="res://scripts/World/location.gd" id="1_fo02n"]
+[ext_resource type="Script" uid="uid://cpselhcxctpmn" path="res://scripts/Chapter 1/prof_olivia_house.gd" id="1_3rxlf"]
 [ext_resource type="TileSet" uid="uid://gfwi66i5se4k" path="res://assets/tilesets/backgrounds/base_inside_tiles.tres" id="2_b65u2"]
+[ext_resource type="Script" uid="uid://bl7o7egd7hho7" path="res://scripts/World/spawn.gd" id="3_3gsiv"]
+[ext_resource type="PackedScene" uid="uid://kkaqj5g0x7un" path="res://scenes/exit_area.tscn" id="4_v678i"]
 
-[node name="ProfOliviaHouse" type="Node2D" unique_id=1027025093]
-script = ExtResource("1_fo02n")
+[node name="ProfOliviaHouse" type="Node2D" unique_id=1027025093 node_paths=PackedStringArray("tilemaps")]
+script = ExtResource("1_3rxlf")
+tilemaps = [NodePath("TileMaps/FloorsAndWalls"), NodePath("TileMaps/Furniture"), NodePath("TileMaps/Stairs"), NodePath("TileMaps/Vase"), NodePath("TileMaps/Flowers"), NodePath("TileMaps/Painting"), NodePath("TileMaps/Fireplace"), NodePath("TileMaps/Windows"), NodePath("TileMaps/Familiar Pen"), NodePath("TileMaps/Rug")]
 metadata/_custom_type_script = "uid://c8im5x5qc72nu"
 
 [node name="TileMaps" type="Node2D" parent="." unique_id=1180116292]
@@ -17,7 +20,7 @@ tile_set = ExtResource("2_b65u2")
 
 [node name="Furniture" type="TileMapLayer" parent="TileMaps" unique_id=1150777137]
 y_sort_enabled = true
-tile_map_data = PackedByteArray("AAACAPr/AAAAAAoAAAACAPv/AAAAAAsAAAACAPz/AAAAAAwAAAADAPr/AAAAAAoAAAADAPv/AAAAAAsAAAADAPz/AAAAAAwAAAAEAPr/AAAAAAoAAAAEAPv/AAAAAAsAAAAEAPz/AAAAAAwAAAAAAPv/AAADAAsAAAAAAPz/AAADAAwAAAABAPr/AAABAAoAABABAPv/AAABAAsAABABAPz/AAABAAwAABAFAPr/AAAAAAoAAAAFAPv/AAAAAAsAAAAFAPz/AAAAAAwAAAAGAPr/AAABAAoAAAAGAPv/AAABAAsAAAAGAPz/AAABAAwAAAAAAP//AAAEAAsAABAAAAAAAAAEAAwAABAAAAEAAAAEAAsAABAAAAIAAAAEAAwAABAAAAMAAAAEAAsAABAAAAQAAAAEAAwAABAAAAUAAAACAAsAAAAAAAYAAAACAAwAAAAHAAUAAAACAAsAAAAHAAYAAAACAAwAAAANAAEAAAAGAAoAAAANAAIAAAAGAAsAAAANAAMAAAAGAAwAAAAOAAEAAAAHAAoAAAAOAAIAAAAHAAsAAAAOAAMAAAAHAAwAAAAMAAIAAAAEAAAAAAAMAAMAAAAEAAEAAAAIAPv/AAAIAAsAAAAIAPz/AAAIAAwAAAAHAPz/AAAGAAgAAAAHAP3/AAAGAAkAAAA=")
+tile_map_data = PackedByteArray("AAACAPr/AAAAAAoAAAACAPv/AAAAAAsAAAACAPz/AAAAAAwAAAADAPr/AAAAAAoAAAADAPv/AAAAAAsAAAADAPz/AAAAAAwAAAAEAPr/AAAAAAoAAAAEAPv/AAAAAAsAAAAEAPz/AAAAAAwAAAABAPr/AAABAAoAABABAPv/AAABAAsAABABAPz/AAABAAwAABAFAPr/AAAAAAoAAAAFAPv/AAAAAAsAAAAFAPz/AAAAAAwAAAAGAPr/AAABAAoAAAAGAPv/AAABAAsAAAAGAPz/AAABAAwAAAAAAP//AAAEAAsAABAAAAAAAAAEAAwAABAAAAEAAAAEAAsAABAAAAIAAAAEAAwAABAAAAMAAAAEAAsAABAAAAQAAAAEAAwAABAAAAUAAAACAAsAAAAAAAYAAAACAAwAAAAHAAUAAAACAAsAAAAHAAYAAAACAAwAAAANAAEAAAAGAAoAAAANAAIAAAAGAAsAAAANAAMAAAAGAAwAAAAOAAEAAAAHAAoAAAAOAAIAAAAHAAsAAAAOAAMAAAAHAAwAAAAMAAIAAAAEAAAAAAAMAAMAAAAEAAEAAAAIAPv/AAAIAAsAAAAIAPz/AAAIAAwAAAAHAPz/AAAGAAgAAAAHAP3/AAAGAAkAAAAPAAAAAAADAAsAAAAPAAEAAAADAAwAAAAJAAAAAAADAAsAAAAJAAEAAAADAAwAAAA=")
 tile_set = ExtResource("2_b65u2")
 
 [node name="Stairs" type="TileMapLayer" parent="TileMaps" unique_id=1589167064]
@@ -48,7 +51,7 @@ tile_set = ExtResource("2_b65u2")
 
 [node name="Windows" type="TileMapLayer" parent="TileMaps" unique_id=1915475835]
 y_sort_enabled = true
-tile_map_data = PackedByteArray("AAAKAP//AAAJAAgAAAAKAAAAAAAJAAkAAAAOAP//AAAJAAgAAAAOAAAAAAAJAAkAAAAAAPr/AAAJAAgAAAAAAPv/AAAJAAkAAAA=")
+tile_map_data = PackedByteArray("AAAKAP//AAAJAAgAAAAKAAAAAAAJAAkAAAAOAP//AAAJAAgAAAAOAAAAAAAJAAkAAAAAAPr/AAAJAAgAAAAAAPv/AAAJAAkAAAAMAP//AAAKAAQAAAA=")
 tile_set = ExtResource("2_b65u2")
 
 [node name="Familiar Pen" type="TileMapLayer" parent="TileMaps" unique_id=200803605]
@@ -60,3 +63,45 @@ modulate = Color(0.65882355, 0.33333334, 0.2784314, 1)
 y_sort_enabled = true
 tile_map_data = PackedByteArray("AAADAAYAAAALAAsAAAAEAAYAAAAMAAsAAAADAAUAAAAEAAoAAAAEAAUAAAAFAAoAAAADAAQAAAAEAAoAAAAEAAQAAAAFAAoAAAADAAMAAAANAAYAAAAEAAMAAAAOAAYAAAADAAIAAAANAAUAAAAEAAIAAAAOAAUAAAADAAEAAAAEAAoAAAAEAAEAAAAFAAoAAAADAAAAAAAEAAoAAAAEAAAAAAAFAAoAAAADAP//AAAEAAoAAAAEAP//AAAFAAoAAAADAP7/AAAOAAYAAFAEAP7/AAAOAAUAAFADAP3/AAANAAYAAFAEAP3/AAANAAUAAFAFAAIAAAAEAAoAAFAFAAMAAAAFAAoAAFAGAAIAAAAEAAoAAFAGAAMAAAAFAAoAAFAHAAIAAAAEAAoAAFAHAAMAAAAFAAoAAFAIAAIAAAAEAAoAAFAIAAMAAAAFAAoAAFAJAAIAAAAEAAoAAFAJAAMAAAAFAAoAAFAKAAIAAAAFAAoAAGAKAAMAAAAEAAoAAGAOAP//AAAKAAgAAAAOAAAAAAAKAAkAAAAKAP//AAAKAAgAAAAKAAAAAAAKAAkAAAAAAPr/AAAKAAgAAAAAAPv/AAAKAAkAAAALAAMAAAAEAAoAAGALAAIAAAAFAAoAAGAMAAMAAAALAAsAAGAMAAIAAAAMAAsAAGAIAP7/AAAGAAQAABACAP3/AAALAAsAAFACAP7/AAAMAAsAAFAFAP3/AAAMAAsAAGAFAP7/AAALAAsAAGA=")
 tile_set = ExtResource("2_b65u2")
+
+[node name="Entry Points" type="Node2D" parent="." unique_id=212753351]
+
+[node name="FrontDoor" type="Marker2D" parent="Entry Points" unique_id=1074028138]
+position = Vector2(56, 120)
+script = ExtResource("3_3gsiv")
+spawn_name = "prof_olivia_door"
+metadata/_custom_type_script = "uid://bl7o7egd7hho7"
+
+[node name="BackDoor" type="Marker2D" parent="Entry Points" unique_id=777448765]
+position = Vector2(136, -24)
+script = ExtResource("3_3gsiv")
+spawn_name = "prof_olivia_backdoor"
+metadata/_custom_type_script = "uid://bl7o7egd7hho7"
+
+[node name="Exits" type="Node2D" parent="." unique_id=165436097]
+
+[node name="Stairs" parent="Exits" unique_id=404008840 instance=ExtResource("4_v678i")]
+position = Vector2(-8, -56)
+lock_message = Array[String](["I don't think the Professor would appreciate me snooping around her home..."])
+
+[node name="BackDoor" parent="Exits" unique_id=199448761 instance=ExtResource("4_v678i")]
+position = Vector2(152, -24)
+target_scene = "uid://y4y1xxl7omnv"
+target_spawn = "bb_village_prof_olivia_garden"
+
+[node name="FrontDoorLeft" parent="Exits" unique_id=1484190475 instance=ExtResource("4_v678i")]
+position = Vector2(56, 136)
+target_scene = "uid://y4y1xxl7omnv"
+target_spawn = "bb_village_prof_olivia"
+lock_message = Array[String](["I should speak with the professor before I leave."])
+
+[node name="FrontDoorRight" parent="Exits" unique_id=553486641 instance=ExtResource("4_v678i")]
+position = Vector2(72, 136)
+target_scene = "uid://y4y1xxl7omnv"
+target_spawn = "bb_village_prof_olivia"
+lock_message = Array[String](["I should speak with the professor before I leave."])
+
+[node name="NPCs" type="Node2D" parent="." unique_id=985368674]
+
+[node name="Prof_Olivia" type="Marker2D" parent="NPCs" unique_id=1889474408]
+position = Vector2(136, 24)

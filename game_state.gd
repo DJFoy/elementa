@@ -15,8 +15,16 @@ var prev_scene: String
 var target_spawn: String
 var target_vec: Vector2
 
+var familiar_vec: Vector2
+
 # Store the direction the PC is facing between scenes
 var pc_dir: Vector2
+
+# Store the current dialogue target
+var dialogue_target: Character
+
+# Store check whether player's familiar is in scene
+var familiar_loaded: bool
 
 # Check whether a scene transition is occuring to prevent character input
 var scene_transitioning:= false
@@ -43,3 +51,7 @@ func unlock():
 
 func is_locked() -> bool:
 	return lock_count > 0
+
+
+# Game Options
+var text_speed := 60.0

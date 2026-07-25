@@ -48,7 +48,7 @@ func generate_text(text_array: Array):
 		text_box, 
 		"visible_ratio", 
 		1, 
-		text_box.text.length()/20.0
+		text_box.text.length()/GameState.text_speed
 	)
 	printing_text = true
 	

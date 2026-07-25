@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://bd5yex4vadwcc"]
 
-[ext_resource type="Texture2D" uid="uid://cjrwv3ydswt2i" path="res://assets/Dialogue Box wo Name Tag.png" id="1_2agik"]
 [ext_resource type="Script" uid="uid://cxbnfgt51pbv6" path="res://scripts/UI/interact.gd" id="1_b1101"]
 [ext_resource type="Theme" uid="uid://dthhuuah0qhsg" path="res://themes/default_interact_theme.tres" id="2_jfapk"]
+[ext_resource type="Texture2D" uid="uid://ex7eglqvqmiu" path="res://assets/base_assets/Dialogue Box wo name tag - v2.png" id="3_6sfgy"]
 
 [node name="Interact" type="Control" unique_id=95365800]
 z_index = 100
@@ -37,7 +37,7 @@ anchor_right = 1.1873199
 anchor_bottom = 1.4791666
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_2agik")
+texture = ExtResource("3_6sfgy")
 metadata/_edit_use_anchors_ = true
 
 [node name="TextBox" type="RichTextLabel" parent="Panel" unique_id=1438836521]

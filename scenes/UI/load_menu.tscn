@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://tgoqh86yjcqi"]
+
+[ext_resource type="Script" uid="uid://capbdlbf2k6e2" path="res://scripts/UI/load_menu.gd" id="1_61f64"]
+[ext_resource type="Theme" uid="uid://dthhuuah0qhsg" path="res://themes/default_interact_theme.tres" id="2_5f4pl"]
+
+[node name="LoadMenu" type="Control" unique_id=424077371]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_61f64")
+
+[node name="Panel" type="Panel" parent="." unique_id=2083181877]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = -10.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_5f4pl")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Panel" unique_id=810628785]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+follow_focus = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/ScrollContainer" unique_id=413709356]
+layout_mode = 2
+size_flags_horizontal = 3

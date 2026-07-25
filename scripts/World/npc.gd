@@ -16,8 +16,20 @@ class_name Non_Player_Character
 
 @export var npc_resource: NPC_Resource
 
+# Add in a variable to define whether the NPC should be following another target
+# A string should be passed from the NPC resource that the actor manager can resolve
+@export var follow_target: String
+var target: Character
+@onready var state_machine: StateMachine = $StateMachine
+
+signal follow_request
+signal idle_request
+
 func _ready() -> void:
-	actor_id = npc_resource.npc_name
+	if npc_resource.chosen_familiar:
+		actor_id = "Chosen_Familiar"
+	else:
+		actor_id = npc_resource.npc_name
 	super()
 	add_to_group("Dialogue")
 	main_sprite.texture = npc_resource.get_sprite_texture(player_data.skin_colour)
@@ -32,3 +44,33 @@ func _ready() -> void:
 	eye_colour.modulate = npc_resource.eye_colour
 	top.texture = npc_resource.npc_top
 	bottoms.texture = npc_resource.npc_bottom
+	
+	EventBus.register_followers.connect(_initialise_following)
+
+func _initialise_following() -> void:
+	follow_target = npc_resource.follow_target
+	
+	print("This NPC is primed to follow %s" % follow_target)
+	
+	if follow_target:
+		print("And now it should be set up that it is tied to the right node, %s" % ActorManager.get_actor(follow_target))
+		target = ActorManager.get_actor(follow_target)
+		print("See, look: %s" % target)
+
+
+func follow() -> void:
+	follow_request.emit()
+
+func idle() -> void:
+	idle_request.emit()
+
+func _continuous_movement():
+	if GameState.is_locked():
+		_stop_movement()
+		return
+	if target.move_ray.is_colliding():
+		_stop_movement()
+		return
+	if current_dir != wants_to_move_dir:
+		direction_change(wants_to_move_dir)
+	force_move(wants_to_move_dir)

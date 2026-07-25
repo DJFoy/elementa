@@ -4,6 +4,7 @@ tags:
 <<declare $playerName = "Player">>
 <<declare $hatedFood = "Apple">>
 <<declare $lovedFood = "Pie">>
+<<declare $dialogueTarget = "Test">>
 <<declare $familiar = "Familiar">>
 <<declare $chapter_1_prof_olivia_ask_repeat = 0>>
 <<declare $George_Activated = 0>>
@@ -24,6 +25,7 @@ tags:
 <<declare $colour = "">>
 <<declare $descriptor = "">>
 <<declare $cheer = 0>>
+<<declare $chosen_familiar= "">>
 Narrator: Your dreams are fading fast. 
 Narrator: This could be your only chance to escape the mundane future ahead of you. You steady the quill in your hand and complete the scholarship application.
 Narrator: You sign your application and send it with the last post. Time comes and goes. 
@@ -104,13 +106,26 @@ title:chapter1_profOliviaRelOpt1
 tags:
 position: 73,-318
 ---
-Prof Olivia: Until now, the twins were the only ones under my sponsorship. 
-Prof Olivia: They collected their Familiars last night. 
-Prof Olivia: Unfortunately, the best I can offer you is from a breeder surplus this season. I took them in the hope of finding them a good home. <<once>>
-    -> Player: What would have happened to them otherwise?<<once>>
-        Prof Olivia: They would have been dumped in the Wilds. But they're already teeming with dangerous Familiars left to turn feral. 
-        Prof Olivia: It just makes the problem worse.
-        <<jump chapter1_profOliviaRelOpt1>>
+Prof Olivia: Until now, the twins were the only ones under my sponsorship. They collected their Familiars last night. 
+Prof Olivia: Unfortunately, the best I can offer you is from a breeder surplus this season. I took them in the hope of finding them a good home.
+    -> Player: What would have happened to them otherwise?
+        Prof Olivia: They would have been dumped in the Wilds. But they're already teeming with dangerous Familiars left to turn feral. It just makes the problem worse.
+        <<jump chapter1_profOliviaRelOpt2>>
+    -> Player: I don't want some noble's leftovers!
+        Prof Olivia: Well, this is your only option. You're lucky to even get a choice at such short notice.  
+    -> Player: I don't care where they've come from. 
+        Prof Olivia: Ha! That's the spirit! #cutehappy
+    -> Player: I guess they'll have to do.
+        Prof Olivia: Indeed.
+Prof Olivia: The Familiars are in the garden outside. You can get there through that door to the right of the bookshelves. Pick whichever one you want. I'll just be working in my study over there.
+Prof Olivia: Oh! Before I forget, here's your Adventurer Handbook. It has several chapters on things like your inventory, the different Familiars you've seen and the spells you've mastered through your Familiar. 
+Prof Olivia: Make sure to take a good look. 
+Prof Olivia: It will be indispensable during your journey. #wink
+===
+
+title:chapter1_profOliviaRelOpt2
+tags:
+---
     -> Player: I don't want some noble's leftovers!
         Prof Olivia: Well, this is your only option. 
         Prof Olivia: You're lucky to even get a choice at such short notice.  
@@ -170,6 +185,7 @@ position: 326,-319
 Prof Olivia: Are you sure this is the one you want?
     -> Player: Yes
         Prof Olivia: Excellent! #happy 
+        <<update_gamestate "significant_events" "familiar_confirmed">>
         <<jump chapter1_profOliviaConfirmChoice>>
     -> Player: I'm not sure...
         Prof Olivia: You can swap them out in the garden. Take your time. This is important.
@@ -797,4 +813,24 @@ Prof Olivia: What can I do for you?
                 -> Player: Not really. I'm content as I am.
                     Professor Oliva: An interesting perspective. 
                     Prof Olivia: If you change your mind, bring me another relic and we can take it from there.
+===
+
+title: chapter1_choose_famliar
+tags:
+---
+Narrator: Do you choose {$dialogueTarget} as your familiar?
+    -> Yes 
+        <<update_gamestate "familiar_chosen" {$dialogueTarget}>>
+        <<update_gamestate "significant_events" "familiar_chosen">>
+    -> No
+===
+
+title: chapter1_choose_different_familiar
+tags:
+---
+Player: The others look kind of sad now. I almost feel bad for not choosing them.
+Player: Do I want to pick {$dialogueTarget} instead?
+    -> Yes
+        <<update_gamestate "familiar_chosen" {$dialogueTarget}>>
+    -> No
 ===

@@ -23,15 +23,14 @@ func _run_line_internal(localized_line: YarnSpinner.LocalizedLine) -> void:
 	
 	var character_name = localized_line.character_name.to_lower()
 	
-	npc_portrait.texture = load("res://assets/character_assets/portraits/%s/%s.png" % [localized_line.character_name.to_lower(), character_name + resolve_variant(character_name)])
-	print("res://assets/character_assets/portraits/%s/%s.png" % [localized_line.character_name.to_lower(), resolve_expression(localized_line) + resolve_variant(character_name)])
+	npc_portrait.texture = load("res://assets/character_assets/portraits/%s/%s.png" % [character_name, character_name + resolve_variant(character_name)])
+	print("res://assets/character_assets/portraits/%s/%s.png" % [character_name, resolve_expression(localized_line) + resolve_variant(character_name)])
 	print("res://assets/character_assets/portraits/%s.png" % [resolve_additions(localized_line) + resolve_variant(character_name)])
-	emotion.texture = load("res://assets/character_assets/portraits/%s/%s.png" % [localized_line.character_name.to_lower(), resolve_expression(localized_line) + resolve_variant(character_name)])
+	emotion.texture = load("res://assets/character_assets/portraits/%s/%s.png" % [character_name, resolve_expression(localized_line) + resolve_variant(character_name)])
 	emote.texture = load("res://assets/character_assets/portraits/%s.png" % [resolve_additions(localized_line)])
 
 func resolve_variant(character_name: String) -> String:
 	return Global_World_State.get_character_portrait_variant(character_name)
-
 
 func resolve_expression(localized_line: YarnSpinner.LocalizedLine) -> String:
 	for tag in localized_line.metadata:

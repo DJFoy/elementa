@@ -8,7 +8,7 @@ var location: Location
 @export var wait_to_finish:= true
 
 func run(director: CutsceneManager):
-	var actor = director.get_actor(actor_id)
+	var actor = ActorManager.get_actor(actor_id)
 	
 	if wait_to_finish:
 		location.path_move_requested(actor, actor.global_position, destination)
