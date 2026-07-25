@@ -1,0 +1,121 @@
+[gd_scene format=3 uid="uid://bxsdrujbrfvuy"]
+
+[ext_resource type="Theme" uid="uid://dthhuuah0qhsg" path="res://themes/default_interact_theme.tres" id="1_ftu16"]
+[ext_resource type="Theme" uid="uid://cgmosxmjhkq5a" path="res://themes/book_menu_theme.tres" id="2_op3w7"]
+[ext_resource type="Script" uid="uid://hbc1q7rhs30" path="res://scripts/UI/load_game_tile.gd" id="2_smsb2"]
+[ext_resource type="Texture2D" uid="uid://dv51smjecs6m" path="res://assets/base_assets/Save Slot Button Border.png" id="3_ftu16"]
+[ext_resource type="Texture2D" uid="uid://dwftxoygtopa3" path="res://assets/base_assets/Button Choice.png" id="4_op3w7"]
+
+[node name="LoadGameTile" type="Control" unique_id=1448644282]
+layout_mode = 3
+anchor_right = 0.85
+anchor_bottom = 0.3
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_ftu16")
+script = ExtResource("2_smsb2")
+
+[node name="Panel" type="Panel" parent="." unique_id=713421746]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_op3w7")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel" unique_id=1011492467]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = -10.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GameDetails" type="VBoxContainer" parent="Panel/HBoxContainer" unique_id=721660745]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.5
+alignment = 1
+
+[node name="CharacterName" type="Label" parent="Panel/HBoxContainer/GameDetails" unique_id=1318497872]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Name:"
+
+[node name="FamiliarName" type="Label" parent="Panel/HBoxContainer/GameDetails" unique_id=1464452909]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Familiar:"
+
+[node name="CurrentChapter" type="Label" parent="Panel/HBoxContainer/GameDetails" unique_id=855284658]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Chapter:"
+
+[node name="TimePlayed" type="Label" parent="Panel/HBoxContainer/GameDetails" unique_id=1454550460]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Time Played:"
+
+[node name="Buttons" type="VBoxContainer" parent="Panel/HBoxContainer" unique_id=919285403]
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="Load" type="Button" parent="Panel/HBoxContainer/Buttons" unique_id=1416262398]
+layout_mode = 2
+theme_type_variation = &"InteractButton"
+text = "Load"
+
+[node name="Delete" type="Button" parent="Panel/HBoxContainer/Buttons" unique_id=203203667]
+layout_mode = 2
+theme_type_variation = &"InteractButton"
+text = "Delete"
+
+[node name="Border" type="NinePatchRect" parent="." unique_id=893318616]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1.0
+offset_top = -1.0
+offset_right = 1.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+localize_numeral_system = false
+texture = ExtResource("3_ftu16")
+region_rect = Rect2(0, 0, 103, 35)
+patch_margin_left = 8
+patch_margin_top = 8
+patch_margin_right = 8
+patch_margin_bottom = 8
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[node name="FocusBorder" type="NinePatchRect" parent="." unique_id=977937613]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1.0
+offset_top = -1.0
+offset_right = 1.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+localize_numeral_system = false
+texture = ExtResource("4_op3w7")
+region_rect = Rect2(-1, -1, 101, 37)
+patch_margin_left = 13
+patch_margin_top = 12
+patch_margin_right = 13
+patch_margin_bottom = 12
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1

@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://oa7wb5onweet"]
+
+[ext_resource type="Texture2D" uid="uid://c1b5wu1fd0jfu" path="res://assets/base_assets/battle/Ice Battle Animation.png" id="1_ux2ai"]
+
+[sub_resource type="Animation" id="Animation_3m4ob"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_0spwr"]
+resource_name = "attack"
+length = 1.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0, 7]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_kxdpa"]
+_data = {
+&"RESET": SubResource("Animation_3m4ob"),
+&"attack": SubResource("Animation_0spwr")
+}
+
+[node name="Attack" type="Node2D" unique_id=486791162]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=363643357]
+texture = ExtResource("1_ux2ai")
+hframes = 4
+vframes = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=756394748]
+libraries/ = SubResource("AnimationLibrary_kxdpa")
