@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://oa7wb5onweet"]
 
-[ext_resource type="Texture2D" uid="uid://c1b5wu1fd0jfu" path="res://assets/base_assets/battle/Ice Battle Animation.png" id="1_ux2ai"]
+[ext_resource type="Texture2D" uid="uid://woxd2d3omeny" path="res://assets/base_assets/battle/Lighting Battle Animation.png" id="1_ux2ai"]
 
 [sub_resource type="Animation" id="Animation_3m4ob"]
 length = 0.001
@@ -20,6 +20,7 @@ tracks/0/keys = {
 [sub_resource type="Animation" id="Animation_0spwr"]
 resource_name = "attack"
 length = 1.2
+loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true

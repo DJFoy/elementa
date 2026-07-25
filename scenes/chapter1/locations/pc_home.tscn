@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://d17n47ihtn6ik" path="res://scripts/Chapter 1/pc_home.gd" id="1_67net"]
 [ext_resource type="PackedScene" uid="uid://kkaqj5g0x7un" path="res://scenes/exit_area.tscn" id="3_hwnoe"]
 [ext_resource type="Script" uid="uid://bl7o7egd7hho7" path="res://scripts/World/spawn.gd" id="3_vfuc7"]
+[ext_resource type="PackedScene" uid="uid://dshkcuk7rjrxn" path="res://scenes/interactable.tscn" id="5_vfuc7"]
 
 [node name="PCHome" type="Node2D" unique_id=800976989 node_paths=PackedStringArray("tilemaps")]
 y_sort_enabled = true
@@ -113,3 +114,9 @@ position = Vector2(24, 7)
 [node name="DadCueCh1Chair" type="Marker2D" parent="CutsceneMarkers" unique_id=1292725111]
 y_sort_enabled = true
 position = Vector2(40, 23)
+
+[node name="Interactables" type="Node2D" parent="." unique_id=1719336493]
+
+[node name="Interactable" parent="Interactables" unique_id=5923318 instance=ExtResource("5_vfuc7")]
+position = Vector2(40, 0)
+text = ["Dad's been hard at work in the kitchen. What's he been up to?"]

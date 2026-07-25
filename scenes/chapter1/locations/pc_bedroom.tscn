@@ -80,17 +80,27 @@ y_sort_enabled = true
 y_sort_enabled = true
 position = Vector2(72, 24)
 collision_layer = 3
-text = ["Filled with lots of home made books"]
+text = ["I used to love all those stories about adventure.", "It's a shame I'll probably never venture further than this village now", "Maybe I'll get to visit Powder Town once in a while if I get lucky."]
 
 [node name="Drawer" parent="Interactables" unique_id=1405228887 instance=ExtResource("5_gbqjd")]
 y_sort_enabled = true
 position = Vector2(24, 24)
-text = ["Ah, my two pairs of underwear", "Dad really did spoil me this birthday"]
+text = ["Ah, my two pairs of underwear.", "Dad really did spoil me this birthday."]
 
 [node name="Window" parent="Interactables" unique_id=202828234 instance=ExtResource("5_gbqjd")]
 y_sort_enabled = true
 position = Vector2(56, 24)
-text = ["I wish I could fly away"]
+text = ["The sun is shining. ", "It seems like it would have been a nice day, if it wasn't for... "]
+
+[node name="Bed" parent="Interactables" unique_id=5923318 instance=ExtResource("5_gbqjd")]
+y_sort_enabled = true
+position = Vector2(40, 40)
+text = ["I've slept enough."]
+
+[node name="Uniform" parent="Interactables" unique_id=2006450237 instance=ExtResource("5_gbqjd")]
+y_sort_enabled = true
+position = Vector2(8, 24)
+text = ["Ugh, my new uniform. I feel queasy just looking at it.", "I wanted so much more from life than this."]
 
 [node name="Uniform" type="Sprite2D" parent="." unique_id=1558022327]
 y_sort_enabled = true
