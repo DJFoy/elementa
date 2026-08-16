@@ -1,6 +1,8 @@
 extends Control
 @onready var v_box_container: VBoxContainer = $Panel/ScrollContainer/VBoxContainer
 
+signal world_change_request(to_scene_path: String)
+
 func _ready() -> void:
 	var slots: Array[String]
 	
@@ -34,4 +36,9 @@ func initialise_load_tile(load_tile: LoadGameTile, save_slot: String):
 	var chapter = load_details.chapter
 	var time_played = ""
 	
-	load_tile.initialise_tile(character_name, familiar_name, chapter, time_played)
+	load_tile.initialise_tile(character_name, familiar_name, chapter, time_played, save_slot)
+	
+	load_tile.load_game.connect(_on_load_game)
+
+func _on_load_game(scene: String):
+	world_change_request.emit(scene)

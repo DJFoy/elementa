@@ -4,6 +4,7 @@
 [ext_resource type="Theme" uid="uid://dthhuuah0qhsg" path="res://themes/default_interact_theme.tres" id="2_5f4pl"]
 
 [node name="LoadMenu" type="Control" unique_id=424077371]
+custom_minimum_size = Vector2(480, 270)
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0

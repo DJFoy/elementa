@@ -119,3 +119,6 @@ patch_margin_right = 13
 patch_margin_bottom = 12
 axis_stretch_horizontal = 1
 axis_stretch_vertical = 1
+
+[connection signal="pressed" from="Panel/HBoxContainer/Buttons/Load" to="." method="_on_load_pressed"]
+[connection signal="pressed" from="Panel/HBoxContainer/Buttons/Delete" to="." method="_on_delete_pressed"]

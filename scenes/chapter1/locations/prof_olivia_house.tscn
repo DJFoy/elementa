@@ -120,3 +120,27 @@ text = ["Wow, so many books!"]
 [node name="Bookcase3" parent="Interactables" unique_id=1880966689 instance=ExtResource("5_3gsiv")]
 position = Vector2(40, -64)
 text = ["There's a lot of books here on Gantoh history and the lost race of elves in particular."]
+
+[node name="Cabinet1" parent="Interactables" unique_id=1651057516 instance=ExtResource("5_3gsiv")]
+position = Vector2(8, 8)
+text = ["There's what looks like some ancient elven artefacts here."]
+
+[node name="Cabinet2" parent="Interactables" unique_id=117988643 instance=ExtResource("5_3gsiv")]
+position = Vector2(8, 40)
+text = ["There's what looks like some ancient elven artefacts here."]
+
+[node name="Cabinet3" parent="Interactables" unique_id=1403499625 instance=ExtResource("5_3gsiv")]
+position = Vector2(8, 72)
+text = ["There's what looks like some ancient elven artefacts here."]
+
+[node name="Cabinet4" parent="Interactables" unique_id=47995256 instance=ExtResource("5_3gsiv")]
+position = Vector2(152, 16)
+text = ["There's what looks like some ancient elven artefacts here."]
+
+[node name="Cabinet5" parent="Interactables" unique_id=629773858 instance=ExtResource("5_3gsiv")]
+position = Vector2(248, 16)
+text = ["There's what looks like some ancient elven artefacts here."]
+
+[node name="Portrait" parent="Interactables" unique_id=187044677 instance=ExtResource("5_3gsiv")]
+position = Vector2(136, -56)
+text = ["I wonder if this is a relative of Professor Olivia's?"]

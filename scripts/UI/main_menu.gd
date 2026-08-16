@@ -11,34 +11,7 @@ func _on_new_game_pressed() -> void:
 
 
 func _on_load_game_pressed() -> void:
-	GameState.game_loaded = true
-	
-	var world_save: WorldStateSave = WorldStateSave.load()
-	
-	var valid_properties := {}
-	
-	for prop in Global_World_State.get_property_list():
-		valid_properties[prop.name] = true
-	
-	for prop in world_save.get_property_list():
-		var property_name = prop.name
-		
-		if prop.usage & PROPERTY_USAGE_SCRIPT_VARIABLE == 0:
-			continue
-		if valid_properties.has(property_name):
-			Global_World_State.set(
-				property_name,
-				world_save.get(property_name)
-			)
-	
-	GameState.target_spawn = "Loaded_Spawn"
-	GameState.target_vec = world_save.last_location
-	GameState.familiar_vec = world_save.fam_last_location
-	
-	if Global_World_State.familiar:
-		Global_World_State.familiar.chosen_familiar = true
-	
-	world_change_request.emit(world_save.current_scene)
+	world_change_request.emit("res://scenes/UI/load_menu.tscn")
 
 
 func _on_options_pressed() -> void:
