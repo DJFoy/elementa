@@ -74,7 +74,7 @@ func force_move(dir: Vector2) -> void:
 		direction_change(dir)
 	if !anim.current_animation == current_anim || !anim.is_playing():
 		anim.play(current_anim)
-	resolve_move(dir)
+	await resolve_move(dir)
 	_on_move_complete()
 
 func move_legal() -> bool:

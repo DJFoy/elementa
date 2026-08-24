@@ -13,8 +13,9 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_61f64")
 
-[node name="Panel" type="Panel" parent="." unique_id=2083181877]
-layout_mode = 1
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=302005796]
+
+[node name="Panel" type="Panel" parent="CanvasLayer" unique_id=2083181877]
 anchors_preset = -1
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -26,7 +27,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("2_5f4pl")
 
-[node name="ScrollContainer" type="ScrollContainer" parent="Panel" unique_id=810628785]
+[node name="ScrollContainer" type="ScrollContainer" parent="CanvasLayer/Panel" unique_id=810628785]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -35,6 +36,6 @@ grow_horizontal = 2
 grow_vertical = 2
 follow_focus = true
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Panel/ScrollContainer" unique_id=413709356]
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Panel/ScrollContainer" unique_id=413709356]
 layout_mode = 2
 size_flags_horizontal = 3

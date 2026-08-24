@@ -70,6 +70,7 @@ func _ready() -> void:
 	
 	# Place the PC in the target spawn position
 	# Currently set to a global variable
+	GameState.familiar_loaded = false
 	if GameState.target_spawn == "Loaded_Spawn":
 		pc.global_position = GameState.target_vec
 		if Global_World_State.familiar:
@@ -92,7 +93,6 @@ func _ready() -> void:
 	navigation.build()
 	
 	EventBus.familiar_changed.connect(_on_familiar_changed)
-	GameState.familiar_loaded = false
 
 func initialise() -> void:
 	_setup_location()
@@ -261,7 +261,7 @@ func _on_pc_move():
 		if !familiar_loaded_check:
 			await familiar.movement_finished
 		update_actor_map(familiar)
-		Global_World_State.fam_last_location = familiar.global_position
+		#Global_World_State.fam_last_location = familiar.global_position
 
 func lock_doors() -> void:
 	for door in locked_doors:
@@ -320,6 +320,7 @@ func spawn_familiar() -> void:
 			familiar.queue_free()
 			GameState.familiar_loaded = false
 			printerr("Could not load familiar, coordinates invalid")
+			familiar_spawn = ""
 			return
 		familiar.global_position = GameState.familiar_vec
 		GameState.familiar_vec = Vector2.ZERO

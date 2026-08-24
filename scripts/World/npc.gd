@@ -74,3 +74,8 @@ func _continuous_movement():
 	if current_dir != wants_to_move_dir:
 		direction_change(wants_to_move_dir)
 	force_move(wants_to_move_dir)
+
+func _on_move_complete() -> void:
+	if actor_id == "Chosen_Familiar":
+		print("Updating familiar last location :)")
+		Global_World_State.fam_last_location = global_position

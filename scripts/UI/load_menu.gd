@@ -1,5 +1,5 @@
 extends Control
-@onready var v_box_container: VBoxContainer = $Panel/ScrollContainer/VBoxContainer
+@onready var v_box_container: VBoxContainer = $CanvasLayer/Panel/ScrollContainer/VBoxContainer
 
 signal world_change_request(to_scene_path: String)
 
