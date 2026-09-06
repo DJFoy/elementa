@@ -1,5 +1,7 @@
 [gd_resource type="Theme" format=3 uid="uid://cgmosxmjhkq5a"]
 
+[ext_resource type="FontFile" uid="uid://h8n6bdxmtvcn" path="res://assets/font/m5x7.ttf" id="1_oh8p8"]
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wul58"]
 bg_color = Color(1, 0.8745098, 0.49411765, 1)
 border_color = Color(0.92156863, 0.7529412, 0.41568628, 1)
@@ -11,4 +13,5 @@ corner_detail = 3
 anti_aliasing = false
 
 [resource]
+default_font = ExtResource("1_oh8p8")
 Panel/styles/panel = SubResource("StyleBoxFlat_wul58")

@@ -1,0 +1,68 @@
+[gd_scene format=3 uid="uid://dt7or8xb6mad4"]
+
+[ext_resource type="Theme" uid="uid://cgmosxmjhkq5a" path="res://themes/book_menu_theme.tres" id="1_xd1y5"]
+[ext_resource type="Theme" uid="uid://dthhuuah0qhsg" path="res://themes/default_interact_theme.tres" id="2_ph2fj"]
+
+[node name="SaveMenu" type="Control" unique_id=1408690970]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_xd1y5")
+
+[node name="Panel" type="Panel" parent="." unique_id=1122357950]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = -10.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_ph2fj")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel" unique_id=526635552]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = -10.0
+offset_bottom = -10.0
+
+[node name="NewSave" type="Panel" parent="Panel/VBoxContainer" unique_id=1535281743]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Button" type="Button" parent="Panel/VBoxContainer/NewSave" unique_id=1484676767]
+custom_minimum_size = Vector2(110, 21)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -55.0
+offset_top = -10.5
+offset_right = 55.0
+offset_bottom = 10.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+theme_type_variation = &"InteractButton"
+text = "New Save"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Panel/VBoxContainer" unique_id=1418336200]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 2.0
+follow_focus = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/VBoxContainer/ScrollContainer" unique_id=1136613655]
+layout_mode = 2

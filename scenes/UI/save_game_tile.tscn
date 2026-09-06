@@ -1,0 +1,124 @@
+[gd_scene format=3 uid="uid://efy75s670p2y"]
+
+[ext_resource type="Theme" uid="uid://dthhuuah0qhsg" path="res://themes/default_interact_theme.tres" id="1_3yljd"]
+[ext_resource type="Script" uid="uid://cyx4xiqsgixnk" path="res://scripts/UI/save_game_tile.gd" id="2_lorxf"]
+[ext_resource type="Theme" uid="uid://cgmosxmjhkq5a" path="res://themes/book_menu_theme.tres" id="2_x44ve"]
+[ext_resource type="Texture2D" uid="uid://dv51smjecs6m" path="res://assets/base_assets/Save Slot Button Border.png" id="3_lorxf"]
+[ext_resource type="Texture2D" uid="uid://dwftxoygtopa3" path="res://assets/base_assets/Button Choice.png" id="4_8d5w6"]
+
+[node name="SaveGameTile" type="Control" unique_id=1718178907]
+layout_mode = 3
+anchor_right = 0.85
+anchor_bottom = 0.3
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_3yljd")
+script = ExtResource("2_lorxf")
+
+[node name="Panel" type="Panel" parent="." unique_id=233405660]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_x44ve")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel" unique_id=1834653480]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = -10.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GameDetails" type="VBoxContainer" parent="Panel/HBoxContainer" unique_id=347285634]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.5
+alignment = 1
+
+[node name="CharacterName" type="Label" parent="Panel/HBoxContainer/GameDetails" unique_id=858175207]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Name:"
+
+[node name="FamiliarName" type="Label" parent="Panel/HBoxContainer/GameDetails" unique_id=1717098422]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Familiar:"
+
+[node name="CurrentChapter" type="Label" parent="Panel/HBoxContainer/GameDetails" unique_id=487646542]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Chapter:"
+
+[node name="TimePlayed" type="Label" parent="Panel/HBoxContainer/GameDetails" unique_id=213971517]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Time Played:"
+
+[node name="Buttons" type="VBoxContainer" parent="Panel/HBoxContainer" unique_id=905777790]
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="Save" type="Button" parent="Panel/HBoxContainer/Buttons" unique_id=43796978]
+layout_mode = 2
+theme_type_variation = &"InteractButton"
+text = "Save"
+
+[node name="Delete" type="Button" parent="Panel/HBoxContainer/Buttons" unique_id=1592883456]
+layout_mode = 2
+theme_type_variation = &"InteractButton"
+text = "Delete"
+
+[node name="Border" type="NinePatchRect" parent="." unique_id=183015630]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1.0
+offset_top = -1.0
+offset_right = 1.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+localize_numeral_system = false
+texture = ExtResource("3_lorxf")
+region_rect = Rect2(0, 0, 103, 35)
+patch_margin_left = 8
+patch_margin_top = 8
+patch_margin_right = 8
+patch_margin_bottom = 8
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[node name="FocusBorder" type="NinePatchRect" parent="." unique_id=189819463]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1.0
+offset_top = -1.0
+offset_right = 1.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+localize_numeral_system = false
+texture = ExtResource("4_8d5w6")
+region_rect = Rect2(-1, -1, 101, 37)
+patch_margin_left = 13
+patch_margin_top = 12
+patch_margin_right = 13
+patch_margin_bottom = 12
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[connection signal="pressed" from="Panel/HBoxContainer/Buttons/Save" to="." method="_on_save_pressed"]
+[connection signal="pressed" from="Panel/HBoxContainer/Buttons/Delete" to="." method="_on_delete_pressed"]
