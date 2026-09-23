@@ -1,7 +1,5 @@
 extends Control
-@onready var v_box_container: VBoxContainer = $CanvasLayer/Panel/ScrollContainer/VBoxContainer
-
-signal world_change_request(to_scene_path: String)
+@onready var v_box_container: VBoxContainer = $Panel/VBoxContainer/ScrollContainer/VBoxContainer
 
 func _ready() -> void:
 	var slots: Array[String]
@@ -32,7 +30,11 @@ func initialise_load_tile(load_tile: LoadGameTile, save_slot: String):
 	var load_details = WorldStateSave.load(save_slot)
 	
 	var character_name = load_details.character.name
-	var familiar_name = load_details.familiar.npc_name
+	var familiar_name: String
+	if load_details.familiar:
+		familiar_name = load_details.familiar.npc_name
+	else:
+		familiar_name = ""
 	var chapter = load_details.chapter
 	var time_played = ""
 	
@@ -40,5 +42,9 @@ func initialise_load_tile(load_tile: LoadGameTile, save_slot: String):
 	
 	load_tile.load_game.connect(_on_load_game)
 
-func _on_load_game(scene: String):
-	world_change_request.emit(scene)
+func _on_load_game() -> void:
+	print("Request to load game received :)")
+	self.queue_free()
+
+func _on_back_pressed() -> void:
+	self.queue_free()

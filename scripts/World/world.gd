@@ -7,6 +7,7 @@ extends Node2D
 func _ready() -> void:
 	var main_menu_init:= main_menu.instantiate()
 	add_child(main_menu_init)
+	EventBus.world_change_request.connect(_on_world_change_request)
 	main_menu_init.connect("world_change_request", _on_world_change_request)
 
 func _load_world(scene_path):

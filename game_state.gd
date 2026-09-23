@@ -3,7 +3,7 @@ extends Node
 # This global is for storing game states
 
 # Set the save slot currently in use
-var current_slot: String = "A"
+var current_slot: String
 
 # Check that a game is loaded for loading in presets and settings
 var game_loaded:= false

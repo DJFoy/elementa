@@ -3,9 +3,13 @@ extends CanvasLayer
 var interact_scene = preload("uid://bd5yex4vadwcc")
 var dialogue_scene = preload("uid://xlgquvpcpldn")
 var game_menu = preload("uid://imfmklwsjtkd")
+var load_menu = preload("uid://tgoqh86yjcqi")
+var save_menu = preload("uid://dt7or8xb6mad4")
 
 func _ready() -> void:
 	EventBus.open_game_menu.connect(_on_game_menu_request)
+	EventBus.load_menu_request.connect(_on_load_menu_request)
+	EventBus.save_menu_request.connect(_on_save_menu_request)
 
 func start_interact_ui(interaction_text):
 	var interact := interact_scene.instantiate()
@@ -49,3 +53,13 @@ func _on_game_menu_request() -> void:
 	GameState.interacting = true
 	var gm: GameMenu = game_menu.instantiate()
 	add_child(gm)
+
+func _on_load_menu_request() -> void:
+	var lm = load_menu.instantiate()
+	add_child(lm)
+
+func _on_save_menu_request() -> void:
+	GameState.lock()
+	GameState.interacting = true
+	var sm := save_menu.instantiate()
+	add_child(sm)

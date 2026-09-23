@@ -1,5 +1,4 @@
 extends Control
-signal world_change_request
 
 
 func _ready() -> void:
@@ -7,11 +6,11 @@ func _ready() -> void:
 
 
 func _on_new_game_pressed() -> void:
-	world_change_request.emit("res://scenes/UI/player_init.tscn")
+	EventBus.world_change_request.emit("res://scenes/UI/player_init.tscn")
 
 
 func _on_load_game_pressed() -> void:
-	world_change_request.emit("res://scenes/UI/load_menu.tscn")
+	EventBus.load_menu_request.emit()
 
 
 func _on_options_pressed() -> void:
@@ -23,4 +22,4 @@ func _on_exit_pressed() -> void:
 
 
 func _on_debug_pressed() -> void:
-	world_change_request.emit("res://scenes/UI/debug.tscn")
+	EventBus.world_change_request.emit("res://scenes/UI/debug.tscn")

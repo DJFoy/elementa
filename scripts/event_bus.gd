@@ -1,7 +1,11 @@
 extends Node
 
 # Set up global scene change signal
-signal world_change_request
+signal world_change_request(scene: String)
+
+# Main Menu signal for requesting Load Menu/Save Menu
+signal load_menu_request
+signal save_menu_request
 
 # Register an "Actor" with the cutscene manager on instantiating a scene
 signal register_actor(actor_id: String, actor: Node)

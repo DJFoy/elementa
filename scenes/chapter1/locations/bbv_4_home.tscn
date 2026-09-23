@@ -8,7 +8,7 @@
 [node name="BBV4Home" type="Node2D" unique_id=869495374 node_paths=PackedStringArray("tilemaps")]
 y_sort_enabled = true
 script = ExtResource("1_8b6c8")
-tilemaps = [NodePath(""), NodePath("TileMaps/FloorsAndWalls"), NodePath("TileMaps/Rug"), NodePath("TileMaps/Chairs"), NodePath("TileMaps/Furniture"), NodePath("TileMaps/Window"), NodePath("TileMaps/Sink"), NodePath("TileMaps/Decorations"), NodePath("TileMaps/Flowers"), NodePath("TileMaps/Cushions")]
+tilemaps = [NodePath("TileMaps/FloorsAndWalls"), NodePath("TileMaps/Rug"), NodePath("TileMaps/Chairs"), NodePath("TileMaps/Furniture"), NodePath("TileMaps/Window"), NodePath("TileMaps/Sink"), NodePath("TileMaps/Decorations"), NodePath("TileMaps/Flowers"), NodePath("TileMaps/Cushions")]
 metadata/_custom_type_script = "uid://c8im5x5qc72nu"
 
 [node name="TileMaps" type="Node2D" parent="." unique_id=472332292]

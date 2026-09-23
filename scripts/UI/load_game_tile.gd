@@ -48,7 +48,9 @@ func _on_load_pressed() -> void:
 	if Global_World_State.familiar:
 		Global_World_State.familiar.chosen_familiar = true
 	
-	load_game.emit(world_save.current_scene)
+	load_game.emit()
+	print("Request to load game sent")
+	EventBus.world_change_request.emit(world_save.current_scene)
 
 func _on_delete_pressed() -> void:
 	pass # Replace with function body.

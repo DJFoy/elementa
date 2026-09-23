@@ -5,9 +5,10 @@
 [ext_resource type="Script" uid="uid://bl7o7egd7hho7" path="res://scripts/World/spawn.gd" id="3_kbup0"]
 [ext_resource type="PackedScene" uid="uid://kkaqj5g0x7un" path="res://scenes/exit_area.tscn" id="4_mt6ud"]
 
-[node name="BBV2Home" type="Node2D" unique_id=438960761]
+[node name="BBV2Home" type="Node2D" unique_id=438960761 node_paths=PackedStringArray("tilemaps")]
 y_sort_enabled = true
 script = ExtResource("1_ub33i")
+tilemaps = [NodePath("TileMaps/FloorsAndWalls"), NodePath("TileMaps/Rug"), NodePath("TileMaps/Chairs"), NodePath("TileMaps/Furniture"), NodePath("TileMaps/Window"), NodePath("TileMaps/Sink"), NodePath("TileMaps/Decorations"), NodePath("TileMaps/Flowers"), NodePath("TileMaps/Cushions")]
 metadata/_custom_type_script = "uid://c8im5x5qc72nu"
 
 [node name="TileMaps" type="Node2D" parent="." unique_id=201471921]

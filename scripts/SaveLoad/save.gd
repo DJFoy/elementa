@@ -101,6 +101,7 @@ static func _load_impl(stem: String, global_scope: bool, cls: GDScript, hard_slo
 		return sf
 
 	# File not found -- return instance
+	printerr("Could not find slot, creating new slot called %s" % [hard_slot])
 	var inst: Save = cls.new()
 	inst._stem = stem
 	inst._global = global_scope

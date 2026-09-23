@@ -38,7 +38,9 @@ func _on_save_pressed() -> void:
 	
 	world_save.save()
 	
-	print("Game Saved")
+	print("Game Saved at slot %s" % [save_slot])
+	
+	save_game.emit()
 
 func _on_delete_pressed() -> void:
 	pass # Replace with function body.
