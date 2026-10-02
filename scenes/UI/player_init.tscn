@@ -1,11 +1,9 @@
 [gd_scene format=3 uid="uid://bfqfu6xbhmt4k"]
 
 [ext_resource type="Script" uid="uid://dxbju3x74w8cl" path="res://scripts/UI/player_init.gd" id="1_x3k8m"]
-[ext_resource type="Texture2D" uid="uid://cwr4dc3u01ncy" path="res://assets/Scroll.png" id="2_6edg5"]
+[ext_resource type="Texture2D" uid="uid://cwr4dc3u01ncy" path="res://assets/base_assets/Scroll.png" id="2_6edg5"]
 [ext_resource type="FontFile" uid="uid://bes6ottao3jvw" path="res://assets/font/Jacquard12-Regular.ttf" id="3_6edg5"]
 [ext_resource type="PackedScene" uid="uid://06t2iv7b2ywp" path="res://scenes/portrait.tscn" id="4_6edg5"]
-[ext_resource type="Texture2D" path="res://assets/locations/brackenberry village/player home/Butler Uniform Asset.png" id="5_qxc0b"]
-[ext_resource type="Texture2D" path="res://assets/locations/brackenberry village/player home/Maid Uniform Asset.png" id="6_0nc47"]
 [ext_resource type="PackedScene" uid="uid://ciyerdi3eh05y" path="res://scenes/skin_tone_selector.tscn" id="7_0nc47"]
 [ext_resource type="Texture2D" uid="uid://d1eo784s7samo" path="res://assets/character_assets/pc_assets/overworld_sprite/hair/h1.png" id="8_q7hap"]
 [ext_resource type="Texture2D" uid="uid://bi882xibkxp7j" path="res://assets/character_assets/pc_assets/overworld_sprite/hair/h2.png" id="9_yjwey"]
@@ -48,7 +46,7 @@ region = Rect2(0, 0, 16, 17)
 atlas = ExtResource("11_bomf6")
 region = Rect2(0, 0, 16, 17)
 
-[node name="PlayerInit" type="Control"]
+[node name="PlayerInit" type="Control" unique_id=1664950628]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -59,17 +57,17 @@ grow_vertical = 2
 mouse_filter = 1
 script = ExtResource("1_x3k8m")
 
-[node name="ScrollContainer" type="ScrollContainer" parent="."]
+[node name="ScrollContainer" type="ScrollContainer" parent="." unique_id=181976406]
 layout_mode = 0
 offset_right = 488.0
 offset_bottom = 270.0
 horizontal_scroll_mode = 0
 
-[node name="ScrollLayer" type="Control" parent="ScrollContainer"]
+[node name="ScrollLayer" type="Control" parent="ScrollContainer" unique_id=1602655875]
 custom_minimum_size = Vector2(0, 1000)
 layout_mode = 2
 
-[node name="Scroll" type="TextureRect" parent="ScrollContainer/ScrollLayer"]
+[node name="Scroll" type="TextureRect" parent="ScrollContainer/ScrollLayer" unique_id=1370459814]
 layout_mode = 1
 offset_right = 480.0
 offset_bottom = 1000.0
@@ -77,7 +75,7 @@ mouse_filter = 2
 texture = ExtResource("2_6edg5")
 stretch_mode = 5
 
-[node name="Introduction" type="RichTextLabel" parent="ScrollContainer/ScrollLayer"]
+[node name="Introduction" type="RichTextLabel" parent="ScrollContainer/ScrollLayer" unique_id=1483333726]
 layout_mode = 0
 offset_left = 165.0
 offset_top = 34.0
@@ -88,7 +86,7 @@ theme_override_fonts/normal_font = ExtResource("3_6edg5")
 theme_override_font_sizes/normal_font_size = 42
 text = "oyal Adventurer Scholarship"
 
-[node name="Instructions" type="RichTextLabel" parent="ScrollContainer/ScrollLayer"]
+[node name="Instructions" type="RichTextLabel" parent="ScrollContainer/ScrollLayer" unique_id=1028328611]
 layout_mode = 0
 offset_left = 85.0
 offset_top = 120.0
@@ -105,10 +103,10 @@ If successful, your sponsor will be allocated upon your acceptance
 "
 scroll_active = false
 
-[node name="Portrait" parent="ScrollContainer/ScrollLayer" instance=ExtResource("4_6edg5")]
+[node name="Portrait" parent="ScrollContainer/ScrollLayer" unique_id=1338147154 instance=ExtResource("4_6edg5")]
 position = Vector2(356, 325)
 
-[node name="NameLabel" type="RichTextLabel" parent="ScrollContainer/ScrollLayer"]
+[node name="NameLabel" type="RichTextLabel" parent="ScrollContainer/ScrollLayer" unique_id=1306457074]
 layout_mode = 0
 offset_left = 85.0
 offset_top = 285.0
@@ -121,7 +119,7 @@ text = "Name
 "
 scroll_active = false
 
-[node name="PlayerName" type="LineEdit" parent="ScrollContainer/ScrollLayer"]
+[node name="PlayerName" type="LineEdit" parent="ScrollContainer/ScrollLayer" unique_id=823241022]
 layout_mode = 0
 offset_left = 85.0
 offset_top = 308.0
@@ -136,7 +134,7 @@ placeholder_text = "Enter name here"
 context_menu_enabled = false
 emoji_menu_enabled = false
 
-[node name="PronounsLabel" type="RichTextLabel" parent="ScrollContainer/ScrollLayer"]
+[node name="PronounsLabel" type="RichTextLabel" parent="ScrollContainer/ScrollLayer" unique_id=1476814173]
 layout_mode = 0
 offset_left = 84.0
 offset_top = 341.0
@@ -149,7 +147,7 @@ text = "Pronouns
 "
 scroll_active = false
 
-[node name="Pronouns" type="OptionButton" parent="ScrollContainer/ScrollLayer"]
+[node name="Pronouns" type="OptionButton" parent="ScrollContainer/ScrollLayer" unique_id=489075486]
 layout_mode = 0
 offset_left = 84.0
 offset_top = 364.0
@@ -177,7 +175,7 @@ popup/item_1/id = 1
 popup/item_2/text = "They/Them"
 popup/item_2/id = 2
 
-[node name="BodyTypeLabel" type="RichTextLabel" parent="ScrollContainer/ScrollLayer"]
+[node name="BodyTypeLabel" type="RichTextLabel" parent="ScrollContainer/ScrollLayer" unique_id=1849243113]
 layout_mode = 0
 offset_left = 85.0
 offset_top = 397.0
@@ -190,7 +188,7 @@ text = "Body Type
 "
 scroll_active = false
 
-[node name="BodyType" type="ItemList" parent="ScrollContainer/ScrollLayer"]
+[node name="BodyType" type="ItemList" parent="ScrollContainer/ScrollLayer" unique_id=2012516803]
 layout_mode = 0
 offset_left = 85.0
 offset_top = 420.0
@@ -207,11 +205,9 @@ item_count = 2
 max_columns = 2
 same_column_width = true
 item_0/text = "Type 1"
-item_0/icon = ExtResource("6_0nc47")
 item_1/text = "Type 2"
-item_1/icon = ExtResource("5_qxc0b")
 
-[node name="SkinToneSelector" parent="ScrollContainer/ScrollLayer" instance=ExtResource("7_0nc47")]
+[node name="SkinToneSelector" parent="ScrollContainer/ScrollLayer" unique_id=1729427878 instance=ExtResource("7_0nc47")]
 layout_mode = 0
 anchors_preset = 0
 anchor_right = 0.0
@@ -223,7 +219,7 @@ offset_bottom = 495.0
 grow_horizontal = 1
 grow_vertical = 1
 
-[node name="HairLabel" type="RichTextLabel" parent="ScrollContainer/ScrollLayer"]
+[node name="HairLabel" type="RichTextLabel" parent="ScrollContainer/ScrollLayer" unique_id=765558510]
 layout_mode = 0
 offset_left = 85.0
 offset_top = 497.0
@@ -235,7 +231,7 @@ theme_override_font_sizes/normal_font_size = 21
 text = "Hair Style"
 scroll_active = false
 
-[node name="HairStyle" type="ItemList" parent="ScrollContainer/ScrollLayer"]
+[node name="HairStyle" type="ItemList" parent="ScrollContainer/ScrollLayer" unique_id=1115057866]
 layout_mode = 0
 offset_left = 85.0
 offset_top = 519.0
@@ -254,7 +250,7 @@ same_column_width = true
 item_0/icon = SubResource("AtlasTexture_sg2sg")
 item_1/icon = SubResource("AtlasTexture_bomf6")
 
-[node name="HairColourLabel" type="RichTextLabel" parent="ScrollContainer/ScrollLayer"]
+[node name="HairColourLabel" type="RichTextLabel" parent="ScrollContainer/ScrollLayer" unique_id=400566343]
 layout_mode = 0
 offset_left = 273.0
 offset_top = 415.0
@@ -266,7 +262,7 @@ theme_override_font_sizes/normal_font_size = 21
 text = "Hair Colour"
 scroll_active = false
 
-[node name="HairColour" type="ColorPickerButton" parent="ScrollContainer/ScrollLayer"]
+[node name="HairColour" type="ColorPickerButton" parent="ScrollContainer/ScrollLayer" unique_id=476245427]
 layout_mode = 0
 offset_left = 276.0
 offset_top = 438.0
@@ -275,7 +271,7 @@ offset_bottom = 469.0
 theme_override_styles/normal = SubResource("StyleBoxFlat_sg2sg")
 color = Color(1, 1, 1, 1)
 
-[node name="EyeColourLabel" type="RichTextLabel" parent="ScrollContainer/ScrollLayer"]
+[node name="EyeColourLabel" type="RichTextLabel" parent="ScrollContainer/ScrollLayer" unique_id=1142390862]
 layout_mode = 0
 offset_left = 275.0
 offset_top = 471.0
@@ -287,7 +283,7 @@ theme_override_font_sizes/normal_font_size = 21
 text = "Eye Colour"
 scroll_active = false
 
-[node name="EyeColour" type="ColorPickerButton" parent="ScrollContainer/ScrollLayer"]
+[node name="EyeColour" type="ColorPickerButton" parent="ScrollContainer/ScrollLayer" unique_id=2139556307]
 layout_mode = 0
 offset_left = 278.0
 offset_top = 494.0
@@ -296,7 +292,7 @@ offset_bottom = 525.0
 theme_override_styles/normal = SubResource("StyleBoxFlat_sg2sg")
 color = Color(1, 1, 1, 1)
 
-[node name="OutfitLabel" type="RichTextLabel" parent="ScrollContainer/ScrollLayer"]
+[node name="OutfitLabel" type="RichTextLabel" parent="ScrollContainer/ScrollLayer" unique_id=512701722]
 layout_mode = 0
 offset_left = 84.0
 offset_top = 551.0
@@ -308,7 +304,7 @@ theme_override_font_sizes/normal_font_size = 21
 text = "Outfit"
 scroll_active = false
 
-[node name="Outfit" type="ItemList" parent="ScrollContainer/ScrollLayer"]
+[node name="Outfit" type="ItemList" parent="ScrollContainer/ScrollLayer" unique_id=152931973]
 layout_mode = 0
 offset_left = 84.0
 offset_top = 573.0
@@ -327,7 +323,7 @@ same_column_width = true
 item_0/icon = SubResource("AtlasTexture_8rhn3")
 item_1/icon = SubResource("AtlasTexture_neoaf")
 
-[node name="LikesLabel" type="RichTextLabel" parent="ScrollContainer/ScrollLayer"]
+[node name="LikesLabel" type="RichTextLabel" parent="ScrollContainer/ScrollLayer" unique_id=367027500]
 layout_mode = 0
 offset_left = 274.0
 offset_top = 526.0
@@ -340,7 +336,7 @@ text = "Likes
 "
 scroll_active = false
 
-[node name="Likes" type="OptionButton" parent="ScrollContainer/ScrollLayer"]
+[node name="Likes" type="OptionButton" parent="ScrollContainer/ScrollLayer" unique_id=698251581]
 layout_mode = 0
 offset_left = 274.0
 offset_top = 548.0
@@ -361,7 +357,7 @@ theme_override_styles/pressed = SubResource("StyleBoxEmpty_yjwey")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_sg2sg")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_0nc47")
 
-[node name="DislikesLabel" type="RichTextLabel" parent="ScrollContainer/ScrollLayer"]
+[node name="DislikesLabel" type="RichTextLabel" parent="ScrollContainer/ScrollLayer" unique_id=324304278]
 layout_mode = 0
 offset_left = 274.0
 offset_top = 580.0
@@ -373,7 +369,7 @@ theme_override_font_sizes/normal_font_size = 21
 text = "Dislikes"
 scroll_active = false
 
-[node name="Dislikes" type="OptionButton" parent="ScrollContainer/ScrollLayer"]
+[node name="Dislikes" type="OptionButton" parent="ScrollContainer/ScrollLayer" unique_id=1863456150]
 layout_mode = 0
 offset_left = 274.0
 offset_top = 602.0
@@ -394,7 +390,7 @@ theme_override_styles/pressed = SubResource("StyleBoxEmpty_yjwey")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_sg2sg")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_0nc47")
 
-[node name="Confirm" type="Button" parent="ScrollContainer/ScrollLayer"]
+[node name="Confirm" type="Button" parent="ScrollContainer/ScrollLayer" unique_id=803377115]
 layout_mode = 0
 offset_left = 83.0
 offset_top = 629.0
@@ -405,7 +401,7 @@ theme_override_fonts/font = ExtResource("3_6edg5")
 theme_override_font_sizes/font_size = 21
 text = "Confirm"
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="Camera2D" type="Camera2D" parent="." unique_id=514214567]
 position = Vector2(240, 135)
 
 [connection signal="item_selected" from="ScrollContainer/ScrollLayer/BodyType" to="." method="_on_body_type_item_selected"]
