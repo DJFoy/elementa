@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://ca12rqhaf52bg"]
+
+[ext_resource type="Theme" uid="uid://cgmosxmjhkq5a" path="res://themes/book_menu_theme.tres" id="1_2m0kk"]
+[ext_resource type="FontFile" uid="uid://bes6ottao3jvw" path="res://assets/font/Jacquard12-Regular.ttf" id="2_j50wt"]
+
+[node name="BestiaryMenuLeft" type="Control" unique_id=407328339]
+layout_mode = 3
+anchor_right = 0.358
+anchor_bottom = 0.744
+offset_right = 0.1599884
+offset_bottom = -0.8800049
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=420928027]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer" unique_id=29037778]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("1_2m0kk")
+theme_type_variation = &"InteractRichTextLabel"
+theme_override_fonts/normal_font = ExtResource("2_j50wt")
+theme_override_font_sizes/normal_font_size = 21
+theme_override_font_sizes/bold_font_size = 21
+bbcode_enabled = true
+text = "[center]Bestiary[/center]"

@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://dblgrerbabgmn"]
+
+[ext_resource type="Theme" uid="uid://cgmosxmjhkq5a" path="res://themes/book_menu_theme.tres" id="1_o0omr"]
+[ext_resource type="Texture2D" uid="uid://8cojvp6a88vk" path="res://assets/character_assets/portraits/frostling/frostling.png" id="2_dd1qq"]
+
+[node name="BestiaryMenuRight" type="Control" unique_id=2081586865]
+layout_mode = 3
+anchor_right = 0.358
+anchor_bottom = 0.74100006
+offset_right = 0.1599884
+offset_bottom = -0.07002258
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_o0omr")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=901074496]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer" unique_id=310606146]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/HBoxContainer" unique_id=546905938]
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("2_dd1qq")
+expand_mode = 5
+stretch_mode = 4
+
+[node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer/HBoxContainer" unique_id=1001204752]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Name:"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer" unique_id=1356718165]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Description: "

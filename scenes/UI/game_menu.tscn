@@ -2,6 +2,25 @@
 
 [ext_resource type="Theme" uid="uid://dthhuuah0qhsg" path="res://themes/default_interact_theme.tres" id="1_kv44u"]
 [ext_resource type="Script" uid="uid://blkpkrghjs74y" path="res://scripts/UI/game_menu.gd" id="2_isfb2"]
+[ext_resource type="Texture2D" uid="uid://c40oadl7e4v07" path="res://assets/menu/Book Menu UI.png" id="3_6gb6r"]
+[ext_resource type="Texture2D" uid="uid://bbfb5qelq6c77" path="res://assets/menu/Bestiary Tab.png" id="4_qhcbv"]
+[ext_resource type="Texture2D" uid="uid://chtqd4gxon43o" path="res://assets/menu/Grimoire Tab.png" id="5_w8k8f"]
+[ext_resource type="Texture2D" uid="uid://c1m3q13grio6m" path="res://assets/menu/Inventory Tab.png" id="6_vw6lw"]
+[ext_resource type="Texture2D" uid="uid://njtfskeuuaad" path="res://assets/menu/Journal Tab.png" id="7_08p2n"]
+[ext_resource type="Texture2D" uid="uid://yihjhsl3rhi0" path="res://assets/menu/Map Tab.png" id="8_2xjdb"]
+[ext_resource type="Texture2D" uid="uid://b3ueias3lc6s0" path="res://assets/menu/Relationships Tab.png" id="9_jbx0l"]
+[ext_resource type="Texture2D" uid="uid://d1mbjam0bkvcv" path="res://assets/menu/Tab Highlight.png" id="10_vw6lw"]
+[ext_resource type="Texture2D" uid="uid://lntf2bga6dfc" path="res://assets/menu/Map Tab Highlight.png" id="11_08p2n"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_br3u5"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1wk3t"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7gh86"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yjc40"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5gosn"]
 
 [node name="GameMenu" type="Control" unique_id=552706908]
 layout_mode = 3
@@ -16,6 +35,7 @@ theme = ExtResource("1_kv44u")
 script = ExtResource("2_isfb2")
 
 [node name="TabContainer" type="TabContainer" parent="." unique_id=2003278462]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -43,4 +63,190 @@ layout_mode = 2
 size_flags_vertical = 4
 text = "Load"
 
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=489189729]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MenuBase" type="TextureRect" parent="PanelContainer" unique_id=104600327]
+layout_mode = 2
+texture = ExtResource("3_6gb6r")
+
+[node name="BestiaryTab" type="TextureRect" parent="PanelContainer" unique_id=34192437]
+layout_mode = 2
+texture = ExtResource("4_qhcbv")
+
+[node name="GrimoireTab" type="TextureRect" parent="PanelContainer" unique_id=1004603855]
+layout_mode = 2
+texture = ExtResource("5_w8k8f")
+
+[node name="InventoryTab" type="TextureRect" parent="PanelContainer" unique_id=1486022043]
+layout_mode = 2
+texture = ExtResource("6_vw6lw")
+
+[node name="JournalTab" type="TextureRect" parent="PanelContainer" unique_id=875867153]
+layout_mode = 2
+texture = ExtResource("7_08p2n")
+
+[node name="MapTab" type="TextureRect" parent="PanelContainer" unique_id=1736072712]
+layout_mode = 2
+texture = ExtResource("8_2xjdb")
+
+[node name="RelationshipsTab" type="TextureRect" parent="PanelContainer" unique_id=1146000432]
+layout_mode = 2
+texture = ExtResource("9_jbx0l")
+
+[node name="Highlights" type="Control" parent="PanelContainer" unique_id=1165068785]
+layout_mode = 2
+
+[node name="BestiaryHighlight" type="TextureRect" parent="PanelContainer/Highlights" unique_id=1925227807]
+visible = false
+layout_mode = 0
+offset_right = 480.0
+offset_bottom = 270.0
+texture = ExtResource("10_vw6lw")
+
+[node name="MapHighlight" type="TextureRect" parent="PanelContainer/Highlights" unique_id=1782439060]
+visible = false
+layout_mode = 0
+offset_right = 480.0
+offset_bottom = 270.0
+texture = ExtResource("11_08p2n")
+
+[node name="LeftPage" type="MarginContainer" parent="." unique_id=85560171]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.1375
+anchor_top = 0.1037037
+anchor_right = 0.49550018
+anchor_bottom = 0.84770364
+offset_right = 0.15991211
+offset_bottom = -0.87997437
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="RightPage" type="MarginContainer" parent="." unique_id=2077926323]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5229166
+anchor_top = 0.1
+anchor_right = 0.88091636
+anchor_bottom = 0.844
+offset_left = 1.0
+offset_right = 1.1601257
+offset_bottom = -0.8799896
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="BestiaryButton" type="Button" parent="." unique_id=1319796708]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.09166667
+anchor_top = 0.13703704
+anchor_right = 0.117
+anchor_bottom = 0.20037037
+offset_right = -0.1600008
+offset_bottom = -0.10000038
+theme_override_styles/normal = SubResource("StyleBoxEmpty_br3u5")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_1wk3t")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_7gh86")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_yjc40")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_5gosn")
+metadata/_edit_use_anchors_ = true
+
+[node name="GrimoireButton" type="Button" parent="." unique_id=35801222]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.08958333
+anchor_top = 0.2962963
+anchor_right = 0.11491667
+anchor_bottom = 0.35962963
+offset_right = -0.1600008
+offset_bottom = -0.10000038
+theme_override_styles/normal = SubResource("StyleBoxEmpty_br3u5")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_1wk3t")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_7gh86")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_yjc40")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_5gosn")
+metadata/_edit_use_anchors_ = true
+
+[node name="InventoryButton" type="Button" parent="." unique_id=101831143]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0875
+anchor_top = 0.45925927
+anchor_right = 0.112833336
+anchor_bottom = 0.5225926
+offset_right = -0.1600008
+offset_bottom = -0.10000038
+theme_override_styles/normal = SubResource("StyleBoxEmpty_br3u5")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_1wk3t")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_7gh86")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_yjc40")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_5gosn")
+metadata/_edit_use_anchors_ = true
+
+[node name="RelationshipButton" type="Button" parent="." unique_id=1621777307]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0875
+anchor_top = 0.6259259
+anchor_right = 0.112833336
+anchor_bottom = 0.6892593
+offset_right = -0.1600008
+offset_bottom = -0.10000038
+theme_override_styles/normal = SubResource("StyleBoxEmpty_br3u5")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_1wk3t")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_7gh86")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_yjc40")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_5gosn")
+metadata/_edit_use_anchors_ = true
+
+[node name="JournalButton" type="Button" parent="." unique_id=127334823]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.083333336
+anchor_top = 0.7814815
+anchor_right = 0.108666666
+anchor_bottom = 0.84481484
+offset_right = -0.1600008
+offset_bottom = -0.10000038
+theme_override_styles/normal = SubResource("StyleBoxEmpty_br3u5")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_1wk3t")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_7gh86")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_yjc40")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_5gosn")
+metadata/_edit_use_anchors_ = true
+
+[node name="MapButton" type="Button" parent="." unique_id=810192005]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.20833333
+anchor_top = 0.9
+anchor_right = 0.25658333
+anchor_bottom = 0.99296296
+offset_right = -0.1600008
+offset_bottom = -0.10000038
+theme_override_styles/normal = SubResource("StyleBoxEmpty_br3u5")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_1wk3t")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_7gh86")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_yjc40")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_5gosn")
+metadata/_edit_use_anchors_ = true
+
 [connection signal="pressed" from="TabContainer/HBoxContainer/Save" to="." method="_on_save_pressed"]
+[connection signal="focus_entered" from="BestiaryButton" to="." method="_on_bestiary_button_focus_entered"]
+[connection signal="focus_exited" from="BestiaryButton" to="." method="_on_tab_button_focus_exited"]
+[connection signal="pressed" from="BestiaryButton" to="." method="_on_bestiary_button_pressed"]
+[connection signal="focus_entered" from="MapButton" to="." method="_on_map_button_focus_entered"]
+[connection signal="focus_exited" from="MapButton" to="." method="_on_tab_button_focus_exited"]
+[connection signal="pressed" from="MapButton" to="." method="_on_map_button_pressed"]

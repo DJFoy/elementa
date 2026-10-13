@@ -15,3 +15,4 @@ anti_aliasing = false
 [resource]
 default_font = ExtResource("1_oh8p8")
 Panel/styles/panel = SubResource("StyleBoxFlat_wul58")
+RichTextLabel/colors/default_color = Color(0, 0, 0, 1)
